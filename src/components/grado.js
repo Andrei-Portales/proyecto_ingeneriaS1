@@ -3,8 +3,19 @@ import './grado.css';
 
 function grado() {
     return (
-        <div className="gradoc">
-            <p> Esto es un grado</p>
+        <div className="grados">
+            <div className="grado1">
+                <p> Esto es un grado</p>
+            </div>
+            <div className="grado2">
+                <p> Esto es un grado</p>
+            </div>
+            <div className="grado3">
+                <p> Esto es un grado</p>
+            </div>
+            <div className="grado4">
+                <p> Esto es un grado</p>
+            </div>
         </div>
     );
 }
