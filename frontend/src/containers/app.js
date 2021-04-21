@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Grado from '../components/grado';
-import Login from '../components/Login';
+import Login from './Login/Login';
 
 class App extends Component {
   render() {

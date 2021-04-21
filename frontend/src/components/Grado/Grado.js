@@ -1,5 +1,5 @@
 import React from 'react';
-import './grado.css';
+import './Grado.css';
 
 function grado() {
     return (
