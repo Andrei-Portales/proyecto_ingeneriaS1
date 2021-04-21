@@ -26,7 +26,7 @@ function Login() {
             <br />
             <a href="#" className="link-password">¿Olvidó contraseña?</a>
             <br />
-            <Link to="/materia">
+            <Link to="/grados">
               <input type="submit" value="Ingresar" />
             </Link>
           </form>

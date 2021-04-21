@@ -28,7 +28,7 @@ function Login() {
             <input type="password" placeholder="Confirmar contraseña" />
             <br />
             <br />
-            <Link to="/materia">
+            <Link to="/grados">
               <input type="submit" value="Registrarse" />
             </Link>
           </form>

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import Materia from './Materias/Materias';
-import Grado from './Grados/Grados';
+import Grados from './Grados/Grados';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
       <Router>
         <Route exact path="/" component={Register} />
         <Route path="/login" component={Login} />
+        <Route path="/grados" component={Grados} />
         <Route path="/materia" component={Materia} />
       </Router>
     );

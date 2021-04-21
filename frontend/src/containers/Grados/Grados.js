@@ -1,6 +1,7 @@
 import React from 'react';
 import './Grados.css';
 import { Container, Row } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 import Cuarto from '../images/4togrado.png';
 import Quinto from '../images/5togrado.png';
 import Sexto from '../images/6togrado.png';
@@ -14,31 +15,31 @@ function Grados() {
                 <Row justify="between" debug>
                     <div id="content">
                         <div class="roundedcorners">
-                            <a href="#">
+                            <Link to="/materia">
                                 <img src={Cuarto} />
                                 <h1>Cuarto </h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
                     <div id="content">
                         <div class="roundedcorners">
-                            <a href="#">
+                            <Link to="/materia">
                                 <img src={Quinto} />
                                 <h1>Quinto  </h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
                     <div id="content">
                         <div class="roundedcorners">
-                            <a href="#">
+                            <Link to="/materia">
                                 <img src={Sexto} />
                                 <h1>Sexto </h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
