@@ -1,5 +1,5 @@
 import React from 'react';
-import './Login.scss';
+import './Register.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,16 +18,21 @@ function Login() {
             <p className="login-icon">🧑</p>
           </div>
           <form>
-            <input type="text" placeholder="Usuario" />
+            <input type="text" placeholder="Correo electrónico" />
             <br />
+            <input type="text" placeholder="Nombre" />
             <br />
             <input type="password" placeholder="Contraseña" />
             <br />
-            <a href="#" className="link-password">¿Olvidó contraseña?</a>
+            <input type="password" placeholder="Confirmar contraseña" />
             <br />
-            <input type="submit" value="Ingresar" />
+            <br />
+            <input type="submit" value="Registrarse" />
           </form>
-          <p>¿Aún no tienes una cuenta? <a href="#" className="link-register"> Registrarse</a></p>
+          <p>¿Ya tienes una cuenta? <a href="#" className="link-register"> Ingresar</a></p>
+          <br />
+          <br />
+          <br />
         </Col>
         <Col sm={4} md={4} lg={4} />
       </Row>

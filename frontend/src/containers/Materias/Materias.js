@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './grados.css';
+import './Materias.css';
 import { Container, Row } from 'react-grid-system';
 import Mate from '../images/matematicas.png';
 import Ciencias from '../images/ciencias.jpg';
 import Idioma from '../images/idioma.jpg';
 
 
-function grados() {
+function Materias() {
     return (
         <Container fluid className="grid">
             <h1 className="materias"> Materias</h1>
@@ -52,4 +52,4 @@ function grados() {
     );
 }
 
-export default grados;
+export default Materias;
