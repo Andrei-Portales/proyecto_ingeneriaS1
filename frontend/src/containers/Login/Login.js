@@ -1,5 +1,11 @@
 import React from 'react';
 import './Login.scss';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -25,9 +31,11 @@ function Login() {
             <br />
             <a href="#" className="link-password">¿Olvidó contraseña?</a>
             <br />
-            <input type="submit" value="Ingresar" />
+            <Link to="/materia">
+              <input type="submit" value="Ingresar" />
+            </Link>
           </form>
-          <p>¿Aún no tienes una cuenta? <a href="#" className="link-register"> Registrarse</a></p>
+          <p>¿Aún no tienes una cuenta? <Link to="/" className="link-register"> Registrarse</Link></p>
         </Col>
         <Col sm={4} md={4} lg={4} />
       </Row>

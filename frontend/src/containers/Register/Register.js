@@ -3,6 +3,12 @@ import './Register.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
 
 function Login() {
   return (
@@ -27,9 +33,11 @@ function Login() {
             <input type="password" placeholder="Confirmar contraseña" />
             <br />
             <br />
-            <input type="submit" value="Registrarse" />
+            <Link to="/materia">
+              <input type="submit" value="Registrarse" />
+            </Link>
           </form>
-          <p>¿Ya tienes una cuenta? <a href="#" className="link-register"> Ingresar</a></p>
+          <p>¿Ya tienes una cuenta? <Link to="/login" className="link-register"> Ingresar</Link></p>
           <br />
           <br />
           <br />
