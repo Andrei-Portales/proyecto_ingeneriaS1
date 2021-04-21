@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import Materia from './Materias/Materias';
+import Grado from './Grados/Grados';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
