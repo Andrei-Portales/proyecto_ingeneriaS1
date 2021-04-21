@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import Login from './Login/Login';
 import Register from './Register/Register';
 import Materia from './Materias/Materias';
+import Grado from './Grados/Grados';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         {/* <Grado /> */}
         <Register />
         <Materia />
+        <Grado />
       </div>
     );
   }
