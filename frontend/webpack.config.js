@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          MiniCssExtractPlugin.loader,  
+          MiniCssExtractPlugin.loader,
           "css-loader",
         ],
       },
@@ -40,6 +40,16 @@ module.exports = {
         loader: "babel-loader",
         exclude: /(node_modules)/,
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+
+          },
+        ],
+      },
+
     ],
   },
 };
