@@ -4,12 +4,14 @@ body {
   font-size: 15px;
   line-height: 1.6em;
   text-align: center;
-  background-color: #fafaef;
+  /* background-color: #fafaef; */
 }
+
 .materias {
   display: flex;
   left: 0;
 }
+
 .tituloMaterias {
   top: 50%;
   display: flex;

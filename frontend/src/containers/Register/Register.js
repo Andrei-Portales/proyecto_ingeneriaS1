@@ -1,45 +1,45 @@
 import React from 'react';
 import './Register.scss';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+import ComputerImg from '../images/computer-work.png';
 
 function Login() {
   return (
-    <Container fluid>
-      <Row>
-        <Col sm={4} md={4} lg={4} />
-        <Col sm={4} md={4} lg={4} className="login-container">
-          <div className="login-button">
+    <div className="register-container">
+      <div className="left-section">
+        <div className="title-text">
+          <h2>Crea una cuenta para</h2>
+          <h2>guardar tus logros y avances</h2>
+        </div>
+        <img src={ComputerImg} alt="Imagen" />
+      </div>
+      <div className="right-section">
+        <div className="skip-container">
+          <Link to="/grados">
             <button type="submit">SALTAR</button>
-          </div>
-          <div className="login-text">
-            <p className="login-student">ESTUDIANTE</p>
-            <p className="login-icon">🧑</p>
-          </div>
-          <form>
-            <input type="text" placeholder="Correo electrónico" />
-            <br />
-            <input type="text" placeholder="Nombre" />
-            <br />
-            <input type="password" placeholder="Contraseña" />
-            <br />
-            <input type="password" placeholder="Confirmar contraseña" />
-            <br />
-            <br />
-            <Link to="/grados">
-              <input type="submit" value="Registrarse" />
-            </Link>
-          </form>
-          <p>¿Ya tienes una cuenta? <Link to="/login" className="link-register"> Ingresar</Link></p>
+          </Link>
+        </div>
+        <div className="login-text">
+          <p className="login-student">ESTUDIANTE</p>
+        </div>
+        <form>
+          <input type="text" placeholder="Correo electrónico" />
+          <br />
+          <input type="text" placeholder="Nombre" />
+          <br />
+          <input type="password" placeholder="Contraseña" />
+          <br />
+          <input type="password" placeholder="Confirmar contraseña" />
           <br />
           <br />
-          <br />
-        </Col>
-        <Col sm={4} md={4} lg={4} />
-      </Row>
-    </Container>
+          <Link to="/grados">
+            <input type="submit" value="Registrarse" />
+          </Link>
+        </form>
+        <br />
+        <p>¿Ya tienes una cuenta? <Link to="/login" className="link-register"> Ingresar</Link></p>
+      </div>
+    </div>
   );
 }
 

@@ -1,26 +1,31 @@
 import React from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import ComputerImg from '../images/computer-work.png';
 
-function Login() {
-  return (
-    <Container fluid>
-      <Row>
-        <Col sm={4} md={4} lg={4} />
-        <Col sm={4} md={4} lg={4} className="login-container">
-          <div className="login-button">
-            <button type="submit">SALTAR</button>
+// eslint-disable-next-line react/prefer-stateless-function
+class Login extends React.Component {
+  render() {
+    return (
+      <div className="login-container">
+        <div className="left-section">
+          <div className="title-text">
+            <h2>Iniciar sesión para</h2>
+            <h2>guardar tus logros y avances</h2>
+          </div>
+          <img src={ComputerImg} alt="Imagen" />
+        </div>
+        <div className="right-section">
+          <div className="skip-container">
+            <Link to="/grados">
+              <button type="submit">SALTAR</button>
+            </Link>
           </div>
           <div className="login-text">
             <p className="login-student">ESTUDIANTE</p>
-            <p className="login-icon">🧑</p>
           </div>
           <form>
             <input type="text" placeholder="Usuario" />
-            <br />
             <br />
             <input type="password" placeholder="Contraseña" />
             <br />
@@ -29,13 +34,13 @@ function Login() {
             <Link to="/grados">
               <input type="submit" value="Ingresar" />
             </Link>
-          </form>
+            </form>
+          <br />
           <p>¿Aún no tienes una cuenta? <Link to="/" className="link-register"> Registrarse</Link></p>
-        </Col>
-        <Col sm={4} md={4} lg={4} />
-      </Row>
-    </Container>
-  );
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Login;
