@@ -1,4 +1,22 @@
-.navbar-brand{
+.navbar-brand {
     width: 200px;
     height: 75px;
+}
+
+#dropdown-basic-button {
+    margin: 0px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, .5);
+    font-size: 15px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 40px;
+}
+
+#dropdown-basic-button:hover {
+    color: black !important;
+    background-color: transparent;
+    text-decoration: none;
 }
