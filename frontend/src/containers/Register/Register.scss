@@ -1,5 +1,5 @@
 .register-container {
-  height: 100vh;
+  height: calc(100vh - 91px);
   display: grid;
   grid-template-columns: auto auto;
 
@@ -8,7 +8,7 @@
     margin: auto;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 91px);
 
     .title-text {
       display: flex;
@@ -19,7 +19,7 @@
       h2 {
         font-size: 34px;
         font-weight: 700;
-        margin: 10px;
+        margin: 8px;
       }
     }
   }
@@ -31,26 +31,14 @@
     flex-direction: column;
     margin: auto;
     background-color: white;
-    height: 630px;
+    height: calc(100vh - 91px);
   
     .skip-container {
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
 
-      button {
-        margin-left: 190px;
-        height: 33px;
-        width: 120px;
-        background-color: white;
-        border: 1px solid #747474;
-
-        &:hover {
-          background: #202431;
-          color: #fff;
-          cursor: pointer;
-        }
-      }
+      // skip.scss is applied here
     }
   
     .login-text {
@@ -120,6 +108,29 @@
       color: #3864cf;
       text-decoration: none;
     }
+  }
+}
+
+@keyframes cart {
+  0% {
+    left: -20%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes txt1 {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
   }
 }
   

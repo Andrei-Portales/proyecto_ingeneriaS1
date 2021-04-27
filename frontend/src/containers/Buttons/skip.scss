@@ -1,0 +1,56 @@
+button {
+    position: relative;
+    margin-left: 190px;
+    height: 33px;
+    width: 120px;
+    user-select: none; 
+    outline: none;
+    cursor: pointer;
+    color: black;
+    padding: 0px;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+    border: 1px solid #747474;
+    overflow: hidden;
+    user-select: none; 
+
+    &:hover {
+      background: #202431;
+      color: white !important;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    .fa-space-shuttle {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: -20px;
+      font-size: 1.3em;
+      transform: translate(-50%, -50%);
+    }
+
+    span {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 50%;
+      font-size: 1em;
+      transform: translate(-50%, -50%);
+
+      .saltar {
+        opacity: 1;
+      }
+    }
+}
+
+button.clicked .fa-space-shuttle {
+  animation: cart 0.8s ease-in-out forwards;
+}
+
+button.clicked span.saltar {
+  animation: txt1 0.8s ease-in-out forwards;      
+}

@@ -1,6 +1,6 @@
 
 .login-container {
-  height: 100vh;
+  height: calc(100vh - 91px);
   display: grid;
   grid-template-columns: auto auto;
 
@@ -9,7 +9,7 @@
     margin: auto;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 91px);
 
     .title-text {
       display: flex;
@@ -32,26 +32,14 @@
     flex-direction: column;
     margin: auto;
     background-color: white;
-    height: 530px;
+    height: calc(100vh - 91px);
 
     .skip-container {
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
 
-      button {
-        margin-left: 190px;
-        height: 33px;
-        width: 120px;
-        background-color: white;
-        border: 1px solid #747474;
-
-        &:hover {
-          background: #202431;
-          color: #fff;
-          cursor: pointer;
-        }
-      }
+      // skip.scss is applied here
     }
 
     .login-text {
