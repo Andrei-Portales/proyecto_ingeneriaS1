@@ -36,6 +36,9 @@ class navbar extends React.Component {
             <li className="nav-item">
               <a className="nav-link" href="#">OFFLINE</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">MODO OSCURO</a>
+            </li>
           </ul>
         </div>
       </nav>
