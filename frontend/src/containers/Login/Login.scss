@@ -1,6 +1,6 @@
 
 .login-container {
-  height: calc(100vh - 91px);
+  height: calc(100vh - 124px);
   display: grid;
   grid-template-columns: auto auto;
 
@@ -9,7 +9,7 @@
     margin: auto;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 91px);
+    height: calc(100vh - 124px);
 
     .title-text {
       display: flex;
@@ -31,8 +31,7 @@
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    background-color: white;
-    height: calc(100vh - 91px);
+    height: calc(100vh - 124px);
 
     .skip-container {
       display: flex;

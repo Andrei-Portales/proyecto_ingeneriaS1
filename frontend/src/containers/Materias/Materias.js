@@ -6,7 +6,6 @@ import Mate from '../images/matematicas.png';
 import Ciencias from '../images/ciencias.jpg';
 import Idioma from '../images/idioma.jpg';
 
-
 function Materias() {
     return (
         <Container fluid className="grid">
