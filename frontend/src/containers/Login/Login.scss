@@ -3,6 +3,7 @@
   height: calc(100vh - 124px);
   display: grid;
   grid-template-columns: auto auto;
+  margin-top: 27px;
 
   .left-section {
     display: flex;
@@ -64,10 +65,8 @@
       input[type='password'] {
         width: 300px;
         height: 40px;
-        color: black;
         font-size: 14px;
         border-radius: 4px;
-        background-color: #f0f2f6;
         border: none;
         padding-left: 16px;
 
@@ -98,7 +97,7 @@
 
       .link-password {
         padding-left: 160px;
-        color: #333333;
+        // color: #333333;
         font-size: 15px;
         text-decoration: none;
       }

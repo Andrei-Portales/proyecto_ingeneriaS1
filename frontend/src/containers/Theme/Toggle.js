@@ -1,22 +1,28 @@
-import React from 'react'
+import React from 'react';
 import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
 const ToggleContainer = styled.button`
-  background: ${({ theme }) => theme.gradient};
-  border: 1px solid ${({ theme }) => theme.toggleBorder};
+  background: ${({ theme }) => theme.body};
+  border: none !important;
+  outline: none;
   color: ${({ theme }) => theme.text};
   overflow: hidden;
   cursor: pointer;
-  margin: auto;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;
 
 const Toggle = ({ theme, toggleTheme }) => {
   const isLight = theme === 'light';
 
   return (
+    // Botón pero con estilo, definido en la linea 5 - 16
     <ToggleContainer lightTheme={isLight} onClick={toggleTheme}>
-      {isLight ? 'Dark Mode' : 'Light Mode'}
+      {isLight ? 'DARK MODE' : 'LIGHT MODE'}
     </ToggleContainer>
   );
 };

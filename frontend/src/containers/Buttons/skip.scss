@@ -1,4 +1,4 @@
-button {
+.skip-button {
     position: relative;
     margin-left: 190px;
     height: 33px;
@@ -6,10 +6,9 @@ button {
     user-select: none; 
     outline: none;
     cursor: pointer;
-    // color: black;
     padding: 0px;
     transition: 0.3s ease-in-out;
-    border: 1px solid #747474;
+    border: 1px solid #747474 !important;
     overflow: hidden;
     user-select: none; 
 
@@ -37,7 +36,7 @@ button {
       z-index: 3;
       left: 50%;
       top: 50%;
-      font-size: 1em;
+      font-size: 0.9em;
       transform: translate(-50%, -50%);
 
       .saltar {
@@ -46,10 +45,10 @@ button {
     }
 }
 
-button.clicked .fa-space-shuttle {
+.skip-button.clicked .fa-space-shuttle {
   animation: cart 0.8s ease-in-out forwards;
 }
 
-button.clicked span.saltar {
+.skip-button.clicked span.saltar {
   animation: txt1 0.8s ease-in-out forwards;      
 }
