@@ -17,9 +17,10 @@ const Div = styled.div`
   display: flex;
 `;
 
-function App() {
+const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
 
   return (
     <ThemeProvider theme={themeMode}>

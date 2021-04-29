@@ -3,6 +3,7 @@ const { sendEmail } = require('./mail');
 
 const login = async (req, res, next, pool) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   if (email === undefined || password === undefined)
     return res.send({ result: false });
@@ -21,7 +22,7 @@ const login = async (req, res, next, pool) => {
     if (result.rowCount !== 1) return res.send({ result: false });
 
     const user = result.rows[0];
-
+      console.log(user.password === password);
     if (user.password === password) return res.send({ result: true });
     else return res.send({ result: false });
   } catch (e) {
@@ -30,7 +31,8 @@ const login = async (req, res, next, pool) => {
 };
 
 const register = async (req, res, next, pool) => {
-  const { email, name, password } = req.body;
+  const { email, name, password} = req.body;
+
 
   if (email === undefined || name === undefined || password === undefined)
     return res.send({ result: false });

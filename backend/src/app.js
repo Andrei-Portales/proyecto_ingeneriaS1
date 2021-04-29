@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 // Login requests
 app.post('/login', (req, res, next) => login(req, res, next, pool)); // email, password
 app.post('/register', (req, res, next) => register(req, res, next, pool)); //  email, name, password
+
 app.post('/restore_password', (req, res, next) => restorePassword(req, res, next, pool)); // email, newPassword
 app.post('/send_recovery_email', (req, res, next) => sendRecoveryEmail(req, res, next, pool)); // email
 app.post('/confirm_recovery_code', (req, res, next) => confirmRecoveryCode(req, res, next)); //code, email

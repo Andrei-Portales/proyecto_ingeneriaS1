@@ -1,49 +1,74 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-class PasswordRecovery extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-    };
+const PasswordRecovery = (props) => {
+  const [state, setState] = useState({
+    isOpen: false,
+  });
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
+  const [emailState, setEmailState] = useState({ email: '' });
 
-  openModal() {
-    this.setState({ isOpen: true });
-  }
+  const closeModal = () => {
+    setState({ isOpen: false });
+  };
 
-  closeModal() {
-    this.setState({ isOpen: false });
-  }
+  const handleChange = (event) => {
+    setEmailState({ email: event.target.value });
+  };
 
-  render() {
-    return (
-      <Modal show={this.state.isOpen} onHide={this.closeModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <div className="modal_body">
-          <h2>Restablecer la contraseña</h2>
-          <p>Ingrese el correo electrónico asociado con su cuenta y le enviaremos un correo electrónico con instrucciones para restablecer su contraseña. </p>
-          <form>
-            <input type="text" placeholder="Usuario" />
-            <br />
-            <input type="submit" value="Ingresar" />
-          </form>
-        </div>
-        <div className="modal_footer">
-          <Button variant="secondary" onClick={this.closeModal}>
-            Close
-          </Button>
-        </div>
-      </Modal>
-    );
-  }
-}
+  const submit = () => {
+    const { email } = emailState;
+
+    if (email.trim() === '') return;
+
+
+    fetch('http://localhost:3000/send_recovery_email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: emailState.email.trim(),
+      }),
+    }).then(res=> res.json()).then((result) => {
+      console.log(result);
+      if (result){
+        alert('Se envio en correo');
+      }else{
+        alert('No se logro enviar el correo');
+      }
+    });
+  };
+
+  return (
+    <Modal show={state.isOpen} onHide={closeModal}>
+      <Modal.Header closeButton>
+        <Modal.Title>Modal heading</Modal.Title>
+      </Modal.Header>
+      <div className="modal_body">
+        <h2>Restablecer la contraseña</h2>
+        <p>
+          Ingrese el correo electrónico asociado con su cuenta y le enviaremos
+          un correo electrónico con instrucciones para restablecer su
+          contraseña.{' '}
+        </p>
+        <form onSubmit={submit}>
+          <input
+            type="text"
+            placeholder="Usuario"
+            onChange={handleChange}
+            value={emailState.email}
+          />
+          <br />
+          <input type="submit" value="Ingresar" />
+        </form>
+      </div>
+      <div className="modal_footer">
+        <Button variant="secondary" onClick={closeModal}>
+          Close
+        </Button>
+      </div>
+    </Modal>
+  );
+};
 
 export default PasswordRecovery;
