@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap';
 
 const PasswordRecovery = (props) => {
   const [state, setState] = useState({
-    isOpen: false,
+    isOpen: true,
   });
 
   const [emailState, setEmailState] = useState({ email: '' });
@@ -22,7 +22,6 @@ const PasswordRecovery = (props) => {
 
     if (email.trim() === '') return;
 
-
     fetch('http://165.227.208.149:3000/send_recovery_email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,9 +30,10 @@ const PasswordRecovery = (props) => {
       }),
     }).then(res=> res.json()).then((result) => {
       console.log(result);
-      if (result){
+      if (result) {
+        console.log(result);
         alert('Se envio en correo');
-      }else{
+      } else {
         alert('No se logro enviar el correo');
       }
     });
@@ -51,16 +51,15 @@ const PasswordRecovery = (props) => {
           un correo electrónico con instrucciones para restablecer su
           contraseña.{' '}
         </p>
-        <form onSubmit={submit}>
-          <input
-            type="text"
-            placeholder="Usuario"
-            onChange={handleChange}
-            value={emailState.email}
-          />
-          <br />
-          <input type="submit" value="Ingresar" />
-        </form>
+        <input
+          type="text"
+          name="email"
+          placeholder="Correo electrónico"
+          onChange={handleChange}
+          value={emailState.email}
+        />
+        <br />
+        <button type="submit" onClick={submit}>Enviar</button>
       </div>
       <div className="modal_footer">
         <Button variant="secondary" onClick={closeModal}>

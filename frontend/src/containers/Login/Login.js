@@ -4,13 +4,11 @@ import React, { useState } from 'react';
 import './Login.scss';
 import styled from 'styled-components';
 import './password-recovery.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import { Modal, Button } from 'react-bootstrap';
 import ComputerImg from '../images/computer-work.png';
 import SkipButton from '../Buttons/Skip';
-
-import { useHistory } from 'react-router-dom';
 
 // COLOR APLICADO ESPECIFIAMENTE DEPENDIENDO EL MODO DARK/LIGHT
 // LOS DEMAS ESTILOS ESTAN EN login.scss
@@ -32,6 +30,8 @@ const Div = styled.div`
 const Login = (props) => {
   const history = useHistory();
 
+  const [emailState, setEmailState] = useState({ email: '' });
+
   const [state, setState] = useState({
     isOpen: false,
   });
@@ -50,11 +50,12 @@ const Login = (props) => {
   };
 
   const onSubmit = () => {
-    
-    const {email, password} = userState;
+    const { email, password } = userState;
 
-    if (email.trim() === '' || password.trim() === '')
-    return;
+    if (email.trim() === '' || password.trim() === '') {
+      // Toast para indiacr campo vacio
+      return;
+    }
 
     fetch('http://165.227.208.149:3000/login', {
       method: 'POST',
@@ -63,27 +64,48 @@ const Login = (props) => {
         email: userState.email.trim(),
         password: userState.password.trim(),
       }),
-    }).then(res=> res.json()).then((result) => {
-
-      if (result){
+    }).then((res) => res.json()).then((result) => {
+      if (result) {
+        console.log(result);
         history.push('/grados');
-      }else{
+      } else {
         history.push('/login');
       }
     });
   };
 
+  const submit = () => {
+    const { email } = emailState;
 
-  const handleChange = (event)=> {
-    const {email, password} = userState;
+    if (email.trim() === '') return;
 
-    const target = event.target;
+    fetch('http://165.227.208.149:3000/send_recovery_email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: emailState.email.trim(),
+      }),
+    }).then((res) => res.json()).then((result) => {
+      console.log(result);
+      if (result) {
+        alert('Se envio en correo');
+      } else {
+        alert('No se logro enviar el correo');
+      }
+    });
+  };
+
+  const handleChange = (event) => {
+    const { email, password } = userState;
+    setEmailState({ email: event.target.value });
+
+    const { target } = event;
 
     setUserState({
-      email: target.id === 'email'? target.value : email,
-      password: target.id === 'password' ? target.value : password
+      email: target.id === 'email' ? target.value : email,
+      password: target.id === 'password' ? target.value : password,
     });
-  }
+  };
 
   return (
     <>
@@ -101,23 +123,22 @@ const Login = (props) => {
               <SkipButton />
             </DelayLink>
           </div>
-          <div className="login-text">
-            <p className="login-student">ESTUDIANTE</p>
-          </div>
-          <form onSubmit={onSubmit}>
-            <Input type="text" placeholder="Correo" id="email" onChange={handleChange} value={userState.email}/>
-            <br />
-            <Input type="password" placeholder="Contraseña" id="password" onChange={handleChange} value={userState.password}/>
-            <br />
-            <A href="#" className="link-password" onClick={openModal}>
-              ¿Olvidó contraseña?
-            </A>
-            <br />
-              <input type="submit" value="Ingresar" />
-          </form>
+          <br />
+          <br />
+          <br />
+          <Input type="text" placeholder="Correo" id="email" onChange={handleChange} value={userState.email}/>
+          <br />
+          <Input type="password" placeholder="Contraseña" id="password" onChange={handleChange} value={userState.password}/>
+          <br />
+          <A href="#" className="link-password" onClick={openModal}>
+            ¿Olvidó contraseña?
+          </A>
+          <br />
+          <button type="submit" className="login-button" onClick={onSubmit}>Ingresar</button>
           <br />
           <p>
-            ¿Aún no tienes una cuenta?{' '}
+            ¿Aún no tienes una cuenta?
+            {' '}
             <Link to="/" className="link-register">
               {' '}
               Registrarse
@@ -135,25 +156,26 @@ const Login = (props) => {
         </Div>
         <Div className="modal_body">
           <h2>Restablecer la contraseña</h2>
+          <br />
           <p>
             Ingrese el correo electrónico asociado con su cuenta y le enviaremos
             un correo electrónico con instrucciones para restablecer su
-            contraseña.{' '}
+            contraseña.
           </p>
-          <form>
-            <br />
-            <br />
-            <Input
-              type="text"
-              name="email"
-              autoFocus="autofocus"
-              placeholder="Correo electrónico"
-            />
-            <br />
-            <input type="submit" value="Enviar" />
-            <br />
-            <br />
-          </form>
+          <br />
+          <br />
+          <Input
+            type="text"
+            name="email"
+            autoFocus="autofocus"
+            placeholder="Correo electrónico"
+            onChange={handleChange}
+            value={emailState.email}
+          />
+          <br />
+          <button type="submit" className="send-button" onClick={submit}>Enviar</button>
+          <br />
+          <br />
         </Div>
       </Modal>
     </>

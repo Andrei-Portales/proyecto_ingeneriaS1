@@ -2,11 +2,10 @@
 import React, { useState } from 'react';
 import './Register.scss';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import ComputerImg from '../images/computer-work.png';
 import SkipButton from '../Buttons/Skip';
-import { useHistory } from "react-router-dom";
 
 // COLOR APLICADO ESPECIFIAMENTE DEPENDIENDO EL MODO DARK/LIGHT
 // LOS DEMAS ESTILOS ESTAN EN register.scss
@@ -33,15 +32,16 @@ const Register = () => {
   const register = () => {
     const { email, name, password, cPassword } = state;
 
-    if (
-      email.trim() === '' ||
-      name.trim() === '' ||
-      password.trim() === '' ||
-      cPassword.trim() === ''
-    )
+    if (email.trim() === '' || name.trim() === ''
+    || password.trim() === '' || cPassword.trim() === '') {
+    // Toast para mostrar si existe algun campo vacio
       return; // codigo por si hay campos vacios
+    }
 
-    if (password.trim() !== cPassword.trim()) return; // codigo por si las contrasenas no son iguales
+    if (password.trim() !== cPassword.trim()) {
+    // Toast para mostar contrasenas no coinciden
+      return; // codigo por si las contrasenas no son iguales
+    }
 
     if (!validateEmail(email)) return; // codigo por si el email no es verdadero
 
@@ -49,16 +49,16 @@ const Register = () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email:state.email.trim(),
+        email: state.email.trim(),
         name: state.name.trim() ,
         password: state.password.trim(),
-        
       }),
-    }).then(res=> res.json()).then((result) => {
-      if (result){
+    }).then((res) => res.json()).then((result) => {
+      if (result) {
+        console.log(result);
         history.push('/login');
-      }else{
-
+      } else {
+        console.log('Error');
       }
     });
   };
@@ -66,7 +66,7 @@ const Register = () => {
   const handleChange = (event) => {
     const { email, name, password, cPassword } = state;
 
-    const target = event.target;
+    const { target } = event;
 
     setState({
       email: target.id === 'email' ? event.target.value : email,
@@ -94,42 +94,40 @@ const Register = () => {
         <div className="login-text">
           <p className="login-student">ESTUDIANTE</p>
         </div>
-        <form onSubmit={register}>
-          <Input
-            id="email"
-            type="text"
-            placeholder="Correo electrónico"
-            value={state.email}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            id="name"
-            type="text"
-            placeholder="Nombre"
-            value={state.name}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            id="password"
-            type="password"
-            placeholder="Contraseña"
-            value={state.password}
-            onChange={handleChange}
-          />
-          <br />
-          <Input
-            id="cPassword"
-            type="password"
-            placeholder="Confirmar contraseña"
-            value={state.cPassword}
-            onChange={handleChange}
-          />
-          <br />
-          <br />
-          <input type="submit" value="Registrarse" />
-        </form>
+        <Input
+          id="email"
+          type="text"
+          placeholder="Correo electrónico"
+          value={state.email}
+          onChange={handleChange}
+        />
+        <br />
+        <Input
+          id="name"
+          type="text"
+          placeholder="Nombre"
+          value={state.name}
+          onChange={handleChange}
+        />
+        <br />
+        <Input
+          id="password"
+          type="password"
+          placeholder="Contraseña"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <br />
+        <Input
+          id="cPassword"
+          type="password"
+          placeholder="Confirmar contraseña"
+          value={state.cPassword}
+          onChange={handleChange}
+        />
+        <br />
+        <br />
+        <button type="submit" className="register-button" onClick={register}> Registrarse</button>
         <br />
         <p>
           ¿Ya tienes una cuenta?
