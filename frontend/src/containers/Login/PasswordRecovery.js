@@ -23,7 +23,7 @@ const PasswordRecovery = (props) => {
     if (email.trim() === '') return;
 
 
-    fetch('http://localhost:3000/send_recovery_email', {
+    fetch('http://165.227.208.149:3000/send_recovery_email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

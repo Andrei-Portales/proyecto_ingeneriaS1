@@ -45,7 +45,7 @@ const Register = () => {
 
     if (!validateEmail(email)) return; // codigo por si el email no es verdadero
 
-    fetch('http://localhost:3000/register', {
+    fetch('http://165.227.208.149:3000/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

@@ -56,7 +56,7 @@ const Login = (props) => {
     if (email.trim() === '' || password.trim() === '')
     return;
 
-    fetch('http://localhost:3000/login', {
+    fetch('http://165.227.208.149:3000/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

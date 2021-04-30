@@ -46,7 +46,7 @@ const register = async (req, res, next, pool) => {
     return res.send({ result: true });
   } catch (e) {
     return res.send({ result: false });
-  }
+  } 
 };
 
 const restorePassword = async (req, res, next, pool) => {
