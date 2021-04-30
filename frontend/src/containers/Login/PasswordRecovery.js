@@ -30,7 +30,7 @@ const PasswordRecovery = (props) => {
       }),
     }).then(res=> res.json()).then((result) => {
       console.log(result);
-      if (result) {
+      if (result.result) {
         console.log(result);
         alert('Se envio en correo');
       } else {

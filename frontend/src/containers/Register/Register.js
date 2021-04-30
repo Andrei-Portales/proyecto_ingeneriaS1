@@ -54,7 +54,7 @@ const Register = () => {
         password: state.password.trim(),
       }),
     }).then((res) => res.json()).then((result) => {
-      if (result) {
+      if (result.result) {
         console.log(result);
         history.push('/login');
       } else {

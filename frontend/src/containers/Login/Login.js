@@ -65,12 +65,10 @@ const Login = (props) => {
         password: userState.password.trim(),
       }),
     }).then((res) => res.json()).then((result) => {
-      if (result) {
+      if (result.result) {
         console.log(result);
         history.push('/grados');
-      } else {
-        history.push('/login');
-      }
+      } 
     });
   };
 
