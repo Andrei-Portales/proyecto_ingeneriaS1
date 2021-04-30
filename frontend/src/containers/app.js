@@ -8,9 +8,22 @@ import { GlobalStyles } from './Theme/global';
 import { useDarkMode } from './Theme/useDarkMode';
 import Toggle from './Theme/Toggle';
 import Register from './Register/Register';
-import Materia from './Materias/Materias';
+import MateriasCuarto from './Grados/CuartoPrimaria/MateriasCuarto/MateriasCuarto';
 import Grados from './Grados/Grados';
 import navbar from './Navbar/navbar';
+
+import MateCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Mate/MateCuarto';
+import CienciasCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/CienciasCuarto';
+import IdiomaCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Idioma/IdiomaCuarto';
+import MateQuinto from './Grados/QuintoPrimaria/MateriasQuinto/Mate/MateQuinto';
+import CienciasQuinto from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/CienciasQuinto';
+import IdiomaQuinto from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/IdiomaQuinto';
+import MateriasQuinto from './Grados/QuintoPrimaria/MateriasQuinto/MateriasQuinto';
+import MateriasSexto from './Grados/SextoPrimaria/MateriasSexto/MateriasSexto';
+import MateSexto from './Grados/SextoPrimaria/MateriasSexto/Mate/MateSexto';
+import IdiomaSexto from './Grados/SextoPrimaria/MateriasSexto/Idioma/IdiomaSexto';
+import CienciasSexto from './Grados/SextoPrimaria/MateriasSexto/Ciencias/CienciasSexto';
+import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/Temas';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -25,6 +38,8 @@ const App = () => {
   return (
     <ThemeProvider theme={themeMode}>
       <>
+
+
         <GlobalStyles />
         <Router>
           <Div className="topbar">
@@ -34,8 +49,22 @@ const App = () => {
           <Route exact path="/" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/grados" component={Grados} />
-          <Route path="/materia" component={Materia} />
+          <Route path="/materiascuarto" component={MateriasCuarto} />
+
+          <Route path="/matecuarto" component={MateCuarto} />
+          <Route path="/cienciasCuarto" component={CienciasCuarto} />
+          <Route path="/idiomacuarto" component={IdiomaCuarto} />
+          <Route path="/materiasquinto" component={MateriasQuinto} />
+          <Route path="/matequinto" component={MateQuinto} />
+          <Route path="/cienciasquinto" component={CienciasQuinto} />
+          <Route path="/idiomaquinto" component={IdiomaQuinto} />
+          <Route path="/materiassexto" component={MateriasSexto} />
+          <Route path="/matesexto" component={MateSexto} />
+          <Route path="/cienciassexto" component={CienciasSexto} />
+          <Route path="/idiomasexto" component={IdiomaSexto} />
+          <Route path="/tema1" component={Temas} />
         </Router>
+
       </>
     </ThemeProvider>
   );

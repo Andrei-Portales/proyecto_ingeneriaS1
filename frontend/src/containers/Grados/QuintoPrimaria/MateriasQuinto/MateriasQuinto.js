@@ -1,44 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import './Materias.css';
+import './MateriasQuinto.css';
 import { Container, Row } from 'react-grid-system';
-import Mate from '../images/matematicas.png';
-import Ciencias from '../images/ciencias.jpg';
-import Idioma from '../images/idioma.jpg';
+import Mate from '../../../images/matematicas.png';
+import Ciencias from '../../../images/ciencias.jpg';
+import Idioma from '../../../images/idioma.jpg';
 
-function Materias() {
+function MateriasQuinto() {
     return (
         <Container fluid className="grid">
-            <h1 className="materias"> Materias</h1>
+            <h1 className="materias"> Materias 5to</h1>
             <span>
                 <Row justify="between" debug>
                     <div id="content">
-                        <div class="roundedcorners">
-                            <a href="#">
+                        <div className="roundedcorners">
+                            <Link to="/matequinto">
                                 <img src={Mate} />
                                 <h1>Matematicas</h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
                     <div id="content">
-                        <div class="roundedcorners">
-                            <a href="#">
+                        <div className="roundedcorners">
+                            <Link to="/cienciasquinto">
                                 <img src={Ciencias} />
                                 <h1>Ciencias </h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
                     <div id="content">
-                        <div class="roundedcorners">
-                            <a href="#">
+                        <div className="roundedcorners">
+                            <Link to="/idiomaquinto">
                                 <img src={Idioma} />
                                 <h1>Idioma</h1>
 
-                            </a>
+                            </Link>
 
                         </div>
                     </div>
@@ -51,4 +52,4 @@ function Materias() {
     );
 }
 
-export default Materias;
+export default MateriasQuinto;
