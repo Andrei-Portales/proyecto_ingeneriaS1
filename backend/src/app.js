@@ -12,6 +12,8 @@ const {
   confirmRecoveryCode,
 } = require('./user');
 
+const {insertTema, getTemas} = require('./grado');
+
 const pool = require('./db');
 
 const port = 3000;
@@ -28,6 +30,8 @@ app.post('/restore_password', (req, res, next) => restorePassword(req, res, next
 app.post('/send_recovery_email', (req, res, next) => sendRecoveryEmail(req, res, next, pool)); // email
 app.post('/confirm_recovery_code', (req, res, next) => confirmRecoveryCode(req, res, next)); //code, email
 
+app.post('/insert-tema', (req, res, next)=>insertTema(req, res, next, pool)); // id_grado, title, body, video_url
+app.post('/get-temas', (req, res, next)=> getTemas(req, res, next, pool)); // id_grado
 
 
 app.listen(port, () => {
