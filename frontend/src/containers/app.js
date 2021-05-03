@@ -25,6 +25,9 @@ import IdiomaSexto from './Grados/SextoPrimaria/MateriasSexto/Idioma/IdiomaSexto
 import CienciasSexto from './Grados/SextoPrimaria/MateriasSexto/Ciencias/CienciasSexto';
 import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/Temas';
 import numeracion_6_digitos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/numeracion_6_digitos';
+import origen_de_vida from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_de_vida';
+import origen_mayas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_mayas';
+import celulas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/celulas';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -56,6 +59,10 @@ const App = () => {
           <Route path="/cienciasCuarto" component={CienciasCuarto} />
           <Route path="/idiomacuarto" component={IdiomaCuarto} />
           <Route path="/materiasquinto" component={MateriasQuinto} />
+          <Route path="/tema1" component={Temas}  />
+          <Route path="/origen_de_vida" component={origen_de_vida} />
+          <Route path="/origen_mayas" component={origen_mayas} />
+          <Route path="/celulas" component={celulas} />
           <Route path="/matequinto" component={MateQuinto} />
           <Route path="/cienciasquinto" component={CienciasQuinto} />
           <Route path="/idiomaquinto" component={IdiomaQuinto} />
@@ -63,7 +70,6 @@ const App = () => {
           <Route path="/matesexto" component={MateSexto} />
           <Route path="/cienciassexto" component={CienciasSexto} />
           <Route path="/idiomasexto" component={IdiomaSexto} />
-          <Route path="/tema1" component={Temas} />
           <Route path="/numeracion_6_digitos" component={numeracion_6_digitos} />
         </Router>
 

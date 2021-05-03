@@ -41,9 +41,6 @@ function navbar() {
             <li className="nav-item">
               <a className="nav-link" href="#">EJERCICIOS</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">OFFLINE</a>
-            </li>
           </ul>
         </div>
       </nav>

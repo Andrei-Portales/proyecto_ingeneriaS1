@@ -39,34 +39,37 @@ class CienciasQuinto extends React.Component {
 
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
-
-                            <p className="tema2"> TEMA1</p>
-
+                            <Link to="/origen_de_vida">
+                            <p className="tema2">Origen de la vida </p>
+                            </Link>
 
                         </Row>
 
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/origen_mayas">
+                            <p className="tema3">Origen de la vida desde la Cultura Maya</p>
+                            </Link>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/celulas">
+                            <p className="tema4">Las Células </p>
+                            </Link>
+
+                        </Row>
+                        <Row className="temas" justify="start" debug >
+                            <p className="tema5">Características Anatómicas</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema6">Cambios en la Materia</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
-
-
-                        </Row>
-                        <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema7">Investigación Científica</p>
 
 
                         </Row>
