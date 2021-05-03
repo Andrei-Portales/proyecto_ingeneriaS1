@@ -24,6 +24,7 @@ import MateSexto from './Grados/SextoPrimaria/MateriasSexto/Mate/MateSexto';
 import IdiomaSexto from './Grados/SextoPrimaria/MateriasSexto/Idioma/IdiomaSexto';
 import CienciasSexto from './Grados/SextoPrimaria/MateriasSexto/Ciencias/CienciasSexto';
 import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/Temas';
+import numeracion_6_digitos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/numeracion_6_digitos';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/cienciassexto" component={CienciasSexto} />
           <Route path="/idiomasexto" component={IdiomaSexto} />
           <Route path="/tema1" component={Temas} />
+          <Route path="/numeracion_6_digitos" component={numeracion_6_digitos} />
         </Router>
 
       </>

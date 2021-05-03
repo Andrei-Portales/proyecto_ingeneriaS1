@@ -27,13 +27,13 @@ function navbar() {
                 <A href="#">MATERIAS</A>
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Link to="/materia">
+                <Link to="/materiascuarto">
                   <Dropdown.Item href="#/action-1">CUARTO</Dropdown.Item>
                 </Link>
-                <Link to="/materia">
+                <Link to="/materiasquinto">
                   <Dropdown.Item href="#/action-1">QUINTO</Dropdown.Item>
                 </Link>
-                <Link to="/materia">
+                <Link to="/materiassexto">
                   <Dropdown.Item href="#/action-1">SEXTO</Dropdown.Item>
                 </Link>
               </Dropdown.Menu>

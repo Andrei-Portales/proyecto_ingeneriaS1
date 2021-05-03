@@ -39,8 +39,9 @@ class MateCuarto extends React.Component {
 
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
-
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/numeracion_6_digitos">
+                                <p className="tema2"> Numeración hasta de 6 cifras</p>
+                            </Link>
 
 
                         </Row>
