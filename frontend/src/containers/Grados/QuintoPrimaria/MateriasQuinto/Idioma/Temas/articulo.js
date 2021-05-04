@@ -24,8 +24,6 @@ function articulo() {
                         <li>–  Lo bueno es que tengo con quien compartir mi pena.</li>
                         <li>–  ¿Has visto lo rápido que corre tu hermana?</li>
                         <li>–  Admiro a mis amigos por lo leales que son.</li>
-                        <lu>Cambio</lu>
-                        Para los sustantivos femeninos que empiezan por a o ha tónicas, también se cambia el artículo indeterminante una por un, pero en el plural utilizamos unas.
                         <br></br><br></br>
                     </p>
                 </Col>
