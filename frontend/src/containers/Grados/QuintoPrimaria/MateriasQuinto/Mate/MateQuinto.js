@@ -40,33 +40,33 @@ class MateQuinto extends React.Component {
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
 
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Division</p>
 
 
                         </Row>
 
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Multiplos</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Fracciones</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Numeros mixtos</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2"> Valor Poscional </p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Proporciones</p>
 
 
                         </Row>

@@ -40,33 +40,33 @@ class IdiomaQuinto extends React.Component {
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
 
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Los Sustantivos</p>
 
 
                         </Row>
 
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Prononbre Personal</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">El verbo </p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">La Oracion </p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2">Figuras Literarias</p>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <p className="tema2"> El Articulo </p>
 
 
                         </Row>
