@@ -39,35 +39,40 @@ class MateQuinto extends React.Component {
 
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
-
+                            <Link to="/division">
                             <p className="tema2">Division</p>
-
+                            </Link>
 
                         </Row>
 
                         <Row className="temas" justify="start" debug >
+                            <Link to="/multiplos">
                             <p className="tema2">Multiplos</p>
-
+                            </Link>
 
                         </Row>
                         <Row className="temas" justify="start" debug >
+                            <Link to="/fracciones">
                             <p className="tema2">Fracciones</p>
-
+                            </Link>
 
                         </Row>
                         <Row className="temas" justify="start" debug >
+                            <Link to="/num_mix">
                             <p className="tema2">Numeros mixtos</p>
-
+                            </Link>
 
                         </Row>
                         <Row className="temas" justify="start" debug >
+                            <Link to="/val_posi">
                             <p className="tema2"> Valor Poscional </p>
-
+                            </Link>
 
                         </Row>
                         <Row className="temas" justify="start" debug >
+                            <Link to="/propor">
                             <p className="tema2">Proporciones</p>
-
+                            </Link>
 
                         </Row>
 
