@@ -11,7 +11,7 @@ import Register from './Register/Register';
 import MateriasCuarto from './Grados/CuartoPrimaria/MateriasCuarto/MateriasCuarto';
 import Grados from './Grados/Grados';
 import navbar from './Navbar/navbar';
-
+import './app.scss';
 import MateCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Mate/MateCuarto';
 import CienciasCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/CienciasCuarto';
 import IdiomaCuarto from './Grados/CuartoPrimaria/MateriasCuarto/Idioma/IdiomaCuarto';
@@ -38,12 +38,9 @@ const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-
   return (
     <ThemeProvider theme={themeMode}>
       <>
-
-
         <GlobalStyles />
         <Router>
           <Div className="topbar">

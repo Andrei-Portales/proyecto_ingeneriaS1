@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './Register.scss';
 import styled from 'styled-components';
+import { Container, Row } from 'react-grid-system';
 import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import ComputerImg from '../images/computer-work.png';
@@ -77,67 +78,69 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="left-section">
-        <div className="title-text">
-          <h2>Crea una cuenta para</h2>
-          <h2>guardar tus logros y avances</h2>
+    <Container fluid className="register-container">
+      <Row>
+        <div className="left-section">
+          <div className="title-text">
+            <h2>Crea una cuenta para</h2>
+            <h2>guardar tus logros y avances</h2>
+          </div>
+          <img src={ComputerImg} alt="Imagen" />
         </div>
-        <img src={ComputerImg} alt="Imagen" />
-      </div>
-      <div className="right-section">
-        <div className="skip-container">
-          <DelayLink delay={800} to="/grados">
-            <SkipButton />
-          </DelayLink>
+        <div className="right-section">
+          <div className="skip-container">
+            <DelayLink delay={800} to="/grados">
+              <SkipButton />
+            </DelayLink>
+          </div>
+          <div className="login-text">
+            <p className="login-student">ESTUDIANTE</p>
+          </div>
+          <Input
+            id="email"
+            type="text"
+            placeholder="Correo electrónico"
+            value={state.email}
+            onChange={handleChange}
+          />
+          <br />
+          <Input
+            id="name"
+            type="text"
+            placeholder="Nombre"
+            value={state.name}
+            onChange={handleChange}
+          />
+          <br />
+          <Input
+            id="password"
+            type="password"
+            placeholder="Contraseña"
+            value={state.password}
+            onChange={handleChange}
+          />
+          <br />
+          <Input
+            id="cPassword"
+            type="password"
+            placeholder="Confirmar contraseña"
+            value={state.cPassword}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
+          <button type="submit" className="register-button" onClick={register}> Registrarse</button>
+          <br />
+          <p>
+            ¿Ya tienes una cuenta?
+            <Link to="/login" className="link-register">
+              {' '}
+              Ingresar
+            </Link>
+          </p>
         </div>
-        <div className="login-text">
-          <p className="login-student">ESTUDIANTE</p>
-        </div>
-        <Input
-          id="email"
-          type="text"
-          placeholder="Correo electrónico"
-          value={state.email}
-          onChange={handleChange}
-        />
-        <br />
-        <Input
-          id="name"
-          type="text"
-          placeholder="Nombre"
-          value={state.name}
-          onChange={handleChange}
-        />
-        <br />
-        <Input
-          id="password"
-          type="password"
-          placeholder="Contraseña"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <br />
-        <Input
-          id="cPassword"
-          type="password"
-          placeholder="Confirmar contraseña"
-          value={state.cPassword}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
-        <button type="submit" className="register-button" onClick={register}> Registrarse</button>
-        <br />
-        <p>
-          ¿Ya tienes una cuenta?
-          <Link to="/login" className="link-register">
-            {' '}
-            Ingresar
-          </Link>
-        </p>
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
 

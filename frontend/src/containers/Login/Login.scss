@@ -1,16 +1,14 @@
 
 .login-container {
-  height: calc(100vh - 124px);
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-top: 27px;
+  height: calc(100vh - 131px);
+  margin-top: 30px;
 
   .left-section {
     display: flex;
     margin: auto;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 124px);
+    height: calc(100vh - 131px);
 
     .title-text {
       display: flex;
@@ -21,7 +19,7 @@
       h2 {
         font-size: 34px;
         font-weight: 700;
-        margin: 10px;
+        margin: 8px;
       }
     }
   }
@@ -32,7 +30,7 @@
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    height: calc(100vh - 124px);
+    height: calc(100vh - 131px);
 
     .skip-container {
       display: flex;
@@ -77,6 +75,7 @@
       border: none;
       color: white;
       font-size: 16px;
+      margin-top: 16px;
 
       &:focus {
         border: none;
@@ -106,4 +105,31 @@
     }
   }
 }
+
+@media only screen and (max-width: 845px) {
+  .login-container {
+    margin-top: 15px;
+
+    .left-section {
+      display: none !important;
+    }
+  
+    .right-section {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 355px) {
+  input[type='text'],
+  input[type='password'] {
+    width: 250px !important;
+  }
+
+  .login-button {
+    width: 250px !important;
+  }
+}
+  
+
 

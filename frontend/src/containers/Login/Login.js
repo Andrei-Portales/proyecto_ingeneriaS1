@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './Login.scss';
 import styled from 'styled-components';
 import './password-recovery.scss';
+import { Container, Row } from 'react-grid-system';
 import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import { Modal, Button } from 'react-bootstrap';
@@ -107,43 +108,51 @@ const Login = (props) => {
 
   return (
     <>
-      <div className="login-container">
-        <div className="left-section">
-          <div className="title-text">
-            <h2>Iniciar sesión para</h2>
-            <h2>guardar tus logros y avances</h2>
+      <Container fluid className="login-container">
+        <Row>
+          <div className="left-section">
+            <div className="title-text">
+              <h2>Iniciar sesión para</h2>
+              <h2>guardar tus logros y avances</h2>
+            </div>
+            <img src={ComputerImg} alt="Imagen" />
           </div>
-          <img src={ComputerImg} alt="Imagen" />
-        </div>
-        <div className="right-section">
-          <div className="skip-container">
-            <DelayLink delay={800} to="/grados">
-              <SkipButton />
-            </DelayLink>
-          </div>
-          <br />
-          <br />
-          <br />
-          <Input type="text" placeholder="Correo" id="email" onChange={handleChange} value={userState.email}/>
-          <br />
-          <Input type="password" placeholder="Contraseña" id="password" onChange={handleChange} value={userState.password}/>
-          <br />
-          <A href="#" className="link-password" onClick={openModal}>
-            ¿Olvidó contraseña?
-          </A>
-          <br />
-          <button type="submit" className="login-button" onClick={onSubmit}>Ingresar</button>
-          <br />
-          <p>
-            ¿Aún no tienes una cuenta?
-            {' '}
-            <Link to="/" className="link-register">
+          <div className="right-section">
+            <div className="skip-container">
+              <DelayLink delay={800} to="/grados">
+                <SkipButton />
+              </DelayLink>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <Input type="text" placeholder="Correo" id="email" onChange={handleChange} value={userState.email}/>
+            <br />
+            <Input type="password" placeholder="Contraseña" id="password" onChange={handleChange} value={userState.password}/>
+            <br />
+            <A href="#" className="link-password" onClick={openModal}>
+              ¿Olvidó contraseña?
+            </A>
+            <br />
+            <button type="submit" className="login-button" onClick={onSubmit}>Ingresar</button>
+            <br />
+            <p>
+              ¿Aún no tienes una cuenta?
               {' '}
-              Registrarse
-            </Link>
-          </p>
-        </div>
-      </div>
+              <Link to="/" className="link-register">
+                {' '}
+                Registrarse
+              </Link>
+            </p>
+          </div>
+        </Row>
+      </Container>
+
       {/* MODAL CODE */}
       <Modal show={state.isOpen} onHide={closeModal}>
         <Div className="modal_header">

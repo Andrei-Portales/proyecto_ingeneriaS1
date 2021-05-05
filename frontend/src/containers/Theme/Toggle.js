@@ -21,7 +21,7 @@ const Toggle = ({ theme, toggleTheme }) => {
 
   return (
     // Botón pero con estilo, definido en la linea 5 - 16
-    <ToggleContainer lightTheme={isLight} onClick={toggleTheme}>
+    <ToggleContainer className="toggle-theme" lightTheme={isLight} onClick={toggleTheme}>
       {isLight ? 'DARK MODE' : 'LIGHT MODE'}
     </ToggleContainer>
   );

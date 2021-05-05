@@ -1,16 +1,14 @@
 
 .register-container {
-  height: calc(100vh - 190px);
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-top: 60px;
+  height: calc(100vh - 131px);
+  margin-top: 30px;
 
   .left-section {
     display: flex;
     margin: auto;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 131px);
 
     .title-text {
       display: flex;
@@ -32,7 +30,7 @@
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 131px);
   
     .skip-container {
       display: flex;
@@ -103,28 +101,31 @@
   }
 }
 
-@keyframes cart {
-  0% {
-    left: -20%;
-  }
-  40%,
-  60% {
-    left: 50%;
-  }
-  100% {
-    left: 120%;
+@media only screen and (max-width: 845px) {
+  .register-container {
+    margin-top: 15px;
+
+    .left-section {
+      display: none !important;
+    }
+  
+    .right-section {
+      width: 100%;
+    }
   }
 }
 
-@keyframes txt1 {
-  0% {
-    opacity: 1;
+@media only screen and (max-width: 355px) {
+  input[type='text'],
+  input[type='password'] {
+    width: 250px !important;
   }
-  20%,
-  100% {
-    opacity: 0;
+
+  .register-button {
+    width: 250px !important;
   }
 }
+  
   
 
   
