@@ -43,6 +43,12 @@ import pro_personal from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Temas/pr
 import oracion from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Temas/oracion';
 import verbo from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Temas/verbo';
 import sustantivos from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Temas/sustantivos';
+import diptongo from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/diptongo';
+import hiato from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/hiato';
+import lirico from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/lirico';
+import poesia from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/poesia';
+import semantica from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/semantica';
+import triptongo from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/triptongo';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -97,6 +103,12 @@ const App = () => {
           <Route path="/matesexto" component={MateSexto} />
           <Route path="/cienciassexto" component={CienciasSexto} />
           <Route path="/idiomasexto" component={IdiomaSexto} />
+          <Route path="/triptongo" component={triptongo} />
+          <Route path="/diptongo" component={diptongo} />
+          <Route path="/hiato" component={hiato} />
+          <Route path="/lirico" component={lirico} />
+          <Route path="/poesia" component={poesia} />
+          <Route path="/semantica" component={semantica} />
           <Route path="/numeracion_6_digitos" component={numeracion_6_digitos} />
         </Router>
 

@@ -39,34 +39,44 @@ class IdiomaSexto extends React.Component {
 
                     <Col className="title">
                         <Row className="temas" justify="start" debug >
-
-                            <p className="tema2"> TEMA1</p>
-
+                            <Link to="/poesia">
+                            <p className="tema2">La Poesía </p>
+                            </Link>
 
                         </Row>
 
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/lirico">
+                            <p className="tema2">Género Lírico</p>
+                            </Link>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/semantica">
+                            <p className="tema2">La Semántica</p>
+                            </Link>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/diptongo">
+                            <p className="tema2"> Diptongo </p>
+                            </Link>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/triptongo">
+                            <p className="tema2"> Triptongo</p>
+                            </Link>
 
 
                         </Row>
                         <Row className="temas" justify="start" debug >
-                            <p className="tema2"> TEMA1</p>
+                            <Link to="/hiato">
+                            <p className="tema2"> Hiato </p>
+                            </Link>
 
 
                         </Row>
