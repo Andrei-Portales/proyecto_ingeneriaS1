@@ -7,7 +7,7 @@ function verbo() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT">El Verbo</h1>
                     <p>
                         <br></br><br></br>
@@ -19,7 +19,7 @@ function verbo() {
                         Al igual que otras palabras, el verbo presenta lexema, en el que reside el significado verbal, y morfemas de persona y número. Tiene, además, morfemas de tiempo, modo y aspecto.
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

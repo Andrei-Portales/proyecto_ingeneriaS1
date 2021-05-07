@@ -1,27 +1,35 @@
-.container {
-  margin-top: 15vh;
+.sexto-container {
+  height: calc(100vh - 101px);
+  background-color: #f1eff3 !important;
+  margin: 0px;
 }
-.colImg {
-  background-color: transparent;
+
+.sexto-container .left-section {
+  padding: 26px !important;
 }
-.colImg img {
+
+.sexto-container .left-section img {
   display: block;
+  width: 340px;
+  height: 340px;
   margin-left: auto;
   margin-right: auto;
 }
-.info {
-  text-align: center;
-  margin-top: 5vh;
-  font-size: 30px;
+
+.sexto-container .left-section .info {
+  font-size: 20px;
+  margin-top: 20px;
 }
-.title {
-  background-color: transparent;
+
+.right-section {
+  padding: 26px !important;
 }
 
 .temas {
-  text-align: center;
+  display: flex;
+  justify-content: start;
   color: black;
   font-size: 20px;
-
+  padding-top: 10px;
   border-bottom: 1px solid #000;
 }

@@ -7,7 +7,7 @@ function lirico() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT"> Género Lírico </h1>
                     <p>
                         <br></br><br></br>
@@ -21,7 +21,7 @@ function lirico() {
                         
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

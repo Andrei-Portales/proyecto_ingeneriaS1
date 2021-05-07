@@ -7,7 +7,7 @@ function semantica() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT"> La Semántica </h1>
                     <p>
                         <br></br><br></br>
@@ -18,7 +18,7 @@ function semantica() {
                         Por otro lado, la semántica lingüística se encarga de estudiar la denotación y connotación de las palabras, cuando el mensaje se expresa objetivamente, se dice que su significa es denotativo y, cuando a la comunicación objetiva se le añade alguna valoración personal mediante gestos o entonación, se habla de que su significado es connotativo.
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

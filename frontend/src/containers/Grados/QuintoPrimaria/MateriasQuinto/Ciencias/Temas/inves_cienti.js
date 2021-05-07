@@ -7,7 +7,7 @@ function inves_cienti() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT">Investigación Científica</h1>
                     <p>
                         <br></br><br></br>
@@ -27,7 +27,7 @@ function inves_cienti() {
                         <li>Finalidad de la investigación. Se refiere a las razones que motivan la investigación, es decir, a su propósito último. Por ejemplo, qué beneficios aportará a la sociedad determinado conocimiento.</li>
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

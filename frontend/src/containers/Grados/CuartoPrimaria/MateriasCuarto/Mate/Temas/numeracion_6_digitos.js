@@ -7,7 +7,7 @@ function numeracion_6_digitos() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT">Numeración hasta de 6 cifras</h1>
                     <p>
                         Los números nos sirven para contar seres, objetos . . ., cualquier cantidad de todo lo que nos rodea.
@@ -62,7 +62,7 @@ function numeracion_6_digitos() {
                         876 341 = 800 000 + 70 000 + 6 000 + 300 + 40 + 1<br></br><br></br>
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

@@ -7,7 +7,7 @@ function diptongo() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT"> Diptongo </h1>
                     <p>
                         <br></br><br></br>
@@ -19,7 +19,7 @@ function diptongo() {
                         En algunas formas verbales se da el fenómeno del triptongo: vocal débil más vocal fuerte más vocal débil, caso de iai en una palabra como riáis
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */

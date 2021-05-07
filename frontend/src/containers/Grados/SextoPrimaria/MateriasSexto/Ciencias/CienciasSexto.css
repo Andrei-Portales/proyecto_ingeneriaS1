@@ -1,20 +1,23 @@
-.container {
-  margin-top: 15vh;
+.sexto-container {
+  height: calc(100vh - 101px);
+  margin: 0px;
+  padding: 0px;
 }
-.colImg {
+
+.sexto-container .left-section {
   background-color: transparent;
+
 }
-.colImg img {
+
+.sexto-container .left-section img {
   display: block;
+  width: 340px;
+  height: 340px;
   margin-left: auto;
   margin-right: auto;
 }
-.info {
-  text-align: center;
-  margin-top: 5vh;
-  font-size: 30px;
-}
-.title {
+
+.right-section {
   background-color: transparent;
 }
 

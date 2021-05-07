@@ -24,26 +24,26 @@ function navbar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Link to="/grados">
-            <A className="nav-link" href="#">GRADOS</A>
+            <A className="nav-link" href="#">Grados</A>
           </Link>
           <Dropdown id="dropdown-basic-button">
             <Dropdown.Toggle variant="link" id="dropdown-basic">
-              <A href="#">MATERIAS</A>
+              <A href="#">Materias</A>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Link to="/materiascuarto">
-                <Dropdown.Item href="#/action-1">CUARTO</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Cuarto</Dropdown.Item>
               </Link>
               <Link to="/materiasquinto">
-                <Dropdown.Item href="#/action-1">QUINTO</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Quinto</Dropdown.Item>
               </Link>
               <Link to="/materiassexto">
-                <Dropdown.Item href="#/action-1">SEXTO</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Sexto</Dropdown.Item>
               </Link>
             </Dropdown.Menu>
           </Dropdown>
           <Link to="/ejercicios">
-            <A className="nav-link" href="#">EJERCICIOS</A>
+            <A className="nav-link" href="#">Ejercicios</A>
           </Link>
         </Nav>
       </Navbar.Collapse>

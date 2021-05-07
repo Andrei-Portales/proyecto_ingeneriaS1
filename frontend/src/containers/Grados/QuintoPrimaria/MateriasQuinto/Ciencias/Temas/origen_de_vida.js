@@ -7,7 +7,7 @@ function origen_de_vida() {
     return (
         <Container fluid className="grid">
             <Row justify="between" debug>
-                <Col>
+                <Col sm={12} md={7} lg={6}>
                     <h1 className="tituloT">Origen de la Vida</h1>
                     <p>
                         <br></br><br></br>
@@ -33,7 +33,7 @@ function origen_de_vida() {
 
                     </p>
                 </Col>
-                <Col>
+                <Col sm={12} md={5} lg={6}>
                     <div className='player-wrapper'>
                         <ReactPlayer
                             /**AQUI VA EL LINK DE YOUTUBE */
