@@ -8,7 +8,7 @@ import { faSpaceShuttle } from '@fortawesome/free-solid-svg-icons';
 // COLOR APLICADO ESPECIFIAMENTE DEPENDIENDO EL MODO DARK/LIGHT
 // LOS DEMAS ESTILOS ESTAN EN skip.scss
 const SkipButton = styled.button`
-    background: ${({ theme }) => theme.body};
+    background: ${({ theme }) => theme.navbar};
     color: ${({ theme }) => theme.text};
 `;
 

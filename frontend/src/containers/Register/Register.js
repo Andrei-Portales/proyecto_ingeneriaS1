@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './Register.scss';
 import styled from 'styled-components';
-import { Container, Row } from 'react-grid-system';
+import { Row } from 'react-grid-system';
 import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import ComputerImg from '../images/computer-work.png';
@@ -13,6 +13,16 @@ import SkipButton from '../Buttons/Skip';
 const Input = styled.input`
   background: ${({ theme }) => theme.input};
   color: ${({ theme }) => theme.text};
+`;
+
+const Container = styled.div`
+background-color: ${({ theme }) => theme.navbar} !important;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
 const Register = () => {

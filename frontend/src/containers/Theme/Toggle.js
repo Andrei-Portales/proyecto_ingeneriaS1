@@ -3,7 +3,7 @@ import { func, string } from 'prop-types';
 import styled from 'styled-components';
 
 const ToggleContainer = styled.button`
-  background: ${({ theme }) => theme.body};
+  background: ${({ theme }) => theme.navbar};
   border: none !important;
   outline: none;
   color: ${({ theme }) => theme.text};

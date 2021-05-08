@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './Login.scss';
 import styled from 'styled-components';
 import './password-recovery.scss';
-import { Container, Row } from 'react-grid-system';
+import { Row } from 'react-grid-system';
 import { Link, useHistory } from 'react-router-dom';
 import DelayLink from 'react-delay-link';
 import { Modal, Button } from 'react-bootstrap';
@@ -25,7 +25,16 @@ const A = styled.a`
 const Div = styled.div`
   background-color: ${({ theme }) => theme.body};
 `;
-//
+
+const Container = styled.div`
+background-color: ${({ theme }) => theme.navbar} !important;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+`;
 
 // eslint-disable-next-line react/prefer-stateless-function
 const Login = (props) => {

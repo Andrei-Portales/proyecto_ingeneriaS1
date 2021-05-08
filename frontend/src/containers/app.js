@@ -51,7 +51,7 @@ import semantica from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/semanti
 import triptongo from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/triptongo';
 
 const Div = styled.div`
-  background-color: ${({ theme }) => theme.body};
+  background-color: ${({ theme }) => theme.navbar};
   display: flex;
 `;
 
