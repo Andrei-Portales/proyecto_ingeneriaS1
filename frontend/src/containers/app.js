@@ -25,6 +25,9 @@ import IdiomaSexto from './Grados/SextoPrimaria/MateriasSexto/Idioma/IdiomaSexto
 import CienciasSexto from './Grados/SextoPrimaria/MateriasSexto/Ciencias/CienciasSexto';
 import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/Temas';
 import numeracion_6_digitos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/numeracion_6_digitos';
+import suma_resta from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/suma_resta';
+import operaciones_combinadas from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/operaciones_combinadas';
+import conjuntos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/conjuntos';
 import origen_de_vida from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_de_vida';
 import origen_mayas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_mayas';
 import celulas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/celulas';
@@ -110,6 +113,9 @@ const App = () => {
           <Route path="/poesia" component={poesia} />
           <Route path="/semantica" component={semantica} />
           <Route path="/numeracion_6_digitos" component={numeracion_6_digitos} />
+          <Route path="/suma_resta" component={suma_resta} />
+          <Route path="/operaciones_combinadas" component={operaciones_combinadas} />
+          <Route path="/conjuntos" component={conjuntos} />
         </Router>
 
       </>

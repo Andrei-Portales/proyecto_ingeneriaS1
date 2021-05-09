@@ -32,17 +32,23 @@ class MateCuarto extends React.Component {
             <Col className="right-section" sm={12} md={12} lg={6}>
               <div className="temas">
                 <Link to="/numeracion_6_digitos">
-                  <p className="tema2"> Numeración hasta de 6 cifras</p>
+                  <p className="tema2"> NUMERACIÓN DE 6 CIFRAS</p>
                 </Link>
               </div>
               <div className="temas">
-                <p className="tema2"> Tema 2</p>
+                <Link to="/suma_resta">
+                  <p className="tema2"> ADICIÓN Y SUSTRACCIÓN DE NÚMEROS</p>
+                </Link>
               </div>
               <div className="temas">
-                <p className="tema2"> Tema 3</p>
+                <Link to="/operaciones_combinadas">
+                  <p className="tema2"> OPERACIONES COMBINADAS</p>
+                </Link>
               </div>
               <div className="temas">
-                <p className="tema2"> Tema 4</p>
+                <Link to="/conjuntos">
+                  <p className="tema2"> CONJUNTOS</p>
+                </Link>
               </div>
               <div className="temas">
                 <p className="tema2"> Tema 5</p>
