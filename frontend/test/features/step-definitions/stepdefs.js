@@ -68,3 +68,7 @@ Then('El usuario recupera su contrasena y recibe {string} como respuesta', (expe
     assert.equal(this.actual, expected);
 });
 
+Then('El usuario se logra registrar con el correo {string}', (expected)=>{
+    assert.notEqual(this.actual, expected);
+});
+
