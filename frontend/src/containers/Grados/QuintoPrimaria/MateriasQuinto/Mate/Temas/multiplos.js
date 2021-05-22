@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import './multiplos.css';
+import '../../../../../Buttons/newbtns.scss';
 
 function multiplos() {
     return (
@@ -34,6 +35,12 @@ function multiplos() {
                             controls='true'
                         />
                     </div>
+                    <button className= "btnEjercicios">
+                      EJERCICIOS
+                    </button>
+                     <button className= "btnDescargar">
+                      DESCARGAR
+                    </button>
                 </Col>
             </Row>
 

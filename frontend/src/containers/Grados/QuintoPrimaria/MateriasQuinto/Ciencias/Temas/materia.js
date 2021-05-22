@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
+import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
 
 const Container = styled.div`
@@ -46,6 +47,12 @@ function materia() {
               controls="true"
             />
           </div>
+          <button className= "btnEjercicios">
+            EJERCICIOS
+          </button>
+          <button className= "btnDescargar">
+            DESCARGAR
+          </button>
         </Col>
       </Row>
     </Container>

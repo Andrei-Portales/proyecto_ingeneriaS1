@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import './num_mix.css';
+import '../../../../../Buttons/newbtns.scss';
 
 function num_mix() {
     return (
@@ -39,6 +40,12 @@ function num_mix() {
                             controls='true'
                         />
                     </div>
+                    <button className= "btnEjercicios">
+                        EJERCICIOS
+                    </button>
+                    <button className= "btnDescargar">
+                        DESCARGAR
+                    </button>
                 </Col>
             </Row>
 

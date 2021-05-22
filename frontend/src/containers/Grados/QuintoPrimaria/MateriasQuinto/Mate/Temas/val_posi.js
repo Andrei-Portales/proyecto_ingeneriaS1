@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import './val_posi.css';
+import '../../../../../Buttons/newbtns.scss';
 
 function val_posi() {
     return (
@@ -35,6 +36,12 @@ function val_posi() {
                             controls='true'
                         />
                     </div>
+                    <button className= "btnEjercicios">
+                        EJERCICIOS
+                    </button>
+                    <button className= "btnDescargar">
+                     DESCARGAR
+                    </button>
                 </Col>
             </Row>
 
