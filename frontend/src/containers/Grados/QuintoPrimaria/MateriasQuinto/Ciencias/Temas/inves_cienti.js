@@ -4,6 +4,7 @@ import { Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -16,12 +17,28 @@ background-color: ${({ theme }) => theme.content} !important;
 `;
 
 function inves_cienti() {
+  const container = React.useRef(null);
+  const pdfExportComponent = React.useRef(null);
+  const exportPDFWithComponent = () => {
+    if (pdfExportComponent.current) {
+      pdfExportComponent.current.save();
+    }
+  };
+
   return (
     <Container fluid className="tema-container">
       <Row>
         <Col className="right-section" sm={12} md={7} lg={6}>
-          <h1 className="tituloT">Investigación Científica</h1>
-        <p>
+          <PDFExport
+            ref={pdfExportComponent}
+            paperSize="auto"
+            margin={40}
+            fileName={`Investigacion Cientifica Quinto Primaria`}
+            creator="Educa Facil"
+
+          >
+            <h1 className="tituloT">Investigación Científica</h1>
+            <p>
               <br></br>
               La investigación científica es un proceso ordenado y sistemático de indagación en el cual,
               mediante la aplicación rigurosa de un conjunto de métodos y criterios, se persigue el estudio,
@@ -29,7 +46,7 @@ function inves_cienti() {
               ampliar o desarrollar el conocimiento que se tiene de este. <br></br><br></br>
 
               El objetivo fundamental de la investigación científica es buscar soluciones a problemas específicos:
-              explicar fenómenos, desarrollar teorías, ampliar conocimientos, establecer principios, 
+              explicar fenómenos, desarrollar teorías, ampliar conocimientos, establecer principios,
               reformular planteamientos, refutar resultados, etc. <br></br><br></br>
 
               La investigación científica consta de tres elementos indispensables:
@@ -37,7 +54,9 @@ function inves_cienti() {
               <li>Objeto de investigación. Se refiere al asunto o tema sobre el que se va a investigar y que será objeto de análisis pormenorizado.</li>
               <li>Medio. Conjunto de recursos, métodos y técnicas adecuados para el tipo de investigación y el tema que se va a abordar.</li>
               <li>Finalidad de la investigación. Se refiere a las razones que motivan la investigación, es decir, a su propósito último. Por ejemplo, qué beneficios aportará a la sociedad determinado conocimiento.</li>
-          </p>
+            </p>
+          </PDFExport>
+
         </Col>
         <Col className="left-section" sm={12} md={5} lg={6}>
           <div className="player-wrapper">
@@ -51,10 +70,11 @@ function inves_cienti() {
               controls="true"
             />
           </div>
-          <button className= "btnEjercicios">
+
+          <button className="btnEjercicios" >
             EJERCICIOS
           </button>
-          <button className= "btnDescargar">
+          <button className="btnDescargar" onClick={exportPDFWithComponent}>
             DESCARGAR
           </button>
         </Col>

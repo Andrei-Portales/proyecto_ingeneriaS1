@@ -4,6 +4,7 @@ import { Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -16,18 +17,37 @@ background-color: ${({ theme }) => theme.content} !important;
 `;
 
 function sustantivos() {
+  const container = React.useRef(null);
+  const pdfExportComponent = React.useRef(null);
+  const exportPDFWithComponent = () => {
+    if (pdfExportComponent.current) {
+      pdfExportComponent.current.save();
+    }
+  };
+
   return (
     <Container fluid className="tema-container">
       <Row>
         <Col className="left-section" sm={12} md={7} lg={6}>
-          <h1 className="tituloT">Sustantivos</h1>
-          <p>
+          <PDFExport
+            ref={pdfExportComponent}
+            paperSize="auto"
+            margin={40}
+            fileName={`Sustantivos`}
+            creator="Educa Facil"
+
+          >
+
+            <h1 className="tituloT">Sustantivos</h1>
+            <p>
               <br></br><br></br>
               Como sustantivo (también escrito substantivo) se denomina la clase de palabras que se emplean para designar seres, entidades u objetos.
               <br></br><br></br>
               En gramática, los sustantivos son el tipo de palabras que se caracterizan por tener género (masculino y femenino) y número (singular y plural), que forman sintagmas nominales, y pueden funcionar como argumento verbal o como complementos del nombre.
               <br></br><br></br>
-          </p>
+            </p>
+          </PDFExport>
+
         </Col>
         <Col className="right-section" sm={12} md={5} lg={6}>
           <div className="player-wrapper">
@@ -41,12 +61,14 @@ function sustantivos() {
               controls="true"
             />
           </div>
-          <button className= "btnEjercicios">
+          <button className="btnEjercicios" >
             EJERCICIOS
           </button>
-          <button className= "btnDescargar">
+          <button className="btnDescargar" onClick={exportPDFWithComponent}>
             DESCARGAR
           </button>
+
+
         </Col>
       </Row>
     </Container>

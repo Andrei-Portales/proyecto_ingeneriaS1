@@ -4,6 +4,7 @@ import { Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
 import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -16,12 +17,29 @@ background-color: ${({ theme }) => theme.content} !important;
 `;
 
 function hiato() {
+  const container = React.useRef(null);
+  const pdfExportComponent = React.useRef(null);
+  const exportPDFWithComponent = () => {
+    if (pdfExportComponent.current) {
+      pdfExportComponent.current.save();
+    }
+  };
+
   return (
     <Container fluid className="tema-container">
       <Row>
         <Col className="left-section" sm={12} md={7} lg={6}>
-          <h1 className="tituloT"> Hiato </h1>
-          <p>
+
+          <PDFExport
+            ref={pdfExportComponent}
+            paperSize="auto"
+            margin={40}
+            fileName={`Hiato Sexto Primaria`}
+            creator="Educa Facil"
+
+          >
+            <h1 className="tituloT"> Hiato </h1>
+            <p>
               <br></br><br></br>
               El hiato es el encuentro de 2 vocales que se pronuncian en sílabas distintas. El término hiato es de origen latín hiatus que significa “abertura” o “separación”
               <br></br><br></br>
@@ -33,7 +51,9 @@ function hiato() {
               <li>Hiato acentual</li>
               se observa con la unión de una vocal débil tónica con una vocal fuerte átona o viceversa, siempre y cuando la vocal débil lleve el acento tónico como: son-rí-e, ca-í-da, fi-lo-so-fí-a, etcétera.
               Cabe resaltar, que la letra “H” entre 2 vocales no impide que se forme el hiato, por ejemplo: bú-ho.
-          </p>
+            </p>
+          </PDFExport>
+
         </Col>
         <Col className="right-section" sm={12} md={5} lg={6}>
           <div className="player-wrapper">
@@ -47,12 +67,13 @@ function hiato() {
               controls="true"
             />
           </div>
-          <button className= "btnEjercicios">
+          <button className="btnEjercicios" >
             EJERCICIOS
           </button>
-          <button className= "btnDescargar">
-           DESCARGAR
+          <button className="btnDescargar" onClick={exportPDFWithComponent}>
+            DESCARGAR
           </button>
+
         </Col>
       </Row>
     </Container>
