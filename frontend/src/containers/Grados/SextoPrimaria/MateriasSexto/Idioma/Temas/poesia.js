@@ -25,14 +25,7 @@ function poesia() {
       pdfExportComponent.current.save();
     }
   };
-  const exportPDFWithMethod = () => {
-    let element = container.current || document.body;
-    savePDF(element, {
-      paperSize: "auto",
-      margin: 40,
-      fileName: `Report for ${new Date().getFullYear()}`,
-    });
-  };
+
 
   return (
     <Container fluid className="tema-container">

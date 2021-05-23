@@ -32,41 +32,41 @@ function area_figuras_planas() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Area de figuras planas Sexto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">ÁREA DE FIGURAS PLANAS</h1>
             <p>
-                <br />
-                Rectángulo
-                <br />
-                Definición:  Un rectángulo es un cuadrilátero (figura de 4 lados), donde todos sus ángulos 
-                interiores son de 90 grados. 
-                <br />
-                El área de un rectángulo se obtiene multiplicando el largo por el ancho.  Area = largo x ancho.
-                <br />
-                A = l * a
-                <br />
-                <br />
-                Paralelogramo
-                <br />
-                Definición:  Un paralelogramo es un cuadrilátero con ambos pares de lados opuestos paralelos.
-                Un rectángulo es un paralelogramo con los 4 ángulos de 90 grados.
-                <br />
-                El área de un paralelogramo se determina multiplicando la base por la altura. 
-                La altura siempre está a 90 grados con la base. (perpendicular)
-                <br />
-                <br />
-                Área de un Triángulo
-                <br />
-                El área de un triángulo se obtiene multiplicando la base por la altura y luego 
-                dividir entre dos. La base y la altura tienen que estar a 90 grados.
-                <br />
-                A = (l * a)/2
-                <br />
-                <br />
+              <br />
+              Rectángulo
+              <br />
+              Definición:  Un rectángulo es un cuadrilátero (figura de 4 lados), donde todos sus ángulos
+              interiores son de 90 grados.
+              <br />
+              El área de un rectángulo se obtiene multiplicando el largo por el ancho.  Area = largo x ancho.
+              <br />
+              A = l * a
+              <br />
+              <br />
+              Paralelogramo
+              <br />
+              Definición:  Un paralelogramo es un cuadrilátero con ambos pares de lados opuestos paralelos.
+              Un rectángulo es un paralelogramo con los 4 ángulos de 90 grados.
+              <br />
+              El área de un paralelogramo se determina multiplicando la base por la altura.
+              La altura siempre está a 90 grados con la base. (perpendicular)
+              <br />
+              <br />
+              Área de un Triángulo
+              <br />
+              El área de un triángulo se obtiene multiplicando la base por la altura y luego
+              dividir entre dos. La base y la altura tienen que estar a 90 grados.
+              <br />
+              A = (l * a)/2
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

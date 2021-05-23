@@ -32,38 +32,38 @@ function exponente_negativo() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Exponente negativo Sexto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">EXPONENTE NEGATIVO</h1>
             <p>
-                <br />
-                Un exponente negativo nos indica cuántas veces dividir por ese número.
-                <br />
-                Ejemplos:
-                <br />
-                8^-1 = 1 ÷ 8 = 1/8 = 0,125
-                <br />
-                5^-3 = 1 ÷ 5 ÷ 5 ÷ 5 = 0,008
-                <br />
-                <br />
-                Pero se puede hacer de una forma más fácil:
-                <br />
-                5^-3 = 1 ÷ (5 × 5 × 5) = 1/5^3 = 1/125 = 0,008
-                <br />
-                <br />
-                El último ejemplo nos mostró una forma más simple de manejar exponentes negativos:
-                <br />
-                Calcula el exponente (a^n)
-                <br />
-                Luego utiliza su recíproco (1/a^n)
-                <br />
-                <br />
-                Para cambiar el signo (más a menos, o menos a más) del exponente se usa el recíproco.
-                <br />
-                <br />
+              <br />
+              Un exponente negativo nos indica cuántas veces dividir por ese número.
+              <br />
+              Ejemplos:
+              <br />
+              8^-1 = 1 ÷ 8 = 1/8 = 0,125
+              <br />
+              5^-3 = 1 ÷ 5 ÷ 5 ÷ 5 = 0,008
+              <br />
+              <br />
+              Pero se puede hacer de una forma más fácil:
+              <br />
+              5^-3 = 1 ÷ (5 × 5 × 5) = 1/5^3 = 1/125 = 0,008
+              <br />
+              <br />
+              El último ejemplo nos mostró una forma más simple de manejar exponentes negativos:
+              <br />
+              Calcula el exponente (a^n)
+              <br />
+              Luego utiliza su recíproco (1/a^n)
+              <br />
+              <br />
+              Para cambiar el signo (más a menos, o menos a más) del exponente se usa el recíproco.
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

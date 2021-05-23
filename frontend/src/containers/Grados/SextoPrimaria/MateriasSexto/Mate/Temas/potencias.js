@@ -32,28 +32,28 @@ function potencias() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Potencias Sexto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">POTENCIAS</h1>
             <p>
-                <br />
-                Una potencia tiene dos partes: una base y un exponente.
-                <br />
-                En la potencia 4^2, el 4 es la base y el 2 es el exponente.
-                <br />
-                El exponente me dice cuantas veces se multiplica la base por sí misma.
-                <br />
-                <br />
-                Ejemplos:
-                <br />
-                4^2 = 4 x 4 = 16
-                <br />
-                2^3 = 2 x 2 x 2 = 8
-                <br />
-                <br />
+              <br />
+              Una potencia tiene dos partes: una base y un exponente.
+              <br />
+              En la potencia 4^2, el 4 es la base y el 2 es el exponente.
+              <br />
+              El exponente me dice cuantas veces se multiplica la base por sí misma.
+              <br />
+              <br />
+              Ejemplos:
+              <br />
+              4^2 = 4 x 4 = 16
+              <br />
+              2^3 = 2 x 2 x 2 = 8
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

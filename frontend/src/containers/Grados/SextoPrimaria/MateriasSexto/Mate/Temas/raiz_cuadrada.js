@@ -32,32 +32,32 @@ function raiz_cuadrada() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Raiz Cuadrada Sexto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">RAÍZ CUADRADA</h1>
             <p>
-                <br />
-                La raíz cuadrada de un número se define como un número que se  multiplique por sí mismo 
-                dos veces cuyo resultado sea el número  evaluado.
-                <br />
-                Ejemplo:
-                <br />
-                raíz cuadrada de 9 = 3       porque 3^2 = 9
-                <br />
-                raíz cuadrada de 25 = 5
-                <br />
-                <br />
-                La raíz cúbica de un número se define como un número que se multiplique por sí mismo 
-                tres veces cuyo resultado sea el número evaluado.
-                <br />
-                Ejemplo:
-                <br />
-                raíz cúbica de 8 = 2       porque 2^3 = 8
-                <br />
-                <br />
+              <br />
+              La raíz cuadrada de un número se define como un número que se  multiplique por sí mismo
+              dos veces cuyo resultado sea el número  evaluado.
+              <br />
+              Ejemplo:
+              <br />
+              raíz cuadrada de 9 = 3       porque 3^2 = 9
+              <br />
+              raíz cuadrada de 25 = 5
+              <br />
+              <br />
+              La raíz cúbica de un número se define como un número que se multiplique por sí mismo
+              tres veces cuyo resultado sea el número evaluado.
+              <br />
+              Ejemplo:
+              <br />
+              raíz cúbica de 8 = 2       porque 2^3 = 8
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

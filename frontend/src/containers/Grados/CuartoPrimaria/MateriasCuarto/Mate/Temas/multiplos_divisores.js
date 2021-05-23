@@ -32,48 +32,48 @@ function multiplos_divisores() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Multiplos y divisores Cuarto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">MULTIPLOS Y DIVISORES</h1>
             <p>
-                MÚLTIPLOS
-                <br />
-                <br />
-                Miss Lili premia con dos stickers cada punto que obtienen en el examen los alumnos de su clase.
-                <br />
-                - El conjunto de los productos 0; 2; 4; 6; 8; 10; 12; 14; 16; 18; ... son múltiplos
-                de 2.
-                <br />
-                - Los múltiplos de un número se obtiene al multiplicar dicho número por otro cualquiera.
-                <br />
-                - Los múltiplos de un número son infinitos.
-                <br />
-                - El cero es múltiplo de todos los números.
-                <br />
-                DIVISORES
-                <br />
-                <br />
-                Los números 1; 2; 3; 4; 6; 9; 12; 18 y 36 son divisores de 36.
-                <br />
-                - Los divisores o factores de un número son aquellos que dividen exactamente otros.
-                <br />
-                - El número uno es divisor de todos los números.
-                <br />
-                - Los divisores de un número forman un conjunto finito.
-                <br />
-                NÚMEROS PRIMOS
-                <br />
-                Son aquellos que tienen dos divisores, el mismo número y la unidad.
-                <br />
-                <br />
-                NÚMEROS COMPUESTOS
-                <br />
-                Son aquellos que tienen más de dos divisores.
-                <br />
-                <br />
+              MÚLTIPLOS
+              <br />
+              <br />
+              Miss Lili premia con dos stickers cada punto que obtienen en el examen los alumnos de su clase.
+              <br />
+              - El conjunto de los productos 0; 2; 4; 6; 8; 10; 12; 14; 16; 18; ... son múltiplos
+              de 2.
+              <br />
+              - Los múltiplos de un número se obtiene al multiplicar dicho número por otro cualquiera.
+              <br />
+              - Los múltiplos de un número son infinitos.
+              <br />
+              - El cero es múltiplo de todos los números.
+              <br />
+              DIVISORES
+              <br />
+              <br />
+              Los números 1; 2; 3; 4; 6; 9; 12; 18 y 36 son divisores de 36.
+              <br />
+              - Los divisores o factores de un número son aquellos que dividen exactamente otros.
+              <br />
+              - El número uno es divisor de todos los números.
+              <br />
+              - Los divisores de un número forman un conjunto finito.
+              <br />
+              NÚMEROS PRIMOS
+              <br />
+              Son aquellos que tienen dos divisores, el mismo número y la unidad.
+              <br />
+              <br />
+              NÚMEROS COMPUESTOS
+              <br />
+              Son aquellos que tienen más de dos divisores.
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

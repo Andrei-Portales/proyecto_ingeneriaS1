@@ -32,35 +32,35 @@ function angulos() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Angulos Sexto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">ÁNGULOS</h1>
             <p>
-                <br />
-                Un ángulo está formado por dos rayos que comienzan en el mismo punto. 
-                Los rayos  son los lados del ángulo y el punto es el vertice del ángulo.
-                <br />
-                <br />
-                - Ángulo Agudo = Es un ángulo que mide menos de 90 grados.
-                <br />
-                - Ángulo Obtuso = Es un ángulo que mide mas de 90 grados pero menos de 180 grados.
-                <br />
-                - Ángulo Recto = Es un ángulo que mide exactamente 90 grados.
-                <br />
-                <br />
-                - Ángulos Adyacentes = Dos ángulos que comparten un lado y un vértice pero uno de los 
-                ángulos no puede estar dentro del otro.
-                <br />
-                - Ángulos Complementarios =  Dos ángulos cuya suma de sus medidas es 90 grados.
-                <br />
-                - Ángulos Suplementarios =  Dos ángulos cuya suma de sus medidas es 180 grados.
-                <br />
-                - Par Lineal = Dos ángulos que son adyacentes y suplementarios.
-                <br />
-                <br />
+              <br />
+              Un ángulo está formado por dos rayos que comienzan en el mismo punto.
+              Los rayos  son los lados del ángulo y el punto es el vertice del ángulo.
+              <br />
+              <br />
+              - Ángulo Agudo = Es un ángulo que mide menos de 90 grados.
+              <br />
+              - Ángulo Obtuso = Es un ángulo que mide mas de 90 grados pero menos de 180 grados.
+              <br />
+              - Ángulo Recto = Es un ángulo que mide exactamente 90 grados.
+              <br />
+              <br />
+              - Ángulos Adyacentes = Dos ángulos que comparten un lado y un vértice pero uno de los
+              ángulos no puede estar dentro del otro.
+              <br />
+              - Ángulos Complementarios =  Dos ángulos cuya suma de sus medidas es 90 grados.
+              <br />
+              - Ángulos Suplementarios =  Dos ángulos cuya suma de sus medidas es 180 grados.
+              <br />
+              - Par Lineal = Dos ángulos que son adyacentes y suplementarios.
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

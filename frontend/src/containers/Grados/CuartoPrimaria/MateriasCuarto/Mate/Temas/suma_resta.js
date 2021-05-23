@@ -32,7 +32,7 @@ function suma_resta() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Adicion y sustraccion de numeros Cuarto Primaria`}
             creator="Educa Facil"
 
           >

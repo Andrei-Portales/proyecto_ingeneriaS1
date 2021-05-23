@@ -32,69 +32,69 @@ function operaciones_conjuntos() {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Poesia Sexto Primaria`}
+            fileName={`Operaciones con conjuntos Cuarto Primaria`}
             creator="Educa Facil"
 
           >
 
             <h1 className="tituloT">OPERACIONES CON CONJUNTOS</h1>
             <p>
-                INTERSECCIÓN DE CONJUNTOS
-                <br />
-                <br />
-                La intersección de dos o más conjuntos es el conjunto formado por los elementos que pertenecen
-                simultáneamente a dichos conjuntos; es decir, los elementos comunes.
-                <br />
-                La notación A  B se lee: A intersección B.
-                <br />
-                <br />
-                * Ejemplo:
-                <br />
-                A = [4; 5; 3; 2]
-                <br />
-                B = [3; 8; 1; 2; 10]
-                <br />
-                A  B = [2; 3]
-                <br />
-                <br />
-                UNIÓN DE CONJUNTOS
-                <br />
-                <br />
-                La unión de dos o más conjuntos está formada por un nuevo conjunto que agrupa 
-                todos los elementos de dichos conjuntos.
-                <br />
-                La notación A  B se lee: A unión B.
-                <br />
-                <br />
-                * Ejemplo:
-                <br />
-                A = [a, e, i, o, u]
-                <br />
-                B = [m, n, t, d, s]
-                <br />
-                A  B = [a, e, i, o, u, m, n, t, d, s]
-                <br />
-                <br />
-                DIFERENCIA DE CONJUNTOS
-                <br />
-                <br />
-                La diferencia de conjuntos consiste en que si al conjunto A le quitamos el conjunto B 
-                solo nos quedarían los elementos que pertenecen únicamente al conjunto A.
-                <br />
-                La notación A - B se lee: A diferencia B.
-                <br />
-                <br />
-                * Ejemplo:
-                <br />
-                M = [a, c, i, h]
-                <br />
-                N = [b, d, e, f, i, h]
-                <br />
-                M - N = [a, c]
-                <br />
-                N - M = [b, d, e, f]
-                <br />
-                <br />
+              INTERSECCIÓN DE CONJUNTOS
+              <br />
+              <br />
+              La intersección de dos o más conjuntos es el conjunto formado por los elementos que pertenecen
+              simultáneamente a dichos conjuntos; es decir, los elementos comunes.
+              <br />
+              La notación A  B se lee: A intersección B.
+              <br />
+              <br />
+              * Ejemplo:
+              <br />
+              A = [4; 5; 3; 2]
+              <br />
+              B = [3; 8; 1; 2; 10]
+              <br />
+              A  B = [2; 3]
+              <br />
+              <br />
+              UNIÓN DE CONJUNTOS
+              <br />
+              <br />
+              La unión de dos o más conjuntos está formada por un nuevo conjunto que agrupa
+              todos los elementos de dichos conjuntos.
+              <br />
+              La notación A  B se lee: A unión B.
+              <br />
+              <br />
+              * Ejemplo:
+              <br />
+              A = [a, e, i, o, u]
+              <br />
+              B = [m, n, t, d, s]
+              <br />
+              A  B = [a, e, i, o, u, m, n, t, d, s]
+              <br />
+              <br />
+              DIFERENCIA DE CONJUNTOS
+              <br />
+              <br />
+              La diferencia de conjuntos consiste en que si al conjunto A le quitamos el conjunto B
+              solo nos quedarían los elementos que pertenecen únicamente al conjunto A.
+              <br />
+              La notación A - B se lee: A diferencia B.
+              <br />
+              <br />
+              * Ejemplo:
+              <br />
+              M = [a, c, i, h]
+              <br />
+              N = [b, d, e, f, i, h]
+              <br />
+              M - N = [a, c]
+              <br />
+              N - M = [b, d, e, f]
+              <br />
+              <br />
             </p>
           </PDFExport>
         </Col>

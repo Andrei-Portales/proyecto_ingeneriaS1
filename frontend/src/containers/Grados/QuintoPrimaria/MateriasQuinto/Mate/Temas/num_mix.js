@@ -22,7 +22,7 @@ function num_mix() {
                         ref={pdfExportComponent}
                         paperSize="auto"
                         margin={40}
-                        fileName={`Numeros Mixtos`}
+                        fileName={`Numeros Mixtos Quinto Primaria`}
                         creator="Educa Facil"
 
                     >
