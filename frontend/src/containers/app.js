@@ -23,11 +23,13 @@ import MateriasSexto from './Grados/SextoPrimaria/MateriasSexto/MateriasSexto';
 import MateSexto from './Grados/SextoPrimaria/MateriasSexto/Mate/MateSexto';
 import IdiomaSexto from './Grados/SextoPrimaria/MateriasSexto/Idioma/IdiomaSexto';
 import CienciasSexto from './Grados/SextoPrimaria/MateriasSexto/Ciencias/CienciasSexto';
-import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/Temas';
+import Temas from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/sistema_digestivo';
 import numeracion_6_digitos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/numeracion_6_digitos';
 import suma_resta from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/suma_resta';
 import operaciones_combinadas from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/operaciones_combinadas';
 import conjuntos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/conjuntos';
+import operaciones_conjuntos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/operaciones_conjuntos';
+import multiplos_divisores from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Temas/multiplos_divisores';
 import origen_de_vida from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_de_vida';
 import origen_mayas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/origen_mayas';
 import celulas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Temas/celulas';
@@ -52,6 +54,16 @@ import lirico from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/lirico';
 import poesia from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/poesia';
 import semantica from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/semantica';
 import triptongo from './Grados/SextoPrimaria/MateriasSexto/Idioma/Temas/triptongo';
+import potencias from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/potencias';
+import exponente_negativo from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/exponente_negativo';
+import notacion_cientifica from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/notacion_cientifica';
+import raiz_cuadrada from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/raiz_cuadrada';
+import angulos from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/angulos';
+import area_figuras_planas from './Grados/SextoPrimaria/MateriasSexto/Mate/Temas/area_figuras_planas';
+import sistema_digestivo from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/sistema_digestivo';
+import ser_humano from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/ser_humano';
+import clasificacion_alimentos from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/clasificacion_alimentos';
+import sistema_respiratorio from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/sistema_respiratorio';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.navbar};
@@ -116,6 +128,18 @@ const App = () => {
           <Route path="/suma_resta" component={suma_resta} />
           <Route path="/operaciones_combinadas" component={operaciones_combinadas} />
           <Route path="/conjuntos" component={conjuntos} />
+          <Route path="/operaciones_conjuntos" component={operaciones_conjuntos} />
+          <Route path="/multiplos_divisores" component={multiplos_divisores} />
+          <Route path="/potencias" component={potencias} />
+          <Route path="/exponente_negativo" component={exponente_negativo} />
+          <Route path="/notacion_cientifica" component={notacion_cientifica} />
+          <Route path="/raiz_cuadrada" component={raiz_cuadrada} />
+          <Route path="/angulos" component={angulos} />
+          <Route path="/area_figuras_planas" component={area_figuras_planas} />
+          <Route path="/sistema_digestivo" component={sistema_digestivo} />
+          <Route path="/ser_humano" component={ser_humano} />
+          <Route path="/clasificacion_alimentos" component={clasificacion_alimentos} />
+          <Route path="/sistema_respiratorio" component={sistema_respiratorio} />
         </Router>
 
       </>

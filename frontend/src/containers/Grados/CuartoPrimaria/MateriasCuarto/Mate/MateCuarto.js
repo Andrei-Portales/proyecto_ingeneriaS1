@@ -51,10 +51,14 @@ class MateCuarto extends React.Component {
                 </Link>
               </div>
               <div className="temas">
-                <p className="tema2"> Tema 5</p>
+                <Link to="/operaciones_conjuntos">
+                  <p className="tema2"> OPERACIONES CON CONJUNTOS</p>
+                </Link>
               </div>
               <div className="temas">
-                <p className="tema2"> Tema 6</p>
+                <Link to="/multiplos_divisores">
+                  <p className="tema2"> MULTIPLOS Y DIVISORES</p>
+                </Link>
               </div>
             </Col>
           </Row>

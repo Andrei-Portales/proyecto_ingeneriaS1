@@ -36,20 +36,24 @@ class CienciasCuarto extends React.Component {
           </Col>
           <Col className="right-section" sm={12} md={12} lg={6}>
             <div className="temas">
-              <Link to="/tema1">
-                <P className="tema2"> Dinamica de fluidos</P>
+              <Link to="/sistema_digestivo">
+                <P className="tema2"> SISTEMA DIGESTIVO</P>
               </Link>
             </div>
             <div className="temas">
-              <Link to="/tema1">
-                <P className="tema2">Tema 2</P>
+              <Link to="/ser_humano">
+                <P className="tema2"> EL SER HUMANO</P>
               </Link>
             </div>
             <div className="temas">
-              <P className="tema2">Tema 3</P>
+              <Link to="/clasificacion_alimentos">
+                <P className="tema2"> CLASIFICACIÓN DE LOS ALIMENTOS</P>
+              </Link>
             </div>
             <div className="temas">
-              <P className="tema2">Tema 4</P>
+              <Link to="/sistema_respiratorio">
+                <P className="tema2"> SISTEMA RESPIRATORIO</P>
+              </Link>
             </div>
             <div className="temas">
               <P className="tema2">Tema 5</P>
