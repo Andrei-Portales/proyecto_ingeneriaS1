@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
+import { Link } from 'react-router-dom';
 import './propor.css';
 import '../../../../../Buttons/newbtns.scss';
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -55,9 +56,11 @@ function propor() {
                             controls='true'
                         />
                     </div>
+                    <Link to="/Ejer_propor">
                     <button className="btnEjercicios" >
                         EJERCICIOS
                     </button>
+                    </Link>
                     <button className="btnDescargar" onClick={exportPDFWithComponent}>
                         DESCARGAR
                     </button>

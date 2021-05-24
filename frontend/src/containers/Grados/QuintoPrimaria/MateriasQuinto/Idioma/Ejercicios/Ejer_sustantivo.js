@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Row } from 'react-grid-system';
 import '../../../../estilo-temas.scss';
 import Ejer2 from '../../../../../images/Ejer2_sustantivo.png';
-import Ejer1 from '../../../../../images/Ejer1_sustantivo.png';
+import Ejer1 from '../../../../../images/Ejer1_sustantivos.png';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;

@@ -73,6 +73,19 @@ import Ejer_Clasificacion_Alimentos from './Grados/CuartoPrimaria/MateriasCuarto
 import Ejer_Ser_Humano from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Ser_Humano';
 import Ejer_Sistema_Digestivo from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Sistema_Digestivo';
 import Ejer_Sistema_Respiratorio from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Sistema_Respiratorio';
+import Ejer_arti from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_arti';
+import Ejer_fig from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_fig';
+import Ejer_oracion from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_oracion';
+import Ejer_pro from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_pro';
+import Ejer_sustantivo from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_sustantivo';
+import Ejer_verbo from './Grados/QuintoPrimaria/MateriasQuinto/Idioma/Ejercicios/Ejer_verbo';
+import Ejer_division from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_division';
+import Ejer_fracc from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_fracc';
+import Ejer_multi from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_multi';
+import Ejer_propor from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_propor';
+import Ejer_num from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_num';
+import Ejer_val from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_val';
+
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.navbar};
@@ -158,6 +171,20 @@ const App = () => {
           <Route path="/Ejer_Ser_Humano" component={Ejer_Ser_Humano} />
           <Route path="/Ejer_Sistema_Digestivo" component={Ejer_Sistema_Digestivo} />
           <Route path="/Ejer_Sistema_Respiratorio" component={Ejer_Sistema_Respiratorio} />
+          <Route path="/Ejer_arti" component={Ejer_arti} />
+          <Route path="/Ejer_fig" component={Ejer_fig} />
+          <Route path="/Ejer_oracion" component={Ejer_oracion} />
+          <Route path="/Ejer_pro" component={Ejer_pro} />
+          <Route path="/Ejer_sustantivo" component={Ejer_sustantivo} />
+          <Route path="/Ejer_verbo" component={Ejer_verbo} />
+          <Route path="/Ejer_division" component={Ejer_division} />
+          <Route path="/Ejer_fracc" component={Ejer_fracc} />
+          <Route path="/Ejer_multi" component={Ejer_multi} />
+          <Route path="/Ejer_num" component={Ejer_num} />
+          <Route path="/Ejer_propor" component={Ejer_propor} />
+          <Route path="/Ejer_val" component={Ejer_val} />
+
+
         </Router>
 
       </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
+import { Link } from 'react-router-dom';
 import './division.css';
 import '../../../../../Buttons/newbtns.scss';
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -53,9 +54,11 @@ function division() {
                             controls='true'
                         />
                     </div>
+                    <Link to="/Ejer_division">
                     <button className="btnEjercicios" >
                         EJERCICIOS
                     </button>
+                    </Link>
                     <button className="btnDescargar" onClick={exportPDFWithComponent}>
                         DESCARGAR
                     </button>

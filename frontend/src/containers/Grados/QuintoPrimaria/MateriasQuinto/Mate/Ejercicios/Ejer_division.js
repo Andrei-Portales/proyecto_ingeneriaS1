@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row } from 'react-grid-system';
 import '../../../../estilo-temas.scss';
-import Ejer2 from '../../../../../images/Ejer2_pronombres.png';
-import Ejer1 from '../../../../../images/Ejer1_pronombres.jpg';
+import Ejer2 from '../../../../../images/Ejer2_divi.png';
+import Ejer1 from '../../../../../images/Ejer1_divi.png';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -15,7 +15,7 @@ background-color: ${({ theme }) => theme.content} !important;
   padding-right: 15px;
 `;
 
-function Ejer_pro() {
+function Ejer_division() {
   return (
     <Container fluid className="grades-container">
       <br />
@@ -34,4 +34,4 @@ function Ejer_pro() {
   );
 }
 
-export default Ejer_pro;
+export default Ejer_division;

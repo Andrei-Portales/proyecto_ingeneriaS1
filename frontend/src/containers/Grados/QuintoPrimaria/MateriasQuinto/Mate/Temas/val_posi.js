@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
+import { Link } from 'react-router-dom';
 import './val_posi.css';
 import '../../../../../Buttons/newbtns.scss';
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -58,9 +59,11 @@ function val_posi() {
                             controls='true'
                         />
                     </div>
+                    <Link to="/Ejer_val">
                     <button className="btnEjercicios" >
                         EJERCICIOS
                     </button>
+                    </Link>
                     <button className="btnDescargar" onClick={exportPDFWithComponent}>
                         DESCARGAR
                     </button>

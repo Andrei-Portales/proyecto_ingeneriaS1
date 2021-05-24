@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import ReactPlayer from 'react-player/lazy';
+import { Link } from 'react-router-dom';
 import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -70,9 +71,11 @@ function articulo() {
               controls="true"
             />
           </div>
+          <Link to="/Ejer_arti">
           <button className="btnEjercicios" >
             EJERCICIOS
           </button>
+          </Link>
           <button className="btnDescargar" onClick={exportPDFWithComponent}>
             DESCARGAR
           </button>

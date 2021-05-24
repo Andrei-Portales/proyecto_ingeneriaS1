@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row } from 'react-grid-system';
 import '../../../../estilo-temas.scss';
-import Ejer2 from '../../../../../images/Ejer2_Investi.png';
-import Ejer1 from '../../../../../images/Ejer1_Investi.png';
+import Ejer2 from '../../../../../images/Ejer2_fig.png';
+import Ejer1 from '../../../../../images/Ejer1_fig.png';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
