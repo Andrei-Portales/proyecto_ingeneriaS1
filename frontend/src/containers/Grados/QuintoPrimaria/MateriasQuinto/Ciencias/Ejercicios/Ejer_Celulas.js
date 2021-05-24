@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row } from 'react-grid-system';
 import '../../../../estilo-temas.scss';
-import Ejer2 from '../../../../../images/Ejer2_Anatomia.png';
-import Ejer1 from '../../../../../images/Ejer1_Anatomia.jpg';
+import Ejer2 from '../../../../../images/Ejer2_Celulas.jpg';
+import Ejer1 from '../../../../../images/Ejer1_Celulas.jpg';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -15,7 +15,7 @@ background-color: ${({ theme }) => theme.content} !important;
   padding-right: 15px;
 `;
 
-function Ejer_Anatomia() {
+function Ejer_Celulas() {
   return (
     <Container fluid className="grades-container">
       <br />
@@ -34,4 +34,4 @@ function Ejer_Anatomia() {
   );
 }
 
-export default Ejer_Anatomia;
+export default Ejer_Celulas;
