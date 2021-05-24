@@ -69,6 +69,10 @@ import Ejer_Celulas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejerci
 import Ejer_Investi from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Investi';
 import Ejer_Materia from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Materia';
 import Ejer_Ovida from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Ovida';
+import Ejer_Clasificacion_Alimentos from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Clasificacion_Alimentos';
+import Ejer_Ser_Humano from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Ser_Humano';
+import Ejer_Sistema_Digestivo from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Sistema_Digestivo';
+import Ejer_Sistema_Respiratorio from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Ejercicios/Ejer_Sistema_Respiratorio';
 
 const Div = styled.div`
   background-color: ${({ theme }) => theme.navbar};
@@ -150,6 +154,10 @@ const App = () => {
           <Route path="/Ejer_Ovida" component={Ejer_Ovida} />
           <Route path="/Ejer_Materia" component={Ejer_Materia} />
           <Route path="/Ejer_Investi" component={Ejer_Investi} />
+          <Route path="/Ejer_Clasificacion_Alimentos" component={Ejer_Clasificacion_Alimentos} />
+          <Route path="/Ejer_Ser_Humano" component={Ejer_Ser_Humano} />
+          <Route path="/Ejer_Sistema_Digestivo" component={Ejer_Sistema_Digestivo} />
+          <Route path="/Ejer_Sistema_Respiratorio" component={Ejer_Sistema_Respiratorio} />
         </Router>
 
       </>
