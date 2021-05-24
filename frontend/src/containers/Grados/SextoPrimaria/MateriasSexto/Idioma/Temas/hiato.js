@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player/lazy';
 import '../../../../../Buttons/newbtns.scss';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
@@ -67,9 +68,11 @@ function hiato() {
               controls="true"
             />
           </div>
+          <Link to="/Ejer_hiato">
           <button className="btnEjercicios" >
             EJERCICIOS
           </button>
+          </Link>
           <button className="btnDescargar" onClick={exportPDFWithComponent}>
             DESCARGAR
           </button>

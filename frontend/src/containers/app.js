@@ -85,6 +85,12 @@ import Ejer_multi from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/E
 import Ejer_propor from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_propor';
 import Ejer_num from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_num';
 import Ejer_val from './Grados/QuintoPrimaria/MateriasQuinto/Mate/Ejercicios/Ejer_val';
+import Ejer_diptongo from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_diptongo';
+import Ejer_hiato from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_hiato';
+import Ejer_lirico from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_lirico';
+import Ejer_poesia from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_poesia';
+import Ejer_semantica from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_semantica';
+import Ejer_tripto from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_tripto';
 
 
 const Div = styled.div`
@@ -183,7 +189,12 @@ const App = () => {
           <Route path="/Ejer_num" component={Ejer_num} />
           <Route path="/Ejer_propor" component={Ejer_propor} />
           <Route path="/Ejer_val" component={Ejer_val} />
-
+          <Route path="/Ejer_diptongo" component={Ejer_diptongo} />
+          <Route path="/Ejer_hiato" component={Ejer_hiato} />
+          <Route path="/Ejer_lirico" component={Ejer_lirico} />
+          <Route path="/Ejer_poesia" component={Ejer_poesia} />
+          <Route path="/Ejer_semantica" component={Ejer_semantica} />
+          <Route path="/Ejer_tripto" component={Ejer_tripto} />
 
         </Router>
 
