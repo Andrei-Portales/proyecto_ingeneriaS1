@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 import Ciencias from '../../../../images/ciencias.jpg';
 import './CienciasSexto.css';
 
@@ -29,13 +30,19 @@ class CienciasSexto extends React.Component {
           </Col>
           <Col className="right-section" sm={12} md={12} lg={6}>
             <div className="temas">
-              <p className="tema2">Tema 1</p>
+              <Link to="/reinos">
+              <p className="tema2">Clasificacion de los seres vivos</p>
+              </Link>
             </div>
             <div className="temas">
-              <p className="tema2">Tema 2</p>
+              <Link to="/animalia">
+              <p className="tema2">Reino Animal</p>
+              </Link>
             </div>
             <div className="temas">
-              <p className="tema2">Tema 3</p>
+              <Link to="/energia">
+              <p className="tema2">La Energia</p>
+              </Link>
             </div>
             <div className="temas">
               <p className="tema2">Tema 4</p>

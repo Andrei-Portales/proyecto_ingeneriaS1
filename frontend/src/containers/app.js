@@ -64,6 +64,8 @@ import sistema_digestivo from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/T
 import ser_humano from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/ser_humano';
 import clasificacion_alimentos from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/clasificacion_alimentos';
 import sistema_respiratorio from './Grados/CuartoPrimaria/MateriasCuarto/Ciencias/Temas/sistema_respiratorio';
+import energia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Temas/Energia';
+import animalia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Temas/animalia';
 import Ejer_Anatomia from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Anatomia';
 import Ejer_Celulas from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Celulas';
 import Ejer_Investi from './Grados/QuintoPrimaria/MateriasQuinto/Ciencias/Ejercicios/Ejer_Investi';
@@ -91,6 +93,10 @@ import Ejer_lirico from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/
 import Ejer_poesia from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_poesia';
 import Ejer_semantica from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_semantica';
 import Ejer_tripto from './Grados/SextoPrimaria/MateriasSexto/Idioma/Ejercicios/Ejer_tripto';
+import Ejer_energia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercicios/Ejer_energia';
+import Ejer_animalia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercicios/Ejer_animalia';
+import Ejer_reinos from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercicios/Ejer_reinos';
+import reinos from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Temas/reinos';
 
 
 const Div = styled.div`
@@ -136,6 +142,7 @@ const App = () => {
           <Route path="/val_posi" component={val_posi} />   
           <Route path="/verbo" component={verbo} />
           <Route path="/articulo" component={articulo} />
+          <Route path="/animalia" component={animalia} />
           <Route path="/oracion" component={oracion} />
           <Route path="/pro_personal" component={pro_personal} />
           <Route path="/sustantivos" component={sustantivos} />
@@ -145,6 +152,7 @@ const App = () => {
           <Route path="/materiassexto" component={MateriasSexto} />
           <Route path="/matesexto" component={MateSexto} />
           <Route path="/cienciassexto" component={CienciasSexto} />
+          <Route path="/energia" component={energia} />
           <Route path="/idiomasexto" component={IdiomaSexto} />
           <Route path="/triptongo" component={triptongo} />
           <Route path="/diptongo" component={diptongo} />
@@ -163,6 +171,7 @@ const App = () => {
           <Route path="/notacion_cientifica" component={notacion_cientifica} />
           <Route path="/raiz_cuadrada" component={raiz_cuadrada} />
           <Route path="/angulos" component={angulos} />
+          <Route path="/reinos" component={reinos} />
           <Route path="/area_figuras_planas" component={area_figuras_planas} />
           <Route path="/sistema_digestivo" component={sistema_digestivo} />
           <Route path="/ser_humano" component={ser_humano} />
@@ -195,7 +204,9 @@ const App = () => {
           <Route path="/Ejer_poesia" component={Ejer_poesia} />
           <Route path="/Ejer_semantica" component={Ejer_semantica} />
           <Route path="/Ejer_tripto" component={Ejer_tripto} />
-
+          <Route path="/Ejer_energia" component={Ejer_energia} />
+          <Route path="/Ejer_animalia" component={Ejer_animalia} />
+          <Route path="/Ejer_reinos" component={Ejer_reinos} />
         </Router>
 
       </>
