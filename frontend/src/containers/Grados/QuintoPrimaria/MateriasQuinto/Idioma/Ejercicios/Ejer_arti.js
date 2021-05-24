@@ -4,6 +4,7 @@ import { Row } from 'react-grid-system';
 import '../../../../estilo-temas.scss';
 import Ejer2 from '../../../../../images/Ejer2_arti.jpg';
 import Ejer1 from '../../../../../images/Ejer1_arti.png';
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 const Container = styled.div`
 background-color: ${({ theme }) => theme.content} !important;
@@ -16,20 +17,41 @@ background-color: ${({ theme }) => theme.content} !important;
 `;
 
 function Ejer_arti() {
+  const container = React.useRef(null);
+  const pdfExportComponent = React.useRef(null);
+  const exportPDFWithComponent = () => {
+    if (pdfExportComponent.current) {
+      pdfExportComponent.current.save();
+    }
+  };
+
   return (
     <Container fluid className="grades-container">
-      <br />
-      <h2 className="text-grados">EJERCICIOS</h2>
-      <span>
-        <Row>
-          <div id="content">
-                <img src={Ejer1} alt="Imagen" />
+      <PDFExport
+        ref={pdfExportComponent}
+        paperSize="auto"
+        margin={40}
+        fileName={`Articulo Quinto Primaria`}
+        creator="Educa Facil"
+
+      >
+
+        <br />
+        <h2 className="text-grados">EJERCICIOS</h2>
+        <span>
+          <Row>
+            <div id="content">
+              <img src={Ejer1} alt="Imagen" />
             </div>
-          <div id="content">
-                <img src={Ejer2} alt="Imagen" />
-          </div>
-        </Row>
-      </span>
+            <div id="content">
+              <img src={Ejer2} alt="Imagen" />
+            </div>
+          </Row>
+        </span>
+      </PDFExport>
+      <button className="btnDescargarEjercicios" onClick={exportPDFWithComponent}>
+        DESCARGAR
+      </button>
     </Container>
   );
 }
