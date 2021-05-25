@@ -32,7 +32,7 @@ function Ejer_Operaciones_Conjuntos() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Operaciones Combinadas Cuarto Primaria`}
         creator="Educa Facil"
 
       >

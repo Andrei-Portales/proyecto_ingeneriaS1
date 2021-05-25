@@ -32,7 +32,7 @@ function Ejer_Area_Figuras_Planas() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Area de Figuras Planas Sexto Primaria`}
         creator="Educa Facil"
 
       >

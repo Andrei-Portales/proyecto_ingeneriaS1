@@ -32,7 +32,7 @@ function Ejer_Numeracion_6_Digitos() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Numeracion 6 Cifras Cuarto Primaria`}
         creator="Educa Facil"
 
       >

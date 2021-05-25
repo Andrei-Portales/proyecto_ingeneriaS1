@@ -32,7 +32,7 @@ function Ejer_Exponente_Negativo() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Exponente Negativo Sexto Primaria`}
         creator="Educa Facil"
 
       >

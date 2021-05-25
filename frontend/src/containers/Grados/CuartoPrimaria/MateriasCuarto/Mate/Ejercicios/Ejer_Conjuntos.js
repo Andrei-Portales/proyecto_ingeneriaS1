@@ -32,7 +32,7 @@ function Ejer_Conjuntos() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Conjuntos Cuarto Primaria`}
         creator="Educa Facil"
 
       >

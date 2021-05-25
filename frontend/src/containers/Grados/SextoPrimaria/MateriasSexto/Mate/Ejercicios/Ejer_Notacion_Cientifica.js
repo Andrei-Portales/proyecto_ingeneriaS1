@@ -32,7 +32,7 @@ function Ejer_Notacion_Cientifica() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Notación Cientifica Sexto Primaria`}
         creator="Educa Facil"
 
       >

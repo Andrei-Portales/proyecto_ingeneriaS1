@@ -32,7 +32,7 @@ function Ejer_Multiplos_Divisores() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Mutltiplos y Divisores Cuarto Primaria`}
         creator="Educa Facil"
 
       >

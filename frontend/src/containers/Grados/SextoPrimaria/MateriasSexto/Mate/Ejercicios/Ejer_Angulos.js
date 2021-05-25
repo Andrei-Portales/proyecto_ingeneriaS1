@@ -32,7 +32,7 @@ function Ejer_Angulos() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Angulos Sexto Primaria`}
         creator="Educa Facil"
 
       >

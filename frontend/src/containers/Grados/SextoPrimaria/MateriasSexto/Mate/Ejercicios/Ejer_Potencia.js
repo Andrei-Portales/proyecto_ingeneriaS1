@@ -32,7 +32,7 @@ function Ejer_Potencia() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Potencias Sexto Primaria`}
         creator="Educa Facil"
 
       >

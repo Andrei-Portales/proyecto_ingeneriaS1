@@ -32,7 +32,7 @@ function Ejer_Raiz_Cuadrada() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Raiz Cuadrada Sexto Primaria`}
         creator="Educa Facil"
 
       >

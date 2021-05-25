@@ -32,7 +32,7 @@ function Ejer_Suma_Resta() {
         ref={pdfExportComponent}
         paperSize="auto"
         margin={40}
-        fileName={`El Sistema Respiratorio Cuarto Primaria`}
+        fileName={`Adicion y sustraccion de numeros Cuarto Primaria`}
         creator="Educa Facil"
 
       >
