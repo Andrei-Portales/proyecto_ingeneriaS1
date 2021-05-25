@@ -97,6 +97,18 @@ import Ejer_energia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercici
 import Ejer_animalia from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercicios/Ejer_animalia';
 import Ejer_reinos from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Ejercicios/Ejer_reinos';
 import reinos from './Grados/SextoPrimaria/MateriasSexto/Ciencias/Temas/reinos';
+import Ejer_Conjuntos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Conjuntos';
+import Ejer_Multiplos_Divisores from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Multiplos_Divisores';
+import Ejer_Numeracion_6_Digitos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Numeracion_6_Digitos';
+import Ejer_Operaciones_Combinadas from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Operaciones_Combinadas';
+import Ejer_Operaciones_Conjuntos from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Operaciones_Conjuntos';
+import Ejer_Suma_Resta from './Grados/CuartoPrimaria/MateriasCuarto/Mate/Ejercicios/Ejer_Suma_Resta';
+import Ejer_Angulos from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Angulos';
+import Ejer_Area_Figuras_Planas from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Area_Figuras_Planas';
+import Ejer_Exponente_Negativo from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Exponente_Negativo';
+import Ejer_Notacion_Cientifica from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Notacion_Cientifica';
+import Ejer_Potencia from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Potencia';
+import Ejer_Raiz_Cuadrada from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Raiz_Cuadrada';
 
 
 const Div = styled.div`
@@ -207,6 +219,18 @@ const App = () => {
           <Route path="/Ejer_energia" component={Ejer_energia} />
           <Route path="/Ejer_animalia" component={Ejer_animalia} />
           <Route path="/Ejer_reinos" component={Ejer_reinos} />
+          <Route path="/Ejer_Conjuntos" component={Ejer_Conjuntos} />
+          <Route path="/Ejer_Multiplos_Divisores" component={Ejer_Multiplos_Divisores} />
+          <Route path="/Ejer_Numeracion_6_Digitos" component={Ejer_Numeracion_6_Digitos} />
+          <Route path="/Ejer_Operaciones_Combinadas" component={Ejer_Operaciones_Combinadas} />
+          <Route path="/Ejer_Operaciones_Conjuntos" component={Ejer_Operaciones_Conjuntos} />
+          <Route path="/Ejer_Suma_Resta" component={Ejer_Suma_Resta} />
+          <Route path="/Ejer_Angulos" component={Ejer_Angulos} />
+          <Route path="/Ejer_Area_Figuras_Planas" component={Ejer_Area_Figuras_Planas} />
+          <Route path="/Ejer_Exponente_Negativo" component={Ejer_Exponente_Negativo} />
+          <Route path="/Ejer_Notacion_Cientifica" component={Ejer_Notacion_Cientifica} />
+          <Route path="/Ejer_Potencia" component={Ejer_Potencia} />
+          <Route path="/Ejer_Raiz_Cuadrada" component={Ejer_Raiz_Cuadrada} />
         </Router>
 
       </>

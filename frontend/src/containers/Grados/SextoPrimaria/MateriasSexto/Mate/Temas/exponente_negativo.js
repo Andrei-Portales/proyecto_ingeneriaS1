@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
+import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player/lazy';
 import '../../../../estilo-temas.scss'; // Es el mismo estilo para todos los temas y ahorrar codigo
 import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
@@ -79,9 +80,11 @@ function exponente_negativo() {
               controls="true"
             />
           </div>
+          <Link to="/Ejer_Exponente_Negativo">
           <button className="btnEjercicios" >
             EJERCICIOS
           </button>
+          </Link>
           <button className="btnDescargar" onClick={exportPDFWithComponent}>
             DESCARGAR
           </button>
