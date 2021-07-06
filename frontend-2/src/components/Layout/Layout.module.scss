@@ -1,0 +1,12 @@
+$nav-bar-height: 80px;
+
+
+.main {
+    width: 100%;
+    height: calc(100vh - #{$nav-bar-height});
+    overflow-y: auto;
+}
+
+.main-dark {
+    background-color: #363537;
+}
