@@ -71,7 +71,7 @@ $nav-bar-height: 80px;
     background-color: black;
     border: none;
     border-radius: 10px;
-    color:white;
+    color: white;
     font-size: 1rem;
     padding: 8px 12px;
 
@@ -80,7 +80,11 @@ $nav-bar-height: 80px;
         border: 2px solid black;
         color: black;
     }
+}
 
+.add {
+    @extend .logout;
+    margin-right: 15px;
 }
 
 @media (max-width: 850px) {

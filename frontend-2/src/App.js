@@ -9,7 +9,9 @@ const Login = React.lazy(() => import('./pages/Login/Login'));
 const Register = React.lazy(() => import('./pages/Register/Register'));
 const Grados = React.lazy(() => import('./pages/Grados/Grados'));
 const Grado = React.lazy(() => import('./pages/Grado/Grado'));
-const Materia = React.lazy(() => import('./pages/Materia/Materia'));
+const Materias = React.lazy(() => import('./pages/Materias/Materias'));
+const Tema = React.lazy(() => import('./pages/Tema/Tema'));
+const Add = React.lazy(() => import('./pages/Add/Add'));
 
 const App = () => {
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
@@ -20,6 +22,10 @@ const App = () => {
         <Switch>
           <Route path="/" exact>
             {isAuth && <LoadingSpinner />}
+            {!isAuth && <Redirect to="/login" />}
+          </Route>
+          <Route path="/add" exact>
+            {isAuth && <Add />}
             {!isAuth && <Redirect to="/login" />}
           </Route>
           <Route path="/login">
@@ -39,7 +45,11 @@ const App = () => {
             {!isAuth && <Redirect to="/login" />}
           </Route>
           <Route path="/grados/:grado/:materia" exact>
-            {isAuth && <Materia />}
+            {isAuth && <Materias />}
+            {!isAuth && <Redirect to="/login" />}
+          </Route>
+          <Route path="/grados/:grado/:materia/:id" exact>
+            {isAuth && <Tema />}
             {!isAuth && <Redirect to="/login" />}
           </Route>
         </Switch>

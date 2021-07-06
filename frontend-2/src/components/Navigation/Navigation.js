@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { themeActions } from '../../store/theme-slice';
@@ -8,12 +8,16 @@ import styles from './Navigation.module.scss';
 import logo from '../../assets/logoCompleto.png';
 
 const Navigation = () => {
+  const history = useHistory();
+  const location = useLocation();
   const dispatch = useDispatch();
   const themeIsLight = useSelector((state) => state.theme.theme) === 'LIGHT';
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
 
   const toggleThemeHandler = () => dispatch(themeActions.toggleTheme());
   const logoutHandler = () => dispatch(authActions.logout());
+  const addHandler = () => history.push('/add');
 
   // Definicion de clases para tema
 
@@ -51,6 +55,11 @@ const Navigation = () => {
       </div>
       {isAuth && (
         <div className={styles['nav-right']}>
+          {isAdmin && location.pathname !== '/add' && (
+            <button className={styles.add} onClick={addHandler}>
+              Agregar tema
+            </button>
+          )}
           <button className={styles.logout} onClick={logoutHandler}>
             Cerrar sesion
           </button>

@@ -1,14 +1,14 @@
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import TemaItem from '../../components/TemaItem/TemaItem';
 
-import styles from './Materia.module.scss';
+import styles from './Materias.module.scss';
 import { temas } from '../../util/grados-materias';
 
-const Materia = () => {
+const Materias = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
   const params = useParams();
-
+  const history = useHistory();
   const grado = temas[params.grado];
   const materia = grado[params.materia];
 
@@ -25,16 +25,22 @@ const Materia = () => {
     !isLightTheme && styles['materia-dark']
   }`;
 
+  const onClickTemaHandler = (id) => {
+    history.push(`/grados/${params.grado}/${params.materia}/${id}`);
+  };
+
   return (
     <div className={materiaClasses}>
       <h1>{materia.title}</h1>
       <div className={styles.materiasList}>
         {temasItems.map((item) => (
-          <TemaItem key={item.no} leading={item.no} title={item.title} />
+          <div onClick={onClickTemaHandler.bind(null, item.no)} key={item.no}>
+            <TemaItem leading={item.no} title={item.title} />
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-export default Materia;
+export default Materias;
