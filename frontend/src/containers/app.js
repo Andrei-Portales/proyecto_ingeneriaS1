@@ -110,7 +110,6 @@ import Ejer_Notacion_Cientifica from './Grados/SextoPrimaria/MateriasSexto/Mate/
 import Ejer_Potencia from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Potencia';
 import Ejer_Raiz_Cuadrada from './Grados/SextoPrimaria/MateriasSexto/Mate/Ejercicios/Ejer_Raiz_Cuadrada';
 
-
 const Div = styled.div`
   background-color: ${({ theme }) => theme.navbar};
   display: flex;
@@ -138,7 +137,7 @@ const App = () => {
           <Route path="/cienciasCuarto" component={CienciasCuarto} />
           <Route path="/idiomacuarto" component={IdiomaCuarto} />
           <Route path="/materiasquinto" component={MateriasQuinto} />
-          <Route path="/tema1" component={Temas}  />
+          <Route path="/tema1" component={Temas} />
           <Route path="/origen_de_vida" component={origen_de_vida} />
           <Route path="/origen_mayas" component={origen_mayas} />
           <Route path="/celulas" component={celulas} />
@@ -151,7 +150,7 @@ const App = () => {
           <Route path="/multiplos" component={multiplos} />
           <Route path="/num_mix" component={num_mix} />
           <Route path="/propor" component={propor} />
-          <Route path="/val_posi" component={val_posi} />   
+          <Route path="/val_posi" component={val_posi} />
           <Route path="/verbo" component={verbo} />
           <Route path="/articulo" component={articulo} />
           <Route path="/animalia" component={animalia} />
@@ -172,11 +171,20 @@ const App = () => {
           <Route path="/lirico" component={lirico} />
           <Route path="/poesia" component={poesia} />
           <Route path="/semantica" component={semantica} />
-          <Route path="/numeracion_6_digitos" component={numeracion_6_digitos} />
+          <Route
+            path="/numeracion_6_digitos"
+            component={numeracion_6_digitos}
+          />
           <Route path="/suma_resta" component={suma_resta} />
-          <Route path="/operaciones_combinadas" component={operaciones_combinadas} />
+          <Route
+            path="/operaciones_combinadas"
+            component={operaciones_combinadas}
+          />
           <Route path="/conjuntos" component={conjuntos} />
-          <Route path="/operaciones_conjuntos" component={operaciones_conjuntos} />
+          <Route
+            path="/operaciones_conjuntos"
+            component={operaciones_conjuntos}
+          />
           <Route path="/multiplos_divisores" component={multiplos_divisores} />
           <Route path="/potencias" component={potencias} />
           <Route path="/exponente_negativo" component={exponente_negativo} />
@@ -187,17 +195,32 @@ const App = () => {
           <Route path="/area_figuras_planas" component={area_figuras_planas} />
           <Route path="/sistema_digestivo" component={sistema_digestivo} />
           <Route path="/ser_humano" component={ser_humano} />
-          <Route path="/clasificacion_alimentos" component={clasificacion_alimentos} />
-          <Route path="/sistema_respiratorio" component={sistema_respiratorio} />
+          <Route
+            path="/clasificacion_alimentos"
+            component={clasificacion_alimentos}
+          />
+          <Route
+            path="/sistema_respiratorio"
+            component={sistema_respiratorio}
+          />
           <Route path="/Ejer_Anatomia" component={Ejer_Anatomia} />
           <Route path="/Ejer_Celulas" component={Ejer_Celulas} />
           <Route path="/Ejer_Ovida" component={Ejer_Ovida} />
           <Route path="/Ejer_Materia" component={Ejer_Materia} />
           <Route path="/Ejer_Investi" component={Ejer_Investi} />
-          <Route path="/Ejer_Clasificacion_Alimentos" component={Ejer_Clasificacion_Alimentos} />
+          <Route
+            path="/Ejer_Clasificacion_Alimentos"
+            component={Ejer_Clasificacion_Alimentos}
+          />
           <Route path="/Ejer_Ser_Humano" component={Ejer_Ser_Humano} />
-          <Route path="/Ejer_Sistema_Digestivo" component={Ejer_Sistema_Digestivo} />
-          <Route path="/Ejer_Sistema_Respiratorio" component={Ejer_Sistema_Respiratorio} />
+          <Route
+            path="/Ejer_Sistema_Digestivo"
+            component={Ejer_Sistema_Digestivo}
+          />
+          <Route
+            path="/Ejer_Sistema_Respiratorio"
+            component={Ejer_Sistema_Respiratorio}
+          />
           <Route path="/Ejer_arti" component={Ejer_arti} />
           <Route path="/Ejer_fig" component={Ejer_fig} />
           <Route path="/Ejer_oracion" component={Ejer_oracion} />
@@ -220,22 +243,42 @@ const App = () => {
           <Route path="/Ejer_animalia" component={Ejer_animalia} />
           <Route path="/Ejer_reinos" component={Ejer_reinos} />
           <Route path="/Ejer_Conjuntos" component={Ejer_Conjuntos} />
-          <Route path="/Ejer_Multiplos_Divisores" component={Ejer_Multiplos_Divisores} />
-          <Route path="/Ejer_Numeracion_6_Digitos" component={Ejer_Numeracion_6_Digitos} />
-          <Route path="/Ejer_Operaciones_Combinadas" component={Ejer_Operaciones_Combinadas} />
-          <Route path="/Ejer_Operaciones_Conjuntos" component={Ejer_Operaciones_Conjuntos} />
+          <Route
+            path="/Ejer_Multiplos_Divisores"
+            component={Ejer_Multiplos_Divisores}
+          />
+          <Route
+            path="/Ejer_Numeracion_6_Digitos"
+            component={Ejer_Numeracion_6_Digitos}
+          />
+          <Route
+            path="/Ejer_Operaciones_Combinadas"
+            component={Ejer_Operaciones_Combinadas}
+          />
+          <Route
+            path="/Ejer_Operaciones_Conjuntos"
+            component={Ejer_Operaciones_Conjuntos}
+          />
           <Route path="/Ejer_Suma_Resta" component={Ejer_Suma_Resta} />
           <Route path="/Ejer_Angulos" component={Ejer_Angulos} />
-          <Route path="/Ejer_Area_Figuras_Planas" component={Ejer_Area_Figuras_Planas} />
-          <Route path="/Ejer_Exponente_Negativo" component={Ejer_Exponente_Negativo} />
-          <Route path="/Ejer_Notacion_Cientifica" component={Ejer_Notacion_Cientifica} />
+          <Route
+            path="/Ejer_Area_Figuras_Planas"
+            component={Ejer_Area_Figuras_Planas}
+          />
+          <Route
+            path="/Ejer_Exponente_Negativo"
+            component={Ejer_Exponente_Negativo}
+          />
+          <Route
+            path="/Ejer_Notacion_Cientifica"
+            component={Ejer_Notacion_Cientifica}
+          />
           <Route path="/Ejer_Potencia" component={Ejer_Potencia} />
           <Route path="/Ejer_Raiz_Cuadrada" component={Ejer_Raiz_Cuadrada} />
         </Router>
-
       </>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
