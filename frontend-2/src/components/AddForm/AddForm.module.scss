@@ -1,0 +1,44 @@
+.form {
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.input {
+    padding: 7px 10px;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.input input {
+    margin-top: 5px;
+    display: block;
+    width: 80%;
+    height: 25px;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0 7px;
+}
+
+.dropDown {
+    padding: 7px 10px;
+}
+
+.dropDown label {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dropDown select {
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 25px;
+    outline: none;
+}
