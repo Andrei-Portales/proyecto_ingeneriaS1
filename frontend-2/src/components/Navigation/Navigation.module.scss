@@ -89,14 +89,14 @@ $nav-bar-height: 80px;
 .drawerIcon {
     display: none;
     margin-right: 15px;
-    width: 50px;
+    width: 35px;
     flex-direction: column;
     border: 2px solid #636363;
     border-radius: 7px;
     padding: 7px 4px;
 
     & div:nth-child(1) {
-        height: 5px;
+        height: 3px;
         width: 100%;
         background-color: #636363;
     }
@@ -104,7 +104,7 @@ $nav-bar-height: 80px;
     & div:nth-child(2),
     div:nth-child(3) {
         margin-top: 7px;
-        height: 5px;
+        height: 3px;
         width: 100%;
         background-color: #636363;
     }

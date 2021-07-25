@@ -83,7 +83,7 @@ const Navigation = () => {
           </div>
         )}
       </div>
-      {showDrawer && <Drawer />}
+      {showDrawer && isAuth && <Drawer toggleDrawer={toggleshowDrawer} />}
     </Fragment>
   );
 };
