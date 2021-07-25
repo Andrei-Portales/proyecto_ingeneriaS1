@@ -54,6 +54,13 @@ const Navigation = () => {
                 >
                   Grados
                 </NavLink>
+                <NavLink
+                  to="/contacto"
+                  activeClassName={styles['action-selected']}
+                  className={styles.action}
+                >
+                  Contacto
+                </NavLink>
                 <div className={styles.action} onClick={toggleThemeHandler}>
                   {themeIsLight ? 'Dark mode' : 'Light mode'}
                 </div>
