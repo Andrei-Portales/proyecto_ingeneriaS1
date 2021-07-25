@@ -1,38 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+// SCREEN 0 - 320PX
 .tema {
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  display: flex;
+  margin: 0;
+}
+
+.videoSection {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .tituloContenedor {
     width: 100%;
-    height: 100%;
-    display: flex;
-}
 
-.main {
-    height: 100%;
-    width: 80%;
-    background-color: rgb(243, 243, 243);
-    overflow-y: auto;
-}
+    .tituloTema {
+      color: #093366;
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "Inter", sans-serif;
+      padding-left: 16px;
+      margin: 15px 0px;
+    }
+  }
 
-.more {
-    height: 100%;
-    width: 20%;
-    background-color: rgb(119, 119, 119);
-}
-
-.video {
+  .videoContenedor {
     width: 100%;
+  }
+
+  .video {
+    width: 100% !important;
     border: none;
-    height: calc(70vh);
+    height: calc(25vh) !important;
+  }
+
+  .opcionesContenedor {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .botonDescargar {
+      background-color: #5894e7;
+      color: white;
+      padding: 10px 24px;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .botonEjercicios {
+      border: none;
+      background-color: white;
+      color: #333;
+      padding: 10px 24px;
+      font-size: 16px;
+      outline: none;
+      border-radius: 5px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.suggestionSection {
+  width: 25%;
+  height: calc(100% - 20px);
+  padding: 20px 16px 0px 16px;
+  background-color: white;
+  display: none;
+
+  .contenidoContenedor {
+    padding-top: 20px;
+    margin: auto !important;
+
+    p {
+      line-height: 26px;
+      font-family: "Lato", sans-serif !important;
+    }
+  }
+}
+
+.esto {
+  margin: 0 !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.titulo-tema-dark {
+  color: white !important;
+}
+
+// SUGERENCIAS
+
+.more-dark {
+  background-color: #21242c;
+  color: white;
+  h2 {
+    color: white !important;
+  }
+}
+
+.hideMore {
+  display: none !important;
 }
 
 .temaContent {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .description {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 320px) {
+  .videoSection {
+    width: 100%;
+    margin: auto;
+    .videoContenedor {
+      width: 100% !important;
+      .video {
+        height: calc(35vh) !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 412px) {
+  .videoSection {
+    width: 100%;
+    margin: auto;
+    .videoContenedor {
+      width: 100% !important;
+      .video {
+        height: calc(40vh) !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .videoSection {
+    width: 94%;
+    margin: auto;
+    .videoContenedor {
+      width: 100% !important;
+      .video {
+        height: calc(50vh) !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 732px) {
+  .videoSection {
+    width: 94%;
+    margin: auto;
+    .videoContenedor {
+      width: 100% !important;
+      .video {
+        height: calc(54vh) !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .tema {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .videoSection {
+    width: 94%;
+    margin: auto;
+    .videoContenedor {
+      width: 100% !important;
+      .video {
+        height: calc(57vh) !important;
+      }
+    }
+    .opcionesContenedor {
+      width: 100%;
+    }
+  }
+  .suggestions {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tema {
+    width: 90% !important;
+    max-width: 90% !important;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    .videoSection {
+      width: 75% !important;
+      .video {
+        height: calc(61vh) !important;
+      }
+      .tituloTema {
+        font-size: 20px;
+      }
+      .opcionesContenedor {
+        flex-direction: row !important;
+        button {
+          width: 40%;
+          margin: auto;
+        }
+      }
+    }
+    .suggestionSection {
+      width: 25% !important;
+      display: block;
+    }
+  }
 }

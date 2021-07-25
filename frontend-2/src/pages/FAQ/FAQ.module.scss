@@ -1,0 +1,26 @@
+.faqContainer {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
+
+  .faqTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #093366;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 0px;
+  }
+}
+
+.faqTitle-dark {
+  color: white !important;
+}
+
+@media (min-width: 1000px) {
+  .faqContainer {
+    width: 60% !important;
+  }
+}

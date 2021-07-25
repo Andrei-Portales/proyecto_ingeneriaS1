@@ -1,14 +1,17 @@
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { themeActions } from '../../store/theme-slice';
-import { authActions } from '../../store/auth-slice';
+import { NavLink, useHistory, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { themeActions } from "../../store/theme-slice";
+import { authActions } from "../../store/auth-slice";
 
-import Drawer from '../Drawer/Drawer';
+import { UilMoon } from "@iconscout/react-unicons";
+import { UilSun } from "@iconscout/react-unicons";
 
-import styles from './Navigation.module.scss';
-import logo from '../../assets/logoCompleto.png';
-import { Fragment } from 'react';
+import Drawer from "../Drawer/Drawer";
+
+import styles from "./Navigation.module.scss";
+import logo from "../../assets/logoCompleto.png";
+import { Fragment } from "react";
 
 const Navigation = () => {
   const history = useHistory();
@@ -16,24 +19,24 @@ const Navigation = () => {
   const dispatch = useDispatch();
   const [showDrawer, setShowDrawer] = useState(false);
 
-  const themeIsLight = useSelector((state) => state.theme.theme) === 'LIGHT';
+  const themeIsLight = useSelector((state) => state.theme.theme) === "LIGHT";
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
   const isAdmin = useSelector((state) => state.auth.isAdmin);
 
   const toggleThemeHandler = () => dispatch(themeActions.toggleTheme());
   const logoutHandler = () => dispatch(authActions.logout());
-  const addHandler = () => history.push('/add');
+  const addHandler = () => history.push("/add");
 
   const toggleshowDrawer = () => setShowDrawer((prevState) => !prevState);
 
   // Definicion de clases para tema
 
-  const navClases = `${styles.nav} ${!themeIsLight ? styles['nav-dark'] : ''}`;
+  const navClases = `${styles.nav} ${!themeIsLight ? styles["nav-dark"] : ""}`;
 
   return (
     <Fragment>
       <div className={navClases}>
-        <div className={styles['nav-left']}>
+        <div className={styles["nav-left"]}>
           <img alt="logo" src={logo} className={styles.logo} />
 
           {isAuth && (
@@ -42,31 +45,34 @@ const Navigation = () => {
                 <NavLink
                   to="/"
                   exact
-                  activeClassName={styles['action-selected']}
+                  activeClassName={styles["action-selected"]}
                   className={styles.action}
                 >
                   Inicio
                 </NavLink>
                 <NavLink
                   to="/grados"
-                  activeClassName={styles['action-selected']}
+                  activeClassName={styles["action-selected"]}
                   className={styles.action}
                 >
                   Grados
                 </NavLink>
                 <NavLink
                   to="/contacto"
-                  activeClassName={styles['action-selected']}
+                  activeClassName={styles["action-selected"]}
                   className={styles.action}
                 >
                   Contacto
                 </NavLink>
-                <div
+                <NavLink
+                  to="/preguntas-frecuentes"
+                  activeClassName={styles["action-selected"]}
                   className={styles.action}
-                  activeClassName={styles['action-selected']}
-                  onClick={toggleThemeHandler}
                 >
-                  {themeIsLight ? 'Dark mode' : 'Light mode'}
+                  Preguntas frecuentes
+                </NavLink>
+                <div className={styles.action} onClick={toggleThemeHandler}>
+                  {themeIsLight ? <UilMoon size="22" /> : <UilSun size="22" />}
                 </div>
               </ul>
             </nav>
@@ -74,8 +80,8 @@ const Navigation = () => {
         </div>
 
         {isAuth && (
-          <div className={styles['nav-right']}>
-            {isAdmin && location.pathname !== '/add' && (
+          <div className={styles["nav-right"]}>
+            {isAdmin && location.pathname !== "/add" && (
               <button className={styles.add} onClick={addHandler}>
                 Agregar tema
               </button>
