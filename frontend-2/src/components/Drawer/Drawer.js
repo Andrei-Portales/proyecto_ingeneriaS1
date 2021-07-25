@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { themeActions } from '../../store/theme-slice';
 import { authActions } from '../../store/auth-slice';
 import styles from './Drawer.module.scss';
@@ -9,6 +9,10 @@ import styles from './Drawer.module.scss';
 const Drawer = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const themeIsLight = useSelector((state) => state.theme.theme) === "LIGHT";
+
+  const navClases = `${styles.drawer} ${!themeIsLight ? styles["drawer-dark"] : ""}`;
 
   const toggleThemeHandler = () => {
     dispatch(themeActions.toggleTheme());
@@ -27,7 +31,7 @@ const Drawer = (props) => {
   const content = (
     <Fragment>
       <div className={styles.background} onClick={props.toggleDrawer}></div>
-      <div className={styles.drawer}>
+      <div className={navClases}>
         <header>
           <div className={styles.drawerIcon} onClick={props.toggleDrawer}>
             <div></div>
@@ -53,6 +57,12 @@ const Drawer = (props) => {
               className={styles.action}
             >
               Contacto
+            </li>
+            <li
+              onClick={onclick.bind(null, '/preguntas-frecuentes')}
+              className={styles.action}
+            >
+              Preguntas frecuentes
             </li>
             <li onClick={toggleThemeHandler} className={styles.action}>
               Dark mode

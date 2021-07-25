@@ -51,22 +51,6 @@ $nav-bar-height: 80px;
     border-bottom: 1px solid black;
 }
 
-.nav-dark {
-    background-color: #363537;
-
-    & .action {
-        color: white;
-
-        &:hover {
-            border-bottom: 1px solid white;
-        }
-    }
-
-    & .action-selected {
-        border-bottom: 1px solid white;
-    }
-}
-
 .logout {
     background-color: black;
     border-radius: 10px;
@@ -89,7 +73,7 @@ $nav-bar-height: 80px;
 .drawerIcon {
     display: none;
     margin-right: 15px;
-    width: 35px;
+    width: 40px;
     flex-direction: column;
     border: 2px solid #636363;
     border-radius: 7px;
@@ -110,7 +94,33 @@ $nav-bar-height: 80px;
     }
 }
 
-@media (max-width: 930px) {
+.nav-dark {
+    background-color: #363537;
+
+    & .action {
+        color: white;
+
+        &:hover {
+            border-bottom: 1px solid white;
+        }
+    }
+
+    & .action-selected {
+        border-bottom: 1px solid white;
+    }
+
+    & .drawerIcon {
+        border: 2px solid white;
+
+        & div:nth-child(1),
+        div:nth-child(2),
+        div:nth-child(3) {
+            background-color: white;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
     .actions {
         display: none;
     }

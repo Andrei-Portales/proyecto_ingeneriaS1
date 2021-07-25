@@ -78,7 +78,7 @@
 }
 
 .action {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: black;
     font-weight: 600;
     user-select: none;
@@ -115,9 +115,41 @@
     }
 }
 
+.drawer-dark {
+    background-color: rgb(37, 37, 37);
+
+    & hr {
+        background-color: white;
+    }
+
+    & .action {
+        border-bottom: 2px solid white;
+        color: white;
+
+        &:hover {
+            background-color: #686868;
+        }
+    }
+
+    & .button {
+        border: 2px solid white;
+        background-color: white;
+        color: black;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
 
 
-@media (min-width: 930px) {
+
+
+}
+
+
+
+@media (min-width: 1050px) {
     .background {
         display: none;
     }

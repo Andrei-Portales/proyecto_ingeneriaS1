@@ -7,7 +7,7 @@ const TemaItemSuggested = (props) => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const itemClasses = `${
-    props.leading == props.playingTema
+    props.leading === props.playingTema
       ? styles.temaPlaying
       : styles.temaItemSuggested
   } ${isLightTheme ? "" : styles["temaItem-dark"]}`;
