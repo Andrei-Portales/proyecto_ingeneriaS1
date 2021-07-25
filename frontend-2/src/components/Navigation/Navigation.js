@@ -61,7 +61,11 @@ const Navigation = () => {
                 >
                   Contacto
                 </NavLink>
-                <div className={styles.action} onClick={toggleThemeHandler}>
+                <div
+                  className={styles.action}
+                  activeClassName={styles['action-selected']}
+                  onClick={toggleThemeHandler}
+                >
                   {themeIsLight ? 'Dark mode' : 'Light mode'}
                 </div>
               </ul>

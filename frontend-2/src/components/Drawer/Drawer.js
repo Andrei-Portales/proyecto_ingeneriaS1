@@ -48,6 +48,12 @@ const Drawer = (props) => {
             >
               Grados
             </li>
+            <li
+              onClick={onclick.bind(null, '/contacto')}
+              className={styles.action}
+            >
+              Contacto
+            </li>
             <li onClick={toggleThemeHandler} className={styles.action}>
               Dark mode
             </li>

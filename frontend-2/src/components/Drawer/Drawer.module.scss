@@ -33,6 +33,7 @@
     background-color: white;
     z-index: 2;
     animation: slide 400ms;
+    overflow-y: auto;
 }
 
 .drawer header {
@@ -116,7 +117,7 @@
 
 
 
-@media (min-width: 850px) {
+@media (min-width: 930px) {
     .background {
         display: none;
     }
