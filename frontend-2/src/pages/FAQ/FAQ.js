@@ -27,7 +27,7 @@ const FAQ = () => {
             <br />
             <br />
             Para eso, acceda a{" "}
-            <a href="https://www.educafacil.org/" target="_blank">
+            <a href="https://www.educafacil.org/" target="_blank" rel="noreferrer">
               https://www.educafacil.org/
             </a>{" "}
             y haga clic en la opción de registro que mejor se aplique a su

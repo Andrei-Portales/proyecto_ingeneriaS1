@@ -17,7 +17,7 @@ const TemaItemSuggested = (props) => {
 
   return (
     <div className={itemClasses}>
-      {props.leading == props.playingTema ? (
+      {props.leading === props.playingTema ? (
         <UilPlay size="16"></UilPlay>
       ) : (
         <div>
@@ -25,7 +25,7 @@ const TemaItemSuggested = (props) => {
         </div>
       )}
       <div className={styles.leading}>
-        <img src={RocketImg} width="40" height="40" />
+        <img src={RocketImg} width="40" height="40" alt={RocketImg}/>
       </div>
       <div className={styles.main}>{props.title}</div>
     </div>
