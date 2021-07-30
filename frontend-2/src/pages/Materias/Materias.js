@@ -21,9 +21,8 @@ const Materias = () => {
     });
   }
 
-  const materiaClasses = `${styles.materia} ${
-    !isLightTheme && styles['materia-dark']
-  }`;
+  const materiaClasses = `${styles.materia} ${!isLightTheme && styles['materia-dark']
+    }`;
 
   const onClickTemaHandler = (id) => {
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
@@ -39,6 +38,7 @@ const Materias = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

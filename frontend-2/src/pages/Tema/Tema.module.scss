@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 // SCREEN 0 - 320PX
 .tema {
@@ -23,7 +23,7 @@
       color: #093366;
       font-weight: 600;
       font-size: 18px;
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       padding-left: 16px;
       margin: 15px 0px;
     }
@@ -77,7 +77,9 @@
     }
   }
 }
-
+.infoMateria {
+  display: none !important;
+}
 .suggestionSection {
   width: 25%;
   height: calc(100% - 20px);
@@ -91,7 +93,7 @@
 
     p {
       line-height: 26px;
-      font-family: "Lato", sans-serif !important;
+      font-family: 'Lato', sans-serif !important;
     }
   }
 }
