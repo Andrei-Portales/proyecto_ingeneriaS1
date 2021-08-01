@@ -16,13 +16,13 @@
 .input input {
     margin-top: 5px;
     display: block;
-    width: 80%;
+    width: calc(100% - 8px);
     height: 25px;
     font-size: 1rem;
     outline: none;
     border-radius: 5px;
     border: 1px solid black;
-    padding: 0 7px;
+    padding: 3px 7px;
 }
 
 .dropDown {
