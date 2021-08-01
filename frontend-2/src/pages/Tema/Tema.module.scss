@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 // SCREEN 0 - 320PX
 .tema {
@@ -23,7 +23,7 @@
       color: #093366;
       font-weight: 600;
       font-size: 18px;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       padding-left: 16px;
       margin: 15px 0px;
     }
@@ -93,7 +93,7 @@
 
     p {
       line-height: 26px;
-      font-family: 'Lato', sans-serif !important;
+      font-family: "Lato", sans-serif !important;
     }
   }
 }
@@ -129,12 +129,36 @@
   margin-right: auto;
 }
 
+
+
 .main::-webkit-scrollbar {
   display: none;
 }
 
 .description {
   white-space: pre-wrap;
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 15px;
+  background-color: white;
+  border-radius: 7px 7px 0 0;
+}
+
+.showMoreDescription {
+  width: calc(100% - 15px);
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 0 0 7px 7px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  &:hover {
+    background-color: rgb(219, 219, 219);
+  }
 }
 
 @media (min-width: 320px) {
@@ -205,6 +229,7 @@
     }
     .opcionesContenedor {
       width: 100%;
+      margin-top: 45px;
     }
   }
   .suggestions {
