@@ -14,6 +14,7 @@ const Tema = React.lazy(() => import("./pages/Tema/Tema"));
 const Add = React.lazy(() => import("./pages/Add/Add"));
 const Contacto = React.lazy(() => import("./pages/Contacto/Contacto"));
 const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
+const AboutUs = React.lazy(() => import('./pages/AboutUs/AboutUs.js'))
 
 const App = () => {
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
@@ -60,6 +61,10 @@ const App = () => {
           </Route>
           <Route path="/preguntas-frecuentes" exact>
             {isAuth && <FAQ />}
+            {!isAuth && <Redirect to="/login" />}
+          </Route>
+          <Route path="/about-us" exact>
+            {isAuth && <AboutUs />}
             {!isAuth && <Redirect to="/login" />}
           </Route>
         </Switch>

@@ -71,6 +71,13 @@ const Navigation = () => {
                 >
                   Preguntas frecuentes
                 </NavLink>
+                <NavLink
+                  to="/about-us"
+                  activeClassName={styles["action-selected"]}
+                  className={styles.action}
+                >
+                  Acerca de Nosotros
+                </NavLink>
                 <div className={styles.action} onClick={toggleThemeHandler}>
                   {themeIsLight ? <UilMoon size="22" /> : <UilSun size="22" />}
                 </div>
