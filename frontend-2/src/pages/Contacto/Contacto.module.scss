@@ -7,3 +7,62 @@
     margin-right: auto;
     font-size: 2.5rem;
 }
+
+.title-dark {
+    color: white !important;
+}
+
+.prf {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prf-dark {
+    color: white !important;
+}
+
+.wrap{
+    background-color: #666699;
+    margin:0 auto 0 auto;
+    width: 500px;
+    text-align:left;
+}
+
+.contactoForm{
+	width: 500px;
+    border: 1px solid #f4fFfF;
+    padding: 15px 15px 15px 15px;
+    background-color: #f4f7f8;
+}
+
+.contactoForm * {
+	display: block;
+	box-sizing: border-box;
+}
+
+.content{
+    padding: 8px;
+	border: 1px solid #CCC;
+	color: #555;
+	font-size: 1em;
+	width: 50%;
+	overflow: hidden;
+	resize: none;
+    display: inline-block;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.subtitle{
+	font-size: 1.1em;
+	width: 50%;
+	overflow: hidden;
+	resize: none;
+    display: inline-block;
+	border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
