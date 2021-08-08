@@ -1,5 +1,6 @@
 import styles from './AboutUs.module.scss';
 import { useSelector } from 'react-redux';
+import fondo from '../../assets/background.jpg';
 
 const AboutUs = () => {
     const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -17,19 +18,21 @@ const AboutUs = () => {
     }`;
 
     return(
-        <div className={styles.aboutContainer}>
-            <div className={tituloAbout}>Acerca de Nosotros</div>
-            <h3 className={textAbout1}>Mision</h3>
-            <h5 className={textAbout2}>Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar 
-            Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar 
-            Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar </h5>
+        <body background={fondo}>
+            <div className={styles.aboutContainer}>
+                <div className={tituloAbout}>Acerca de Nosotros</div>
+                <h3 className={textAbout1}>Mision</h3>
+                <h5 className={textAbout2}>Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar 
+                Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar 
+                Nuestra Msision es alcanzar Nuestra Msision es alcanzar Nuestra Msision es alcanzar </h5>
 
-            <h3 className={textAbout1}>Vision</h3>
-            <h5 className={textAbout2}>Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar 
-            Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar 
-            Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar </h5>
+                <h3 className={textAbout1}>Vision</h3>
+                <h5 className={textAbout2}>Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar 
+                Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar 
+                Nuestra Vision es alcanzar Nuestra Vision es alcanzar Nuestra Vision es alcanzar </h5>
 
-        </div>);
+            </div>
+        </body>);
 };
 
 export default AboutUs;
