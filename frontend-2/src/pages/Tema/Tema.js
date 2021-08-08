@@ -31,21 +31,17 @@ const Tema = () => {
     });
   }
 
-  const mainClases = `${
-    showContent ? styles.videoSection : styles.fullScreenMain
-  } ${!isLightTheme ? styles['main-dark'] : ''}`;
+  const mainClases = `${showContent ? styles.videoSection : styles.fullScreenMain
+    } ${!isLightTheme ? styles['main-dark'] : ''}`;
 
-  const materiaClasses = `${styles.materia} ${
-    !isLightTheme && styles['materia-dark']
-  }`;
+  const materiaClasses = `${styles.materia} ${!isLightTheme && styles['materia-dark']
+    }`;
 
-  const tituloTema = `${styles.tituloTema} ${
-    !isLightTheme && styles['titulo-tema-dark']
-  }`;
+  const tituloTema = `${styles.tituloTema} ${!isLightTheme && styles['titulo-tema-dark']
+    }`;
 
-  const suggestions = `${styles.suggestionSection} ${
-    !isLightTheme ? styles['more-dark'] : ''
-  }`;
+  const suggestions = `${styles.suggestionSection} ${!isLightTheme ? styles['more-dark'] : ''
+    }`;
 
   const onClickTemaHandler = (id) => {
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
@@ -62,6 +58,9 @@ const Tema = () => {
   const toggleShowDescription = () =>
     setShowDescription((prevState) => !prevState);
 
+  const onClickExercice = (id) => {
+    history.push(`/ejercicio/10001`);
+  };
   return (
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
@@ -219,8 +218,11 @@ const Tema = () => {
           >
             Descargar PDF <UilImport size="16"></UilImport>{' '}
           </button>
-          <button className={styles.botonEjercicios}>
-            Ejercicios <UilClipboard size="16"></UilClipboard>{' '}
+          <button
+            className={styles.botonEjercicios}
+            onClick={() => onClickExercice(params.id)}
+          >
+            Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
           </button>
         </div>
 

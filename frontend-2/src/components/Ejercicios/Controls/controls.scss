@@ -1,0 +1,125 @@
+.grid {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  .col-3 {
+    width: 25% !important;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+
+    button {
+      width: 95%;
+      height: 100%;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-weight: 700;
+      font-size: 26px;
+      z-index: 100;
+      background-color: #57b9ff;
+      border-bottom: 4px solid #0f83d7;
+      &:active {
+        border-bottom: none;
+      }
+
+      .buttonContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .helpButtonContent {
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .buttonHelp {
+      width: 95%;
+      height: 100%;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-weight: 700;
+      font-size: 26px;
+      z-index: 100;
+      background-color: #57b9ff;
+      border-bottom: 4px solid #0f83d7;
+      &:active {
+        border-bottom: none;
+      }
+
+      .buttonContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .helpButtonContent {
+          padding-left: 10px;
+        }
+      }
+    }
+    .buttonHelpHidden {
+      display: none !important;
+    }
+
+    .rewardsButton {
+      background-color: rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none !important;
+      cursor: default;
+      &:active {
+        border-bottom: none;
+      }
+      .rewardsInside {
+        display: none;
+        .uilStar {
+          color: yellow;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .rewardsInsideShow {
+        display: flex;
+      }
+    }
+  }
+
+  .col-6 {
+    width: 50% !important ;
+    display: flex;
+    justify-content: center;
+
+    button {
+      width: 95%;
+      height: 100%;
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-weight: 700;
+      font-size: 26px;
+      background-color: #6ec382;
+      border-bottom: 4px solid #2e9948;
+      &:active {
+        border-bottom: none;
+      }
+    }
+    .buttonAnswerHidden {
+      display: none;
+    }
+
+    .buttonContinue {
+      color: #39414b;
+      background-color: #ffe566;
+      border-bottom: 4px solid #ccb029;
+    }
+    .buttonContinueHidden {
+      display: none;
+    }
+  }
+}

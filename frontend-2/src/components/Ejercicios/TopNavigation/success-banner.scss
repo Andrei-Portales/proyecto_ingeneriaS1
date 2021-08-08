@@ -1,0 +1,23 @@
+.successBanner {
+  margin: 0px;
+  max-width: 1000px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .innerBanner {
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: #5cba73;
+    p {
+      margin: 0;
+      padding-left: 16px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.exitPanel {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  margin: 0;
+  p {
+    background-color: white;
+    padding: 6px 21px;
+    border-radius: 8px;
+    border-bottom: 4px solid #d2d8e4;
+    cursor: pointer;
+    margin: 0;
+  }
+}

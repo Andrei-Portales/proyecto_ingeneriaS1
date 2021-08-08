@@ -1,0 +1,66 @@
+.progressBar {
+  margin: 0px;
+  // background-color: #3f3380;
+  padding: 23px;
+  max-width: 1000px;
+  border-radius: 12px;
+  ul {
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 26px;
+    li {
+      display: inline-block;
+      width: 100px;
+      position: relative;
+      z-index: 10;
+      .doneProgressStep {
+        background-color: #148bca;
+        // background-color: #148bca; // 2nd background
+        color: white;
+        border-radius: 20px;
+        padding: 4px 37px;
+        z-index: 100 !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .currentProgressStep {
+        background-color: white;
+        color: #51677b;
+        border-radius: 20px;
+        padding: 4px 37px;
+        z-index: 100 !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .undoneprogressStep {
+        background-color: #ccc;
+        color: white;
+        border-radius: 20px;
+        padding: 4px 37px;
+        z-index: 100 !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,255 @@
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exerciceWrapper {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(204, 237, 240);
+  background: url(../../../../assets/background2.png) repeat;
+  // background-color: rgb(250, 251, 255);
+  // background: url(../../../../assets/background3.png) repeat;
+}
+
+.problemBody {
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1 1 0;
+  height: calc(100% - 137px) !important;
+  .problemContentWrapper {
+    padding: 12px 14px;
+    flex: 1 1 0;
+    width: 83.33% !important;
+    .problemContent {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      justify-content: center;
+      .problemContentTextBlock {
+        width: 83.33% !important;
+        flex: none;
+        .problemContentEmoji {
+          img {
+            width: 260px;
+            height: 160px;
+          }
+        }
+        .problemContentText {
+          font-size: 26px;
+          line-height: 36px;
+          color: black;
+        }
+      }
+      .problemVariants {
+        width: 100%;
+        .gridVariants {
+          flex-grow: 1;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 15px;
+          width: 100%;
+          grid-template-columns: 4fr;
+        }
+      }
+    }
+  }
+}
+
+.layoutPageFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px !important;
+  max-height: 65px;
+  .footer {
+    width: 75%;
+    height: 100%;
+    .grid {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      .col-3 {
+        width: 25% !important;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+
+        button {
+          width: 95%;
+          height: 100%;
+          border: none;
+          border-radius: 14px;
+          color: white;
+          font-weight: 700;
+          font-size: 26px;
+          z-index: 100;
+          background-color: #57b9ff;
+          border-bottom: 4px solid #0f83d7;
+
+          .buttonContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .helpButtonContent {
+              padding-left: 10px;
+            }
+          }
+        }
+
+        .buttonHelp {
+          width: 95%;
+          height: 100%;
+          border: none;
+          border-radius: 14px;
+          color: white;
+          font-weight: 700;
+          font-size: 26px;
+          z-index: 100;
+          background-color: #57b9ff;
+          border-bottom: 4px solid #0f83d7;
+
+          .buttonContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .helpButtonContent {
+              padding-left: 10px;
+            }
+          }
+        }
+        .buttonHelpHidden {
+          display: none !important;
+        }
+
+        .rewardsButton {
+          background-color: rgba(0, 0, 0, 0.1);
+          z-index: 1;
+          border: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          user-select: none !important;
+          cursor: default;
+          .rewardsInside {
+            display: none;
+            .uilStar {
+              color: yellow;
+              width: 40px;
+              height: 40px;
+            }
+          }
+          .rewardsInsideShow {
+            display: flex;
+          }
+        }
+      }
+
+      .col-6 {
+        width: 50% !important ;
+        display: flex;
+        justify-content: center;
+
+        button {
+          width: 95%;
+          height: 100%;
+          border: none;
+          border-radius: 14px;
+          color: white;
+          font-weight: 700;
+          font-size: 26px;
+          background-color: #6ec382;
+          border-bottom: 4px solid #2e9948;
+        }
+        .buttonAnswerHidden {
+          display: none;
+        }
+
+        .buttonContinue {
+          color: #39414b;
+          background-color: #ffe566;
+          border-bottom: 4px solid #ccb029;
+        }
+        .buttonContinueHidden {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+////////////////
+.inputAnswersPanel {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 15px;
+  width: 100%;
+  justify-content: center;
+  grid-template-columns: 4fr;
+  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.radio_input {
+  display: none;
+}
+
+.radio_label {
+  width: 20%;
+  background-color: white;
+  margin: 20px;
+  min-height: 68px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #39414b;
+  border: 2px solid #d0d8e5;
+  border-radius: 12px;
+  transition: background 0.1s;
+}
+
+// .radio_label:not(:last-of-type) {
+//   border-right: 1px solid #006b56;
+// }
+
+.radio_input:checked + .radio_label {
+  color: white;
+  background-color: #5597f2;
+  border: 4px solid #457ae5;
+}
+
+.inputAnswer {
+  width: 20%;
+  background-color: white !important;
+  // margin: 20px;
+  min-height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 30px;
+  letter-spacing: 0;
+  color: #39414b;
+  border: 2px solid #d0d8e5;
+  border-radius: 12px;
+}
+
+.pointerEvents {
+  pointer-events: none !important;
+}
