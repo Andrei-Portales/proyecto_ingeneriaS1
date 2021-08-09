@@ -19,6 +19,7 @@ const Tema = React.lazy(() => import("./pages/Tema/Tema"));
 const Add = React.lazy(() => import("./pages/Add/Add"));
 const Contacto = React.lazy(() => import("./pages/Contacto/Contacto"));
 const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
+const About = React.lazy(() => import('./pages/AboutUs/AboutUs.js'))
 //const PageNotFound = React.lazy(() => import("./pages/404/PageNotFound"));
 //const Profile = React.lazy(() => import("./pages/Profile/Profile"));
 
@@ -167,6 +168,10 @@ const App = () => {
           </Route>
           <Route path="/preguntas-frecuentes" exact>
             {isAuth && <FAQ />}
+            {!isAuth && <Redirect to="/login" />}
+          </Route>
+          <Route path="/about-us" exact>
+            {isAuth && <About />}
             {!isAuth && <Redirect to="/login" />}
           </Route>
           {/* <Route component={PageNotFound} /> */}
