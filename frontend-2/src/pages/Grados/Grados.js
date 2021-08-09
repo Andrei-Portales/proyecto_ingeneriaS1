@@ -23,7 +23,7 @@ const Grados = () => {
               alt="cuarto"
               onClick={selectGradeHandler.bind(null, 'cuarto')}
             />
-            <h3>Cuarto</h3>
+            <h3 className={styles.text_grados}>Cuarto</h3>
           </div>
           <div>
             <img
@@ -31,7 +31,7 @@ const Grados = () => {
               alt="quitno"
               onClick={selectGradeHandler.bind(null, 'quinto')}
             />
-            <h3>Quinto</h3>
+            <h3 className={styles.text_grados}>Quinto</h3>
           </div>
           <div>
             <img
@@ -39,7 +39,7 @@ const Grados = () => {
               alt="sexto"
               onClick={selectGradeHandler.bind(null, 'sexto')}
             />
-            <h3>Sexto</h3>
+            <h3 className={styles.text_grados}>Sexto</h3>
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ const AboutUs = () => {
                 <h5 className={textAbout2}>Contribuir a la educación y la 
                 productividad de las personas, poniendo a su disposición 
                 una plataforma que brinda contenido educativo de calidad 
-                para el fortalecimiento de los conocimientos adquiridos de 
+                para el fortalecimiento de los conocimientos adquiridos en 
                 cursos impartidos en las instituciones educativas, 
                 complementando el proceso de aprender una manera eficiente. 
                 </h5>
