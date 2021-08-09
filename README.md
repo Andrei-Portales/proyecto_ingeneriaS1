@@ -34,7 +34,7 @@ Muchas veces la educación que recibimos no es totalmente completa por lo que qu
 <!-- GETTING STARTED -->
 ## Para comenzar
 
-Clonar o descargar el repositorio
+
 
 ### Requisitos
 
