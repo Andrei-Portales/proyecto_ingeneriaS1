@@ -14,6 +14,9 @@ const Editor = forwardRef((props, ref) => {
     save() {
       return editor.getHTML();
     },
+    reset(){
+
+    }
   }));
 
   return (

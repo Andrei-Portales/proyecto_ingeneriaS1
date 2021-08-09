@@ -1,0 +1,18 @@
+
+.background {
+    position: fixed;
+    width: calc(100vw);
+    height: calc(100vh);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.container {
+    background-color: white;
+    border-radius: 7px;
+    padding: 20px;
+    user-select: none;
+}

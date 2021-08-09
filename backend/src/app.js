@@ -13,16 +13,11 @@ const {
   confirmRecoveryCode,
 } = require('./user');
 
-const {  insertTema,
-  getTemas,
-  getGrados,
-  materiasGrado,
-  getTema,
-} = require('./grado');
+const { addTema } = require('./grado');
 
 const pool = require('./db');
 
-const port = 3000;
+const port = 2000;
 const app = express();
 
 app.use(cors());
@@ -41,11 +36,7 @@ app.post('/send_recovery_email', (req, res, next) => sendRecoveryEmail(req, res,
 app.post('/confirm_recovery_code', (req, res, next) => confirmRecoveryCode(req, res, next)); //code, email
 
 
-app.post('/insert-tema', (req, res, next)=>insertTema(req, res, next, pool)); // id_grado, title, body, video_url
-app.post('/get-temas', (req, res, next)=> getTemas(req, res, next, pool)); // id_materia
-app.post('/get-grados', (req, res, next)=> getGrados(req, res, next, pool));  
-app.post('/materias-grado', (req, res, next)=> materiasGrado(req, res, next, pool)); // grado
-app.post('/get-tema', (req, res, next)=> getTema(req, res, next, pool)); // id
+app.post('/addTema', (req, res) => addTema(req, res, pool))
 
 
 app.get('*', (req, res, next)=>{
