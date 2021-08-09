@@ -40,7 +40,7 @@ Muchas veces la educación que recibimos no es totalmente completa por lo que qu
 
 Este proyecto fue creado mediante  **React JS**
 
-### Installation
+### Instalacion
 
 1. Clone the repo
    ```sh
