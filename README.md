@@ -34,7 +34,7 @@ Muchas veces la educación que recibimos no es totalmente completa por lo que qu
 <!-- GETTING STARTED -->
 ## Para comenzar
 
-
+El frontend se encuentra en la carpeta de **frontend-2**
 
 ### Requisitos
 
