@@ -1,6 +1,6 @@
 # proyecto_ingeneriaS1
 
-<!-- TABLE OF CONTENTS -->
+<!-- Contenido -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
