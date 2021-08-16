@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import {
   Switch,
   Route,
-  BrowserRouter as Router,
   Redirect,
 } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -70,7 +69,7 @@ const App = () => {
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
 
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense fallback={<div className="suspense"><LoadingSpinner /></div> }>
       <Switch>
         <Route path="/profile" exact>
           {/*{isAuth && <Profile />}*/}
@@ -129,6 +128,9 @@ const App = () => {
           {isAuth && <Exercise10015 />}
           {!isAuth && <Redirect to="/login" />}
         </Route>
+
+
+
         <Layout>
           <Route path="/" exact>
             {isAuth && <LoadingSpinner />}
