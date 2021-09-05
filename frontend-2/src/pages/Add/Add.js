@@ -41,7 +41,7 @@ const Add = () => {
         formRef.current.reset();
       }
     } catch (e) {
-
+      console.log(e);
     }
     setIsLoading(false);
   };
