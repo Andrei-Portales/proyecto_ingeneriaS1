@@ -129,8 +129,6 @@
   margin-right: auto;
 }
 
-
-
 .main::-webkit-scrollbar {
   display: none;
 }
@@ -158,6 +156,36 @@
 
   &:hover {
     background-color: rgb(219, 219, 219);
+  }
+}
+
+.helpContainer {
+  height: 80px;
+  background-color: rgba(223, 223, 223, 0.3);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  .questionIconSpan {
+    background-color: #0070d2;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    .questionIcon {
+      color: white !important;
+    }
+  }
+  .questionTitle {
+    color: #006dcc;
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    align-items: center;
+    text-decoration: none;
   }
 }
 

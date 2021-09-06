@@ -1,19 +1,19 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useState, useRef, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
-import styles from './Tema.module.scss';
-import { tema as linkTema } from '../../util/links';
+import styles from "./Tema.module.scss";
+import { tema as linkTema } from "../../util/links";
 
-import { UilImport } from '@iconscout/react-unicons';
-import { UilClipboard } from '@iconscout/react-unicons';
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
+import { UilImport } from "@iconscout/react-unicons";
+import { UilClipboard } from "@iconscout/react-unicons";
+import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
-  const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
   const [showContent, setShowContent] = useState(true);
   const [showDescription, setShowDescription] = useState(false);
   const pdfExportComponent = useRef(null);
@@ -21,18 +21,18 @@ const Tema = () => {
 
   const mainClases = `${
     showContent ? styles.videoSection : styles.fullScreenMain
-  } ${!isLightTheme ? styles['main-dark'] : ''}`;
+  } ${!isLightTheme ? styles["main-dark"] : ""}`;
 
   const materiaClasses = `${styles.materia} ${
-    !isLightTheme && styles['materia-dark']
+    !isLightTheme && styles["materia-dark"]
   }`;
 
   const tituloTema = `${styles.tituloTema} ${
-    !isLightTheme && styles['titulo-tema-dark']
+    !isLightTheme && styles["titulo-tema-dark"]
   }`;
 
   const suggestions = `${styles.suggestionSection} ${
-    !isLightTheme ? styles['more-dark'] : ''
+    !isLightTheme ? styles["more-dark"] : ""
   }`;
 
   // const onClickTemaHandler = (id) => {
@@ -42,9 +42,9 @@ const Tema = () => {
   const fetchTemaData = useCallback(async () => {
     try {
       const response = await fetch(linkTema, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: params.id }),
       });
@@ -113,14 +113,14 @@ const Tema = () => {
               <div>
                 <div
                   className={styles.description}
-                  style={{ height: showDescription ? 'fit-content' : '200px' }}
-                  dangerouslySetInnerHTML={{__html: tema.body}}
+                  style={{ height: showDescription ? "fit-content" : "200px" }}
+                  dangerouslySetInnerHTML={{ __html: tema.body }}
                 ></div>
                 <button
                   onClick={toggleShowDescription}
                   className={styles.showMoreDescription}
                 >
-                  {showDescription ? 'Mostrar menos' : 'Mostrar mas'}
+                  {showDescription ? "Mostrar menos" : "Mostrar mas"}
                 </button>
               </div>
             </PDFExport>
@@ -131,13 +131,13 @@ const Tema = () => {
               className={styles.botonDescargar}
               onClick={exportPDFWithComponent}
             >
-              Descargar PDF <UilImport size="16"></UilImport>{' '}
+              Descargar PDF <UilImport size="16"></UilImport>{" "}
             </button>
             <button
               className={styles.botonEjercicios}
               onClick={() => onClickExercice(params.id)}
             >
-              Ejercicios <UilClipboard size="16"></UilClipboard>{' '}
+              Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
             </button>
           </div>
 
@@ -161,6 +161,18 @@ const Tema = () => {
                   />
                 </div>
               ))} */}
+
+              <div className={styles.helpContainer}>
+                <span className={styles.questionIconSpan}></span>
+                <a
+                  href="https://materialeducativo.org/guatematica-para-cuarto-grado/"
+                  target="_blank"
+                  className={styles.questionTitle}
+                  rel="noreferrer"
+                >
+                  Fuente - MINEDUC 4to Grado
+                </a>
+              </div>
             </div>
           </div>
         </div>
