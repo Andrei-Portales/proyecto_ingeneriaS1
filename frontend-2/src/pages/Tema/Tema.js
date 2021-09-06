@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
+// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
 import styles from './Tema.module.scss';
 import { tema as linkTema } from '../../util/links';
 
@@ -35,11 +35,11 @@ const Tema = () => {
     !isLightTheme ? styles['more-dark'] : ''
   }`;
 
-  const onClickTemaHandler = (id) => {
-    history.push(`/grados/${params.grado}/${params.materia}/${id}`);
-  };
+  // const onClickTemaHandler = (id) => {
+  //   history.push(`/grados/${params.grado}/${params.materia}/${id}`);
+  // };
 
-  const fetchTemaData = async () => {
+  const fetchTemaData = useCallback(async () => {
     try {
       const response = await fetch(linkTema, {
         method: 'POST',
@@ -57,11 +57,11 @@ const Tema = () => {
     } catch (e) {
       console.log(e);
     }
-  };
+  }, [params]);
 
   useEffect(() => {
     fetchTemaData();
-  }, []);
+  }, [fetchTemaData]);
 
   const exportPDFWithComponent = async () => {
     if (pdfExportComponent.current) {

@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams, useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import TemaItem from '../../components/TemaItem/TemaItem';
-import {temas as linkTema} from '../../util/links';
+import { temas as linkTema } from '../../util/links';
 
 import styles from './Materias.module.scss';
 
@@ -12,41 +12,44 @@ const Materias = () => {
   const history = useHistory();
   const [temas, setTemas] = useState([]);
 
-
-  const materiaClasses = `${styles.materia} ${!isLightTheme && styles['materia-dark']
-    }`;
+  const materiaClasses = `${styles.materia} ${
+    !isLightTheme && styles['materia-dark']
+  }`;
 
   const onClickTemaHandler = (id) => {
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   };
 
-  const fetchTemas = async () => {
-      try{
-        const response = await fetch(linkTema, {
-          method: 'POST',
-          body: JSON.stringify({
-            subject: params.materia,
-            grade: params.grado
-          }),
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
+  const fetchTemas = useCallback(async () => {
+    try {
+      const response = await fetch(linkTema, {
+        method: 'POST',
+        body: JSON.stringify({
+          subject: params.materia,
+          grade: params.grado,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (data.result){
-          const tempTemas = data.temas.map((item, index)=>({no: index + 1, ...item}));
-          setTemas(tempTemas);
-        }
-      }catch(e){
-        console.log(e);
+      if (data.result) {
+        const tempTemas = data.temas.map((item, index) => ({
+          no: index + 1,
+          ...item,
+        }));
+        setTemas(tempTemas);
       }
-  };
+    } catch (e) {
+      console.log(e);
+    }
+  }, [params]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchTemas();
-  }, []);
+  }, [fetchTemas]);
 
   return (
     <div className={materiaClasses}>
