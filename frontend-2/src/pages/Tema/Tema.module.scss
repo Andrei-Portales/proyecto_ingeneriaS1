@@ -23,7 +23,7 @@
       color: #093366;
       font-weight: 600;
       font-size: 18px;
-      font-family: "Inter", sans-serif;
+      font-family: "DejaVu Sans", "Arial", sans-serif;
       padding-left: 16px;
       margin: 15px 0px;
     }
@@ -55,7 +55,7 @@
       border: none;
       outline: none;
       border-radius: 5px;
-      width: 90%;
+      width: 300px;
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
@@ -141,6 +141,7 @@
   margin-right: 15px;
   background-color: white;
   border-radius: 7px 7px 0 0;
+  font-family: "DejaVu Sans", "Arial", sans-serif;
 }
 
 .showMoreDescription {

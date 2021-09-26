@@ -1,3 +1,6 @@
+const pdf = require('html-pdf');
+const path = require('path');
+
 const addTema = async (req, res, pool) => {
   try {
     const { subject, grade, title, body, video_url } = req.body;
@@ -68,8 +71,54 @@ const getTema = async (req, res, pool) => {
   }
 };
 
+const getTemaPdf = async (req, res, pool) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.json({ result: false });
+    }
+
+    const result = await pool.query(
+      `
+      select * from tema where id = $1 limit 1;
+    `,
+      [id]
+    );
+
+    if (result.rowCount > 0) {
+      const contenido = `
+      <br/> 
+      <br/> 
+      <h1>${result.rows[0].title}</h1>
+      <br/>
+      <br/>
+      <div>
+        ${result.rows[0].body}
+      </div>
+      `;
+
+      pdf
+        .create(contenido)
+        .toFile(__dirname + `/pdfs/${id}.pdf`, function (err, resPdf) {
+          if (err) {
+            return res.send('<p>No Content found</p>');
+          } else {
+            return res.sendFile(path.join(__dirname, 'pdfs', `${id}.pdf`));
+          }
+        });
+    } else {
+      return res.send('<p>No Content found</p>');
+    }
+  } catch (e) {
+    console.log(e);
+    return res.send('<p>No Content found</p>');
+  }
+};
+
 module.exports = {
   addTema,
   getTemas,
   getTema,
+  getTemaPdf,
 };

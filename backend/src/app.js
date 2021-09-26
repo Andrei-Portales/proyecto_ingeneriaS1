@@ -13,7 +13,7 @@ const {
   confirmRecoveryCode,
 } = require('./user');
 
-const { addTema, getTemas, getTema } = require('./grado');
+const { addTema, getTemas, getTema, getTemaPdf } = require('./grado');
 const pool = require('./db');
 const port = 2000;
 const app = express();
@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'pdfs')));
 
 
 // Login requests
@@ -37,10 +38,12 @@ app.post('/confirm_recovery_code', (req, res, next) => confirmRecoveryCode(req, 
 app.post('/addTema', (req, res) => addTema(req, res, pool));
 app.post('/temas', (req, res) => getTemas(req, res, pool));
 app.post('/tema', (req, res) => getTema(req, res, pool));
+app.get('/downloadTema/:id', (req, res) => getTemaPdf(req, res, pool));
 
 
 app.get('*', (req, res, next)=>{
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  // res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.send('<p>Page not found 404</p>')
 });
 
 

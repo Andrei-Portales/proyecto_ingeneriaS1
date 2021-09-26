@@ -1,19 +1,19 @@
-import { useState, useRef, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router";
-import { useSelector } from "react-redux";
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
-import styles from "./Tema.module.scss";
-import { tema as linkTema } from "../../util/links";
+import styles from './Tema.module.scss';
+import { tema as linkTema, downloadTema } from '../../util/links';
 
-import { UilImport } from "@iconscout/react-unicons";
-import { UilClipboard } from "@iconscout/react-unicons";
-import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
+import { UilImport } from '@iconscout/react-unicons';
+import { UilClipboard } from '@iconscout/react-unicons';
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
-  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+  const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
   const [showContent, setShowContent] = useState(true);
   const [showDescription, setShowDescription] = useState(false);
   const pdfExportComponent = useRef(null);
@@ -21,18 +21,18 @@ const Tema = () => {
 
   const mainClases = `${
     showContent ? styles.videoSection : styles.fullScreenMain
-  } ${!isLightTheme ? styles["main-dark"] : ""}`;
+  } ${!isLightTheme ? styles['main-dark'] : ''}`;
 
   const materiaClasses = `${styles.materia} ${
-    !isLightTheme && styles["materia-dark"]
+    !isLightTheme && styles['materia-dark']
   }`;
 
   const tituloTema = `${styles.tituloTema} ${
-    !isLightTheme && styles["titulo-tema-dark"]
+    !isLightTheme && styles['titulo-tema-dark']
   }`;
 
   const suggestions = `${styles.suggestionSection} ${
-    !isLightTheme ? styles["more-dark"] : ""
+    !isLightTheme ? styles['more-dark'] : ''
   }`;
 
   // const onClickTemaHandler = (id) => {
@@ -42,9 +42,9 @@ const Tema = () => {
   const fetchTemaData = useCallback(async () => {
     try {
       const response = await fetch(linkTema, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ id: params.id }),
       });
@@ -113,31 +113,34 @@ const Tema = () => {
               <div>
                 <div
                   className={styles.description}
-                  style={{ height: showDescription ? "fit-content" : "200px" }}
+                  style={{ height: showDescription ? 'fit-content' : '200px' }}
                   dangerouslySetInnerHTML={{ __html: tema.body }}
                 ></div>
                 <button
                   onClick={toggleShowDescription}
                   className={styles.showMoreDescription}
                 >
-                  {showDescription ? "Mostrar menos" : "Mostrar mas"}
+                  {showDescription ? 'Mostrar menos' : 'Mostrar mas'}
                 </button>
               </div>
             </PDFExport>
           </div>
 
           <div className={styles.opcionesContenedor}>
-            <button
+            <a
               className={styles.botonDescargar}
-              onClick={exportPDFWithComponent}
+              href={`${downloadTema}/${params.id}`}
+              target="_blank"
+              rel="noreferrer"
+              download
             >
-              Descargar PDF <UilImport size="16"></UilImport>{" "}
-            </button>
+              Descargar PDF <UilImport size="16"></UilImport>{' '}
+            </a>
             <button
               className={styles.botonEjercicios}
               onClick={() => onClickExercice(params.id)}
             >
-              Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
+              Ejercicios <UilClipboard size="16"></UilClipboard>{' '}
             </button>
           </div>
 
