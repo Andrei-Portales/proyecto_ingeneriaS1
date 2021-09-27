@@ -1,0 +1,17 @@
+.buttonContinue {
+  width: 95%;
+  height: 100%;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 26px;
+  color: #39414b;
+  background-color: #ffe566;
+  border-bottom: 4px solid #ccb029;
+  &:active {
+    border-bottom: none;
+  }
+}
+.buttonContinueHidden {
+  display: none;
+}

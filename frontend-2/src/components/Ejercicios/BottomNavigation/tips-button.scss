@@ -1,0 +1,35 @@
+.buttonHelp {
+  width: 95%;
+  height: 100%;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 700;
+  font-size: 26px;
+  z-index: 100;
+  // background-color: #57b9ff;
+  // border-bottom: 4px solid #0f83d7;
+  &:active {
+    border-bottom: none;
+  }
+
+  .buttonContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .helpButtonContent {
+      padding-left: 10px;
+      display: none;
+    }
+  }
+}
+.buttonHelpHidden {
+  display: none !important;
+}
+
+@media (min-width: 640px) {
+  .helpButtonContent {
+    display: flex !important;
+  }
+}

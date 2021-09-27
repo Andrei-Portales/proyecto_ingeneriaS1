@@ -2,14 +2,60 @@
   display: flex;
   align-items: center;
   height: 50px;
-  width: 100px;
+  justify-content: center;
   margin: 0;
+  // border: 1px solid green;
   p {
     background-color: white;
-    padding: 6px 21px;
+    padding: 5px 12px;
     border-radius: 8px;
     border-bottom: 4px solid #d2d8e4;
     cursor: pointer;
     margin: 0;
+    .uilTimes {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .exitPanel {
+    display: flex !important;
+    width: 10%;
+    p {
+      padding: 5px 12px;
+    }
+  }
+  .uilTimes {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .uilTimes {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (min-width: 864px) {
+  .exitPanel {
+    height: 40px !important;
+    p {
+      padding: 5px 12px !important;
+    }
+  }
+}
+
+@media (min-width: 962px) {
+  .exitPanel {
+  }
+}
+
+@media (min-width: 1100px) {
+  .exitPanel {
+    width: 145px;
   }
 }

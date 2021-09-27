@@ -1,27 +1,45 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useState, useRef, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
 
-// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado 
+import { temas } from "../../util/grados-materias";
+import Youtube from "./Youtube";
 
-import styles from './Tema.module.scss';
-import { tema as linkTema, downloadTema } from '../../util/links';
+// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
-import { UilImport } from '@iconscout/react-unicons';
-import { UilClipboard } from '@iconscout/react-unicons';
+import styles from "./Tema.module.scss";
+import { tema as linkTema, downloadTema } from "../../util/links";
 
-// import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual 
-import { PDFExport } from '@progress/kendo-react-pdf';
+import { UilImport } from "@iconscout/react-unicons";
+import { UilClipboard } from "@iconscout/react-unicons";
+
+// import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual
+import { PDFExport } from "@progress/kendo-react-pdf";
 
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
-  const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+  const grado = temas[params.grado];
+  const materia = grado[params.materia];
 
   /* setShowContent no es utilizado pero es esencial para el  
-  funcionamiento del estado, el cual si es utilizado en el codigo*/ 
+  funcionamiento del estado, el cual si es utilizado en el codigo*/
   const [showContent, setShowContent] = useState(true);
+
+  const temasItems = [];
+  const currentTema = [];
+
+  for (let i = 0; i < materia.temas.length; i++) {
+    temasItems.push(materia.temas[i]);
+  }
+
+  temasItems.map((value, index) => {
+    if (value.id === params.id) {
+      currentTema.push(value);
+    }
+  });
 
   const [showDescription, setShowDescription] = useState(false);
   const pdfExportComponent = useRef(null);
@@ -29,18 +47,18 @@ const Tema = () => {
 
   const mainClases = `${
     showContent ? styles.videoSection : styles.fullScreenMain
-  } ${!isLightTheme ? styles['main-dark'] : ''}`;
+  } ${!isLightTheme ? styles["main-dark"] : ""}`;
 
   const materiaClasses = `${styles.materia} ${
-    !isLightTheme && styles['materia-dark']
+    !isLightTheme && styles["materia-dark"]
   }`;
 
   const tituloTema = `${styles.tituloTema} ${
-    !isLightTheme && styles['titulo-tema-dark']
+    !isLightTheme && styles["titulo-tema-dark"]
   }`;
 
   const suggestions = `${styles.suggestionSection} ${
-    !isLightTheme ? styles['more-dark'] : ''
+    !isLightTheme ? styles["more-dark"] : ""
   }`;
 
   // onClickTemaHandler ha sido eliminado por falta de uso dentro del codigo
@@ -51,9 +69,9 @@ const Tema = () => {
   const fetchTemaData = useCallback(async () => {
     try {
       const response = await fetch(linkTema, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ id: params.id }),
       });
@@ -83,79 +101,73 @@ const Tema = () => {
   const toggleShowDescription = () =>
     setShowDescription((prevState) => !prevState);
 
-  const onClickExercice = (id) => {
-    history.push(`/ejercicio/10001`);
+  const openExercise = () => {
+    const workingExerciseId = localStorage.getItem("workingExerciseId");
+    if (workingExerciseId === "0") {
+      history.push(`/ejercicio/${params.id}/1`);
+      return;
+    }
+    history.push(`/ejercicio/${params.id}/1`);
   };
 
   return (
     <div className={styles.tema}>
-      {tema && (
-        <div className={`${showContent ? mainClases : mainClases}`}>
-          <div className={styles.videoContenedor}>
-            <iframe
-              className={styles.video}
-              src={tema.video_url}
-              title="YouTube video player"
-              allow="clipboard-write; encrypted-media; picture-in-picture; autoplay"
-              type="text/html"
-              frameBorder="0"
-              tabIndex="0"
-              showInfo="0"
-              autoHide="0"
-            ></iframe>
-          </div>
-
-          <div>
-            <PDFExport
-              ref={pdfExportComponent}
-              paperSize="auto"
-              margin={40}
-              fileName={tema.title}
-              creator="Educa Facil"
-            >
-              <div className={styles.tituloContenedor}>
-                <h3 className={tituloTema}>{tema.title}</h3>
-              </div>
-
-              {/* <h1 className="tituloT">Numeración hasta de 6 cifras</h1> */}
-
-              <div>
-                <div
-                  className={styles.description}
-                  style={{ height: showDescription ? 'fit-content' : '200px' }}
-                  dangerouslySetInnerHTML={{ __html: tema.body }}
-                ></div>
-                <button
-                  onClick={toggleShowDescription}
-                  className={styles.showMoreDescription}
-                >
-                  {showDescription ? 'Mostrar menos' : 'Mostrar mas'}
-                </button>
-              </div>
-            </PDFExport>
-          </div>
-
-          <div className={styles.opcionesContenedor}>
-            <a
-              className={styles.botonDescargar}
-              href={`${downloadTema}/${params.id}`}
-              target="_blank"
-              rel="noreferrer"
-              download
-            >
-              Descargar PDF <UilImport size="16"></UilImport>{' '}
-            </a>
-            <button
-              className={styles.botonEjercicios}
-              onClick={() => onClickExercice(params.id)}
-            >
-              Ejercicios <UilClipboard size="16"></UilClipboard>{' '}
-            </button>
-          </div>
-
-          <br />
+      <div className={`${showContent ? mainClases : mainClases}`}>
+        <div className={styles.videoContenedor}>
+          {currentTema.map((value, index) => (
+            <Youtube videoId={value.videoId} />
+          ))}
         </div>
-      )}
+        <div>
+          <PDFExport
+            ref={pdfExportComponent}
+            paperSize="auto"
+            margin={40}
+            // fileName={tema.title}
+            creator="Educa Facil"
+          >
+            <div className={styles.tituloContenedor}>
+              {currentTema.map((value, index) => (
+                <h3 className={tituloTema}>{value.title}</h3>
+              ))}
+            </div>
+            <div>
+              <div
+                className={styles.description}
+                style={{ height: showDescription ? "fit-content" : "200px" }}
+                // dangerouslySetInnerHTML={{ __html: tema.body }}
+              ></div>
+              <button
+                onClick={toggleShowDescription}
+                className={styles.showMoreDescription}
+              >
+                {showDescription ? "Mostrar menos" : "Mostrar mas"}
+              </button>
+            </div>
+          </PDFExport>
+        </div>
+
+        <div className={styles.opcionesContenedor}>
+          <a
+            className={styles.botonDescargar}
+            href={`${downloadTema}/${params.id}`}
+            target="_blank"
+            rel="noreferrer"
+            download
+          >
+            Descargar PDF <UilImport size="16"></UilImport>{" "}
+          </a>
+          <button
+            className={styles.botonEjercicios}
+            onClick={() => openExercise()}
+          >
+            Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
+          </button>
+        </div>
+
+        <br />
+      </div>
+
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>

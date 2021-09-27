@@ -1,0 +1,89 @@
+.profileWrapper {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(204, 237, 240);
+  background: url(../../assets/background2.png) repeat;
+
+  .navigationTop {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: flex-start;
+    height: 90px;
+    align-items: center;
+  }
+
+  .userProfileWrapper {
+    .userAvatarWrapper {
+      background-color: rgba(0, 0, 0, 0.1);
+      width: 90%;
+      height: 400px;
+      margin: 0px auto;
+      border-radius: 12px;
+      display: flex;
+
+      .userAvatar {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .avatar {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          background-color: #048dc4;
+          justify-content: center;
+          img {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            right: 20 !important;
+          }
+        }
+      }
+      .userBasicInfo {
+        width: 50%;
+        margin: auto;
+        .userInfo {
+          width: 90%;
+          margin: auto;
+
+          input {
+            width: 100%;
+            margin: 10px 0px;
+            padding: 7px 16px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            // border-color: #e1e2e3;
+          }
+          label {
+            color: #39414b !important;
+          }
+          select {
+            width: 200px;
+            height: 40px;
+            border-color: #e1e2e3;
+            padding-left: 10px;
+            padding-right: 16px;
+            outline: none;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.saveChangesWrapper {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.saveChangesWrapperHidden {
+  display: none;
+}

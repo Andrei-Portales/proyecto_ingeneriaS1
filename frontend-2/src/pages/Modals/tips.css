@@ -1,0 +1,15 @@
+.modal-backdrop {
+    background-color: white !important;
+}
+
+
+.modal-dialog {
+    display: flex;
+    margin-top: 0px;
+    justify-content: center;
+    border: none !important;
+}
+
+.modal-content {
+    background-color: none !important;
+}

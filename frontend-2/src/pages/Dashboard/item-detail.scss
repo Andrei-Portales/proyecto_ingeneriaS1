@@ -1,0 +1,88 @@
+.quizDetailContainer {
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 10px 24px;
+  // border-left: 2px solid #070810;
+  box-shadow: rgba(0, 0, 0, 0.2) -10px 0px 20px -5px;
+
+  .quizHeader {
+    height: 70px;
+    display: flex;
+    padding-top: 16px;
+    justify-content: flex-end;
+
+    span {
+      height: 30px;
+      width: 30px;
+      padding: 0px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+
+      :hover {
+        color: #3381ff !important;
+        cursor: pointer !important;
+      }
+    }
+
+    .expandArrowAlt {
+      margin: auto;
+    }
+  }
+  .quizId {
+    height: 60px;
+  }
+  .userAndDate {
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    .user {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      p {
+        margin: 0px;
+        padding-left: 10px;
+      }
+    }
+    .date {
+      display: flex;
+      width: 50%;
+      align-items: center;
+      p {
+        margin: 0px;
+        padding-left: 10px;
+      }
+      span {
+        background-color: rgba(10, 151, 90, 0.4);
+        border-radius: 50%;
+        padding: 3px 6px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+      }
+      .uil-calender {
+        color: #0a975a;
+        margin: auto;
+        padding: 0px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  .selectionsToggle {
+    display: flex;
+    justify-content: space-evenly !important;
+  }
+  .numberExercises {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .inputTemaId {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
