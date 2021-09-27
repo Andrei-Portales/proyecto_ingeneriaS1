@@ -17,7 +17,6 @@ const TopNavigation = ({ index }) => {
   const [numberOfExercises] = useGetExercise(
     history.location.pathname.slice(11, 16)
   );
-  const { isCorrectAnswer } = useContext(Context);
 
   return (
     <div className="topNavigation">
