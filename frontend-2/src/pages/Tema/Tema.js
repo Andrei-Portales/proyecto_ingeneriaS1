@@ -2,19 +2,27 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
-// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
+
+// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado 
+
 import styles from './Tema.module.scss';
 import { tema as linkTema, downloadTema } from '../../util/links';
 
 import { UilImport } from '@iconscout/react-unicons';
 import { UilClipboard } from '@iconscout/react-unicons';
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
+
+// import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual 
+import { PDFExport } from '@progress/kendo-react-pdf';
 
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
   const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
+
+  /* setShowContent no es utilizado pero es esencial para el  
+  funcionamiento del estado, el cual si es utilizado en el codigo*/ 
   const [showContent, setShowContent] = useState(true);
+
   const [showDescription, setShowDescription] = useState(false);
   const pdfExportComponent = useRef(null);
   const [tema, setTema] = useState(null);
@@ -35,6 +43,7 @@ const Tema = () => {
     !isLightTheme ? styles['more-dark'] : ''
   }`;
 
+  // onClickTemaHandler ha sido eliminado por falta de uso dentro del codigo
   // const onClickTemaHandler = (id) => {
   //   history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   // };
