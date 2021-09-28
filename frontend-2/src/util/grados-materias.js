@@ -95,6 +95,18 @@ export const temas = {
       ],
     },
   },
-  quinto: {},
+  quinto: {
+    matermaticas: {
+      title: "Matemáticas",
+      temas: [
+        {
+          id: "51001",
+          title: "Números hasta millones",
+          videoId: "a7aUQQCfuP0",
+          isCompleted: true,
+        },
+      ],
+    },
+  },
   sexto: {},
 };
