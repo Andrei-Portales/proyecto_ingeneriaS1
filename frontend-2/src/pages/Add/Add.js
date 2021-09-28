@@ -26,7 +26,8 @@ const Add = () => {
     var newTemaRef = temasRef.push();
     newTemaRef.set(
       {
-        id: id,
+        id: newTemaRef.key,
+        tema_id: id,
         subject: materia,
         grade: grade,
         title: title,
