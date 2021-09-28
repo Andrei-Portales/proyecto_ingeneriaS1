@@ -13,8 +13,17 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    border: 7px solid #fff;
+    border: 7px solid;
     border-color: black transparent black transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
     animation: spinner 1.5s linear infinite;
 }
+
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  

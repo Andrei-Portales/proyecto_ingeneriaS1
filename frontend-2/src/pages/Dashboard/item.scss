@@ -1,0 +1,143 @@
+.tree-item {
+  position: relative;
+  padding-top: 38px !important;
+  background-color: #2b2e44;
+  color: white !important;
+  list-style: none;
+  margin: 0px auto;
+
+  &:hover {
+    background-color: #33374a !important;
+  }
+
+  .tree-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 39px !important;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+    color: white !important;
+
+    &:hover {
+      .uil-trash {
+        visibility: visible !important;
+      }
+    }
+
+    .tree-row-front {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 10px;
+
+      .uil-circle {
+        padding: 0px 4px;
+        font-size: 21px;
+
+        &:hover {
+          color: #44cba6;
+        }
+      }
+      .uil-check-circle {
+        padding: 0px 4px;
+        font-size: 21px;
+        color: #44cba6;
+
+        &:hover {
+          color: #44cba6;
+        }
+      }
+    }
+    .tree-row-content {
+      overflow: hidden;
+      flex: 1;
+      align-items: center;
+      color: white !important;
+
+      .task-menu-bar {
+        display: flex;
+        height: 100%;
+        cursor: pointer;
+        padding-top: 1px;
+        white-space: nowrap;
+        float: right !important;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          margin: 0 10px;
+          width: 100px;
+          color: #b1b5c5;
+        }
+
+        .temaId {
+          width: 50px;
+          margin: 0px 4px 0px 30px;
+          color: white;
+        }
+        .numberOfExercises {
+          width: 50px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          margin: 0px 10px;
+          color: white !important;
+        }
+        .uil-schedule-text {
+          color: #b1b5c5;
+          .uil-calender {
+            margin-right: 4px;
+          }
+        }
+        .uil-trash {
+          visibility: hidden;
+          color: red;
+          width: 24px;
+          height: 24px;
+          margin: auto 16px;
+        }
+      }
+
+      .task-name-wrapper {
+        padding: 2px 0px;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        .task-name-frame {
+          padding: 0px 10px 0px 5px;
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border: 1px solid transparent;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: 27px;
+
+          .task-name-frame-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid transparent;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+
+            .task-name {
+              color: #b1b5c5;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

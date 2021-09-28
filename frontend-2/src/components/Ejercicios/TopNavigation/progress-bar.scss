@@ -1,33 +1,37 @@
 .progressBar {
   margin: 0px;
-  // background-color: #3f3380;
-  padding: 23px;
-  max-width: 1000px;
+  padding-top: 19px;
+  padding-bottom: 19px;
   border-radius: 12px;
+  width: 100%;
   ul {
     text-align: center;
     align-items: center;
     margin: 0;
     padding: 0;
-    height: 26px;
+    height: 33px;
+    display: flex;
     li {
       display: inline-block;
-      width: 100px;
       position: relative;
       z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .doneProgressStep {
-        background-color: #148bca;
-        // background-color: #148bca; // 2nd background
+        background-color: #457ae5;
         color: white;
         border-radius: 20px;
-        padding: 4px 37px;
+        height: 33px;
+        width: 90% !important;
         z-index: 100 !important;
+        display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: 0;
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 600;
         text-decoration: none;
         cursor: pointer;
       }
@@ -35,32 +39,79 @@
         background-color: white;
         color: #51677b;
         border-radius: 20px;
-        padding: 4px 37px;
+        width: 90%;
+        height: 33px;
+        display: flex;
         z-index: 100 !important;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: 0;
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 600;
         text-decoration: none;
         cursor: pointer;
       }
       .undoneprogressStep {
-        background-color: #ccc;
-        color: white;
         border-radius: 20px;
-        padding: 4px 37px;
+        height: 33px;
+        width: 90%;
         z-index: 100 !important;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: 0;
+        display: flex;
         font-size: 18px;
-        font-weight: 700;
+        font-weight: 600;
         text-decoration: none;
         cursor: pointer;
       }
     }
+    .progressListItem4 {
+      width: 25% !important;
+    }
+    .progressListItem5 {
+      width: 20% !important;
+    }
+    .progressListItem6 {
+      width: 16.66% !important;
+    }
+    .progressListItem7 {
+      width: 14.28% !important;
+    }
+    .progressListItem8 {
+      width: 12.5% !important;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .progressBar {
+    width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .progressBar {
+    width: 75%;
+  }
+}
+
+@media (min-width: 864px) {
+  .progressBar {
+    width: 640px;
+  }
+}
+
+@media (min-width: 962px) {
+  .progressBar {
+    width: 746px !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .progressBar {
+    width: 810px !important;
   }
 }

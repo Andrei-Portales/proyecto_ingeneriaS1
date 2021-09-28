@@ -1,0 +1,72 @@
+.modal-backdrop {
+    /* background-color: transparent !important; */
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal {
+    height: 100vh !important;
+}
+
+.modal-dialog {
+    min-height: 500px !important;
+    background-color: #1a1d28;
+}
+
+.modalHeader {
+    background-color: #282e3e;
+    color: white !important;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.modalBody {
+    background-color: #1a1d28;
+    height: 100% !important;
+    padding: 20px;
+}
+
+
+.audioSettings {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputAudio {
+    display: flex;
+}
+
+.audio_radio_input {
+    display: none;
+}
+
+.audio_radio_input:checked+.audio_radio_label {
+    color: white !important;
+    background-color: #5597f2 !important;
+}
+
+.audio_radio_label {
+    width: 60px;
+    margin: 6px 0px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+    border: 2px solid #5597f2;
+    border-radius: 12px;
+    transition: background 0.1s;
+}

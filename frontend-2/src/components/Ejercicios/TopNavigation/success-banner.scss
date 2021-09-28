@@ -11,7 +11,7 @@
     display: flex;
     border-radius: 10px;
     color: white;
-    padding: 5px 0px;
+    padding: 7px 0px;
     justify-content: center;
     align-items: center;
     background-color: #5cba73;
@@ -19,5 +19,11 @@
       margin: 0;
       padding-left: 16px;
     }
+  }
+}
+
+@media (min-width: 1100px) {
+  .successBanner {
+    width: 810px;
   }
 }

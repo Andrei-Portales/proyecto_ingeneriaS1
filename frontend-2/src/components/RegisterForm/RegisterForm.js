@@ -1,5 +1,6 @@
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import LoadingSpinnerSized from '../LoadingSpinnerSized/LoadingSpinnerSized';
 import styles from './RegisterForm.module.scss';
 
 
@@ -29,10 +30,26 @@ const reducer = (state, action) => {
 const RegisterForm = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    console.log('submited');
+    
+    try{
+      setIsLoading(true);
+      // const response = await fetch('url', {
+      //   method: 'POST',
+      //   body: JSON.stringify({ email, password }),
+      // });
+  
+      // response.json();
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      setIsLoading(false);
+      history.replace('/login');
+    }catch(e){
+      setIsLoading(false);
+    }
   };
 
   const hasAccountHandler = () => history.replace('/login');
@@ -98,15 +115,16 @@ const RegisterForm = (props) => {
         onChange={cPasswordChangeHandler}
       />
 
-      <button className={styles.submit}>Registrarse</button>
+     {!isLoading && <button className={styles.submit}>Registrarse</button>}
+     {isLoading && <LoadingSpinnerSized height='40px' width='40px' border='3px'/>}
 
-      <div>
+     {!isLoading && <div>
         <span>¿Ya tienes una cuenta?</span>
         <span className={styles.register} onClick={hasAccountHandler}>
           {' '}
           Iniciar sesion
         </span>
-      </div>
+      </div>}
     </form>
   );
 };

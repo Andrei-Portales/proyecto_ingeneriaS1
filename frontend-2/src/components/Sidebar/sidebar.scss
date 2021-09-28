@@ -1,0 +1,34 @@
+.sidebarWrapper {
+  width: 7%;
+  height: 100vh;
+  border-right: 1px solid #393c52;
+
+  .logoWrapper {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    p {
+      color: white;
+      margin: auto;
+    }
+  }
+
+  .itemsWrapper {
+    ul {
+      .sidebarItem {
+        list-style: none;
+        height: 45px;
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        transition: background 500;
+        text-decoration: none;
+        color: #f0f0f2;
+        cursor: pointer;
+      }
+      .sidebarItem.active {
+        color: #44cba6;
+      }
+    }
+  }
+}

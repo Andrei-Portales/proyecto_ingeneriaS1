@@ -1,0 +1,26 @@
+.modal-backdrop {
+    /* background-color: transparent !important; */
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal {
+    display: flex;
+    justify-content: center
+}
+
+.modal-dialog {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    border: none !important;
+}
+
+.modal-content {
+    /* background-color: transparent; */
+    border: none !important;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+}

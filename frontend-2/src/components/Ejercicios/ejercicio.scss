@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
+.exerciceWrapper {
+  height: 100vh;
+  margin: 0;
+  font-family: "Open Sans";
+  padding: 0;
+  background-color: rgb(204, 237, 240);
+  background: url(../../assets/background2.png) repeat;
+  // background-color: rgb(250, 251, 255);
+  // background: url(../../../assets/background3.png) repeat;
+
+  .problemBody {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex: 1 1 0;
+    height: calc(100% - 137px) !important;
+    // border: 1px solid orange;
+    .problemContentWrapper {
+      padding: 12px 14px;
+      display: flex;
+      flex: 1 1 0;
+      flex-direction: column;
+      width: 100%;
+      margin: auto;
+      // background-color: #161b22 !important;
+      // background-color: #2b2e44;
+      // border: 1px solid green;
+      .problemTopbar {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        margin: auto;
+        padding: 0px 10px;
+        // border: 1px solid orange;
+        .uilVolume {
+          cursor: pointer;
+          color: white;
+        }
+      }
+      .problemContent {
+        align-items: center;
+        display: flex;
+        margin: auto !important;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        // border: 1px solid red;
+      }
+    }
+  }
+}
+
+.exerciceWrapperDark {
+  background-color: #2b2e44 !important;
+  // background: #2b2e44 !important;
+
+  // background-color: #0e182a;
+
+  // background-color: #161f2c;
+
+  // background-color: #0d1117 !important;
+  // background-color: #161b22;
+}
+
+@media (min-width: 768px) {
+  .problemContentWrapper {
+    width: 90% !important;
+  }
+}
+
+@media (min-width: 864px) {
+  .problemContent {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 962px) {
+  .problemContent {
+    width: 90% !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .problemContentWrapper {
+    width: 85% !important;
+    .problemTopbar {
+      width: 80% !important;
+    }
+    .problemContent {
+      width: 90% !important;
+    }
+  }
+}

@@ -1,51 +1,94 @@
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import { useSelector } from 'react-redux';
-import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested';
-import React from 'react';
-import styles from './Tema.module.scss';
-import { temas } from '../../util/grados-materias';
+import { useState, useRef, useEffect, useCallback } from "react";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
 
-import { UilImport } from '@iconscout/react-unicons';
-import { UilClipboard } from '@iconscout/react-unicons';
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
+import { temas } from "../../util/grados-materias";
+import Youtube from "./Youtube";
+
+// import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
+
+import styles from "./Tema.module.scss";
+import { tema as linkTema, downloadTema } from "../../util/links";
+
+import { UilImport } from "@iconscout/react-unicons";
+import { UilClipboard } from "@iconscout/react-unicons";
+
+// import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual
+import { PDFExport } from "@progress/kendo-react-pdf";
 
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
-  const isLightTheme = useSelector((state) => state.theme.theme) === 'LIGHT';
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
   const grado = temas[params.grado];
   const materia = grado[params.materia];
 
+  /* setShowContent no es utilizado pero es esencial para el  
+  funcionamiento del estado, el cual si es utilizado en el codigo*/
   const [showContent, setShowContent] = useState(true);
-  const [showDescription, setShowDescription] = useState(false);
 
   const temasItems = [];
-  const pdfExportComponent = React.useRef(null);
+  const currentTema = [];
 
   for (let i = 0; i < materia.temas.length; i++) {
-    temasItems.push({
-      no: i + 1,
-      title: materia.temas[i],
-    });
+    temasItems.push(materia.temas[i]);
   }
 
-  const mainClases = `${showContent ? styles.videoSection : styles.fullScreenMain
-    } ${!isLightTheme ? styles['main-dark'] : ''}`;
+  temasItems.map((value, index) => {
+    if (value.id === params.id) {
+      currentTema.push(value);
+    }
+  });
 
-  const materiaClasses = `${styles.materia} ${!isLightTheme && styles['materia-dark']
-    }`;
+  const [showDescription, setShowDescription] = useState(false);
+  const pdfExportComponent = useRef(null);
+  const [tema, setTema] = useState(null);
 
-  const tituloTema = `${styles.tituloTema} ${!isLightTheme && styles['titulo-tema-dark']
-    }`;
+  const mainClases = `${
+    showContent ? styles.videoSection : styles.fullScreenMain
+  } ${!isLightTheme ? styles["main-dark"] : ""}`;
 
-  const suggestions = `${styles.suggestionSection} ${!isLightTheme ? styles['more-dark'] : ''
-    }`;
+  const materiaClasses = `${styles.materia} ${
+    !isLightTheme && styles["materia-dark"]
+  }`;
 
-  const onClickTemaHandler = (id) => {
-    history.push(`/grados/${params.grado}/${params.materia}/${id}`);
-  };
+  const tituloTema = `${styles.tituloTema} ${
+    !isLightTheme && styles["titulo-tema-dark"]
+  }`;
+
+  const suggestions = `${styles.suggestionSection} ${
+    !isLightTheme ? styles["more-dark"] : ""
+  }`;
+
+  // onClickTemaHandler ha sido eliminado por falta de uso dentro del codigo
+  // const onClickTemaHandler = (id) => {
+  //   history.push(`/grados/${params.grado}/${params.materia}/${id}`);
+  // };
+
+  const fetchTemaData = useCallback(async () => {
+    try {
+      const response = await fetch(linkTema, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: params.id }),
+      });
+
+      const data = await response.json();
+
+      if (data.result) {
+        setTema(data.tema);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }, [params]);
+
+  useEffect(() => {
+    fetchTemaData();
+  }, [fetchTemaData]);
 
   const exportPDFWithComponent = async () => {
     if (pdfExportComponent.current) {
@@ -58,169 +101,65 @@ const Tema = () => {
   const toggleShowDescription = () =>
     setShowDescription((prevState) => !prevState);
 
-  const onClickExercice = (id) => {
-    history.push(`/ejercicio/10001`);
+  const openExercise = () => {
+    const workingExerciseId = localStorage.getItem("workingExerciseId");
+    if (workingExerciseId === "0") {
+      history.push(`/ejercicio/${params.id}/1`);
+      return;
+    }
+    history.push(`/ejercicio/${params.id}/1`);
   };
+
   return (
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
-          <iframe
-            className={styles.video}
-            src="https://www.youtube.com/embed/a7aUQQCfuP0"
-            title="YouTube video player"
-            allow="clipboard-write; encrypted-media; picture-in-picture; autoplay"
-            type="text/html"
-            frameBorder="0"
-            tabIndex="0"
-            showInfo="0"
-            autoHide="0"
-          ></iframe>
+          {currentTema.map((value, index) => (
+            <Youtube videoId={value.videoId} />
+          ))}
         </div>
-
         <div>
           <PDFExport
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            fileName={`Numeracion hasta de 6 cifras Cuarto Primaria`}
+            // fileName={tema.title}
             creator="Educa Facil"
           >
             <div className={styles.tituloContenedor}>
-              <h3 className={tituloTema}>Numeracion de 6 cifras</h3>
+              {currentTema.map((value, index) => (
+                <h3 className={tituloTema}>{value.title}</h3>
+              ))}
             </div>
-
-            {/* <h1 className="tituloT">Numeración hasta de 6 cifras</h1> */}
-
             <div>
               <div
                 className={styles.description}
-                style={{ height: showDescription ? 'fit-content' : '200px' }}
-              >
-                <p>
-                  Los números nos sirven para contar seres, objetos...,
-                  cualquier cantidad de todo lo que nos rodea. Para poder
-                  escribir cualquier número, hemos de usar caracteres o
-                  símbolos, que hemos de combinar según unas reglas que forman
-                  lo que llamamos un sistema de numeración.
-                  <br />
-                  <br />
-                  A lo largo de la historia ha habido distintos sistemas de
-                  numeración, como el maya, el chino o el sistema romano, con
-                  símbolos y reglas diferentes a los nuestros.Nuestro sistema de
-                  numeración decimal procede de la India, aunque fueron los
-                  árabes los que lo introdujeron en Europa.
-                  <br />
-                  <br />
-                  Se llama sistema decimal porque 10 unidades de un orden
-                  cualquiera forman 1 unidad del orden inmediato superior.Es así
-                  que:
-                  <br />
-                  <br />
-                  10 UM = 1DM
-                  <br />
-                  10 DM = 1CM
-                  <br />
-                  1 CM en cifras: 100 000
-                  <br />
-                  1 CM en palabras: cien mil
-                  <br />
-                  <br />
-                  Ejemplo:
-                  <br />
-                  <br />
-                  3 CM = 300 000
-                  <br />
-                  8 CM = 800 000
-                  <br />
-                  <br />
-                  UBICACIÓN EN EL TABLERO POSICIONAL
-                  <br />
-                  <br />
-                  Para ubicar los números en el tablero posicional comenzamos de
-                  derecha a izquierda comenzando por las unidades (U), decenas
-                  (D), centenas (C), unidades de millar (UM), decenas de millas
-                  (DM) y centenas de millar (CM).
-                  <br />
-                  <br />
-                  LECTURA Y ESCRITURA DE NÚMEROS HASTA LA CENTENA DE MILLAR
-                  <br />
-                  <br />
-                  Para leer cantidades, primero se leen los millares: centenas
-                  de millar (CM), decenas de millar (DM) y unidades de millar
-                  (UM); y después se leen las centenas (C), decenas (D) y
-                  unidades (U).
-                  <br />
-                  <br />
-                  Ejemplo:
-                  <br />
-                  <br />
-                  Número
-                  <br />
-                  863 574
-                  <br />
-                  <br />
-                  Lectura del número
-                  <br />
-                  ochocientos sesenta y tres mil quinientos setenta y cuatro
-                  <br />
-                  <br />
-                  Para poder leer los números hasta la centena de millar es
-                  importante que formes grupos de tres cifras; es decir,
-                  (teniendo en cuenta el ejemplo) 863 el espacio que encontramos
-                  se le puede reemplazar con la palabra mil y luego, las últimas
-                  tres cifras 574.
-                  <br />
-                  <br />
-                  Para escribir los números hasta la centena de millar se puede
-                  seguir la misma recomendación. Comienza de izquierda a derecha
-                  con el número que está antes de la palabra mil, (863) el
-                  espacio que se deja es por la palabra mil y luego escribe el
-                  número que sigue (574).
-                  <br />
-                  <br />
-                  DESCOMPOSICIÓN DE UN NÚMERO
-                  <br />
-                  <br />
-                  Los números se pueden descomponer:
-                  <br />
-                  <br />
-                  • Descomposición según su valor posicional:
-                  <br />
-                  462 921 = 4CM + 6DM + 2UM + 9C + 2D + 1U
-                  <br />
-                  936 705 = 9CM + 3DM + 6UM + 7C + 5U
-                  <br />
-                  <br />
-                  • Descomposición en unidades:
-                  <br />
-                  725 634 = 700 000 + 20 000 + 5 000 + 600 + 30 + 4
-                  <br />
-                  876 341 = 800 000 + 70 000 + 6 000 + 300 + 40 + 1
-                  <br />
-                  <br />
-                </p>
-              </div>
+                style={{ height: showDescription ? "fit-content" : "200px" }}
+                // dangerouslySetInnerHTML={{ __html: tema.body }}
+              ></div>
               <button
                 onClick={toggleShowDescription}
                 className={styles.showMoreDescription}
               >
-                {showDescription ? 'Mostrar menos' : 'Mostrar mas'}
+                {showDescription ? "Mostrar menos" : "Mostrar mas"}
               </button>
             </div>
           </PDFExport>
         </div>
 
         <div className={styles.opcionesContenedor}>
-          <button
+          <a
             className={styles.botonDescargar}
-            onClick={exportPDFWithComponent}
+            href={`${downloadTema}/${params.id}`}
+            target="_blank"
+            rel="noreferrer"
+            download
           >
-            Descargar PDF <UilImport size="16"></UilImport>{' '}
-          </button>
+            Descargar PDF <UilImport size="16"></UilImport>{" "}
+          </a>
           <button
             className={styles.botonEjercicios}
-            onClick={() => onClickExercice(params.id)}
+            onClick={() => openExercise()}
           >
             Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
           </button>
@@ -228,11 +167,12 @@ const Tema = () => {
 
         <br />
       </div>
+
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>
             <div className={styles.materiasList}>
-              {temasItems.map((item) => (
+              {/* {temasItems.map((item) => (
                 <div
                   className={styles.esto}
                   onClick={onClickTemaHandler.bind(null, item.no)}
@@ -244,7 +184,19 @@ const Tema = () => {
                     playingTema={params.id}
                   />
                 </div>
-              ))}
+              ))} */}
+
+              <div className={styles.helpContainer}>
+                <span className={styles.questionIconSpan}></span>
+                <a
+                  href="https://materialeducativo.org/guatematica-para-cuarto-grado/"
+                  target="_blank"
+                  className={styles.questionTitle}
+                  rel="noreferrer"
+                >
+                  Fuente - MINEDUC 4to Grado
+                </a>
+              </div>
             </div>
           </div>
         </div>

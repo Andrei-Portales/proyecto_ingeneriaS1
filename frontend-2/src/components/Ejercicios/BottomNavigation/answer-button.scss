@@ -1,0 +1,17 @@
+.buttonAnswer {
+  width: 95%;
+  height: 100%;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-weight: 700;
+  font-size: 26px;
+  background-color: #6ec382;
+  border-bottom: 4px solid #2e9948;
+  &:active {
+    border-bottom: none;
+  }
+}
+.buttonAnswerHidden {
+  display: none;
+}

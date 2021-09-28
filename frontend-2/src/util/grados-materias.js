@@ -1,30 +1,30 @@
-import matematicasIcon from '../assets/matematicas.png';
-import cienciasIcon from '../assets/ciencias.jpg';
-import idiomaIcon from '../assets/idioma.jpg';
+import matematicasIcon from "../assets/matematicas.png";
+import cienciasIcon from "../assets/ciencias.jpg";
+import idiomaIcon from "../assets/idioma.jpg";
 
 export const materias = {
   cuarto: {
-    title: 'Materias 4to',
+    title: "Materias 4to",
     materias: [
-      { id: 'matematicas', title: 'Matemáticas', image: matematicasIcon },
-      { id: 'ciencias', title: 'Ciencias', image: cienciasIcon },
-      { id: 'idioma', title: 'Idioma', image: idiomaIcon },
+      { id: "matematicas", title: "Matemáticas", image: matematicasIcon },
+      { id: "ciencias", title: "Ciencias", image: cienciasIcon },
+      { id: "idioma", title: "Idioma", image: idiomaIcon },
     ],
   },
   quinto: {
-    title: 'Materias 5to',
+    title: "Materias 5to",
     materias: [
-      { id: 'matematicas', title: 'Matemáticas', image: matematicasIcon },
-      { id: 'ciencias', title: 'Ciencias', image: cienciasIcon },
-      { id: 'idioma', title: 'Idioma', image: idiomaIcon },
+      { id: "matematicas", title: "Matemáticas", image: matematicasIcon },
+      { id: "ciencias", title: "Ciencias", image: cienciasIcon },
+      { id: "idioma", title: "Idioma", image: idiomaIcon },
     ],
   },
   sexto: {
-    title: 'Materias 6to',
+    title: "Materias 6to",
     materias: [
-      { id: 'matematicas', title: 'Matemáticas', image: matematicasIcon },
-      { id: 'ciencias', title: 'Ciencias', image: cienciasIcon },
-      { id: 'idioma', title: 'Idioma', image: idiomaIcon },
+      { id: "matematicas", title: "Matemáticas", image: matematicasIcon },
+      { id: "ciencias", title: "Ciencias", image: cienciasIcon },
+      { id: "idioma", title: "Idioma", image: idiomaIcon },
     ],
   },
 };
@@ -32,108 +32,81 @@ export const materias = {
 export const temas = {
   cuarto: {
     matematicas: {
-      title: 'Matematicas Cuarto',
+      title: "Matemáticas",
       temas: [
-        'Numeracion de 6 cifras',
-        'Adicion y sustraccion de numeros',
-        'Operaciones combinadas',
-        'Conjuntos',
-        'Operaciones de conjuntos',
-        'Operaciones con conjuntos',
+        {
+          id: "10001",
+          title: "Números hasta millones",
+          videoId: "a7aUQQCfuP0",
+          isCompleted: true,
+        },
+        {
+          id: "10020",
+          title: "Multiplicación",
+          videoId: "YFtEaVw5k1A",
+          isCompleted: true,
+        },
+        {
+          id: "10030",
+          title: "Ángulos",
+          videoId: "4pGyx2PrfgM",
+          isCompleted: true,
+        },
+        {
+          id: "103",
+          title: "División",
+          videoId: "mQ4wKV9_pZs",
+          isCompleted: false,
+        },
+        {
+          id: "104",
+          title: "Números decimales",
+          videoId: "bVFExqCCwfE",
+          isCompleted: false,
+        },
+        {
+          id: "105",
+          title: "Triángulos",
+          videoId: "RGeOmrvRmFc",
+          isCompleted: false,
+        },
       ],
     },
     ciencias: {
-      title: 'Ciencias Cuarto',
+      title: "Ciencias Cuarto",
       temas: [
-        'Sistema Digestivo',
-        'El Ser Humano',
-        'Clasificacion de los alimentos',
-        'Sistema Respiratorio',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
+        "Numeracion de 6 cifras",
+        "Adicion y sustraccion de numeros",
+        "Operaciones combinadas",
+        "Conjuntos",
+        "Operaciones de conjuntos",
+        "Operaciones con conjuntos",
       ],
     },
     idioma: {
-      title: 'Idioma Cuarto',
+      title: "Idioma Cuarto",
       temas: [
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
+        "Numeracion de 6 cifras",
+        "Adicion y sustraccion de numeros",
+        "Operaciones combinadas",
+        "Conjuntos",
+        "Operaciones de conjuntos",
+        "Operaciones con conjuntos",
       ],
     },
   },
   quinto: {
-    matematicas: {
-      title: 'Matematicas Quinto',
+    matermaticas: {
+      title: "Matemáticas",
       temas: [
-        'Division',
-        'Multiplos',
-        'Fracciones',
-        'Numeros Mixtos',
-        'Valor Posicional',
-        'Proporciones',
-      ],
-    },
-    ciencias: {
-      title: 'Ciencias Quinto',
-      temas: [
-        'Origen de la Vida',
-        'Origen de la Vida, desde la perspectiva maya',
-        'Las Celulas',
-        'Anatomia',
-        'Cambios en la materia',
-        'Investigacion Cientifica',
-      ],
-    },
-    idioma: {
-      title: 'Idioma Quinto',
-      temas: [
-        'Los Sustantivos',
-        'Pronombre personal',
-        'El Verbo',
-        'La Oracion',
-        'Fuguras Literarias',
-        'El Articulo',
+        {
+          id: "51001",
+          title: "Números hasta millones",
+          videoId: "a7aUQQCfuP0",
+          isCompleted: true,
+        },
       ],
     },
   },
-
-  sexto: {
-    matematicas: {
-      title: 'Matematicas Sexto',
-      temas: [
-        'Potencias',
-        'Exponente Negativo',
-        'Notacion Cientifica',
-        'Raiz Cuadrada',
-        'Angulos',
-        'Area de Figuras Planas',
-      ],
-    },
-    ciencias: {
-      title: 'Ciencias Sexto',
-      temas: [
-        'Clasificacion de los seres vivos',
-        'Reino Animal',
-        'La Energia',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-        '(Sin tema aun :(  )',
-      ],
-    },
-    idioma: {
-      title: 'Idioma Sexto',
-      temas: [
-        'La Poesia',
-        'Genero Lirico',
-        'La Semantica',
-        'Diptongo',
-        'Triptongo',
-        'Hiato',
-      ],
-    },
-  },
+  sexto: {},
 };

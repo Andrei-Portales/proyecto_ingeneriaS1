@@ -1,0 +1,12 @@
+.emptyWrapper {
+  display: flex;
+  justify-content: center;
+
+  .emptyImgContainer {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 400px;
+    }
+  }
+}

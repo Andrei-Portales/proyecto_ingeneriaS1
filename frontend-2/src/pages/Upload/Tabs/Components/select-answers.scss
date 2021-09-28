@@ -1,0 +1,48 @@
+.selectionAnswers {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .selectionTitle {
+    color: white;
+    margin-right: 20px;
+  }
+
+  .selectionWrapper {
+    display: flex;
+    .radio_input {
+      display: none;
+    }
+
+    .radio_input:checked + .radio_label {
+      color: white;
+      background-color: #5597f2;
+      border: #457ae5;
+    }
+
+    .radio_label {
+      width: 50px;
+      background-color: #393c52;
+      min-height: 38px;
+      display: flex;
+      cursor: pointer;
+      margin: 4px;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: 0;
+      color: white;
+      border: 2px solid #393c52;
+      border-radius: 8px;
+      transition: background 0.1s;
+    }
+    .radio_label:last-of-type {
+      margin-right: 0;
+    }
+    .radio_label:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
