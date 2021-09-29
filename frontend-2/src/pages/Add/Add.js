@@ -16,7 +16,7 @@ const Add = () => {
     const { id, title, url, materia, grade } = formRef.current.state;
     const editor = editorRef.current.save();
 
-    if (title.trim() === "" || url.trim() === "") {
+    if (title.trim() === "" || url.trim() === "" || id.trim() === "") {
       return;
     }
 

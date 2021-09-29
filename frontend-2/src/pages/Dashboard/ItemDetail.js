@@ -61,7 +61,7 @@ const ItemDetail = (props) => {
       <div className="userAndDate">
         <div className="user">
           <img src={ProfileImg} alt="Profile" width="27" height="27" />
-          <p>Edman Cota</p>
+          <p>Usuario Admin</p>
         </div>
         <div className="date">
           {quizList.map((data) => {

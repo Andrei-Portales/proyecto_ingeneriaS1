@@ -1,9 +1,7 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
-
-import { temas } from "../../util/grados-materias";
 import Youtube from "./Youtube";
 
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
@@ -17,33 +15,20 @@ import { UilClipboard } from "@iconscout/react-unicons";
 // import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual
 import { PDFExport } from "@progress/kendo-react-pdf";
 
+import { useGetTema } from "../../hooks/useGetTema";
+
 const Tema = () => {
   const params = useParams();
   const history = useHistory();
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
-  const grado = temas[params.grado];
-  const materia = grado[params.materia];
+  const { tema } = useGetTema();
 
   /* setShowContent no es utilizado pero es esencial para el  
   funcionamiento del estado, el cual si es utilizado en el codigo*/
   const [showContent, setShowContent] = useState(true);
 
-  const temasItems = [];
-  const currentTema = [];
-
-  for (let i = 0; i < materia.temas.length; i++) {
-    temasItems.push(materia.temas[i]);
-  }
-
-  temasItems.map((value, index) => {
-    if (value.id === params.id) {
-      currentTema.push(value);
-    }
-  });
-
   const [showDescription, setShowDescription] = useState(false);
   const pdfExportComponent = useRef(null);
-  const [tema, setTema] = useState(null);
 
   const mainClases = `${
     showContent ? styles.videoSection : styles.fullScreenMain
@@ -60,35 +45,6 @@ const Tema = () => {
   const suggestions = `${styles.suggestionSection} ${
     !isLightTheme ? styles["more-dark"] : ""
   }`;
-
-  // onClickTemaHandler ha sido eliminado por falta de uso dentro del codigo
-  // const onClickTemaHandler = (id) => {
-  //   history.push(`/grados/${params.grado}/${params.materia}/${id}`);
-  // };
-
-  const fetchTemaData = useCallback(async () => {
-    try {
-      const response = await fetch(linkTema, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: params.id }),
-      });
-
-      const data = await response.json();
-
-      if (data.result) {
-        setTema(data.tema);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }, [params]);
-
-  useEffect(() => {
-    fetchTemaData();
-  }, [fetchTemaData]);
 
   const exportPDFWithComponent = async () => {
     if (pdfExportComponent.current) {
@@ -114,8 +70,8 @@ const Tema = () => {
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
-          {currentTema.map((value, index) => (
-            <Youtube videoId={value.videoId} />
+          {tema.map((item, index) => (
+            <Youtube videoId={item.video_url} />
           ))}
         </div>
         <div>
@@ -127,8 +83,8 @@ const Tema = () => {
             creator="Educa Facil"
           >
             <div className={styles.tituloContenedor}>
-              {currentTema.map((value, index) => (
-                <h3 className={tituloTema}>{value.title}</h3>
+              {tema.map((item, index) => (
+                <h3 className={tituloTema}>{item.title}</h3>
               ))}
             </div>
             <div>

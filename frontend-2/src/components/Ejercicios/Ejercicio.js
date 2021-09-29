@@ -13,13 +13,10 @@ import TopNavigation from "./TopNavigation/TopNavigation";
 import BottomNavigation from "./BottomNavigation/BottomNavigation";
 import ProblemTopbar from "./ProblemTopbar";
 
-// import QuestionsPanel from "./QuestionsPanel";
-
-// Terminar hoy
-
 const Ejercicio = () => {
   let params = useParams();
   const history = useHistory();
+  const [quizId, setQuizId] = useState("");
   const [exerciseList, setExerciseList] = useState([]);
   const { isCorrectAnswer, id, actions } = useContext(Context);
 
@@ -56,6 +53,18 @@ const Ejercicio = () => {
   if (e === "10040") {
     working = [...ex10040];
   }
+
+  // useEffect(() => {
+  //       database.ref("quiz").on("value", (snapshot) => {
+  //         let list = [];
+  //         snapshot.forEach((snap) => {
+  //           list.push(snap.val());
+  //           if (snap.val().tema_id === "10001") {
+  //             setQuizId(snap.val().id);
+  //           }
+  //         });
+  //       });
+  // }, []);
 
   useEffect(() => {
     database

@@ -24,7 +24,7 @@ const NumberOfExercises = (props) => {
 
   return (
     <div onChange={onChangeValue} className="numberOfExercisesPanel">
-      <div className="inputNumberOfExercisesTitle">Número de ejercicios</div>
+      <div className="inputNumberOfExercisesTitle">Número de preguntas</div>
       <div className="inputNumberOfExercises">
         {Array.from(Array(5)).map((value, index) => (
           <>

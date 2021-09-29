@@ -1,33 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams, useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import TemaItem from "../../components/TemaItem/TemaItem";
-
-import MateriasProgressComponent from "./MateriasProgress";
-import NavigationComponent from "./Navigation";
+import { useGetMaterias } from "../../hooks/useGetMaterias";
 
 import styles from "./Materias.module.scss";
-import { temas } from "../../util/grados-materias";
 
 const Materias = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
   const params = useParams();
   const history = useHistory();
-  const grado = temas[params.grado];
-  const materia = grado[params.materia];
-
-  const temasItems = [];
-  const completedItems = [];
-
-  for (let i = 0; i < materia.temas.length; i++) {
-    temasItems.push(materia.temas[i]);
-  }
-
-  temasItems.map((value, index) => {
-    if (value.isCompleted) {
-      completedItems.push(value);
-    }
-  });
+  const { temas } = useGetMaterias();
 
   const materiaClasses = `${styles.materiaPanel} ${
     !isLightTheme && styles["materia-dark"]
@@ -37,22 +20,15 @@ const Materias = () => {
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   };
 
-  const progressPercentage = Math.round(
-    (completedItems.length / temasItems.length) * 100
-  );
-
-  localStorage.setItem("materia", params.materia);
-
   return (
     <div className={materiaClasses}>
-      <h1 className={styles.temaTitulo}>{materia.title}</h1>
-      {/* <MateriasProgressComponent progressPercentage={progressPercentage} /> */}
+      <h1 className={styles.temaTitulo}>{params.materia}</h1>
 
       <div className={styles.materiasListPanel}>
-        {temasItems.map((item, index) => (
+        {temas.map((item, index) => (
           <>
             <div
-              onClick={onClickTemaHandler.bind(null, item.id)}
+              onClick={onClickTemaHandler.bind(null, item.tema_id)}
               key={item.id}
               className={styles.temaItemPanel}
             >
@@ -65,7 +41,6 @@ const Materias = () => {
           </>
         ))}
       </div>
-      {/* <NavigationComponent /> */}
     </div>
   );
 };
