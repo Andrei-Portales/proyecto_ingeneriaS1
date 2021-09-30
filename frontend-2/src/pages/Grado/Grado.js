@@ -2,10 +2,10 @@ import { useParams, useHistory } from 'react-router-dom';
 import { materias } from '../../util/grados-materias';
 import styles from './Grado.module.scss';
 
-const Grado = () => {
+const Grado = (props) => {
   const history = useHistory();
   const params = useParams();
-  const gradoInfo = materias[params.grado];
+  const gradoInfo = materias[props.grade ? props.grade : params.grado];
 
   if (!gradoInfo) {
     history.replace('/grados');
@@ -25,7 +25,7 @@ const Grado = () => {
               key={item.id}
               onClick={onMateriaClickHandler.bind(null, item.id)}
             >
-              <img src={item.image} alt="cuarto" />
+              <img src={item.image} alt="" />
               <h3>{item.title}</h3>
             </div>
           );
