@@ -20,8 +20,6 @@ const NumberOfExercises = (props) => {
     }
   };
 
-  console.log("numberOfExercises");
-
   return (
     <div onChange={onChangeValue} className="numberOfExercisesPanel">
       <div className="inputNumberOfExercisesTitle">Número de preguntas</div>

@@ -87,7 +87,7 @@ const AddForm = forwardRef((props, ref) => {
       </div>
 
       <div className={styles.input}>
-        <label>Url de video:</label>
+        <label>Id de video:</label>
         <input onChange={urlChangeHandler} value={state.url} />
       </div>
     </form>

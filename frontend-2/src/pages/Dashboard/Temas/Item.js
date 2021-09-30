@@ -1,15 +1,11 @@
 import { useState } from "react";
-import "./item.scss";
+import "../item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
-import RenderIndex from "./Components/RenderIndex";
-import RenderDate from "../../components/RenderDate/RenderDate";
-import ProfileImg from "../../assets/profile.png";
-import DeleteQuiz from "../../hooks/useDeleteQuiz";
+import RenderIndex from "../Components/RenderIndex";
+import RenderDate from "../../../components/RenderDate/RenderDate";
+import ProfileImg from "../../../assets/profile.png";
 
-const QuizItem = (props) => {
-  // How To Apply SOLID Principles To Clean Your Code in React
-  // 1. Move Data Processing Logic Out
-  // 3. Decompose UI Components
+const TemaItem = (props) => {
   const [chosen, setChosen] = useState(false);
 
   const onItemSelect = (id) => {
@@ -25,7 +21,7 @@ const QuizItem = (props) => {
   return (
     <li
       className={chosen ? "tree-item active" : "tree-item"}
-      onClick={() => onItemSelect(props.quizId)}
+      onClick={() => onItemSelect(props.id)}
     >
       <div className="tree-row">
         <div className="tree-row-front">
@@ -57,7 +53,7 @@ const QuizItem = (props) => {
           <div className="task-name-wrapper">
             <div className="task-name-frame">
               <div className="task-name-frame-border">
-                <span className="task-name">{props.quizId}</span>
+                <span className="task-name">{props.title}</span>
               </div>
             </div>
           </div>
@@ -67,4 +63,4 @@ const QuizItem = (props) => {
   );
 };
 
-export default QuizItem;
+export default TemaItem;

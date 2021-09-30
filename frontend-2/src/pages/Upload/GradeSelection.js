@@ -6,8 +6,7 @@ export const GradeSelection = ({ gradeSelection, grade }) => {
     gradeSelection(e.target.value);
   };
 
-  console.log("GradeSelection");
-  console.log("in " + grade);
+  console.log("IN: " + grade);
 
   return (
     <select onChange={handleGradeSelection} value={grade}>

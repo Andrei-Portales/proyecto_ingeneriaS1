@@ -1,6 +1,6 @@
-import "./input-tema-id.scss";
+import "./input-video-id.scss";
 
-const InputTema = (props) => {
+const InputVideoId = (props) => {
   const temaIdInputHandler = (e) => {
     props.temaIdInput(e.target.value);
   };
@@ -11,9 +11,9 @@ const InputTema = (props) => {
       type="text"
       value={props.temaId}
       onChange={temaIdInputHandler}
-      placeholder="Tema Id"
+      placeholder="Video Id"
     />
   );
 };
 
-export default InputTema;
+export default InputVideoId;

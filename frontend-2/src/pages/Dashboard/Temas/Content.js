@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import "./content.scss";
-import QuizItem from "./Item";
+import "../content.scss";
+import TemaItem from "./Item";
 import ItemDetail from "./ItemDetail";
 import Dropdown from "react-bootstrap/Dropdown";
-import { useGetQuiz } from "../../hooks/useGetQuiz";
+import { useGetTemas } from "../../../hooks/useGetTemas";
 
 const Content = () => {
   const [isItemSelected, setIsItemSelected] = useState(false);
   const [itemId, setItemId] = useState("");
 
-  const { quizList } = useGetQuiz();
+  const { temas } = useGetTemas();
 
   const isItemSelectFunction = (value) => {
     setIsItemSelected(value);
@@ -34,21 +34,21 @@ const Content = () => {
             </Dropdown>
           </div>
           <div className="titleContainer">
-            <p>Quiz</p>
+            <p>Temas</p>
           </div>
         </div>
         <div className="listContainer">
           <ul className="tree-list">
-            {quizList.map((data, index) => {
+            {temas.map((data, index) => {
               return (
-                <QuizItem
+                <TemaItem
                   key={data.id}
                   index={index + 1}
-                  quizId={data.id}
+                  id={data.id}
+                  title={data.title}
                   grade={data.grade}
                   subject={data.subject}
                   temaId={data.tema_id}
-                  numberOfExercises={data.number_of_exercises}
                   dateAdded={data.date_added}
                   isItemSelected={isItemSelectFunction}
                   itemId={itemIdFunction}

@@ -22,6 +22,9 @@ const Add = () => {
 
     setIsLoading(true);
 
+    const currentDate = new Date();
+    const timestamp = currentDate.getTime(); // Milliseconds
+
     var temasRef = database.ref("temas");
     var newTemaRef = temasRef.push();
     newTemaRef.set(
@@ -33,6 +36,8 @@ const Add = () => {
         title: title,
         body: editor,
         video_url: url,
+        date_added: timestamp.toString(),
+        user_id: "2ZX9urSBNmY5BWAtyrBVK1q92iz1",
       },
       (error) => {
         if (error) {

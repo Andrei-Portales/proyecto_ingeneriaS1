@@ -77,12 +77,9 @@
     display: flex;
     justify-content: space-evenly !important;
   }
-  .numberExercises {
-    width: 100%;
-    margin-top: 40px;
-  }
   .inputTemaId {
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly !important;
     margin-top: 40px;
   }
 }

@@ -1,4 +1,4 @@
-import "./subject-selection.scss";
+import "../../Upload/subject-selection.scss";
 
 const SubjectSelection = (props) => {
   const handleSubjectSelection = (e) => {
@@ -7,9 +7,9 @@ const SubjectSelection = (props) => {
 
   return (
     <select onChange={handleSubjectSelection} value={props.subject}>
-      <option>Matemáticas</option>
-      <option>Ciencias</option>
-      <option>Idioma</option>
+      <option>matematicas</option>
+      <option>ciencias</option>
+      <option>idioma</option>
     </select>
   );
 };

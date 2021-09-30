@@ -1,0 +1,18 @@
+.inputTemaTitle {
+  height: 40px;
+  padding: 16px 10px;
+  width: 100%;
+  outline: none !important;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid transparent;
+
+  &:focus {
+    color: rgba(66, 165, 245, 1);
+  }
+  &:hover {
+    background-color: #393c52;
+    border: 1px solid #393c52;
+  }
+}

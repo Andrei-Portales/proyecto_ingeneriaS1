@@ -1,7 +1,8 @@
 import { useHistory } from "react-router";
 import "./sidebar.scss";
 import { UilUpload } from "@iconscout/react-unicons";
-import { UilDashboard } from "@iconscout/react-unicons";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 
 const Sidebar = (props) => {
   const history = useHistory();
@@ -23,7 +24,13 @@ const Sidebar = (props) => {
               className={`sidebarItem ${props.isActive === 2 ? "active" : ""}`}
               onClick={() => history.push(`/dashboard`)}
             >
-              <UilDashboard className="uilDashboard" />
+              <DashboardIcon className="uilDashboard" />
+            </li>
+            <li
+              className={`sidebarItem ${props.isActive === 3 ? "active" : ""}`}
+              onClick={() => history.push(`/dashboard/temas`)}
+            >
+              <AssignmentIcon className="uilDashboard" />
             </li>
           </ul>
         </div>

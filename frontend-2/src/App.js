@@ -22,6 +22,9 @@ const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
 const Profile = React.lazy(() => import("./pages/Profile/Profile"));
 const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
+const DashboardTemas = React.lazy(() =>
+  import("./pages/Dashboard/Temas/Dashboard")
+);
 const Quiz = React.lazy(() => import("./pages/Assessment/Quiz"));
 
 const Ejercicio = React.lazy(() => import("./components/Ejercicios/Ejercicio"));
@@ -38,6 +41,10 @@ const App = () => {
         </Route>
         <Route path="/dashboard" exact>
           {isAuth && <Dashboard />}
+          {!isAuth && <Redirect to="/login" />}
+        </Route>
+        <Route path="/dashboard/temas" exact>
+          {isAuth && <DashboardTemas />}
           {!isAuth && <Redirect to="/login" />}
         </Route>
         <Route path="/assessment" exact>
