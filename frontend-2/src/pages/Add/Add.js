@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 const Add = () => {
   const editorRef = useRef();
   const formRef = useRef();
+  const [alreadyExist, setAlreadyExists] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const saveForm = async () => {
@@ -22,31 +23,46 @@ const Add = () => {
 
     setIsLoading(true);
 
-    const currentDate = new Date();
-    const timestamp = currentDate.getTime(); // Milliseconds
+    database
+      .ref("temas")
+      .orderByChild("tema_id")
+      .on("value", (snapshot) => {
+        snapshot.forEach((snap) => {
+          if (snap.val().tema_id === id) {
+            setAlreadyExists(true);
+            console.log("already exists");
+          }
+        });
+      });
 
-    var temasRef = database.ref("temas");
-    var newTemaRef = temasRef.push();
-    newTemaRef.set(
-      {
-        id: newTemaRef.key,
-        tema_id: id,
-        subject: materia,
-        grade: grade,
-        title: title,
-        body: editor,
-        video_url: url,
-        date_added: timestamp.toString(),
-        user_id: "2ZX9urSBNmY5BWAtyrBVK1q92iz1",
-      },
-      (error) => {
-        if (error) {
-          toast.error(error);
-        } else {
-          formRef.current.reset();
+    console.log(alreadyExist);
+    if (alreadyExist) {
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime(); // Milliseconds
+
+      var temasRef = database.ref("temas");
+      var newTemaRef = temasRef.push();
+      newTemaRef.set(
+        {
+          id: newTemaRef.key,
+          tema_id: id.trim(),
+          subject: materia,
+          grade: grade,
+          title: title,
+          body: editor,
+          video_url: url,
+          date_added: timestamp.toString(),
+          user_id: "2ZX9urSBNmY5BWAtyrBVK1q92iz1",
+        },
+        (error) => {
+          if (error) {
+            toast.error(error);
+          } else {
+            formRef.current.reset();
+          }
         }
-      }
-    );
+      );
+    }
 
     setIsLoading(false);
   };

@@ -60,10 +60,14 @@ const Tema = () => {
   const openExercise = () => {
     const workingExerciseId = localStorage.getItem("workingExerciseId");
     if (workingExerciseId === "0") {
-      history.push(`/ejercicio/${params.id}/1`);
+      history.push(
+        `/grados/${params.grado}/${params.materia}/${params.id}/ejercicio/${params.id}/1`
+      );
       return;
     }
-    history.push(`/ejercicio/${params.id}/1`);
+    history.push(
+      `/grados/${params.grado}/${params.materia}/${params.id}/ejercicio/${params.id}/1`
+    );
   };
 
   return (
@@ -88,11 +92,17 @@ const Tema = () => {
               ))}
             </div>
             <div>
-              <div
-                className={styles.description}
-                style={{ height: showDescription ? "fit-content" : "200px" }}
-                // dangerouslySetInnerHTML={{ __html: tema.body }}
-              ></div>
+              {tema.map((item) => {
+                return (
+                  <div
+                    className={styles.description}
+                    style={{
+                      height: showDescription ? "fit-content" : "200px",
+                    }}
+                    dangerouslySetInnerHTML={{ __html: item.body }}
+                  ></div>
+                );
+              })}
               <button
                 onClick={toggleShowDescription}
                 className={styles.showMoreDescription}
@@ -120,7 +130,6 @@ const Tema = () => {
             Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
           </button>
         </div>
-
         <br />
       </div>
 

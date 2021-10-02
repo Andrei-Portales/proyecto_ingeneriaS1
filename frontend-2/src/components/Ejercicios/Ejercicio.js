@@ -21,7 +21,8 @@ const Ejercicio = () => {
   const { isCorrectAnswer, id, actions } = useContext(Context);
 
   let working = [];
-  const e = history.location.pathname.slice(11, 16);
+  const e = history.location.pathname.slice(11, 17);
+  console.log(e);
 
   const ex10001 = [
     "-MhnQ_VfCidaZVWOVVjj",
@@ -34,7 +35,7 @@ const Ejercicio = () => {
     "-Mi-Xgktus16bF0vZAgO",
   ];
 
-  const ex10030 = [
+  const ex510001 = [
     "-MiO5YSpgvZbzHdWh7G0",
     "-MiOZumWjGOOI2NUgYaZ",
     "-MiSa6u-zEb23qOyPEyU",
@@ -47,8 +48,8 @@ const Ejercicio = () => {
   if (e === "10001") {
     working = [...ex10001];
   }
-  if (e === "10030") {
-    working = [...ex10030];
+  if (e === "510001") {
+    working = [...ex510001];
   }
   if (e === "10040") {
     working = [...ex10040];

@@ -1,0 +1,38 @@
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    background-color: rgb(211, 211, 211);
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: rgb(179, 179, 179);
+    }
+
+    &:active {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+}
+
+.icon {
+    height: 70%;
+    width: 70%;
+    filter: invert(0%) sepia(96%) saturate(22%) hue-rotate(68deg) brightness(101%) contrast(107%);
+}
+
+// .icon-dark {
+//     height: 50px;
+//     width: 50px;
+//     filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
+// }

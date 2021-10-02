@@ -1,7 +1,8 @@
 .tree-item {
   position: relative;
   padding-top: 38px !important;
-  background-color: #2b2e44;
+  // background-color: #2b2e44;
+  background-color: #1b1c30;
   color: white !important;
   list-style: none;
   margin: 0px auto;
@@ -66,6 +67,7 @@
         float: right !important;
         justify-content: center;
         align-items: center;
+        // border: 1px solid red;
 
         p {
           margin: 0 10px;
@@ -75,8 +77,10 @@
 
         .temaId {
           width: 50px;
-          margin: 0px 4px 0px 30px;
-          color: white;
+          margin: 0px 30px;
+        }
+        .videoId {
+          width: 130px;
         }
         .numberOfExercises {
           width: 50px;
@@ -104,6 +108,7 @@
       .task-name-wrapper {
         padding: 2px 0px;
         height: 100%;
+        // border: 1px solid green;
         position: relative;
         cursor: pointer;
         overflow: hidden;
@@ -140,4 +145,8 @@
       }
     }
   }
+}
+
+.tree-item.selected {
+  background-color: #33374a !important;
 }

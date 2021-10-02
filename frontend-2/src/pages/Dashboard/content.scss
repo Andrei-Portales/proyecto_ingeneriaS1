@@ -1,5 +1,6 @@
 .contentWrapper {
-  background-color: #2b2e44;
+  // background-color: #2b2e44;
+  background-color: #1b1c30;
   height: 100vh;
   width: 90%;
   margin: auto;
@@ -7,14 +8,12 @@
   // padding-top: 46px;
 
   .listViewContainer {
-    // width: 70%;
     margin: 0px auto;
     padding-top: 46px;
+    position: absolute;
 
     .listTitle {
       height: 50px;
-      // border: 1px solid green;
-      // align-items: center;
       width: 94%;
       margin: auto;
       border-bottom: 1px solid #393c52;
@@ -36,18 +35,19 @@
         }
       }
     }
-
-    .listContainer {
-    }
   }
 
   .listViewDetail {
-    width: 30%;
+    background-color: #1b1c30;
+    width: 28%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
   }
 }
 
 .tree-list {
-  width: 94%;
   padding: 0px;
   margin: auto;
 }

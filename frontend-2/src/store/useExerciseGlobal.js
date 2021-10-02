@@ -14,9 +14,14 @@ const useExerciseGlobal = () => {
     list: [],
   });
   const [showSettings, setShowSettings] = useState({ value: false, list: [] });
+  const [showEditor, setShowEditor] = useState({ value: false, list: [] });
 
   const [id, setId] = useState({ value: "", list: [] });
   const [index, setIndex] = useState({ value: 0, list: [] });
+  const [activeIndex, setActiveIndex] = useState({ value: -1 });
+
+  ////// GLOBAL VARIABLES FOR TEMAS
+  const [isItemVisible, setIsItemVisible] = useState({ value: false });
 
   const actions = (action) => {
     const { type, payload } = action;
@@ -31,8 +36,14 @@ const useExerciseGlobal = () => {
         return setId(payload);
       case "setIndex":
         return setIndex(payload);
+      case "setActiveIndex":
+        return setActiveIndex(payload);
       case "setShowSettings":
         return setShowSettings(payload);
+      case "setShowEditor":
+        return setShowEditor(payload);
+      case "setIsItemVisible":
+        return setIsItemVisible(payload);
       default:
         return isCorrectAnswer;
     }
@@ -43,7 +54,10 @@ const useExerciseGlobal = () => {
     isWrongAnswer,
     id,
     index,
+    activeIndex,
     showSettings,
+    showEditor,
+    isItemVisible,
     actions,
   };
 };
