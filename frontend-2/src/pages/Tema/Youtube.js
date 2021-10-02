@@ -53,7 +53,7 @@ class Youtube extends React.Component {
           onReady={this._onReady}
           onStateChange={this._onStateChange}
         />
-        {this.state.show ? <Congratulations show={true} /> : ""}
+        {/* {this.state.show ? <Congratulations show={true} /> : ""} */}
       </>
     );
   }

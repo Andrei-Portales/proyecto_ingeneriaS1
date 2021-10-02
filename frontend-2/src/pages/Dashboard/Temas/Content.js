@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../content.scss";
 import TemaItem from "./Item";
 import ItemDetail from "./ItemDetail";
+import Context from "../../../store/context";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useGetTemas } from "../../../hooks/useGetTemas";
 
 const Content = () => {
   const [isItemSelected, setIsItemSelected] = useState(false);
   const [itemId, setItemId] = useState("");
+  const { isItemVisible } = useContext(Context);
 
   const { temas } = useGetTemas();
 
@@ -18,8 +20,9 @@ const Content = () => {
     setItemId(value);
   };
 
-  const widthOne = `${isItemSelected ? "70%" : "90%"}`;
-  const display = `${isItemSelected ? "flex" : "none"}`;
+  const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
+  const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
+  const display = `${isItemVisible.value ? "flex" : "none"}`;
 
   return (
     <div className="contentWrapper">
@@ -38,17 +41,18 @@ const Content = () => {
           </div>
         </div>
         <div className="listContainer">
-          <ul className="tree-list">
+          <ul className="tree-list" style={{ width: widthTreeList }}>
             {temas.map((data, index) => {
               return (
                 <TemaItem
                   key={data.id}
-                  index={index + 1}
+                  index={index}
                   id={data.id}
                   title={data.title}
                   grade={data.grade}
                   subject={data.subject}
                   temaId={data.tema_id}
+                  videoId={data.video_url}
                   dateAdded={data.date_added}
                   isItemSelected={isItemSelectFunction}
                   itemId={itemIdFunction}

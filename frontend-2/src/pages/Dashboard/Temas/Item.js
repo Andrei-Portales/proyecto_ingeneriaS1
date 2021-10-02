@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "../item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
 import RenderIndex from "../Components/RenderIndex";
 import RenderDate from "../../../components/RenderDate/RenderDate";
 import ProfileImg from "../../../assets/profile.png";
+import Context from "../../../store/context";
 
 const TemaItem = (props) => {
-  const [chosen, setChosen] = useState(false);
+  const { isItemVisible, activeIndex, actions } = useContext(Context);
 
-  const onItemSelect = (id) => {
+  const onItemSelect = (id, index) => {
+    actions({
+      type: "setActiveIndex",
+      payload: { ...activeIndex, value: index },
+    });
     props.isItemSelected(true);
+    actions({
+      type: "setIsItemVisible",
+      payload: { ...isItemVisible, value: true },
+    });
     props.itemId(id);
-    setChosen(true);
   };
 
-  const deleteQuiz = (id) => {
-    // DeleteQuiz(id);
-  };
+  const deleteTema = (id) => {};
 
   return (
     <li
-      className={chosen ? "tree-item active" : "tree-item"}
-      onClick={() => onItemSelect(props.id)}
+      className={`tree-item${
+        props.index === activeIndex.value ? " selected" : ""
+      }`}
+      onClick={() => onItemSelect(props.id, props.index)}
+      key={props.index}
     >
       <div className="tree-row">
         <div className="tree-row-front">
-          <RenderIndex index={props.index} />
+          <RenderIndex index={props.index + 1} />
         </div>
         <div className="tree-row-content">
           <div className="task-menu-bar">
@@ -38,15 +47,17 @@ const TemaItem = (props) => {
             <Tooltip title="Tema Id" placement="top" arrow>
               <p className="temaId">{props.temaId}</p>
             </Tooltip>
-            <Tooltip title="Número de ejercicios" placement="top" arrow>
-              <p className="numberOfExercises">{props.numberOfExercises}</p>
+            <Tooltip title="Video Id" placement="top" arrow>
+              <p className="videoId">{props.videoId}</p>
             </Tooltip>
-            <RenderDate date={props.dateAdded} />
+            {!isItemVisible.value ? (
+              <RenderDate date={props.dateAdded} />
+            ) : null}
             <img src={ProfileImg} width="27" height="27" alt="Profile" />
             <Tooltip title="Eliminar" placement="top">
               <i
                 className="uil uil-trash"
-                onClick={() => deleteQuiz(props.quizId)}
+                onClick={() => deleteTema(props.quizId)}
               ></i>
             </Tooltip>
           </div>

@@ -17,6 +17,9 @@ const Materias = () => {
   }`;
 
   const onClickTemaHandler = (id) => {
+    localStorage.setItem("grado", params.grado);
+    localStorage.setItem("materia", params.materia);
+    localStorage.setItem("temaId", id);
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   };
 

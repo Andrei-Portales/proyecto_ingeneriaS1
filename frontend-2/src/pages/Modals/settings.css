@@ -1,5 +1,4 @@
-.modal-backdrop {
-    /* background-color: transparent !important; */
+/* .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -52,9 +51,9 @@
 .audio_radio_input:checked+.audio_radio_label {
     color: white !important;
     background-color: #5597f2 !important;
-}
+} 
 
-.audio_radio_label {
+ .audio_radio_label {
     width: 60px;
     margin: 6px 0px;
     height: 40px;
@@ -69,4 +68,4 @@
     border: 2px solid #5597f2;
     border-radius: 12px;
     transition: background 0.1s;
-}
+}  */

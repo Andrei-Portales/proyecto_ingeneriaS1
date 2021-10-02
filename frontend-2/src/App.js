@@ -56,7 +56,7 @@ const App = () => {
           {isAuth && <Profile />}
           {!isAuth && <Redirect to="/login" />}
         </Route>
-        <Route path="/ejercicio/:id/:id" exact>
+        <Route path="/grados/:id/:id/:id/ejercicio/:id/:id" exact>
           {isAuth && <Ejercicio />}
           {!isAuth && <Redirect to="/login" />}
         </Route>

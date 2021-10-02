@@ -1,5 +1,4 @@
-.modal-backdrop {
-    /* background-color: transparent !important; */
+/* .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -16,11 +15,10 @@
 }
 
 .modal-content {
-    /* background-color: transparent; */
     border: none !important;
 }
 
 .body {
     display: flex;
     justify-content: center;
-}
+} */

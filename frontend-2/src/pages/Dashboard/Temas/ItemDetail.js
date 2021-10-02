@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../item-detail.scss";
 import database from "../../../firebase";
 import ProfileImg from "../../../assets/profile.png";
 import GradeSelection from "../Components/GradeSelection";
 import SubjectSelection from "../Components/SubjectSelection";
+import Context from "../../../store/context";
 import InputTemaId from "../../Upload/InputTemaId";
+import EditorModal from "../../Modals/Editor";
 import InputVideoId from "../Components/InputVideoId";
 import InputTemaTitle from "../Components/InputTemaTitle";
 import useGetTemaDetail from "../../../hooks/useGetTemaDetail";
 import RenderDate from "../../../components/RenderDate/RenderDate";
 import { UilExpandArrowsAlt } from "@iconscout/react-unicons";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ItemDetail = ({ itemId }) => {
-  const [grade, setGrade] = useState("6to Grado");
-  const [subject, setSubject] = useState("Matemáticas");
+  const [show, setShow] = useState(false);
+  const { isItemVisible, activeIndex, showEditor, actions } =
+    useContext(Context);
 
   const tema = useGetTemaDetail(itemId);
 
@@ -22,12 +26,10 @@ const ItemDetail = ({ itemId }) => {
   };
 
   const gradeSelection = (answer) => {
-    setGrade(answer);
     database.ref(`temas/${itemId}`).update({ grade: answer });
   };
 
   const subjectSelection = (answer) => {
-    setSubject(answer);
     database.ref(`temas/${itemId}`).update({ subject: answer });
   };
   const temaIdUpdate = (answer) => {
@@ -38,17 +40,29 @@ const ItemDetail = ({ itemId }) => {
     database.ref(`temas/${itemId}`).update({ video_url: answer });
   };
 
-  tema.map((data, index) => {
-    return console.log(data.grade);
-  });
+  const onClose = () => {
+    actions({
+      type: "setActiveIndex",
+      payload: { ...activeIndex, value: -1 },
+    });
+    actions({
+      type: "setIsItemVisible",
+      payload: { ...isItemVisible, value: false },
+    });
+  };
 
-  const onClose = () => {};
+  const openEditorModal = () => {
+    actions({
+      type: "setShowEditor",
+      payload: { ...showEditor, value: true },
+    });
+  };
 
   return (
     <div className="quizDetailContainer">
       <div className="quizHeader">
         <span onClick={() => onClose()}>
-          {/* <UilExpandArrowsAlt size="18" className="expandArrowAlt" /> */}
+          <UilExpandArrowsAlt size="18" className="expandArrowAlt" />
         </span>
       </div>
       <div className="quizId">
@@ -102,6 +116,18 @@ const ItemDetail = ({ itemId }) => {
           );
         })}
       </div>
+      <div className="updateContentContainer">
+        <button onClick={() => openEditorModal()}>
+          Visualizar o actualizar contenido
+          <OpenInNewIcon className="openInNewIcon" />
+          <EditorModal show={show} temaId={itemId} />
+        </button>
+      </div>
+      {/* <div>
+        {tema.map((data) => {
+          return data.body;
+        })}
+      </div> */}
     </div>
   );
 };
