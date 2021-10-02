@@ -7,7 +7,7 @@ import LoadingSpinnerSized from '../LoadingSpinnerSized/LoadingSpinnerSized';
 
 import styles from './LoginForm.module.scss';
 
-const LoginForm = (props) => {
+const LoginForm = () => {
   const authDispatch = useDispatch();
   const history = useHistory();
   const [email, setEmail] = useState('');
