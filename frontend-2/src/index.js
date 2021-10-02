@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import Context from "./store/context";
 import useExerciseGlobal from "./store/useExerciseGlobal";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { Grados } from "./pages/Grados/Grados.js";
 
 const Index = () => {
   const stor = useExerciseGlobal();
