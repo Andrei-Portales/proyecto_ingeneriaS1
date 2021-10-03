@@ -28,7 +28,7 @@ const Grados = () => {
           <div>
             <img
               src={quinto}
-              alt="quitno"
+              alt="quinto"
               onClick={selectGradeHandler.bind(null, 'quinto')}
             />
             <h3 className={styles.text_grados}>Quinto</h3>

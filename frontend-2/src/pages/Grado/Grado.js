@@ -1,6 +1,7 @@
 import { useParams, useHistory } from 'react-router-dom';
 import { materias } from '../../util/grados-materias';
 import styles from './Grado.module.scss';
+import fondo from '../../assets/background.jpg';
 
 const Grado = (props) => {
   const history = useHistory();
@@ -16,22 +17,24 @@ const Grado = (props) => {
   };
 
   return (
-    <div className={styles.gradoPage}>
-      <h1 className={styles.title}>{gradoInfo.title}</h1>
-      <div className={styles.materias}>
-        {gradoInfo.materias.map((item) => {
-          return (
-            <div
-              key={item.id}
-              onClick={onMateriaClickHandler.bind(null, item.id)}
-            >
-              <img src={item.image} alt="" />
-              <h3>{item.title}</h3>
-            </div>
-          );
-        })}
+    <body  background={fondo}>
+      <div className={styles.gradoPage}>
+        <h1 className={styles.title}>{gradoInfo.title}</h1>
+        <div className={styles.materias}>
+          {gradoInfo.materias.map((item) => {
+            return (
+              <div
+                key={item.id}
+                onClick={onMateriaClickHandler.bind(null, item.id)}
+              >
+                <img src={item.image} alt="" />
+                <h3>{item.title}</h3>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </body>
   );
 };
 
