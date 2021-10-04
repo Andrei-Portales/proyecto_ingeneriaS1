@@ -41,7 +41,7 @@ const NumberOfExercises = (props) => {
               id={`myRadio${index + 4}`}
             />
             <label className="radio_label" for={`myRadio${index + 4}`}>
-              {index + 4}
+              {index + 2}
             </label>
           </>
         ))}
