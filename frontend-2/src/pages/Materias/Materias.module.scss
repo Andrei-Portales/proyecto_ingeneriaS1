@@ -9,17 +9,16 @@
 }
 
 .materiasList {
-    animation: item-load 400ms ease-in;
     list-style: none;
     margin-top: 30px;
 }
 
 .title{
-    animation: item-load 400ms ease-in;
     color: white;
 }
 
 .temaTitulo{
+    animation: item-load 400ms ease-in;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -27,6 +26,7 @@
 }
 
 .materiasListPanel{
+    animation: item-load 400ms ease-in;
     color:white;
 }
 
