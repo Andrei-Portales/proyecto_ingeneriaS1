@@ -1,9 +1,8 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import Youtube from "./Youtube";
-import Context from "../../store/context";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
 import styles from "./Tema.module.scss";
@@ -20,7 +19,6 @@ const Tema = () => {
   const history = useHistory();
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
   const { tema } = useGetTema();
-  const { isCorrectAnswer, actions } = useContext(Context);
 
   /* setShowContent no es utilizado pero es esencial para el  
   funcionamiento del estado, el cual si es utilizado en el codigo*/
