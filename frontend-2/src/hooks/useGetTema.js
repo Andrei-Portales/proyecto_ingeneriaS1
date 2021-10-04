@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router";
 import database from "../firebase";
+import Context from "../store/context";
 
 export const useGetTema = () => {
   const params = useParams();
   const [tema, setTema] = useState([]);
+  const { isCorrectAnswer, actions } = useContext(Context);
 
   // Obtener los detalles de los ejercicios del tema
   useEffect(() => {
@@ -17,9 +19,6 @@ export const useGetTema = () => {
             snap.val().number_of_exercises
           );
           return;
-        } else {
-          // localStorage.setItem("quizId", "-1");
-          // localStorage.setItem("numberOfExercises", "0");
         }
       });
     });
@@ -36,7 +35,11 @@ export const useGetTema = () => {
       });
       setTema(list);
     });
-  }, [params.id]);
+    actions({
+      type: "setIsCorrectAnswer",
+      payload: { ...isCorrectAnswer, value: false },
+    });
+  }, [params.id, actions, isCorrectAnswer]);
 
   return { tema };
 };
