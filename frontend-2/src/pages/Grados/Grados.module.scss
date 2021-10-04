@@ -10,8 +10,9 @@ body {
 .title {
     margin-left: auto;
     margin-right: auto;
-    font-size: 2.5rem;
+    font-size: 4rem;
     color: white;
+    padding-top: 10px;
 }
 
 .grados {
@@ -23,10 +24,15 @@ body {
 
 
 .grados div img {
-    width: 80%;
-    max-width: 250px;
-    height: 80%;
-    border-radius: 10px;
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 20px 60px;
+    transition: transform 750ms;
+}
+
+.grados div img:hover{
+    transform: translateY(-20px);
+    
 }
 
 @media (max-width: 900px) {
@@ -38,3 +44,16 @@ body {
 .text_grados {
     color: white    ;
 }
+
+
+.div_grados{
+    padding-top: 30px;
+}
+
+.div_grados:hover{
+    
+    .text_grados{
+        color: palegoldenrod;
+    }
+}
+

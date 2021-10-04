@@ -17,29 +17,29 @@ const Grados = () => {
       <div className={styles.gradosPage}>
         <h1 className={styles.title}>Grados</h1>
         <div className={styles.grados}>
-          <div>
+          <div className={styles.div_grados}>
             <img
               src={cuarto}
               alt="cuarto"
               onClick={selectGradeHandler.bind(null, 'cuarto')}
             />
-            <h3 className={styles.text_grados}>Cuarto</h3>
+            <h2 className={styles.text_grados}>Cuarto</h2>
           </div>
-          <div>
-            <img
+          <div className={styles.div_grados}>
+            <img 
               src={quinto}
               alt="quinto"
               onClick={selectGradeHandler.bind(null, 'quinto')}
             />
-            <h3 className={styles.text_grados}>Quinto</h3>
+            <h2 className={styles.text_grados}>Quinto</h2>
           </div>
-          <div>
-            <img
+          <div className={styles.div_grados}>
+            <img 
               src={sexto}
               alt="sexto"
               onClick={selectGradeHandler.bind(null, 'sexto')}
             />
-            <h3 className={styles.text_grados}>Sexto</h3>
+            <h2 className={styles.text_grados}>Sexto</h2>
           </div>
         </div>
       </div>

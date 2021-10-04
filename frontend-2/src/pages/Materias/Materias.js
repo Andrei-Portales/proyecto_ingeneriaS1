@@ -27,9 +27,9 @@ const Materias = () => {
 
   return (
     <div className={materiaClasses}>
-      <h1 className={styles.temaTitulo}>{params.materia}</h1>
+      <h1 className={styles.temaTitulo} >{params.materia}</h1>
 
-      <div className={styles.materiasListPanel}>
+      <div className={styles.materiasListPanel} >
         {temas.map((item, index) => (
           <>
             <div
