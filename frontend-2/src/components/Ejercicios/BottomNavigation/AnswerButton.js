@@ -17,8 +17,6 @@ const AnswerButton = ({ correctAnswer }) => {
         payload: { ...isCorrectAnswer, value: true },
       });
 
-      // // GUEST USER - LOCAL STORAGE POINTS SYSTEM
-
       let currentPoints = localStorage.getItem("userPoints");
 
       if (currentPoints === "") {

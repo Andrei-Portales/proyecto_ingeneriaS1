@@ -1,46 +1,25 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import database from "../firebase";
 
-const useGetExercise = (temaId) => {
-  const [exerciseList, setExerciseList] = useState([]);
-  const [quizId, setQuizId] = useState("");
-  const [numberOfExercises, setNumberOfExercises] = useState(0);
+export const useGetExercise = (props) => {
+  const params = useParams();
+  const [exercise, setExercise] = useState([]);
 
   useEffect(() => {
-    database.ref("quiz").on("value", (snapshot) => {
+    database.ref("exercises").on("value", (snapshot) => {
       let list = [];
       snapshot.forEach((snap) => {
-        list.push(snap.val());
-        if (snap.val().tema_id === temaId) {
-          console.log("#" + numberOfExercises);
-          setNumberOfExercises(snap.val().number_of_exercises);
-          setQuizId(snap.val().id);
+        if (
+          snap.val().quiz_id === localStorage.getItem("quizId") &&
+          snap.val().order === parseInt(params.id)
+        ) {
+          list.push(snap.val());
         }
       });
+      setExercise(list);
     });
-    // database.ref("exercises").on("value", (snapshot) => {
-    //   let list = [];
-    //   snapshot.forEach((snap) => {
-    //     if (snap.val().quiz_id === quizId) {
-    //       list.push(snap.val());
-    //     }
-    //   });
-    //   setExerciseList(list);
-    // });
-  }, [temaId, numberOfExercises]);
+  }, [params.id]);
 
-  //   useEffect(() => {
-  //     database.ref("exercises").on("value", (snapshot) => {
-  //       let list = [];
-  //       snapshot.forEach((snap) => {
-  //         if (snap.val().quiz_id === quizId) {
-  //           list.push(snap.val());
-  //         }
-  //       });
-  //       setExerciseList(list);
-  //     });
-  //   }, []);
-  return [numberOfExercises, quizId];
+  return { exercise };
 };
-
-export default useGetExercise;

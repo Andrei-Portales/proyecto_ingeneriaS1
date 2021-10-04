@@ -233,7 +233,7 @@ const TabOne = (props) => {
       }
     );
   };
-  console.log("version: " + exerciseVersion);
+
   const heightOne = `${exerciseVersion === 3 ? "100px" : "190px"}`;
   const display = `${exerciseVersion === 3 ? "flex" : "none"}`;
   const displayTwo = `${exerciseVersion === 3 ? "none" : "flex"}`;

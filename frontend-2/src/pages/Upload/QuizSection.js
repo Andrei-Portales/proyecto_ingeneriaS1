@@ -3,14 +3,15 @@ import NumberOfExercisesComponent from "./NumberOfExercises";
 import SubjectSelectionComponent from "./SubjectSelection";
 import GradeSelectionComponent from "./GradeSelection";
 import InputTemaIdComponent from "./InputTemaId";
+import InputTemaTitle from "./InputTemaTitle";
 import database from "../../firebase";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-// import AddQuiz from "../../hooks/useAddQuiz";
 
 const QuizSection = (props) => {
   const [numberOfExercises, setNumberOfExercises] = useState(0);
   const [temaId, setTemaId] = useState("");
+  const [temaTitle, setTemaTitle] = useState("");
   const [grade, setGrade] = useState("4to Grado");
   const [subject, setSubject] = useState("Matemáticas");
 
@@ -22,8 +23,6 @@ const QuizSection = (props) => {
     let isNumber = /^\d+$/.test(temaId);
     if (temaId !== "") {
       if (isNumber) {
-        // AddQuiz({ numberOfExercises, grade, subject, temaId });
-
         var quizRef = database.ref("quiz");
         var newQuizRef = quizRef.push();
         props.quizId(newQuizRef.key);
@@ -32,6 +31,7 @@ const QuizSection = (props) => {
             number_of_exercises: numberOfExercises,
             grade: grade,
             subject: subject,
+            tema: temaTitle,
             tema_id: temaId,
             date_added: timestamp.toString(),
             id: newQuizRef.key,
@@ -71,7 +71,9 @@ const QuizSection = (props) => {
     setTemaId(answer);
   };
 
-  console.log("out " + grade);
+  const temaTitleInput = (answer) => {
+    setTemaTitle(answer);
+  };
 
   return (
     <div className="generateQuizSection">
@@ -89,6 +91,11 @@ const QuizSection = (props) => {
             subject={subject}
           />
           <InputTemaIdComponent temaIdInput={temaIdInput} temaId={temaId} />
+
+          <InputTemaTitle
+            temaTitleInput={temaTitleInput}
+            temaTitle={temaTitle}
+          />
 
           <button
             className="exerciseUploadButton"

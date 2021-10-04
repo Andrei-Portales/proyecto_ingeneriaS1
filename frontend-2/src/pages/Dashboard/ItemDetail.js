@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./item-detail.scss";
 import database from "../../firebase";
 import { useHistory } from "react-router";
-
+import Context from "../../store/context";
 import ProfileImg from "../../assets/profile.png";
 import GradeSelection from "../Upload/GradeSelection";
 import SubjectSelection from "../Upload/SubjectSelection";
@@ -14,13 +14,15 @@ import { UilExpandArrowsAlt } from "@iconscout/react-unicons";
 
 const ItemDetail = (props) => {
   const history = useHistory();
+  const { isItemVisible, activeIndex, showEditor, actions } =
+    useContext(Context);
+
+  const quizList = useGetQuizDetail(props.itemId);
 
   const [numberOfExercises, setNumberOfExercises] = useState(0);
   const [temaId, setTemaId] = useState("");
   const [grade, setGrade] = useState("4to Grado");
   const [subject, setSubject] = useState("Matemáticas");
-
-  const quizList = useGetQuizDetail(props.itemId);
 
   // useUpdateQuiz(props.itemId, grade);
 
@@ -44,14 +46,21 @@ const ItemDetail = (props) => {
     database.ref(`quiz/${props.itemId}`).update({ tema_id: answer });
   };
 
-  const onQuiz = () => {
-    history.push(`/assessment`);
+  const onClose = () => {
+    actions({
+      type: "setActiveIndex",
+      payload: { ...activeIndex, value: -1 },
+    });
+    actions({
+      type: "setIsItemVisible",
+      payload: { ...isItemVisible, value: false },
+    });
   };
 
   return (
     <div className="quizDetailContainer">
       <div className="quizHeader">
-        <span onClick={() => onQuiz()}>
+        <span onClick={() => onClose()}>
           <UilExpandArrowsAlt size="18" className="expandArrowAlt" />
         </span>
       </div>
@@ -93,6 +102,8 @@ const ItemDetail = (props) => {
           );
         })}
       </div>
+      <br />
+      <br />
       <div className="numberExercises">
         <NumberOfExercises numberOfExercises={answersSelection} />
       </div>

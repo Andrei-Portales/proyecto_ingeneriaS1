@@ -6,13 +6,16 @@ export const useGetQuiz = () => {
 
   useEffect(() => {
     // Retreive from firebase
-    database.ref("quiz").on("value", (snapshot) => {
-      let list = [];
-      snapshot.forEach((snap) => {
-        list.push(snap.val());
+    database
+      .ref("quiz")
+      .orderByChild("tema_id")
+      .on("value", (snapshot) => {
+        let list = [];
+        snapshot.forEach((snap) => {
+          list.push(snap.val());
+        });
+        setQuizList(list);
       });
-      setQuizList(list);
-    });
   }, []);
 
   return { quizList };

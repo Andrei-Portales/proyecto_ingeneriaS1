@@ -12,6 +12,8 @@ const Materias = () => {
   const history = useHistory();
   const { temas } = useGetMaterias();
 
+  localStorage.setItem("quizId", "");
+
   const materiaClasses = `${styles.materiaPanel} ${
     !isLightTheme && styles["materia-dark"]
   }`;

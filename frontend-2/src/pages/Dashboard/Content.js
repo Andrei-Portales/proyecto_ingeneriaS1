@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./content.scss";
 import QuizItem from "./Item";
+import Context from "../../store/context";
 import ItemDetail from "./ItemDetail";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useGetQuiz } from "../../hooks/useGetQuiz";
@@ -8,6 +9,7 @@ import { useGetQuiz } from "../../hooks/useGetQuiz";
 const Content = () => {
   const [isItemSelected, setIsItemSelected] = useState(false);
   const [itemId, setItemId] = useState("");
+  const { isItemVisible } = useContext(Context);
 
   const { quizList } = useGetQuiz();
 
@@ -18,8 +20,9 @@ const Content = () => {
     setItemId(value);
   };
 
-  const widthOne = `${isItemSelected ? "70%" : "90%"}`;
-  const display = `${isItemSelected ? "flex" : "none"}`;
+  const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
+  const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
+  const display = `${isItemVisible.value ? "flex" : "none"}`;
 
   return (
     <div className="contentWrapper">
@@ -34,11 +37,11 @@ const Content = () => {
             </Dropdown>
           </div>
           <div className="titleContainer">
-            <p>Quiz</p>
+            <p>Ejericicios</p>
           </div>
         </div>
         <div className="listContainer">
-          <ul className="tree-list">
+          <ul className="tree-list" style={{ width: widthTreeList }}>
             {quizList.map((data, index) => {
               return (
                 <QuizItem
@@ -48,6 +51,7 @@ const Content = () => {
                   grade={data.grade}
                   subject={data.subject}
                   temaId={data.tema_id}
+                  tema={data.tema}
                   numberOfExercises={data.number_of_exercises}
                   dateAdded={data.date_added}
                   isItemSelected={isItemSelectFunction}

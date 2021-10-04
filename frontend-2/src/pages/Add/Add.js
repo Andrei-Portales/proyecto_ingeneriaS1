@@ -35,34 +35,31 @@ const Add = () => {
         });
       });
 
-    console.log(alreadyExist);
-    if (alreadyExist) {
-      const currentDate = new Date();
-      const timestamp = currentDate.getTime(); // Milliseconds
+    const currentDate = new Date();
+    const timestamp = currentDate.getTime(); // Milliseconds
 
-      var temasRef = database.ref("temas");
-      var newTemaRef = temasRef.push();
-      newTemaRef.set(
-        {
-          id: newTemaRef.key,
-          tema_id: id.trim(),
-          subject: materia,
-          grade: grade,
-          title: title,
-          body: editor,
-          video_url: url,
-          date_added: timestamp.toString(),
-          user_id: "2ZX9urSBNmY5BWAtyrBVK1q92iz1",
-        },
-        (error) => {
-          if (error) {
-            toast.error(error);
-          } else {
-            formRef.current.reset();
-          }
+    var temasRef = database.ref("temas");
+    var newTemaRef = temasRef.push();
+    newTemaRef.set(
+      {
+        id: newTemaRef.key,
+        tema_id: id.trim(),
+        subject: materia,
+        grade: grade,
+        title: title,
+        body: editor,
+        video_url: url,
+        date_added: timestamp.toString(),
+        user_id: "2ZX9urSBNmY5BWAtyrBVK1q92iz1",
+      },
+      (error) => {
+        if (error) {
+          toast.error(error);
+        } else {
+          formRef.current.reset();
         }
-      );
-    }
+      }
+    );
 
     setIsLoading(false);
   };

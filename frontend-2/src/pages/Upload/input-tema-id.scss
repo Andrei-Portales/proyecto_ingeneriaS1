@@ -1,14 +1,14 @@
 .inputTema {
   height: 40px;
+  width: 180px !important;
   padding: 16px 10px;
-  width: 180px;
   outline: none !important;
   border-radius: 5px;
   margin: 0 10px;
   font-weight: 600;
-  background-color: #393c52;
+  background-color: #26273a;
   color: white;
-  border: 1px solid #393c52;
+  border: 1px solid #26273a;
 
   &:focus {
     color: rgba(66, 165, 245, 1);

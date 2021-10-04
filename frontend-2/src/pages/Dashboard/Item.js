@@ -1,21 +1,28 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
 import RenderIndex from "./Components/RenderIndex";
 import RenderDate from "../../components/RenderDate/RenderDate";
 import ProfileImg from "../../assets/profile.png";
-import DeleteQuiz from "../../hooks/useDeleteQuiz";
+import Context from "../../store/context";
 
 const QuizItem = (props) => {
   // How To Apply SOLID Principles To Clean Your Code in React
   // 1. Move Data Processing Logic Out
   // 3. Decompose UI Components
-  const [chosen, setChosen] = useState(false);
+  const { isItemVisible, activeIndex, actions } = useContext(Context);
 
-  const onItemSelect = (id) => {
+  const onItemSelect = (id, index) => {
+    actions({
+      type: "setActiveIndex",
+      payload: { ...activeIndex, value: index },
+    });
     props.isItemSelected(true);
+    actions({
+      type: "setIsItemVisible",
+      payload: { ...isItemVisible, value: true },
+    });
     props.itemId(id);
-    setChosen(true);
   };
 
   const deleteQuiz = (id) => {
@@ -24,8 +31,11 @@ const QuizItem = (props) => {
 
   return (
     <li
-      className={chosen ? "tree-item active" : "tree-item"}
-      onClick={() => onItemSelect(props.quizId)}
+      className={`tree-item${
+        props.index === activeIndex.value ? " selected" : ""
+      }`}
+      onClick={() => onItemSelect(props.quizId, props.index)}
+      key={props.index}
     >
       <div className="tree-row">
         <div className="tree-row-front">
@@ -42,7 +52,7 @@ const QuizItem = (props) => {
             <Tooltip title="Tema Id" placement="top" arrow>
               <p className="temaId">{props.temaId}</p>
             </Tooltip>
-            <Tooltip title="Número de ejercicios" placement="top" arrow>
+            <Tooltip title="Número de preguntas" placement="top" arrow>
               <p className="numberOfExercises">{props.numberOfExercises}</p>
             </Tooltip>
             <RenderDate date={props.dateAdded} />
@@ -57,7 +67,7 @@ const QuizItem = (props) => {
           <div className="task-name-wrapper">
             <div className="task-name-frame">
               <div className="task-name-frame-border">
-                <span className="task-name">{props.quizId}</span>
+                <span className="task-name">{props.tema}</span>
               </div>
             </div>
           </div>

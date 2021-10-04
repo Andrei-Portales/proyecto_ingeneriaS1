@@ -4,13 +4,14 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: #2b2e44;
+  // background-color: #2b2e44;
+  background-color: #1b1c30;
   font-family: "Inter", sans-serif;
 
   .uploadContentWrapper {
-    width: 90%;
+    width: 95%;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 30px;
     .contentPanel {
       height: 100%;
       width: 90%;
@@ -18,7 +19,8 @@
       border-radius: 8px 8px 0 0;
 
       .contentBodyWrapper {
-        background-color: #2e3247;
+        // background-color: #2e3247;
+        background-color: rgba(0, 0, 0, 0.09);
         width: 100%;
         margin: auto;
         margin-top: 40px;

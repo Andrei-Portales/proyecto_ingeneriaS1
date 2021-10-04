@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import "../item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
 import RenderIndex from "../Components/RenderIndex";

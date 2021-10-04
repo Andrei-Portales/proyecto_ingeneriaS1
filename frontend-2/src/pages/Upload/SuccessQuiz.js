@@ -10,7 +10,7 @@ const SuccessQuiz = (props) => {
         </div>
 
         <div className="rightSection">
-          <p>¡Quiz creado exitosamente!</p>
+          <p>¡Ejercicio creado exitosamente!</p>
           <h4>{props.quizId}</h4>
         </div>
       </div>

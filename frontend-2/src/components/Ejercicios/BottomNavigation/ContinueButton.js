@@ -1,28 +1,32 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
-import useGetExercise from "../../../hooks/useGetExercise";
 import "./continue.scss";
 import Context from "../../../store/context";
 
-const Continue = (props) => {
+const Continue = () => {
   let params = useParams();
   const history = useHistory();
   const { isCorrectAnswer } = useContext(Context);
-  const [numberOfExercises] = useGetExercise(
-    history.location.pathname.slice(11, 16)
-  );
-  const eId = history.location.pathname.slice(11, 16);
 
   const nextExercise = () => {
-    if (Number(numberOfExercises) !== parseInt(params.id)) {
-      history.push(`/ejercicio/${eId}/${parseInt(params.id) + 1}`);
-      window.location.reload();
-    } else {
+    if (
+      Number(localStorage.getItem("numberOfExercises")) !== parseInt(params.id)
+    ) {
       history.push(
         `/grados/${localStorage.getItem("grado")}/${localStorage.getItem(
           "materia"
-        )}/${eId}`
+        )}/${localStorage.getItem("temaId")}/ejercicio/${localStorage.getItem(
+          "temaId"
+        )}/${parseInt(params.id) + 1}`
+      );
+      window.location.reload();
+    } else {
+      localStorage.setItem("quizId", "");
+      history.push(
+        `/grados/${localStorage.getItem("grado")}/${localStorage.getItem(
+          "materia"
+        )}/${localStorage.getItem("temaId")}`
       );
     }
   };
