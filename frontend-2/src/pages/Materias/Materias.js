@@ -5,6 +5,7 @@ import TemaItem from "../../components/TemaItem/TemaItem";
 import { useGetMaterias } from "../../hooks/useGetMaterias";
 
 import styles from "./Materias.module.scss";
+import fondo from '../../assets/background.jpg';
 
 const Materias = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -26,10 +27,11 @@ const Materias = () => {
   };
 
   return (
+    <body background={fondo}>
     <div className={materiaClasses}>
-      <h1 className={styles.temaTitulo}>{params.materia}</h1>
+      <h1 className={styles.temaTitulo} >{params.materia}</h1>
 
-      <div className={styles.materiasListPanel}>
+      <div className={styles.materiasListPanel} >
         {temas.map((item, index) => (
           <>
             <div
@@ -47,6 +49,7 @@ const Materias = () => {
         ))}
       </div>
     </div>
+    </body>
   );
 };
 

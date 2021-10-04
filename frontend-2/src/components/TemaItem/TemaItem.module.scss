@@ -9,19 +9,28 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
+    background-color:#9464DD;
+    transition: all 300ms ease;
 
     &:hover {
-        background-color: #cacaca;
+        background-color: #f21170;
+        z-index: 10px;
+        font-weight: 600;
+        border: 2px solid #f21170;
+        transform: translateX(8px);
     }
 }
 
 .temaItem-dark {
-    background-color: #7a7a7a;
+    background-color: #9464DD;
     color: white;
 
     &:hover {
-        background-color: #fcfcfc;
-        color: black;
+        background-color: #f21170;
+        z-index: 10px;
+        font-weight: 600;
+        border: 2px solid #f21170;
+        transform: translateX(8px);
     }
 }
 
@@ -44,6 +53,7 @@
 .main {
     margin-left: 15px;
     font-size: 1.1rem;
+    
 }
 
 @media (max-width: 850px) {

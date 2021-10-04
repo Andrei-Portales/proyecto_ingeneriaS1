@@ -23,12 +23,12 @@ const Grado = (props) => {
         <div className={styles.materias}>
           {gradoInfo.materias.map((item) => {
             return (
-              <div
+              <div className={styles.materiaPart}
                 key={item.id}
                 onClick={onMateriaClickHandler.bind(null, item.id)}
               >
                 <img src={item.image} alt="" />
-                <h3>{item.title}</h3>
+                <h2>{item.title}</h2>
               </div>
             );
           })}
