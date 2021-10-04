@@ -3,6 +3,12 @@ import "./number-of-exercises.scss";
 
 const NumberOfExercises = (props) => {
   const onChangeValue = (event) => {
+    if (event.target.value === "2") {
+      props.numberOfExercises(2);
+    }
+    if (event.target.value === "3") {
+      props.numberOfExercises(3);
+    }
     if (event.target.value === "4") {
       props.numberOfExercises(4);
     }
@@ -24,7 +30,7 @@ const NumberOfExercises = (props) => {
     <div onChange={onChangeValue} className="numberOfExercisesPanel">
       <div className="inputNumberOfExercisesTitle">Número de preguntas</div>
       <div className="inputNumberOfExercises">
-        {Array.from(Array(5)).map((value, index) => (
+        {Array.from(Array(7)).map((value, index) => (
           <>
             <input
               className="radio_input"
