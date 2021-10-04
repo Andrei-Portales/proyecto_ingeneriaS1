@@ -10,6 +10,7 @@ body {
   width: 100%;
 
   .faqTitle {
+    animation: item-load 400ms ease-in;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,5 +29,17 @@ body {
 @media (min-width: 1000px) {
   .faqContainer {
     width: 60% !important;
+  }
+}
+
+@keyframes item-load {
+  0%{
+      transform: translateY(-20%);
+      opacity: 0;
+  }
+
+  100%{
+      transform: translateY(0px);
+      opacity: 1;
   }
 }
