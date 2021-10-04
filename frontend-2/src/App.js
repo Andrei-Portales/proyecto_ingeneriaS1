@@ -63,7 +63,7 @@ const App = () => {
 
         <Layout>
           <Route path="/" exact>
-            {isAuth && <LoadingSpinner />}
+            {isAuth && <Grados />}
             {!isAuth && <Redirect to="/login" />}
           </Route>
           <Route path="/add" exact>
