@@ -10,7 +10,7 @@ const Grados = () => {
 
   const selectGradeHandler = (grade) => {
     history.push(`/grados/${grade}`);
-  };
+  };  
 
   return (
     <body  background={fondo}>

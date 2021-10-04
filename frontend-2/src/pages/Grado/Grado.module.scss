@@ -3,6 +3,7 @@
 }
 
 .title {
+    animation: item-load 400ms ease-in;
     margin-left: auto;
     margin-right: auto;
     font-size: 4rem;
@@ -11,6 +12,7 @@
 }
 
 .materias {
+    animation: item-load 400ms ease-in;
     margin-top: 50px;
     width: 100%;
     display: grid;
@@ -21,6 +23,7 @@
 
 
 .materias div img {
+    animation: item-load 400ms ease-in;
     width: 300px;
     height: 300px;
     border-radius: 20px 60px;
@@ -43,4 +46,16 @@
 
 .materiaPart:hover{
     color:palegoldenrod;
+}
+
+@keyframes item-load {
+    0%{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

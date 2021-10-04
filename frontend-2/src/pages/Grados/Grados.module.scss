@@ -8,6 +8,7 @@ body {
 }
 
 .title {
+    animation: item-load 400ms ease-in;
     margin-left: auto;
     margin-right: auto;
     font-size: 4rem;
@@ -16,6 +17,7 @@ body {
 }
 
 .grados {
+    animation: item-load 400ms ease-in;
     margin-top: 50px;
     width: 100%;
     display: grid;
@@ -24,6 +26,7 @@ body {
 
 
 .grados div img {
+    animation: item-load 400ms ease-in;
     max-width: 350px;
     max-height: 350px;
     border-radius: 20px 60px;
@@ -45,7 +48,6 @@ body {
     color: white    ;
 }
 
-
 .div_grados{
     padding-top: 30px;
 }
@@ -57,3 +59,14 @@ body {
     }
 }
 
+@keyframes item-load {
+    0%{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
