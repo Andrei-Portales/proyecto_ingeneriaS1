@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./questions-panel.scss";
-import { storage } from "../../firebase";
 import { useSelector } from "react-redux";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -21,17 +20,6 @@ const QuestionsPanel = (props) => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const titleColor = `${!isLightTheme ? "#FFFFFF" : "#000000"}`;
-
-  // Se usa unicamente para validar tiempo de carga
-  useEffect(() => {
-    storage
-      .ref("images")
-      .child("Angulo.svg")
-      .getDownloadURL()
-      .then((url) => {
-        setUrl(url);
-      });
-  }, []);
 
   const imageDisplay = `${isCorrectAnswer.value ? "flex" : "none"}`;
   const display = `${isCorrectAnswer.value ? "none" : "flex"}`;
