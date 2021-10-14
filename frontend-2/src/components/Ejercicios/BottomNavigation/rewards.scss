@@ -7,7 +7,8 @@
   justify-content: center;
   align-items: center;
   user-select: none !important;
-  cursor: default !important;
+  // border-bottom: 4px solid #0f83d7;
+  border-bottom: 4px solid;
   &:active {
     border-bottom: none;
   }

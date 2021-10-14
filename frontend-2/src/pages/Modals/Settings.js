@@ -5,10 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import { UilMultiply } from "@iconscout/react-unicons";
 
-const Settings = (props) => {
+const Settings = () => {
   const [id, setId] = useState(
     localStorage.getItem("enabledAudio") === "true" ? "on" : "off"
   );
+
   const { showSettings, actions } = useContext(Context);
 
   const handleClose = () => {
@@ -34,7 +35,7 @@ const Settings = (props) => {
       <div className="modalHeader">
         <Modal.Title>Ajustes</Modal.Title>
         <button onClick={() => handleClose()} className="closeButton">
-          <UilMultiply />
+          <UilMultiply size="22" />
         </button>
       </div>
       <div className="modalBody">
@@ -48,7 +49,7 @@ const Settings = (props) => {
               id="on"
               checked={id === "on" ? true : false}
             />
-            <label className="audio_radio_label" for="on">
+            <label className="audio_radio_label_left" for="on">
               On
             </label>
             <input
@@ -58,10 +59,44 @@ const Settings = (props) => {
               id="off"
               checked={id === "off" ? true : false}
             />
-            <label className="audio_radio_label" for="off">
+            <label className="audio_radio_label_right" for="off">
               Off
             </label>
           </div>
+        </div>
+        <div className="shortcuts">
+          <div>
+            <br />
+            <br />
+            <p>Atajos de teclado</p>
+            <hr />
+          </div>
+          <ul className="shortcuts-tree">
+            <li className="shortcut">
+              <div className="shortcut-function">
+                <b>Salir</b>
+              </div>
+              <div className="shortcut-key">
+                <p>Esc</p>
+              </div>
+            </li>
+            <li className="shortcut">
+              <div className="shortcut-function">
+                <b>Reproducir audio</b>
+              </div>
+              <div className="shortcut-key">
+                <p>F</p>
+              </div>
+            </li>
+            <li className="shortcut">
+              <div className="shortcut-function">
+                <b>Habilitar/deshabilitar audio</b>
+              </div>
+              <div className="shortcut-key">
+                <p>A</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </Modal>

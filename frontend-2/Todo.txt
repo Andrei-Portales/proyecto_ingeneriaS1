@@ -1,0 +1,26 @@
+
+Dashboard:
+    [] Opcion para filtrar por varias categorias
+    [] Agregar dark/light mode
+    [] Mejorar editor de texto
+
+Ejercicios
+    [ ] Optimizar carga de ejercicios
+    [x] Utilizar shortcuts en la pantalla de ejercicios
+        Escape:  cerrar la pantalla de ejercicios y regresa a la pantalla del tema
+        F:       reproducir el audio del ejercicio
+        A:       Habilita y deshabilita el audio
+    [x] Shake effect cuando la respuesta es incorrecta
+    [x] Implementar modo oscuro en la pantalla de ejercicios
+    [x] Cambiar de color a icono de sonido al momento de reproducir audio
+    [ ] Agregar reconocimiento de voz
+
+General
+    [ ] Utilizar loader al momento de cargar los temas
+    [ ] Dark/light mode permanente
+    [x] Implementar login/register
+
+    New:
+    context folder
+
+

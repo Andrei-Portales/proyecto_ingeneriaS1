@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import { UisStar } from "@iconscout/react-unicons-solid";
 import "./rewards.scss";
 import Context from "../../../store/context";
@@ -8,10 +9,13 @@ import SettingsModal from "../../../pages/Modals/Settings";
 const Rewards = () => {
   const { isCorrectAnswer, showSettings, actions } = useContext(Context);
   const [show, setShow] = useState(false);
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const backgroundColor = `${
     isCorrectAnswer.value ? "#5cba73" : "rgba(0, 0, 0, 0.1)"
   } `;
+
+  const borderColor = `${!isLightTheme ? "#000000" : "#ffffff"}`;
 
   const openSettingsModal = () => {
     actions({
@@ -24,7 +28,7 @@ const Rewards = () => {
     <>
       <button
         className="rewardsButton"
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: backgroundColor, borderColor: borderColor }}
         onClick={() => openSettingsModal()}
       >
         <div className="rewardsInside">
@@ -38,7 +42,7 @@ const Rewards = () => {
           )}
         </div>
       </button>
-      <SettingsModal show={show} />
+      <SettingsModal />
     </>
   );
 };

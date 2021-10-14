@@ -1,64 +1,105 @@
+.divForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
-    width: 320px;
-    text-align: center;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    padding: 25px;
-    border-radius: 7px;
-    background-color: white;
+  width: 400px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 7px;
+  background-color: white;
 }
 
 .input {
-    display: block;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f0f2f6;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    padding: 7px 15px;
-    height: 35px;
-    margin-bottom: 17px;
-    font-size: 0.9rem;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0f2f6;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  height: 43px;
+  margin-bottom: 17px;
+  font-size: 0.9rem;
 }
 
 .submit {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 30px;
-    background-color: #1f50cc;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 7px;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background-color: #1f50cc;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
 
-    &:hover {
-        background-color: #041a53;
-    }
+  &:hover {
+    background-color: #041a53;
+  }
 }
 
 .forgotPass {
-    width: 100%;
-    margin-top: 25px;
-    text-align: end;
-    user-select: none;
-    cursor: pointer;
+  width: 100%;
+  margin-top: 25px;
+  text-align: end;
+  user-select: none;
+  cursor: pointer;
 
-    &:hover {
-        color: #1f50cc;
-    }
+  &:hover {
+    color: #1f50cc;
+  }
 }
 
 .register {
-    color: #1f50cc;
-    user-select: none;
-    cursor: pointer;
+  color: #1f50cc;
+  user-select: none;
+  cursor: pointer;
 
-    &:hover {
-        color: #0c2e83;
+  &:hover {
+    color: #0c2e83;
+  }
+}
+
+.socialLogin {
+  width: 400px;
+
+  .socialLoginTitle {
+    color: rgba(0, 0, 0, 0.24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+  }
+
+  ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    li {
+      display: block;
+      border: 1px solid #f0f0f0;
+      border-radius: 20px;
+      box-sizing: border-box;
+
+      button {
+        color: rgba(0, 0, 0, 0.54);
+        width: 100%;
+        border: none;
+        background-color: white;
+        padding: 8px 0px;
+        border-radius: 20px;
+      }
     }
+  }
 }
