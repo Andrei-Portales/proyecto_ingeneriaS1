@@ -3,7 +3,7 @@ import database from "../../../../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import { useDropzone } from "react-dropzone";
 
-import { storage } from "../../../../firebase";
+import storage from "../../../../firebase";
 import EmptyComponent from "../Components/Empty";
 import UploadedComponent from "../Components/Uploaded";
 import SelectAnswersComponent from "../Components/SelectAnswers";
