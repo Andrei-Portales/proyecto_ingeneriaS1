@@ -23,6 +23,7 @@ import Materias from "./pages/Materias/Materias";
 import Tema from "./pages/Tema/Tema";
 // const Ejercicio = React.lazy(() => import("./components/Ejercicios/Ejercicio"));
 import Ejercicio from "./components/Ejercicios/Ejercicio";
+
 // const Add = React.lazy(() => import("./pages/Add/Add"));
 // const Contacto = React.lazy(() => import("./pages/Contacto/Contacto"));
 // const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
