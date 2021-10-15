@@ -6,8 +6,9 @@ import { themeActions } from "../../store/theme-slice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../../firebase";
 
-import { UilMoon } from "@iconscout/react-unicons";
-import { UilSun } from "@iconscout/react-unicons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
 
 import Drawer from "../Drawer/Drawer";
 
@@ -94,7 +95,11 @@ const Navigation = () => {
                   Acerca de Nosotros
                 </NavLink>
                 <div className={styles.action} onClick={toggleThemeHandler}>
-                  {themeIsLight ? <UilMoon size="22" /> : <UilSun size="22" />}
+                  {themeIsLight ? (
+                    <FontAwesomeIcon icon={faMoon} />
+                  ) : (
+                    <FontAwesomeIcon icon={faSun} />
+                  )}
                 </div>
               </ul>
             </nav>
@@ -110,7 +115,7 @@ const Navigation = () => {
             )} */}
 
             <div>{user?.name}</div>
-            <div>{user?.email}</div>
+            <div onClick={() => history.push("/perfil")}>{user?.email}</div>
 
             {
               <button className={styles.logout} onClick={logout}>

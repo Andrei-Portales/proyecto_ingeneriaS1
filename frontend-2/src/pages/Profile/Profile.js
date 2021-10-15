@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./profile.scss";
 import Avatar from "../../assets/avatar.png";
 
-import IconButton from "@material-ui/core/IconButton";
-import EditIcon from "@material-ui/icons/Edit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
 
 import CloseExercise from "../../components/Ejercicios/TopNavigation/CloseExercise";
 
@@ -62,9 +62,12 @@ const Profile = () => {
               <img src={Avatar} alt="Avatar" />
               <input type="file" id="imageInput" hidden="hidden" />
             </div>
-            <IconButton onClick={handleEditPicture} className="button">
-              <EditIcon color="primary" />
-            </IconButton>
+
+            <FontAwesomeIcon
+              icon={faPenAlt}
+              onClick={handleEditPicture}
+              className="button"
+            />
           </div>
           <div className="userBasicInfo">
             <div className="userInfo">

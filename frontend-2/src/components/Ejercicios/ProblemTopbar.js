@@ -1,7 +1,8 @@
 import "./problem-topbar.scss";
-import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 import useKeyboardShortcut from "use-keyboard-shortcut";
 import { useAudio } from "react-use";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 
 const ProblemTopbar = ({ audioSource }) => {
   const [audio, state, controls] = useAudio({
@@ -29,12 +30,14 @@ const ProblemTopbar = ({ audioSource }) => {
             JSON.stringify(state.time, null, 2) ===
               JSON.stringify(state.duration, null, 2) ||
             JSON.stringify(state.paused, null, 2) === "true" ? (
-              <VolumeUpIcon
+              <FontAwesomeIcon
+                icon={faVolumeUp}
                 className="uilVolume"
                 onClick={() => assessmentAudio()}
               />
             ) : (
-              <VolumeUpIcon
+              <FontAwesomeIcon
+                icon={faVolumeUp}
                 className="uilVolumePlaying"
                 onClick={() => assessmentAudio()}
               />

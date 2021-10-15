@@ -23,11 +23,13 @@ import Materias from "./pages/Materias/Materias";
 import Tema from "./pages/Tema/Tema";
 // const Ejercicio = React.lazy(() => import("./components/Ejercicios/Ejercicio"));
 import Ejercicio from "./components/Ejercicios/Ejercicio";
-
 // const Add = React.lazy(() => import("./pages/Add/Add"));
 // const Contacto = React.lazy(() => import("./pages/Contacto/Contacto"));
+import Contacto from "./pages/Contacto/Contacto";
 // const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
+import FAQ from "./pages/FAQ/FAQ";
 // const Profile = React.lazy(() => import("./pages/Profile/Profile"));
+import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 // const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
 // const DashboardTemas = React.lazy(() =>
@@ -51,6 +53,15 @@ const App = () => {
       <Layout>
         <Route path="/" exact>
           <Grados />
+        </Route>
+        <Route path="/contacto" exact>
+          <Contacto />
+        </Route>
+        <Route path="/preguntas-frecuentes" exact>
+          <FAQ />
+        </Route>
+        <Route path="/perfil" exact>
+          <Profile />
         </Route>
         <Route path="/grados" exact>
           <Grados />
