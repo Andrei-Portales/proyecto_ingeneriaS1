@@ -1,9 +1,10 @@
 import { useHistory } from "react-router";
 import "./sidebar.scss";
 import Tooltip from "@material-ui/core/Tooltip";
-import { UilUpload } from "@iconscout/react-unicons";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AssignmentIcon from "@mui/icons-material/Assignment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = (props) => {
   const history = useHistory();
@@ -22,7 +23,7 @@ const Sidebar = (props) => {
                 }`}
                 onClick={() => history.push(`/upload`)}
               >
-                <UilUpload className="uilUpload" />
+                <FontAwesomeIcon icon={faUpload} className="uilUpload" />
               </li>
             </Tooltip>
             <Tooltip title="Ejercicios" placement="top" arrow>
@@ -32,7 +33,7 @@ const Sidebar = (props) => {
                 }`}
                 onClick={() => history.push(`/dashboard`)}
               >
-                <DashboardIcon className="uilDashboard" />
+                <FontAwesomeIcon icon={faChartLine} className="uilDashboard" />
               </li>
             </Tooltip>
 
@@ -43,7 +44,7 @@ const Sidebar = (props) => {
                 }`}
                 onClick={() => history.push(`/dashboard/temas`)}
               >
-                <AssignmentIcon className="uilDashboard" />
+                <FontAwesomeIcon icon={faListAlt} className="uilDashboard" />
               </li>
             </Tooltip>
           </ul>

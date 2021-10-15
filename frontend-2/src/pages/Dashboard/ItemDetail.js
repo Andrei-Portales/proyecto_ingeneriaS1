@@ -10,7 +10,8 @@ import NumberOfExercises from "../Upload/NumberOfExercises";
 import InputTemaId from "../Upload/InputTemaId";
 import useGetQuizDetail from "../../hooks/useGetQuizDetail";
 import RenderDate from "../../components/RenderDate/RenderDate";
-import { UilExpandArrowsAlt } from "@iconscout/react-unicons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const ItemDetail = (props) => {
   const history = useHistory();
@@ -61,7 +62,7 @@ const ItemDetail = (props) => {
     <div className="quizDetailContainer">
       <div className="quizHeader">
         <span onClick={() => onClose()}>
-          <UilExpandArrowsAlt size="18" className="expandArrowAlt" />
+          <FontAwesomeIcon icon={faExpand} className="expandArrowAlt" />
         </span>
       </div>
       <div className="quizId">

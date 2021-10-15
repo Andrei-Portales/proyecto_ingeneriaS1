@@ -11,8 +11,6 @@ import InputVideoId from "../Components/InputVideoId";
 import InputTemaTitle from "../Components/InputTemaTitle";
 import useGetTemaDetail from "../../../hooks/useGetTemaDetail";
 import RenderDate from "../../../components/RenderDate/RenderDate";
-import { UilExpandArrowsAlt } from "@iconscout/react-unicons";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ItemDetail = ({ itemId }) => {
   const [show, setShow] = useState(false);
@@ -62,7 +60,7 @@ const ItemDetail = ({ itemId }) => {
     <div className="quizDetailContainer">
       <div className="quizHeader">
         <span onClick={() => onClose()}>
-          <UilExpandArrowsAlt size="18" className="expandArrowAlt" />
+          <i className="uil uil-calender expandArrowAlt"></i>
         </span>
       </div>
       <div className="quizId">
@@ -119,7 +117,7 @@ const ItemDetail = ({ itemId }) => {
       <div className="updateContentContainer">
         <button onClick={() => openEditorModal()}>
           Visualizar o actualizar contenido
-          <OpenInNewIcon className="openInNewIcon" />
+          <i className="uil uil-calender openInNewIcon"></i>
           <EditorModal show={show} temaId={itemId} />
         </button>
       </div>

@@ -31,10 +31,13 @@ import FAQ from "./pages/FAQ/FAQ";
 // const Profile = React.lazy(() => import("./pages/Profile/Profile"));
 import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
+import Upload from "./pages/Upload/Upload";
 // const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
+import Dashboard from "./pages/Dashboard/Dashboard";
 // const DashboardTemas = React.lazy(() =>
 //   import("./pages/Dashboard/Temas/Dashboard")
 // );
+import DashboardTemas from "./pages/Dashboard/Temas/Dashboard";
 // const Quiz = React.lazy(() => import("./pages/Assessment/Quiz"));
 
 const App = () => {
@@ -48,6 +51,15 @@ const App = () => {
       </Route>
       <Route path="/grados/:id/:id/:id/ejercicio/:id/:id" exact>
         <Ejercicio />
+      </Route>
+      <Route path="/upload" exact>
+        <Upload />
+      </Route>
+      <Route path="/dashboard" exact>
+        <Dashboard />
+      </Route>
+      <Route path="/dashboard/temas" exact>
+        <DashboardTemas />
       </Route>
 
       <Layout>
