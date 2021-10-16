@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import firebase from "firebase";
 import "firebase/storage";
+import Context from "./store/context";
 // import "firebase/auth";
 
 const firebaseConfig = {
@@ -76,6 +78,7 @@ const sendPasswordResetEmail = async (email) => {
 const logout = () => {
   auth.signOut();
 };
+
 export {
   auth,
   db,

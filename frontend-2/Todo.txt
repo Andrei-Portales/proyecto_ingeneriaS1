@@ -19,6 +19,8 @@ General
     [ ] Utilizar loader al momento de cargar los temas
     [ ] Dark/light mode permanente
     [x] Implementar login/register
+        Recuperar constrasena
+        Correo de verificacion al crear cuenta
 
     New:
     context folder

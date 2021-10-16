@@ -118,7 +118,7 @@ const ItemDetail = ({ itemId }) => {
         <button onClick={() => openEditorModal()}>
           Visualizar o actualizar contenido
           <i className="uil uil-calender openInNewIcon"></i>
-          <EditorModal show={show} temaId={itemId} />
+          {/* <EditorModal show={show} temaId={itemId} /> */}
         </button>
       </div>
       {/* <div>

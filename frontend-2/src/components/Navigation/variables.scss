@@ -1,0 +1,64 @@
+$primaryBackground: #fefefe;
+$primaryColor: #3864cf;
+
+$nonePriorityColor: #7c7b7b;
+$lowPriorityColor: #2041b7;
+$mediumPriorityColor: #ffbd5a;
+$highPriorityColor: #fa2323;
+
+$primaryHoverBackground: #ededed;
+$secondaryHoverBackground: #e9ecef;
+
+$primaryBorderColor: #e2e8f0;
+$secondaryBorderColor: rgba(0, 0, 0, 0.06);
+
+$tomorrowColor: #61b1b1;
+
+$headerHeight: 3rem;
+
+/* ================= COLORS ================ */
+
+/* HSL COLOR MODE */
+$firstColor: hsl(250, 69%, 61%);
+$firstColorSecond: hsl(250, 69%, 61%);
+$firstColorAlt: hsl(250, 57%, 53%);
+$firstColorLighter: hsl(250, 92%, 85%);
+$titleColor: hsl(250, 8%, 15%);
+$textColor: hsl(250, 8%, 45%);
+$textColorLighter: hsl(250, 8%, 65%);
+$inputColor: hsl(250, 70%, 96%);
+$bodyColor: hsl(250, 60%, 99%);
+$containerColor: #ffffff;
+
+/* ================= Font and typography ================ */
+$bodyFont: "Poppins", sans-serif;
+
+/* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+$bigFontSize: 2rem;
+$h1FontSize: 1.5rem;
+$h2FontSize: 1.25rem;
+$h3FontSize: 1.125rem;
+$normalFontSize: 0.938rem;
+$smallFontSize: 0.813rem;
+$smallerFontSize: 0.75rem;
+
+/*========== Font weight ==========*/
+$fontMedium: 500;
+$fontSemiBold: 600;
+$fontBold: 700;
+
+/*========== Margenes Bottom ==========*/
+/* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+$mb-0-25: 0.25rem;
+$mb-0-5: 0.5rem;
+$mb-0-75: 0.75rem;
+$mb-1: 1rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+$mb-3: 3rem;
+
+/*========== z index ==========*/
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-modal: 1000;

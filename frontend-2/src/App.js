@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Switch,
-  Route,
-  BrowserRouter as Router,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 // import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 
@@ -24,6 +19,7 @@ import Tema from "./pages/Tema/Tema";
 // const Ejercicio = React.lazy(() => import("./components/Ejercicios/Ejercicio"));
 import Ejercicio from "./components/Ejercicios/Ejercicio";
 // const Add = React.lazy(() => import("./pages/Add/Add"));
+import Add from "./pages/Add/Add";
 // const Contacto = React.lazy(() => import("./pages/Contacto/Contacto"));
 import Contacto from "./pages/Contacto/Contacto";
 // const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
@@ -65,6 +61,9 @@ const App = () => {
       <Layout>
         <Route path="/" exact>
           <Grados />
+        </Route>
+        <Route path="/add" exact>
+          <Add />
         </Route>
         <Route path="/contacto" exact>
           <Contacto />

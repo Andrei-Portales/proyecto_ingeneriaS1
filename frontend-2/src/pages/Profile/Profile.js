@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import "./profile.scss";
 import Avatar from "../../assets/avatar.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../../firebase";
 
 import CloseExercise from "../../components/Ejercicios/TopNavigation/CloseExercise";
 
 const Profile = () => {
+  const history = useHistory();
+  const [name, setName] = useState("");
+  const [user, loading, error] = useAuthState(auth);
   const [showSave, setShowSave] = useState(false);
   const [userGrade, setUserGrade] = useState(localStorage.getItem("userGrade"));
   const [userName, setUserName] = useState(localStorage.getItem("userName"));
@@ -21,15 +27,26 @@ const Profile = () => {
     fileInput.click();
   }
 
-  // const generateUserId = (e) => {
-  //   e.preventDefault();
-  //   const newNote = {
-  //     id: Math.random().toString(36).substr(2, 9),
-  //     text: e.target.note.value,
-  //   };
-  //   setNotes([...notes, newNote]);
-  //   e.target.note.value = "";
-  // };
+  const fetchUserName = async () => {
+    console.log("feching");
+    try {
+      const query = await db
+        .collection("users")
+        .where("uid", "==", user?.uid)
+        .get();
+      const data = await query.docs[0].data();
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      console.log("An error occured while fetching user data");
+    }
+  };
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return history.replace("/login");
+    fetchUserName();
+  }, [user, loading]);
 
   const handleSelection = (e) => {
     setUserGrade(e.target.value);
@@ -52,9 +69,7 @@ const Profile = () => {
 
   return (
     <div className="profileWrapper">
-      <div className="navigationTop">
-        <CloseExercise />
-      </div>
+      <div className="navigationTop">{/* <CloseExercise /> */}</div>
       <div className="userProfileWrapper">
         <div className="userAvatarWrapper">
           <div className="userAvatar">
@@ -75,14 +90,14 @@ const Profile = () => {
               <br />
               <input
                 type="name"
-                value={userName}
+                value={name}
                 onChange={userNameChangeHandler}
               />
               <br />
               <br />
               <label>Correo electrónico</label>
               <b />
-              <input type="email" value="" />
+              <input type="email" value={user?.email} />
               <br />
               <br />
               <label>Grado</label>

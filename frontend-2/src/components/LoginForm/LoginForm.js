@@ -7,6 +7,7 @@ import {
   signInWithGoogle,
 } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import PasswordRecovery from "../../pages/Modals/PasswordRecovery";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,6 +56,7 @@ const LoginForm = () => {
     <div>
       <div className={styles.divForm}>
         <ToastContainer />
+        {/* <PasswordRecovery /> */}
         <form className={styles.form}>
           {/* <h2>Iniciar sesion</h2> */}
           <input

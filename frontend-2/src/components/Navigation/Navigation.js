@@ -11,6 +11,7 @@ import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 
 import Drawer from "../Drawer/Drawer";
+import Navbar from "./Navbar";
 
 import styles from "./Navigation.module.scss";
 import logo from "../../assets/logoCompleto.png";
@@ -25,6 +26,7 @@ const Navigation = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   const fetchUserName = async () => {
+    console.log("feching");
     try {
       const query = await db
         .collection("users")
@@ -101,6 +103,9 @@ const Navigation = () => {
                     <FontAwesomeIcon icon={faSun} />
                   )}
                 </div>
+                <button className={styles.add} onClick={addHandler}>
+                  Agregar tema
+                </button>
               </ul>
             </nav>
           )}
@@ -108,20 +113,16 @@ const Navigation = () => {
 
         {isAuth && (
           <div className={styles["nav-right"]}>
-            {/* {isAdmin && location.pathname !== "/add" && (
-              <button className={styles.add} onClick={addHandler}>
-                Agregar tema
-              </button>
-            )} */}
+            <Navbar />
 
-            <div>{user?.name}</div>
+            {/* <div>{name}</div>
             <div onClick={() => history.push("/perfil")}>{user?.email}</div>
 
             {
               <button className={styles.logout} onClick={logout}>
                 Cerrar sesion
               </button>
-            }
+            } */}
           </div>
         )}
 
