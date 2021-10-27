@@ -3,7 +3,6 @@ import "./settings.css";
 import Context from "../../store/context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
-import { UilMultiply } from "@iconscout/react-unicons";
 
 const Settings = () => {
   const [id, setId] = useState(
@@ -35,7 +34,7 @@ const Settings = () => {
       <div className="modalHeader">
         <Modal.Title>Ajustes</Modal.Title>
         <button onClick={() => handleClose()} className="closeButton">
-          <UilMultiply size="22" />
+          <i className="uil uil-multiply" size="22"></i>
         </button>
       </div>
       <div className="modalBody">

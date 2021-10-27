@@ -28,14 +28,14 @@ const Content = () => {
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          <div className="filterContainer">
+          {/* <div className="filterContainer">
             <Dropdown>
               <Dropdown.Toggle variant="link" id="dropdown-basic">
                 <i className="uil uil-filter"></i>
               </Dropdown.Toggle>
               <Dropdown.Menu></Dropdown.Menu>
             </Dropdown>
-          </div>
+          </div> */}
           <div className="titleContainer">
             <p>Temas</p>
           </div>

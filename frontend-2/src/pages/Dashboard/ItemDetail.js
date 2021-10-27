@@ -1,49 +1,40 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import { Flex, Avatar, Text, Slide } from "@chakra-ui/react";
 import "./item-detail.scss";
 import database from "../../firebase";
-import { useHistory } from "react-router";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import Context from "../../store/context";
-import ProfileImg from "../../assets/profile.png";
+import ProfileImg from "../../assets/profile.jpg";
 import GradeSelection from "../Upload/GradeSelection";
 import SubjectSelection from "../Upload/SubjectSelection";
-import NumberOfExercises from "../Upload/NumberOfExercises";
+import NumberOfExercises from "./Components/NumberOfExercises";
 import InputTemaId from "../Upload/InputTemaId";
+import InputTemaTitle from "./Components/InputTemaTitle";
 import useGetQuizDetail from "../../hooks/useGetQuizDetail";
 import RenderDate from "../../components/RenderDate/RenderDate";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 const ItemDetail = (props) => {
-  const history = useHistory();
-  const { isItemVisible, activeIndex, showEditor, actions } =
-    useContext(Context);
+  const { isItemVisible, activeIndex, actions } = useContext(Context);
 
   const quizList = useGetQuizDetail(props.itemId);
 
-  const [numberOfExercises, setNumberOfExercises] = useState(0);
-  const [temaId, setTemaId] = useState("");
-  const [grade, setGrade] = useState("4to Grado");
-  const [subject, setSubject] = useState("Matemáticas");
-
-  // useUpdateQuiz(props.itemId, grade);
+  const temaTitleUpdate = (answer) => {
+    database.ref(`quiz/${props.itemId}`).update({ tema: answer });
+  };
 
   const gradeSelection = (answer) => {
-    setGrade(answer);
     database.ref(`quiz/${props.itemId}`).update({ grade: answer });
   };
 
   const subjectSelection = (answer) => {
-    setSubject(answer);
     database.ref(`quiz/${props.itemId}`).update({ subject: answer });
   };
   const answersSelection = (answer) => {
-    setNumberOfExercises(answer);
     database
       .ref(`quiz/${props.itemId}`)
       .update({ number_of_exercises: answer });
   };
   const temaIdUpdate = (answer) => {
-    setTemaId(answer);
     database.ref(`quiz/${props.itemId}`).update({ tema_id: answer });
   };
 
@@ -59,28 +50,35 @@ const ItemDetail = (props) => {
   };
 
   return (
-    <div className="quizDetailContainer">
-      <div className="quizHeader">
-        <span onClick={() => onClose()}>
-          <FontAwesomeIcon icon={faExpand} className="expandArrowAlt" />
+    <Flex className="shadow" direction="column" w="100%" py="10px" px="24px">
+      <Flex h="70px" justifyContent="end">
+        <span onClick={() => onClose()} className="expandArrow">
+          <ArrowForwardIcon />
         </span>
-      </div>
-      <div className="quizId">
-        <p>{props.itemId}</p>
-      </div>
-      <div className="userAndDate">
-        <div className="user">
-          <img src={ProfileImg} alt="Profile" width="27" height="27" />
-          <p>Usuario Admin</p>
-        </div>
-        <div className="date">
+      </Flex>
+      <Flex h="60px">
+        {quizList.map((data) => {
+          return (
+            <InputTemaTitle
+              temaTitleInput={temaTitleUpdate}
+              title={data.tema}
+            />
+          );
+        })}
+      </Flex>
+      <Flex h="60px" mb="6px">
+        <Flex w="50%">
+          <Avatar src={ProfileImg} w="27px" h="27px" />
+          <Text pl="10px">Usuario Admin</Text>
+        </Flex>
+        <Flex w="50%">
           {quizList.map((data) => {
             return <RenderDate key={data.date_added} date={data.date_added} />;
           })}
-        </div>
-      </div>
+        </Flex>
+      </Flex>
       <hr />
-      <div className="selectionsToggle">
+      <Flex mt="30px" justifyContent="space-evenly">
         {quizList.map((data) => {
           return (
             <>
@@ -95,20 +93,27 @@ const ItemDetail = (props) => {
             </>
           );
         })}
-      </div>
-      <div className="inputTemaId">
+      </Flex>
+      <Flex mt="40px">
         {quizList.map((data) => {
           return (
             <InputTemaId temaIdInput={temaIdUpdate} temaId={data.tema_id} />
           );
         })}
-      </div>
+      </Flex>
       <br />
       <br />
-      <div className="numberExercises">
-        <NumberOfExercises numberOfExercises={answersSelection} />
-      </div>
-    </div>
+      <Flex>
+        {quizList.map((data) => {
+          return (
+            <NumberOfExercises
+              numberOf={data.number_of_exercises}
+              numberOfExercises={answersSelection}
+            />
+          );
+        })}
+      </Flex>
+    </Flex>
   );
 };
 

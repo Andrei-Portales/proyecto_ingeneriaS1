@@ -1,14 +1,9 @@
-import { NavLink, useHistory, useLocation } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { themeActions } from "../../store/theme-slice";
+import { useSelector } from "react-redux";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db, logout } from "../../firebase";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { auth, db } from "../../firebase";
 
 import Drawer from "../Drawer/Drawer";
 import Navbar from "./Navbar";
@@ -19,10 +14,8 @@ import { Fragment } from "react";
 
 const Navigation = () => {
   const history = useHistory();
-  const location = useLocation();
-  const dispatch = useDispatch();
   const [name, setName] = useState("");
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [showDrawer, setShowDrawer] = useState(false);
 
   const fetchUserName = async () => {
@@ -48,10 +41,6 @@ const Navigation = () => {
 
   const themeIsLight = useSelector((state) => state.theme.theme) === "LIGHT";
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
-
-  const toggleThemeHandler = () => dispatch(themeActions.toggleTheme());
-
-  const addHandler = () => history.push("/add");
 
   const toggleshowDrawer = () => setShowDrawer((prevState) => !prevState);
 
@@ -96,16 +85,6 @@ const Navigation = () => {
                 >
                   Acerca de Nosotros
                 </NavLink>
-                <div className={styles.action} onClick={toggleThemeHandler}>
-                  {themeIsLight ? (
-                    <FontAwesomeIcon icon={faMoon} />
-                  ) : (
-                    <FontAwesomeIcon icon={faSun} />
-                  )}
-                </div>
-                <button className={styles.add} onClick={addHandler}>
-                  Agregar tema
-                </button>
               </ul>
             </nav>
           )}
@@ -114,15 +93,6 @@ const Navigation = () => {
         {isAuth && (
           <div className={styles["nav-right"]}>
             <Navbar />
-
-            {/* <div>{name}</div>
-            <div onClick={() => history.push("/perfil")}>{user?.email}</div>
-
-            {
-              <button className={styles.logout} onClick={logout}>
-                Cerrar sesion
-              </button>
-            } */}
           </div>
         )}
 

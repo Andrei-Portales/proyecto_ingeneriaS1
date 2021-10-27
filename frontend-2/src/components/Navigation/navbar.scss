@@ -1,12 +1,13 @@
 @import "./variables.scss";
 
 .main-navbar {
-  height: 90px !important;
+  height: 80px !important;
   width: 100%;
   display: flex !important;
   justify-content: flex-end !important;
   padding: 0px 40px;
-  border: 1px solid $secondaryBorderColor;
+  border-left: 1px solid $secondaryBorderColor;
+  border-right: 1px solid $secondaryBorderColor;
 
   ul {
     list-style: none;
@@ -47,15 +48,6 @@
           }
         }
 
-        .image-profile {
-          width: 40px;
-          height: 40px;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-
         .uil-bell {
           font-size: 22px;
           padding: 0px 10px;
@@ -92,24 +84,6 @@
         // -moz-box-shadow: -1px 2px 13px 0 rgb(0 0 0 / 10%);
         // box-shadow: -1px 2px 13px 0 rgb(0 0 0 / 10%);
 
-        .horizontal-divider {
-          display: flex;
-          height: 8px;
-          justify-content: center;
-          align-items: center;
-
-          hr {
-            width: 80%;
-            background-color: #e7e7e9;
-            height: 1px !important;
-            border: 0px !important;
-            margin: 0px 26px;
-            display: block;
-            overflow: hidden;
-            box-sizing: border-box;
-          }
-        }
-
         .menu-item {
           height: 45px;
           width: 100%;
@@ -129,8 +103,74 @@
           .uil {
             margin: 0px 12px 0px 20px;
           }
+          .uil-toggle-on {
+            color: blue;
+          }
+          .uil-toggle-off {
+            color: #6e6d7a;
+          }
         }
       }
     }
+  }
+}
+
+.profile-dropdown-toggle {
+  height: 100%;
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: black !important;
+  outline: none !important;
+
+  &:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  &::after {
+    display: none !important;
+  }
+}
+
+.profile-dropdown-menu {
+  top: 78px;
+  width: 220px;
+  transform: translateX(-55%);
+  background-color: white;
+  padding: 1rem 0;
+  overflow: hidden;
+  z-index: 5;
+  border: 1px solid #ededed;
+  border-radius: 8px;
+}
+.uil {
+  margin: 0px 12px 0px 0px;
+}
+
+.horizontal-divider {
+  display: flex;
+  height: 8px;
+  justify-content: center;
+  align-items: center;
+
+  hr {
+    width: 80%;
+    background-color: #e7e7e9;
+    height: 1px !important;
+    border: 0px !important;
+    margin: 0px 26px;
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+}
+
+.image-profile {
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    cursor: pointer;
   }
 }

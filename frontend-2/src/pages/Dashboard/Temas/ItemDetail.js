@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "../item-detail.scss";
 import database from "../../../firebase";
-import ProfileImg from "../../../assets/profile.png";
+import ProfileImg from "../../../assets/profile.jpg";
 import GradeSelection from "../Components/GradeSelection";
 import SubjectSelection from "../Components/SubjectSelection";
 import Context from "../../../store/context";
@@ -60,7 +60,7 @@ const ItemDetail = ({ itemId }) => {
     <div className="quizDetailContainer">
       <div className="quizHeader">
         <span onClick={() => onClose()}>
-          <i className="uil uil-calender expandArrowAlt"></i>
+          <i className="uil uil-minus"></i>
         </span>
       </div>
       <div className="quizId">

@@ -1,10 +1,8 @@
 import { useContext } from "react";
-import Shuttle from "../../../assets/shuttle.png";
 import "./tips-button.scss";
 import { useSelector } from "react-redux";
 import TipsModal from "../../../pages/Modals/Tips";
 import Context from "../../../store/context";
-import { UilQuestion } from "@iconscout/react-unicons";
 
 const Tips = () => {
   const { isCorrectAnswer } = useContext(Context);
@@ -28,7 +26,7 @@ const Tips = () => {
       >
         <div className="buttonContent">
           <div className="helpButtonIcon">
-            <UilQuestion size="40" />
+            <i className="uil uil-question" size="40"></i>
           </div>
         </div>
       </button>

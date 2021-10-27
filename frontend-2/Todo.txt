@@ -16,6 +16,8 @@ Ejercicios
     [ ] Agregar reconocimiento de voz
 
 General
+    [x] Colocar boton de modo oscuro en dropdown menu
+    [x] Mover agregar tema a dashboard
     [ ] Utilizar loader al momento de cargar los temas
     [ ] Dark/light mode permanente
     [x] Implementar login/register

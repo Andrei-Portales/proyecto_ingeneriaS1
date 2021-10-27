@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
-import { UisStar } from "@iconscout/react-unicons-solid";
 import "./rewards.scss";
 import Context from "../../../store/context";
-import { UilSetting } from "@iconscout/react-unicons";
 import SettingsModal from "../../../pages/Modals/Settings";
 
 const Rewards = () => {
@@ -35,10 +33,10 @@ const Rewards = () => {
           {isCorrectAnswer.value ? (
             <>
               <p className="points">+15</p>
-              <UisStar className="uilStar" />
+              <i className="uil uil-star uilStar"></i>
             </>
           ) : (
-            <UilSetting className="uilSettings" />
+            <i className="uil uil-setting uilSettings"></i>
           )}
         </div>
       </button>

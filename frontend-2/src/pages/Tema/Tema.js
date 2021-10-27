@@ -9,8 +9,6 @@ import { useGetMaterias } from "../../hooks/useGetMaterias";
 
 import styles from "./Tema.module.scss";
 import { tema as linkTema, downloadTema } from "../../util/links";
-import { UilImport } from "@iconscout/react-unicons";
-import { UilClipboard } from "@iconscout/react-unicons";
 
 // import savePDF from "@progress/kendo-react-pdf" ha sido eliminado por no ser utilizado en el codigo actual
 import { PDFExport } from "@progress/kendo-react-pdf";
@@ -128,13 +126,13 @@ const Tema = () => {
             rel="noreferrer"
             download
           >
-            Descargar PDF <UilImport size="16"></UilImport>{" "}
+            Descargar PDF <i className="uil uil-import" size="16"></i>
           </a>
           <button
             className={styles.botonEjercicios}
             onClick={() => openExercise()}
           >
-            Ejercicios <UilClipboard size="16"></UilClipboard>{" "}
+            Ejercicios <i className="uil uil-clipboard-blank" size="16"></i>
           </button>
         </div>
         <br />

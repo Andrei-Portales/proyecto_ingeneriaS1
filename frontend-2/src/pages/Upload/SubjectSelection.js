@@ -1,4 +1,4 @@
-import "./subject-selection.scss";
+import { Select } from "@chakra-ui/react";
 
 const SubjectSelection = (props) => {
   const handleSubjectSelection = (e) => {
@@ -6,11 +6,17 @@ const SubjectSelection = (props) => {
   };
 
   return (
-    <select onChange={handleSubjectSelection} value={props.subject}>
+    <Select
+      bg="#1f2733"
+      borderColor="#1f2733"
+      _focus={{ boxShadow: "none" }}
+      onChange={handleSubjectSelection}
+      value={props.subject}
+    >
       <option>Matemáticas</option>
       <option>Ciencias</option>
       <option>Idioma</option>
-    </select>
+    </Select>
   );
 };
 

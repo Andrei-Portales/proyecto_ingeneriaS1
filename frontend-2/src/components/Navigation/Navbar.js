@@ -1,15 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import "./navbar.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { themeActions } from "../../store/theme-slice";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../assets/avatar.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../../firebase";
+import Dropdown from "react-bootstrap/Dropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar(props) {
   const history = useHistory();
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
+  const dispatch = useDispatch();
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+  const toggleThemeHandler = () => {
+    dispatch(themeActions.toggleTheme());
+  };
 
   const fetchUserName = async () => {
     console.log("feching");
@@ -35,11 +46,47 @@ function Navbar(props) {
   return (
     <div className="main-navbar">
       <ul className="ul-navbar-nav">
-        <li className="nav-item">{name}</li>
+        {/* <li className="nav-item">{name}</li> */}
 
-        <NavItem>
+        <Dropdown>
+          <Dropdown.Toggle
+            className="profile-dropdown-toggle"
+            id="dropdown-basic"
+          >
+            {name}
+            <img className="image-profile" src={Avatar} alt="User profile" />
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu className="profile-dropdown-menu">
+            <Dropdown.Item onClick={() => history.push("/perfil")}>
+              {/* <i className="uil uil-user"></i> */}
+              <FontAwesomeIcon icon={faUserAlt} className="uil" />
+              Mi perfil
+            </Dropdown.Item>
+            <Dropdown.Item onClick={toggleThemeHandler} className="menu-item">
+              {isLightTheme ? (
+                <i className="uil uil-toggle-off"></i>
+              ) : (
+                <i className="uil uil-toggle-on"></i>
+              )}
+              Modo oscuro
+            </Dropdown.Item>
+            <div className="horizontal-divider">
+              <hr />
+            </div>
+            <Dropdown.Item>
+              <a onClick={logout} className="menu-item">
+                {props.children}
+                <i className="uil uil-signout"></i>
+                Cerra cesion
+              </a>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+
+        {/* <NavItem>
           <DropdownMenu></DropdownMenu>
-        </NavItem>
+        </NavItem> */}
       </ul>
     </div>
   );
@@ -60,18 +107,11 @@ function NavItem(props) {
 }
 
 function DropdownMenu() {
-  const [error, setError] = useState("");
-  const history = useHistory();
-
-  async function handleLogout() {
-    setError("");
-    try {
-      await logout();
-      history.push("/login");
-    } catch {
-      setError("Fail to logout");
-    }
-  }
+  const dispatch = useDispatch();
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+  const toggleThemeHandler = () => {
+    dispatch(themeActions.toggleTheme());
+  };
 
   function DropdownItem(props) {
     return (
@@ -84,6 +124,14 @@ function DropdownMenu() {
   function DropdownItemLogout(props) {
     return (
       <a onClick={logout} className="menu-item">
+        {props.children}
+      </a>
+    );
+  }
+
+  function DropdownItemTheme(props) {
+    return (
+      <a onClick={toggleThemeHandler} className="menu-item">
         {props.children}
       </a>
     );
@@ -104,10 +152,14 @@ function DropdownMenu() {
           <i className="uil uil-question-circle"></i>
           Ayuda
         </DropdownItem>
-        {/* <DropdownItem goTo="/pro">
-          <i className="uil uil-shield-exclamation"></i>
-          Ir premium
-        </DropdownItem> */}
+        <DropdownItemTheme>
+          {isLightTheme ? (
+            <i class="uil uil-toggle-off"></i>
+          ) : (
+            <i className="uil uil-toggle-on"></i>
+          )}
+          Modo oscuro
+        </DropdownItemTheme>
         <div className="horizontal-divider">
           <hr />
         </div>

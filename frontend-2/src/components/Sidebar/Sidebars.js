@@ -16,7 +16,7 @@ const Sidebar = (props) => {
         </div>
         <div className="itemsWrapper">
           <ul>
-            <Tooltip title="Upload" placement="top" arrow>
+            <Tooltip title="Subir ejercicios" placement="top" arrow>
               <li
                 className={`sidebarItem ${
                   props.isActive === 1 ? "active" : ""
@@ -26,12 +26,22 @@ const Sidebar = (props) => {
                 <FontAwesomeIcon icon={faUpload} className="uilUpload" />
               </li>
             </Tooltip>
-            <Tooltip title="Ejercicios" placement="top" arrow>
+            <Tooltip title="Subir temas" placement="top" arrow>
               <li
                 className={`sidebarItem ${
                   props.isActive === 2 ? "active" : ""
                 }`}
-                onClick={() => history.push(`/dashboard`)}
+                onClick={() => history.push(`/dashboard/subir-temas`)}
+              >
+                <FontAwesomeIcon icon={faListAlt} className="uilDashboard" />
+              </li>
+            </Tooltip>
+            <Tooltip title="Ejercicios" placement="top" arrow>
+              <li
+                className={`sidebarItem ${
+                  props.isActive === 3 ? "active" : ""
+                }`}
+                onClick={() => history.push(`/dashboard/ejercicios`)}
               >
                 <FontAwesomeIcon icon={faChartLine} className="uilDashboard" />
               </li>
@@ -40,7 +50,7 @@ const Sidebar = (props) => {
             <Tooltip title="Temas" placement="top" arrow>
               <li
                 className={`sidebarItem ${
-                  props.isActive === 3 ? "active" : ""
+                  props.isActive === 4 ? "active" : ""
                 }`}
                 onClick={() => history.push(`/dashboard/temas`)}
               >

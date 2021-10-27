@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 //paginas
 // const Login = React.lazy(() => import("./pages/Login/Login"));
 import Login from "./pages/Login/Login";
+import SignIn from "./views/Pages/SignIn";
 // const Register = React.lazy(() => import("./pages/Register/Register"));
 import Register from "./pages/Register/Register";
 // const Grados = React.lazy(() => import("./pages/Grados/Grados"));
@@ -29,7 +30,7 @@ import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 import Upload from "./pages/Upload/Upload";
 // const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
-import Dashboard from "./pages/Dashboard/Dashboard";
+import DashboardEjercicios from "./pages/Dashboard/Dashboard";
 // const DashboardTemas = React.lazy(() =>
 //   import("./pages/Dashboard/Temas/Dashboard")
 // );
@@ -42,6 +43,9 @@ const App = () => {
       <Route path="/login">
         <Login />
       </Route>
+      <Route path="/signin">
+        <SignIn />
+      </Route>
       <Route path="/register">
         <Register />
       </Route>
@@ -51,19 +55,19 @@ const App = () => {
       <Route path="/upload" exact>
         <Upload />
       </Route>
-      <Route path="/dashboard" exact>
-        <Dashboard />
+      <Route path="/dashboard/ejercicios" exact>
+        <DashboardEjercicios />
       </Route>
       <Route path="/dashboard/temas" exact>
         <DashboardTemas />
+      </Route>
+      <Route path="/dashboard/subir-temas" exact>
+        <Add />
       </Route>
 
       <Layout>
         <Route path="/" exact>
           <Grados />
-        </Route>
-        <Route path="/add" exact>
-          <Add />
         </Route>
         <Route path="/contacto" exact>
           <Contacto />

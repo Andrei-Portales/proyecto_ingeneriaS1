@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import database from "../../firebase";
 import Editor from "../../components/Editor/Editor";
 import AddForm from "../../components/AddForm/AddForm";
+import Sidebar from "../../components/Sidebar/Sidebars";
 import styles from "./Add.module.scss";
 import { Fragment } from "react";
 import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay";
@@ -67,16 +68,21 @@ const Add = () => {
   return (
     <Fragment>
       {isLoading && <LoadingOverlay />}
-      <div className={styles.add}>
-        <AddForm ref={formRef} />
-        <Editor ref={editorRef} />
-        <div className={styles.actions}>
-          <button onClick={() => {}} className={styles.submitButton}>
-            Resetear
-          </button>
-          <button onClick={saveForm} className={styles.submitButton}>
-            Guardar
-          </button>
+      <div className={styles.dashboardWrapper}>
+        <Sidebar isActive={2} />
+        <div className={styles.addWrapper}>
+          <div className={styles.add}>
+            <AddForm ref={formRef} />
+            <Editor ref={editorRef} />
+            <div className={styles.actions}>
+              <button onClick={() => {}} className={styles.submitButton}>
+                Resetear
+              </button>
+              <button onClick={saveForm} className={styles.submitButton}>
+                Guardar
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </Fragment>

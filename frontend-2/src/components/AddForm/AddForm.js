@@ -64,8 +64,10 @@ const AddForm = forwardRef((props, ref) => {
         <input onChange={titleChangeHandler} value={state.title} />
       </div>
       <div className={styles.input}>
-        <label>Id:</label>
+        <label>Id de tema:</label>
         <input onChange={idChangeHandler} value={state.id} />
+        <label>Id de video:</label>
+        <input onChange={urlChangeHandler} value={state.url} />
       </div>
 
       <div className={styles.dropDown}>
@@ -75,9 +77,6 @@ const AddForm = forwardRef((props, ref) => {
           <option value="quinto">Quinto</option>
           <option value="sexto">Sexto</option>
         </select>
-      </div>
-
-      <div className={styles.dropDown}>
         <label>Materia:</label>
         <select onChange={materiaChangeHandler} value={state.materia}>
           <option value="matematicas">Matematicas</option>
@@ -86,10 +85,10 @@ const AddForm = forwardRef((props, ref) => {
         </select>
       </div>
 
-      <div className={styles.input}>
+      {/* <div className={styles.input}>
         <label>Id de video:</label>
         <input onChange={urlChangeHandler} value={state.url} />
-      </div>
+      </div> */}
     </form>
   );
 });
