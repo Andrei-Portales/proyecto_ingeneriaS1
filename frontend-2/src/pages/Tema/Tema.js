@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import Youtube from "./Youtube";
+import TemaItem from "../../components/TemaItem/TemaItem";
+import { useGetMaterias } from "../../hooks/useGetMaterias";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
 import styles from "./Tema.module.scss";
@@ -18,6 +20,7 @@ const Tema = () => {
   const params = useParams();
   const history = useHistory();
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+  const { temas } = useGetMaterias();
   const { tema } = useGetTema();
 
   /* setShowContent no es utilizado pero es esencial para el  
@@ -49,6 +52,13 @@ const Tema = () => {
       await new Promise((resolve) => setTimeout(resolve, 200));
       pdfExportComponent.current.save();
     }
+  };
+
+  const onClickTemaHandler = (id) => {
+    localStorage.setItem("grado", params.grado);
+    localStorage.setItem("materia", params.materia);
+    localStorage.setItem("temaId", id);
+    history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   };
 
   const toggleShowDescription = () =>
@@ -129,7 +139,7 @@ const Tema = () => {
         </div>
         <br />
       </div>
-
+      
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>
@@ -149,15 +159,21 @@ const Tema = () => {
               ))} */}
 
               <div className={styles.helpContainer}>
-                <span className={styles.questionIconSpan}></span>
-                <a
-                  href="https://materialeducativo.org/guatematica-para-cuarto-grado/"
-                  target="_blank"
-                  className={styles.questionTitle}
-                  rel="noreferrer"
-                >
-                  Fuente - MINEDUC 4to Grado
-                </a>
+                {temas.map((item, index) => (
+                  <>
+                    <div
+                      onClick={onClickTemaHandler.bind(null, item.tema_id)}
+                      key={item.id}
+                      className={styles.temaItemPanel}
+                    >
+                      <TemaItem
+                        leading={index + 1}
+                        title={item.title}
+                        isCompleted={item.isCompleted}
+                      />
+                    </div>
+                  </>
+                ))}
               </div>
             </div>
           </div>
