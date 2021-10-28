@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import Youtube from "./Youtube";
-import TemaItem from "../../components/TemaItem/TemaItem";
+import TemaItemSuggested from "../../components/TemaItem/TemaItem";
 import { useGetMaterias } from "../../hooks/useGetMaterias";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
@@ -156,7 +156,6 @@ const Tema = () => {
                 </div>
               ))} */}
 
-              <div className={styles.helpContainer}>
                 {temas.map((item, index) => (
                   <>
                     <div
@@ -164,7 +163,7 @@ const Tema = () => {
                       key={item.id}
                       className={styles.temaItemPanel}
                     >
-                      <TemaItem
+                      <TemaItemSuggested
                         leading={index + 1}
                         title={item.title}
                         isCompleted={item.isCompleted}
@@ -172,7 +171,6 @@ const Tema = () => {
                     </div>
                   </>
                 ))}
-              </div>
             </div>
           </div>
         </div>
