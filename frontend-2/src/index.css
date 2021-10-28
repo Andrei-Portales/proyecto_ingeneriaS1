@@ -8,6 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
+  cursor: url(./assets/newCursor1.png), auto;
+  /* cursor: url(./assets/newCursor2.png), pointer; */
 }
 
 
