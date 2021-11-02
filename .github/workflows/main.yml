@@ -16,9 +16,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
+      - name: Setup Node.js environment
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '15.3.0'
       - name: Install dependencies
         run: |
           cd frontend-2
@@ -30,7 +31,7 @@ jobs:
       - name: Archive production artifact
         uses: actions/upload-artifact@main
         with:
-          name: build
+          name: frontend-2/build
           path: frontend-2/build
           
   deploy:
@@ -43,7 +44,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@main
         with:
-          name: build
+          name: frontend-2/build
           path: frontend-2/build
       - name: Deploy to firebase
         uses: w9jds/firebase-action@master
