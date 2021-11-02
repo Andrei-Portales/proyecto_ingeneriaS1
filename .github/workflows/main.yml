@@ -27,7 +27,7 @@ jobs:
       - name: Build dependecies
         run: |
           cd frontend-2
-          npm run build
+          CI=false npm run build
       - name: Archive production artifact
         uses: actions/upload-artifact@main
         with:
