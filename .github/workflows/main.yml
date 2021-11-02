@@ -16,10 +16,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install dependencies
         run: |
           cd frontend-2
-          npm ci
+          npm i
       - name: Build dependecies
         run: |
           cd frontend-2
