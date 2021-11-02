@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
+      - name: Enter Frontend folder
+        run: cd ./Frontend-2/
       - name: Install dependencies
         run: npm i
       - name: Build dependecies
