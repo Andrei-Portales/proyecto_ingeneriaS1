@@ -7,45 +7,47 @@
     display: flex;
     color: white;
     height: 33px;
-    font-weight: 600;
+    margin-top: 10px;
   }
+}
 
-  .inputNumberOfExercises {
-    display: flex;
+.inputNumberOfExercises {
+  display: flex;
+}
 
-    .radio_input {
-      display: none;
-    }
+.radio_input {
+  display: none;
+}
 
-    .radio_input:checked + .radio_label {
-      color: white;
-      background-color: #5597f2;
-      border: #457ae5;
-    }
-    .radio_label {
-      width: 50px;
-      background-color: #26273a;
-      height: 38px;
-      display: flex;
-      cursor: pointer;
-      margin: 1px;
-      justify-content: center;
-      align-items: center;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 30px;
-      letter-spacing: 0;
-      // color: #39414b;
-      color: white;
-      border: 2px solid #26273a;
-      border-radius: 8px;
-      transition: background 0.1s;
-    }
-    .radio_label:last-of-type {
-      margin-right: 0;
-    }
-    .radio_label:first-of-type {
-      margin-left: 0;
-    }
-  }
+.radio_input:checked + .radio_label {
+  color: white;
+  background-color: #5597f2;
+  border: #457ae5;
+}
+.radio_label {
+  width: 50px;
+  // background-color: #26273a;
+  background-color: #1f2733;
+  height: 38px;
+  display: flex;
+  cursor: pointer;
+  margin: 1px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0;
+  // color: #39414b;
+  color: white;
+  // border: 2px solid #26273a;
+  border: 2px solid #1f2733;
+  border-radius: 8px;
+  transition: background 0.1s;
+}
+.radio_label:last-of-type {
+  margin-right: 0;
+}
+.radio_label:first-of-type {
+  margin-left: 0;
 }

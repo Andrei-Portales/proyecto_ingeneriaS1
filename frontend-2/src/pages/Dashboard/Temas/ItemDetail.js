@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "../item-detail.scss";
 import database from "../../../firebase";
-import ProfileImg from "../../../assets/profile.png";
+import ProfileImg from "../../../assets/profile.jpg";
 import GradeSelection from "../Components/GradeSelection";
 import SubjectSelection from "../Components/SubjectSelection";
 import Context from "../../../store/context";
@@ -11,8 +11,6 @@ import InputVideoId from "../Components/InputVideoId";
 import InputTemaTitle from "../Components/InputTemaTitle";
 import useGetTemaDetail from "../../../hooks/useGetTemaDetail";
 import RenderDate from "../../../components/RenderDate/RenderDate";
-import { UilExpandArrowsAlt } from "@iconscout/react-unicons";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const ItemDetail = ({ itemId }) => {
   const [show, setShow] = useState(false);
@@ -62,7 +60,7 @@ const ItemDetail = ({ itemId }) => {
     <div className="quizDetailContainer">
       <div className="quizHeader">
         <span onClick={() => onClose()}>
-          <UilExpandArrowsAlt size="18" className="expandArrowAlt" />
+          <i className="uil uil-minus"></i>
         </span>
       </div>
       <div className="quizId">
@@ -119,8 +117,8 @@ const ItemDetail = ({ itemId }) => {
       <div className="updateContentContainer">
         <button onClick={() => openEditorModal()}>
           Visualizar o actualizar contenido
-          <OpenInNewIcon className="openInNewIcon" />
-          <EditorModal show={show} temaId={itemId} />
+          <i className="uil uil-calender openInNewIcon"></i>
+          {/* <EditorModal show={show} temaId={itemId} /> */}
         </button>
       </div>
       {/* <div>

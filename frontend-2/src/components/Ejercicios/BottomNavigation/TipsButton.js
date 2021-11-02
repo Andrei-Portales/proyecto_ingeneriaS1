@@ -1,10 +1,8 @@
 import { useContext } from "react";
-import Shuttle from "../../../assets/shuttle.png";
 import "./tips-button.scss";
 import { useSelector } from "react-redux";
 import TipsModal from "../../../pages/Modals/Tips";
 import Context from "../../../store/context";
-import { UilQuestion } from "@iconscout/react-unicons";
 
 const Tips = () => {
   const { isCorrectAnswer } = useContext(Context);
@@ -18,18 +16,18 @@ const Tips = () => {
     !isLightTheme ? "rgba(0, 0, 0, 0.1)" : "#57b9ff"
   } `;
 
+  const borderColor = `${!isLightTheme ? "#000000" : "#0f83d7"}`;
+
   return (
     <>
       <button
         className={className}
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: backgroundColor, borderColor: borderColor }}
       >
         <div className="buttonContent">
           <div className="helpButtonIcon">
-            {/* <img src={Shuttle} width="30" height="48" alt="Shuttle" /> */}
-            <UilQuestion size="40" />
+            <i className="uil uil-question" size="40"></i>
           </div>
-          {/* <div className="helpButtonContent">Pista</div> */}
         </div>
       </button>
       <TipsModal />

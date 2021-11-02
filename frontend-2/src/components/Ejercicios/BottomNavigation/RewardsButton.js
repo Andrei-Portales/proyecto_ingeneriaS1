@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
-import { UisStar } from "@iconscout/react-unicons-solid";
+import { useSelector } from "react-redux";
 import "./rewards.scss";
 import Context from "../../../store/context";
-import { UilSetting } from "@iconscout/react-unicons";
 import SettingsModal from "../../../pages/Modals/Settings";
 
 const Rewards = () => {
   const { isCorrectAnswer, showSettings, actions } = useContext(Context);
   const [show, setShow] = useState(false);
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const backgroundColor = `${
     isCorrectAnswer.value ? "#5cba73" : "rgba(0, 0, 0, 0.1)"
   } `;
+
+  const borderColor = `${!isLightTheme ? "#000000" : "#ffffff"}`;
 
   const openSettingsModal = () => {
     actions({
@@ -24,21 +26,21 @@ const Rewards = () => {
     <>
       <button
         className="rewardsButton"
-        style={{ backgroundColor: backgroundColor }}
+        style={{ backgroundColor: backgroundColor, borderColor: borderColor }}
         onClick={() => openSettingsModal()}
       >
         <div className="rewardsInside">
           {isCorrectAnswer.value ? (
             <>
               <p className="points">+15</p>
-              <UisStar className="uilStar" />
+              <i className="uil uil-star uilStar"></i>
             </>
           ) : (
-            <UilSetting className="uilSettings" />
+            <i className="uil uil-setting uilSettings"></i>
           )}
         </div>
       </button>
-      <SettingsModal show={show} />
+      <SettingsModal />
     </>
   );
 };

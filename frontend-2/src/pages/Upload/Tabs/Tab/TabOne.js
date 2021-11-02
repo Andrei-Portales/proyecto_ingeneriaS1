@@ -8,7 +8,9 @@ import EmptyComponent from "../Components/Empty";
 import UploadedComponent from "../Components/Uploaded";
 import SelectAnswersComponent from "../Components/SelectAnswers";
 import SelectVersionComponent from "../Components/SelectVersion";
-import { UilCloudUpload } from "@iconscout/react-unicons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudUploadAlt } from "@fortawesome/free-solid-svg-icons";
+// import { UilCloudUpload } from "@iconscout/react-unicons";
 
 const baseStyle = {
   flex: 1,
@@ -299,7 +301,7 @@ const TabOne = (props) => {
                       <div className={container}>
                         <div {...getRootProps({ style })}>
                           <input {...getInputProps()} />
-                          <UilCloudUpload />
+                          <FontAwesomeIcon icon={faCloudUploadAlt} />
                           <button type="button" style={button} onClick={open}>
                             Subir
                           </button>
@@ -374,7 +376,7 @@ const TabOne = (props) => {
                       <div className={container}>
                         <div {...getRootProps({ style })}>
                           <input {...getInputProps()} />
-                          <UilCloudUpload />
+                          <FontAwesomeIcon icon={faCloudUploadAlt} />
                           <button type="button" style={button} onClick={open}>
                             Subir
                           </button>

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import "./item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
 import RenderIndex from "./Components/RenderIndex";
@@ -55,7 +55,9 @@ const QuizItem = (props) => {
             <Tooltip title="Número de preguntas" placement="top" arrow>
               <p className="numberOfExercises">{props.numberOfExercises}</p>
             </Tooltip>
-            <RenderDate date={props.dateAdded} />
+            {!isItemVisible.value ? (
+              <RenderDate date={props.dateAdded} />
+            ) : null}
             <img src={ProfileImg} width="27" height="27" alt="Profile" />
             <Tooltip title="Eliminar" placement="top">
               <i

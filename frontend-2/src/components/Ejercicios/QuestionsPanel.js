@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "./questions-panel.scss";
-import { storage } from "../../firebase";
 import { useSelector } from "react-redux";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -15,23 +14,11 @@ const override = css`
 `;
 
 const QuestionsPanel = (props) => {
-  const [url, setUrl] = useState("");
-  const { isCorrectAnswer } = useContext(Context);
+  const { isCorrectAnswer, loading } = useContext(Context);
 
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const titleColor = `${!isLightTheme ? "#FFFFFF" : "#000000"}`;
-
-  // Se usa unicamente para validar tiempo de carga
-  useEffect(() => {
-    storage
-      .ref("images")
-      .child("Angulo.svg")
-      .getDownloadURL()
-      .then((url) => {
-        setUrl(url);
-      });
-  }, []);
 
   const imageDisplay = `${isCorrectAnswer.value ? "flex" : "none"}`;
   const display = `${isCorrectAnswer.value ? "none" : "flex"}`;
@@ -60,7 +47,7 @@ const QuestionsPanel = (props) => {
           <br />
         </>
       )}
-      {!url ? (
+      {loading.value ? (
         <div className="placeholderPanel">
           <ClimbingBoxLoader
             color="#36d7b7"

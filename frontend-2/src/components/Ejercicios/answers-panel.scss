@@ -27,8 +27,11 @@
     font-size: 19px;
     border: 2px solid;
     border-radius: 10px;
-
     transition: background 0.1s;
+
+    &:hover {
+      border: 2px solid #457ae5 !important;
+    }
   }
   .radio_label:last-of-type {
     margin-right: 0;

@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import "./ejercicio.scss";
@@ -9,19 +10,40 @@ import AnswersPanel from "./AnswersPanel";
 import TopNavigation from "./TopNavigation/TopNavigation";
 import BottomNavigation from "./BottomNavigation/BottomNavigation";
 import ProblemTopbar from "./ProblemTopbar";
+import useKeyboardShortcut from "use-keyboard-shortcut";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+import { createSpeechlySpeechRecognition } from "@speechly/speech-recognition-polyfill";
+
+// const appId = "f16ef849-188b-4e08-9b63-e2b321edaa41";
+// const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
+// SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
 const Ejercicio = () => {
-  const { isCorrectAnswer } = useContext(Context);
   const { exercise } = useGetExercise();
+  const { isCorrectAnswer } = useContext(Context);
+  let isAudioEnabled = localStorage.getItem("enabledAudio") === "true";
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+  const startListening = () =>
+    SpeechRecognition.startListening({ continuous: true });
 
   const answersList = [];
 
-  exercise.map((value) => {
-    answersList.push(value.answer_one);
-    answersList.push(value.answer_two);
-    answersList.push(value.answer_three);
-    answersList.push(value.answer_four);
+  useKeyboardShortcut(["A"], () => handleAudio(), {
+    overrideSystem: false,
   });
+
+  answersList.push(exercise.answer_one);
+  answersList.push(exercise.answer_two);
+  answersList.push(exercise.answer_three);
+  answersList.push(exercise.answer_four);
 
   const theme = useSelector((state) => state.theme.theme);
 
@@ -31,36 +53,59 @@ const Ejercicio = () => {
     isLightMode ? "exerciceWrapperDark" : ""
   }`;
 
+  const handleAudio = () => {
+    if (isAudioEnabled) {
+      localStorage.setItem("enabledAudio", false);
+      return;
+    }
+    if (!isAudioEnabled) {
+      localStorage.setItem("enabledAudio", true);
+      return;
+    }
+  };
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
+
   return (
     <div className={exerciceWrapper}>
       {isCorrectAnswer.value ? <Confetti active={true} /> : ""}
-      {exercise.length <= 0 ? <TopNavigation index={8} /> : null}
-      {exercise.map((value) => {
-        return (
-          <>
-            <TopNavigation index={value.order} />
-            <div className="problemBody">
-              <div className="problemContentWrapper">
-                <ProblemTopbar audioSource={value.audio_url} />
-                <div className="problemContent">
-                  <QuestionsPanel
-                    instructions={value.question_title}
-                    issue={value.question_subtitle}
-                    answerUrl={value.answer_url}
-                    version={value.version}
-                    id={value.id}
-                  />
-                  <AnswersPanel
-                    answersList={answersList}
-                    version={value.version}
-                  />
-                </div>
-              </div>
-            </div>
-            <BottomNavigation correctAnswer={value.correct_answer} />
-          </>
-        );
-      })}
+
+      <TopNavigation index={exercise.order} />
+      <div className="problemBody">
+        <div className="problemContentWrapper">
+          <ProblemTopbar audioSource={exercise.audio_url} />
+
+          {/* <div>
+                  <p>Microphone: {listening ? "on" : "off"}</p>
+                  <button
+                    onTouchStart={startListening}
+                    onMouseDown={startListening}
+                    onTouchEnd={SpeechRecognition.stopListening}
+                    onMouseUp={SpeechRecognition.stopListening}
+                  >
+                    Hold to talk
+                  </button>
+                  <p>{transcript}</p>
+                </div> */}
+
+          <div className="problemContent">
+            <QuestionsPanel
+              instructions={exercise.question_title}
+              issue={exercise.question_subtitle}
+              answerUrl={exercise.answer_url}
+              version={exercise.version}
+              id={exercise.id}
+            />
+            <AnswersPanel
+              answersList={answersList}
+              version={exercise.version}
+            />
+          </div>
+        </div>
+      </div>
+      <BottomNavigation correctAnswer={exercise.correct_answer} />
     </div>
   );
 };

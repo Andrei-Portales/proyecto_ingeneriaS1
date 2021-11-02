@@ -1,5 +1,5 @@
-.modal-backdrop {
-    /* background-color: transparent !important; */
+/* .modal-backdrop {
+
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -12,8 +12,6 @@
 .modal-dialog {
     min-height: 500px !important;
     max-width: 800px !important;
-    background-color: green !important;
-    /* background-color: #1a1d28; */
 }
 
 .modalHeader {
@@ -49,4 +47,4 @@
     border-radius: 6px;
     padding: 5px 15px;
     border: 1px solid black;
-}
+} */

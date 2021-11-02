@@ -15,6 +15,7 @@ const useExerciseGlobal = () => {
   });
   const [showSettings, setShowSettings] = useState({ value: false, list: [] });
   const [showEditor, setShowEditor] = useState({ value: false, list: [] });
+  const [loading, setLoading] = useState({ value: false });
 
   const [id, setId] = useState({ value: "", list: [] });
   const [index, setIndex] = useState({ value: 0, list: [] });
@@ -42,6 +43,8 @@ const useExerciseGlobal = () => {
         return setShowSettings(payload);
       case "setShowEditor":
         return setShowEditor(payload);
+      case "setLoading":
+        return setLoading(payload);
       case "setIsItemVisible":
         return setIsItemVisible(payload);
       default:
@@ -57,6 +60,7 @@ const useExerciseGlobal = () => {
     activeIndex,
     showSettings,
     showEditor,
+    loading,
     isItemVisible,
     actions,
   };

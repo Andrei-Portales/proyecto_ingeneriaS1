@@ -7,27 +7,26 @@ import Context from "../../../store/context";
 const Continue = () => {
   let params = useParams();
   const history = useHistory();
-  const { isCorrectAnswer } = useContext(Context);
+  const { isCorrectAnswer, actions, loading } = useContext(Context);
+  const materia = localStorage.getItem("materia");
+  const grado = localStorage.getItem("grado");
+  const temaId = localStorage.getItem("temaId");
+  const numberOfExercises = localStorage.getItem("numberOfExercises");
 
   const nextExercise = () => {
-    if (
-      Number(localStorage.getItem("numberOfExercises")) !== parseInt(params.id)
-    ) {
+    // IR AL SIGUIENTE EJERCICIO
+    if (Number(numberOfExercises) !== parseInt(params.id)) {
+      actions({ type: "setLoading", payload: { ...loading, value: true } });
       history.push(
-        `/grados/${localStorage.getItem("grado")}/${localStorage.getItem(
-          "materia"
-        )}/${localStorage.getItem("temaId")}/ejercicio/${localStorage.getItem(
-          "temaId"
-        )}/${parseInt(params.id) + 1}`
+        `/grados/${grado}/${materia}/${temaId}/ejercicio/${temaId}/${
+          parseInt(params.id) + 1
+        }`
       );
       window.location.reload();
     } else {
+      // REGRESAR A LA SECCION DE TEMAS
       localStorage.setItem("quizId", "");
-      history.push(
-        `/grados/${localStorage.getItem("grado")}/${localStorage.getItem(
-          "materia"
-        )}/${localStorage.getItem("temaId")}`
-      );
+      history.push(`/grados/${grado}/${materia}/${temaId}`);
     }
   };
 

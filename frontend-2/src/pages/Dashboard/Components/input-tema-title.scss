@@ -9,10 +9,13 @@
   border: 1px solid transparent;
 
   &:focus {
-    color: rgba(66, 165, 245, 1);
+    // color: rgba(66, 165, 245, 1);
+    background-color: #1a202c;
   }
   &:hover {
-    background-color: #26273a;
-    border: 1px solid #26273a;
+    // background-color: #26273a;
+    background-color: #1a202c;
+    // border: 1px solid #26273a;
+    border: 1px solid #1a202c;
   }
 }

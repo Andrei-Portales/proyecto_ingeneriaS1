@@ -1,10 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router";
 import "./close-exercise.scss";
-import { UilTimes } from "@iconscout/react-unicons";
+import useKeyboardShortcut from "use-keyboard-shortcut";
 
 const CloseExercise = () => {
   const history = useHistory();
+
+  useKeyboardShortcut(["Escape"], () => closeExercise(), {
+    overrideSystem: false,
+  });
 
   const closeExercise = () => {
     if (history.location.pathname.includes("/ejercicio/")) {
@@ -22,7 +26,7 @@ const CloseExercise = () => {
   return (
     <div className="exitPanel">
       <p onClick={() => closeExercise()}>
-        <UilTimes className="uilTimes" />
+        <i className="uil uil-times uilTimes"></i>
       </p>
     </div>
   );

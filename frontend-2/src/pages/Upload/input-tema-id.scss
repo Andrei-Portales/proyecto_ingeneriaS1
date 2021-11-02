@@ -6,9 +6,11 @@
   border-radius: 5px;
   margin: 0 10px;
   font-weight: 600;
-  background-color: #26273a;
+  // background-color: #26273a;
   color: white;
-  border: 1px solid #26273a;
+  // border: 1px solid #26273a;
+  border-color: #1f2733;
+  background-color: #1f2733;
 
   &:focus {
     color: rgba(66, 165, 245, 1);

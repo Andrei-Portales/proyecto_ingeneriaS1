@@ -1,9 +1,10 @@
 import { useHistory } from "react-router";
 import "./sidebar.scss";
 import Tooltip from "@material-ui/core/Tooltip";
-import { UilUpload } from "@iconscout/react-unicons";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AssignmentIcon from "@mui/icons-material/Assignment";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUpload } from "@fortawesome/free-solid-svg-icons";
+import { faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = (props) => {
   const history = useHistory();
@@ -15,35 +16,45 @@ const Sidebar = (props) => {
         </div>
         <div className="itemsWrapper">
           <ul>
-            <Tooltip title="Upload" placement="top" arrow>
+            <Tooltip title="Subir ejercicios" placement="top" arrow>
               <li
                 className={`sidebarItem ${
                   props.isActive === 1 ? "active" : ""
                 }`}
                 onClick={() => history.push(`/upload`)}
               >
-                <UilUpload className="uilUpload" />
+                <FontAwesomeIcon icon={faUpload} className="uilUpload" />
+              </li>
+            </Tooltip>
+            <Tooltip title="Subir temas" placement="top" arrow>
+              <li
+                className={`sidebarItem ${
+                  props.isActive === 2 ? "active" : ""
+                }`}
+                onClick={() => history.push(`/dashboard/subir-temas`)}
+              >
+                <FontAwesomeIcon icon={faListAlt} className="uilDashboard" />
               </li>
             </Tooltip>
             <Tooltip title="Ejercicios" placement="top" arrow>
               <li
                 className={`sidebarItem ${
-                  props.isActive === 2 ? "active" : ""
+                  props.isActive === 3 ? "active" : ""
                 }`}
-                onClick={() => history.push(`/dashboard`)}
+                onClick={() => history.push(`/dashboard/ejercicios`)}
               >
-                <DashboardIcon className="uilDashboard" />
+                <FontAwesomeIcon icon={faChartLine} className="uilDashboard" />
               </li>
             </Tooltip>
 
             <Tooltip title="Temas" placement="top" arrow>
               <li
                 className={`sidebarItem ${
-                  props.isActive === 3 ? "active" : ""
+                  props.isActive === 4 ? "active" : ""
                 }`}
                 onClick={() => history.push(`/dashboard/temas`)}
               >
-                <AssignmentIcon className="uilDashboard" />
+                <FontAwesomeIcon icon={faListAlt} className="uilDashboard" />
               </li>
             </Tooltip>
           </ul>

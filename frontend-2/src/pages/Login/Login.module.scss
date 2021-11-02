@@ -1,48 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
 .loginPage {
-    height: 100%;
-    width: 100%;
-    display: flex;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  font-family: "Open Sans" !important;
 }
 
 .info {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  color: white;
+  background-color: #0a2a66 !important;
 }
 
 .info-dark {
-    color: white;
+  color: white;
 }
 
 .info h1 {
-    font-size: 2rem;
-    padding-left: 25px;
-    padding-right: 25px;
+  font-size: 2rem;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .info img {
-    height: 45%;
-    width: 450px;
+  height: 45%;
+  width: 450px;
 }
 
 .form {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
 @media (max-width: 850px) {
-    .info {
-        display: none;
-    }
+  .info {
+    display: none;
+  }
 
-    .form {
-        width: 100%;
-    }
+  .form {
+    width: 100%;
+  }
 }

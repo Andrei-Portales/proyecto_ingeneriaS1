@@ -1,65 +1,94 @@
 import React, { useState, useContext } from "react";
+import {
+  Table,
+  Tbody,
+  Th,
+  Thead,
+  Tr,
+  useColorModeValue,
+  useDisclosure,
+  Slide,
+} from "@chakra-ui/react";
 import "./content.scss";
-import QuizItem from "./Item";
 import Context from "../../store/context";
 import ItemDetail from "./ItemDetail";
-import Dropdown from "react-bootstrap/Dropdown";
-import { useGetQuiz } from "../../hooks/useGetQuiz";
+import Card from "../../components/Card/Card";
+import CardBody from "../../components/Card/CardBody.js";
+import TablesTableRow from "../../components/Tables/EjerciciosRow";
+import AdminNavbar from "../../components/Navbars/AdminNavbar";
+import { useGetEjercicios } from "../../hooks/useGetEjercicios";
 
-const Content = () => {
-  const [isItemSelected, setIsItemSelected] = useState(false);
+const Content = (props) => {
+  const { ...rest } = props;
   const [itemId, setItemId] = useState("");
   const { isItemVisible } = useContext(Context);
+  const { onOpen } = useDisclosure();
+  const [fixed, setFixed] = useState(false);
 
-  const { quizList } = useGetQuiz();
+  const { ejercicios } = useGetEjercicios();
 
-  const isItemSelectFunction = (value) => {
-    setIsItemSelected(value);
-  };
   const itemIdFunction = (value) => {
     setItemId(value);
+    console.log(value);
   };
 
   const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
   const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
   const display = `${isItemVisible.value ? "flex" : "none"}`;
 
+  const textColor = useColorModeValue("gray.700", "white");
+
   return (
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          <div className="filterContainer">
-            <Dropdown>
-              <Dropdown.Toggle variant="link" id="dropdown-basic">
-                <i className="uil uil-filter"></i>
-              </Dropdown.Toggle>
-              <Dropdown.Menu></Dropdown.Menu>
-            </Dropdown>
-          </div>
-          <div className="titleContainer">
-            <p>Ejericicios</p>
-          </div>
+          <AdminNavbar
+            onOpen={onOpen}
+            logoText={"PURITY UI DASHBOARD"}
+            brandText="Ejercicios"
+            fixed={fixed}
+            {...rest}
+          />
         </div>
         <div className="listContainer">
-          <ul className="tree-list" style={{ width: widthTreeList }}>
-            {quizList.map((data, index) => {
-              return (
-                <QuizItem
-                  key={data.id}
-                  index={index + 1}
-                  quizId={data.id}
-                  grade={data.grade}
-                  subject={data.subject}
-                  temaId={data.tema_id}
-                  tema={data.tema}
-                  numberOfExercises={data.number_of_exercises}
-                  dateAdded={data.date_added}
-                  isItemSelected={isItemSelectFunction}
-                  itemId={itemIdFunction}
-                />
-              );
-            })}
-          </ul>
+          <div className="cardContainer" style={{ width: widthTreeList }}>
+            <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+              <CardBody>
+                <Table variant="simple" color={textColor}>
+                  <Thead>
+                    <Tr my=".8rem" color="gray.400">
+                      <Th mx="0rem"></Th>
+                      <Th color="gray.400">Ejercicio</Th>
+                      <Th color="gray.400">Grado</Th>
+                      <Th color="gray.400">Asignatura</Th>
+                      <Th color="gray.400">Tema Id</Th>
+                      <Th color="gray.400">#Preguntas</Th>
+                      {/* <Th color="gray.400">Fecha</Th> */}
+                      {/* <Th></Th> */}
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {ejercicios.map((data, index) => {
+                      return (
+                        <TablesTableRow
+                          key={data.id}
+                          index={index + 1}
+                          ejercicioId={data.id}
+                          grade={data.grade}
+                          subject={data.subject}
+                          temaId={data.tema_id}
+                          tema={data.tema}
+                          numberOfExercises={data.number_of_exercises}
+                          dateAdded={data.date_added}
+                          itemId={itemIdFunction}
+                        />
+                      );
+                    })}
+                  </Tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </div>
       <div className="listViewDetail" style={{ display: display }}>

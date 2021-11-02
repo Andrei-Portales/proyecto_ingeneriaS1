@@ -1,12 +1,11 @@
 import React from "react";
 import "./success-banner.scss";
-import { UilThumbsUp } from "@iconscout/react-unicons";
 
 const SuccessBanner = () => {
   return (
     <div className="successBanner">
       <div className="innerBanner">
-        <UilThumbsUp />
+        <i className="uil uil-thumbs-up"></i>
         <p>¡Correcto!</p>
       </div>
     </div>

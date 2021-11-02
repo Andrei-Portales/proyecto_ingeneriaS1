@@ -3,7 +3,7 @@ import "./upload.scss";
 import "./quiz-section.scss";
 import QuizSectionComponent from "./QuizSection";
 import SuccessQuizComponent from "./SuccessQuiz";
-import SidebarComponent from "../../components/Sidebar/Sidebar";
+import SidebarComponent from "../../components/Sidebar/Sidebars";
 import TabOne from "./Tabs/Tab/TabOne";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";

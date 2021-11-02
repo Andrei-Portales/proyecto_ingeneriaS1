@@ -1,14 +1,15 @@
 .tree-item {
   position: relative;
-  padding-top: 38px !important;
-  // background-color: #2b2e44;
-  background-color: #1b1c30;
+  padding-top: 40px !important;
+  // background-color: #1b1c30;
+  background-color: #1f2733;
   color: white !important;
   list-style: none;
   margin: 0px auto;
 
   &:hover {
-    background-color: #33374a !important;
+    background-color: #1a202c !important;
+    border-radius: 8px !important;
   }
 
   .tree-row {
@@ -16,7 +17,7 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
-    height: 39px !important;
+    height: 40px !important;
     width: 100%;
     display: flex;
     z-index: 1;
@@ -137,7 +138,9 @@
             align-items: center;
 
             .task-name {
-              color: #b1b5c5;
+              // color: #b1b5c5;
+              font-weight: 600;
+              color: white;
               font-size: 15px;
             }
           }
@@ -148,5 +151,5 @@
 }
 
 .tree-item.selected {
-  background-color: #33374a !important;
+  background-color: #1a202c !important;
 }

@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
+
+@mixin grid($cols, $mgn){
+  float: left;
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  width: ((100% - (($cols - 1) * $mgn )) / $cols );
+  &:nth-child(#{$cols}n) {
+    margin-right: 0;
+ }
+}
+
+
 // SCREEN 0 - 320PX
 .tema {
   width: 100%;
@@ -166,29 +178,12 @@
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-
-  .questionIconSpan {
-    background-color: #0070d2;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    display: flex;
-    margin-left: 20px;
-    justify-content: center;
-    align-items: center;
-    .questionIcon {
-      color: white !important;
-    }
-  }
-  .questionTitle {
-    color: #006dcc;
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 0px;
-    align-items: center;
-    text-decoration: none;
-  }
+  @include grid(1, 2%)
 }
+
+
+
+
 
 @media (min-width: 320px) {
   .videoSection {

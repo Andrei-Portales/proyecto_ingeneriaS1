@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import database from "../firebase";
 
-export const useGetQuiz = () => {
-  const [quizList, setQuizList] = useState([]);
+export const useGetEjercicios = () => {
+  const [ejercicios, setEjercicios] = useState([]);
 
   useEffect(() => {
     // Retreive from firebase
@@ -14,9 +14,9 @@ export const useGetQuiz = () => {
         snapshot.forEach((snap) => {
           list.push(snap.val());
         });
-        setQuizList(list);
+        setEjercicios(list);
       });
   }, []);
 
-  return { quizList };
+  return { ejercicios };
 };

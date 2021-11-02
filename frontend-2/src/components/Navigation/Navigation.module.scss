@@ -1,135 +1,136 @@
 $nav-bar-height: 80px;
 
 .nav {
-    height: $nav-bar-height;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 25px;
-    box-shadow: 0px 15px 5px -15px #111;
+  height: $nav-bar-height;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 25px;
+  box-shadow: 0px 15px 5px -15px #111;
 }
 .nav-left {
-    height: 100%;
-    display: flex;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-right {
-    margin-right: 25px;
+  margin-right: 25px;
+  height: 80px;
 }
 
 .logo {
-    height: 100%;
-    transform: translateY(5%);
+  height: 100%;
+  transform: translateY(5%);
 }
 
 .actions {
-    display: block;
+  display: block;
 }
 
 .actions ul {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 .action {
-    margin-right: 25px;
-    font-size: 1.2rem;
-    color: black;
-    font-weight: 500;
-    text-decoration: none;
-    user-select: none;
-    cursor: pointer;
+  margin-right: 25px;
+  font-size: 1.2rem;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
 
-    &:hover {
-        border-bottom: 1px solid black;
-    }
+  &:hover {
+    border-bottom: 1px solid black;
+  }
 }
 
 .action-selected {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .logout {
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    font-size: 1rem;
-    padding: 6px 10px;
-    border: 2px solid black;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border: 2px solid black;
 
-    &:hover {
-        background-color: white;
-        color: black;
-    }
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 }
 
 .add {
-    @extend .logout;
-    margin-right: 15px;
+  @extend .logout;
+  margin-right: 15px;
 }
 
 .drawerIcon {
-    display: none;
-    margin-right: 15px;
-    width: 40px;
-    flex-direction: column;
-    border: 2px solid #636363;
-    border-radius: 7px;
-    padding: 7px 4px;
+  display: none;
+  margin-right: 15px;
+  width: 40px;
+  flex-direction: column;
+  border: 2px solid #636363;
+  border-radius: 7px;
+  padding: 7px 4px;
 
-    & div:nth-child(1) {
-        height: 3px;
-        width: 100%;
-        background-color: #636363;
-    }
+  & div:nth-child(1) {
+    height: 3px;
+    width: 100%;
+    background-color: #636363;
+  }
 
-    & div:nth-child(2),
-    div:nth-child(3) {
-        margin-top: 7px;
-        height: 3px;
-        width: 100%;
-        background-color: #636363;
-    }
+  & div:nth-child(2),
+  div:nth-child(3) {
+    margin-top: 7px;
+    height: 3px;
+    width: 100%;
+    background-color: #636363;
+  }
 }
 
 .nav-dark {
-    background-color: #363537;
+  background-color: #363537;
 
-    & .action {
-        color: white;
+  & .action {
+    color: white;
 
-        &:hover {
-            border-bottom: 1px solid white;
-        }
+    &:hover {
+      border-bottom: 1px solid white;
     }
+  }
 
-    & .action-selected {
-        border-bottom: 1px solid white;
+  & .action-selected {
+    border-bottom: 1px solid white;
+  }
+
+  & .drawerIcon {
+    border: 2px solid white;
+
+    & div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3) {
+      background-color: white;
     }
-
-    & .drawerIcon {
-        border: 2px solid white;
-
-        & div:nth-child(1),
-        div:nth-child(2),
-        div:nth-child(3) {
-            background-color: white;
-        }
-    }
+  }
 }
 
 @media (max-width: 1248px) {
-    .actions {
-        display: none;
-    }
+  .actions {
+    display: none;
+  }
 
-    .nav-right {
-        display: none;
-    }
+  .nav-right {
+    display: none;
+  }
 
-    .drawerIcon {
-        display: flex;
-    }
+  .drawerIcon {
+    display: flex;
+  }
 }

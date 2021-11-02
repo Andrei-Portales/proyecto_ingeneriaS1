@@ -1,5 +1,5 @@
 import React from "react";
-import "./grade-selection.scss";
+import { Select } from "@chakra-ui/react";
 
 export const GradeSelection = ({ gradeSelection, grade }) => {
   const handleGradeSelection = (e) => {
@@ -9,11 +9,18 @@ export const GradeSelection = ({ gradeSelection, grade }) => {
   console.log("IN: " + grade);
 
   return (
-    <select onChange={handleGradeSelection} value={grade}>
+    <Select
+      bg="#1f2733"
+      borderColor="#1f2733"
+      mx="10px"
+      _focus={{ boxShadow: "none" }}
+      onChange={handleGradeSelection}
+      value={grade}
+    >
       <option>4to Grado</option>
       <option>5to Grado</option>
       <option>6to Grado</option>
-    </select>
+    </Select>
   );
 };
 
