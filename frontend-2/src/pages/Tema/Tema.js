@@ -40,6 +40,10 @@ const Tema = () => {
     !isLightTheme && styles["titulo-tema-dark"]
   }`;
 
+  const tituloRecomendaciones = `${styles.tituloRecomendaciones} ${
+    !isLightTheme && styles["titulo-recomendaciones-dark"]
+  }`;
+
   const suggestions = `${styles.suggestionSection} ${
     !isLightTheme ? styles["more-dark"] : ""
   }`;
@@ -76,6 +80,7 @@ const Tema = () => {
   };
 
   return (
+    
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
@@ -93,7 +98,7 @@ const Tema = () => {
           >
             <div className={styles.tituloContenedor}>
               {tema.map((item, index) => (
-                <h3 className={styles.tituloTema} /* se cambio la fuente de estilo*/>
+                <h3 className={tituloTema} /* se cambio la fuente de estilo*/>
                   {item.title}
                 </h3>
               ))}
@@ -149,7 +154,7 @@ const Tema = () => {
         
       
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
-      <h3 className={styles.tituloRecomendaciones}>Recomendaciones</h3>
+      <h3 className={tituloRecomendaciones}>Recomendaciones</h3>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>
             
