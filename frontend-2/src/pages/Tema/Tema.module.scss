@@ -41,6 +41,15 @@
     }
   }
 
+.tituloRecomendaciones {
+  color: #093366;
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "DejaVu Sans", "Arial", sans-serif;
+      padding-left: 16px;
+      margin: 15px 0px;
+}
+
   .videoContenedor {
     width: 100%;
   }
@@ -94,9 +103,8 @@
 }
 .suggestionSection {
   width: 25%;
-  height: calc(100% - 20px);
-  padding: 20px 16px 0px 16px;
-  background-color: white;
+  height: calc(100% - 175px);
+  padding: 50px 16px 0px 16px;
   display: none;
 
   .contenidoContenedor {
@@ -150,14 +158,14 @@
   padding: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 15px;
+  margin-right: 30px;
   background-color: white;
   border-radius: 7px 7px 0 0;
   font-family: "DejaVu Sans", "Arial", sans-serif;
 }
 
 .showMoreDescription {
-  width: calc(100% - 15px);
+  width: calc(100% - 30px);
   border: none;
   outline: none;
   background-color: white;

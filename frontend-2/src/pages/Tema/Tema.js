@@ -7,6 +7,7 @@ import TemaItemSuggested from "../../components/TemaItem/TemaItem";
 import { useGetMaterias } from "../../hooks/useGetMaterias";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
+import fondo from '../../assets/background.jpg';
 import styles from "./Tema.module.scss";
 import { tema as linkTema, downloadTema } from "../../util/links";
 
@@ -76,6 +77,7 @@ const Tema = () => {
   };
 
   return (
+
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
@@ -139,8 +141,10 @@ const Tema = () => {
       </div>
       
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
+      <h3 className={styles.tituloRecomendaciones}>Recomendaciones</h3>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>
+            
             <div className={styles.materiasList}>
               {/* {temasItems.map((item) => (
                 <div
