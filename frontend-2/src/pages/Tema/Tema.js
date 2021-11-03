@@ -123,23 +123,30 @@ const Tema = () => {
         </div>
 
         <div className={styles.opcionesContenedor}>
+          <button className={styles.botonDescargar} style={{width: '250px'}}>
           <a
-            className={styles.botonDescargar}
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
             href={`${downloadTema}/${params.id}`}
             target="_blank"
             rel="noreferrer"
             download
           >
-            Descargar PDF <i className="uil uil-import" size="16"></i>
+            Descargar PDF <i className="uil uil-import" size="16" style={{paddingLeft:'50px'}} ></i>
           </a>
+          </button>
           <button
             className={styles.botonEjercicios}
+            style={{width: '250px', 
+                    marginRight: 'calc(100% - 85%)'}}
             onClick={() => openExercise()}
           >
-            Ejercicios <i className="uil uil-clipboard-blank" size="16"></i>
+            Ejercicios<i className="uil uil-clipboard-blank" size="16" style={{paddingLeft:'50px'}}></i>
           </button>
+          
         </div>
-        <br />
       </div>
         
       
