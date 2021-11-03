@@ -7,7 +7,6 @@ import TemaItemSuggested from "../../components/TemaItem/TemaItem";
 import { useGetMaterias } from "../../hooks/useGetMaterias";
 // import TemaItemSuggested from '../../components/TemaItem/TemaItemSuggested'; ha sido eliminado por no ser utilizado
 
-import fondo from '../../assets/background.jpg';
 import styles from "./Tema.module.scss";
 import { tema as linkTema, downloadTema } from "../../util/links";
 
@@ -77,7 +76,6 @@ const Tema = () => {
   };
 
   return (
-    <body>
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
@@ -177,7 +175,6 @@ const Tema = () => {
         </div>
       </div>
     </div>
-    </body>
   );
 };
 export default Tema;

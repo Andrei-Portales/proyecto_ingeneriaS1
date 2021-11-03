@@ -26,6 +26,8 @@ import Contacto from "./pages/Contacto/Contacto";
 // const FAQ = React.lazy(() => import("./pages/FAQ/FAQ.js"));
 import FAQ from "./pages/FAQ/FAQ";
 // const Profile = React.lazy(() => import("./pages/Profile/Profile"));
+import AboutUs from "./pages/AboutUs/AboutUs";
+
 import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 import Upload from "./pages/Upload/Upload";
@@ -74,6 +76,9 @@ const App = () => {
         </Route>
         <Route path="/preguntas-frecuentes" exact>
           <FAQ />
+        </Route>
+        <Route path="/about-us" exact>
+          <AboutUs />
         </Route>
         <Route path="/perfil" exact>
           <Profile />
