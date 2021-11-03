@@ -8,6 +8,6 @@
 }
 
 .youtubeVideo {
-  width: 86% !important;
+  width: calc(100% - 30px) !important;
   height: calc(69vh) !important;
 }

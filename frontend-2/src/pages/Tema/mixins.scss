@@ -2,7 +2,7 @@
 @mixin grid($cols, $mgn){
   float: left;
   margin-right: $mgn;
-  margin-bottom: $mgn;
+  border-right: 4px solid #093366 ;
   width: ((100% - (($cols - 1) * $mgn )) / $cols );
   &:nth-child(#{$cols}n) {
     margin-right: 0;

@@ -95,7 +95,9 @@ const Tema = () => {
           >
             <div className={styles.tituloContenedor}>
               {tema.map((item, index) => (
-                <h3 className={tituloTema}>{item.title}</h3>
+                <h3 className={styles.tituloTema} /* se cambio la fuente de estilo*/>
+                  {item.title}
+                </h3>
               ))}
             </div>
             <div>
@@ -139,6 +141,7 @@ const Tema = () => {
         </div>
         <br />
       </div>
+        
       
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
       <h3 className={styles.tituloRecomendaciones}>Recomendaciones</h3>
@@ -146,20 +149,7 @@ const Tema = () => {
           <div className={materiaClasses}>
             
             <div className={styles.materiasList}>
-              {/* {temasItems.map((item) => (
-                <div
-                  className={styles.esto}
-                  onClick={onClickTemaHandler.bind(null, item.no)}
-                  key={item.no}
-                >
-                  <TemaItemSuggested
-                    leading={item.no}
-                    title={item.title}
-                    playingTema={params.id}
-                  />
-                </div>
-              ))} */}
-
+              
                 {temas.map((item, index) => (
                   <>
                     <div

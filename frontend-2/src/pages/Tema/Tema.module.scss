@@ -41,15 +41,7 @@
     }
   }
 
-.tituloRecomendaciones {
-  color: #093366;
-      font-weight: 600;
-      font-size: 18px;
-      font-family: "DejaVu Sans", "Arial", sans-serif;
-      padding-left: 16px;
-      margin: 15px 0px;
-}
-
+    
   .videoContenedor {
     width: 100%;
   }
@@ -98,6 +90,26 @@
     }
   }
 }
+
+.tituloRecomendaciones{
+  color: #093366;
+      text-align: center;
+      font-weight: 600;
+      font-size: 25px;
+      font-family: "DejaVu Sans", "Arial", sans-serif;
+      padding-left: 0;
+      margin-top: -25px;
+}
+
+.lineaDivisora{
+  border-left: 4px solid #093366;
+  height: 100vh;
+  left: 50%;
+  margin-left: -3px;
+  margin-top: 25px;
+}
+
+
 .infoMateria {
   display: none !important;
 }
@@ -105,7 +117,11 @@
   width: 25%;
   height: calc(100% - 175px);
   padding: 50px 16px 0px 16px;
+  margin-right: -20px;
+  margin-top: 100px;
   display: none;
+  background-color: white;
+  border-radius: 20px;
 
   .contenidoContenedor {
     padding-top: 20px;
