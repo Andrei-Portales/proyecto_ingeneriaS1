@@ -6,8 +6,6 @@ export const GradeSelection = ({ gradeSelection, grade }) => {
     gradeSelection(e.target.value);
   };
 
-  console.log("IN: " + grade);
-
   return (
     <Select
       bg="#1f2733"

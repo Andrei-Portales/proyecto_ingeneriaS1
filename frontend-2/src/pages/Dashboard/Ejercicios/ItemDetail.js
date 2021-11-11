@@ -1,22 +1,22 @@
 import React, { useContext } from "react";
-import { Flex, Avatar, Text, Slide } from "@chakra-ui/react";
+import { Flex, Avatar, Text } from "@chakra-ui/react";
 import "./item-detail.scss";
-import database from "../../firebase";
+import database from "../../../firebase";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import Context from "../../store/context";
-import ProfileImg from "../../assets/profile.jpg";
-import GradeSelection from "../Upload/GradeSelection";
-import SubjectSelection from "../Upload/SubjectSelection";
-import NumberOfExercises from "./Components/NumberOfExercises";
-import InputTemaId from "../Upload/InputTemaId";
-import InputTemaTitle from "./Components/InputTemaTitle";
-import useGetQuizDetail from "../../hooks/useGetQuizDetail";
-import RenderDate from "../../components/RenderDate/RenderDate";
+import Context from "../../../store/context";
+import ProfileImg from "../../../assets/profile.jpg";
+import GradeSelection from "../../Upload/GradeSelection";
+import SubjectSelection from "../../Upload/SubjectSelection";
+import NumberOfExercises from "../Components/NumberOfExercises";
+import InputTemaId from "../../Upload/InputTemaId";
+import InputTemaTitle from "../Components/InputTemaTitle";
+import useGetEjercicioDetalle from "../../../hooks/useGetEjercicioDetalle";
+import RenderDate from "../../../components/RenderDate/RenderDate";
 
 const ItemDetail = (props) => {
   const { isItemVisible, activeIndex, actions } = useContext(Context);
 
-  const quizList = useGetQuizDetail(props.itemId);
+  const ejercicio = useGetEjercicioDetalle(props.itemId);
 
   const temaTitleUpdate = (answer) => {
     database.ref(`quiz/${props.itemId}`).update({ tema: answer });
@@ -57,7 +57,7 @@ const ItemDetail = (props) => {
         </span>
       </Flex>
       <Flex h="60px">
-        {quizList.map((data) => {
+        {ejercicio.map((data) => {
           return (
             <InputTemaTitle
               temaTitleInput={temaTitleUpdate}
@@ -72,14 +72,14 @@ const ItemDetail = (props) => {
           <Text pl="10px">Usuario Admin</Text>
         </Flex>
         <Flex w="50%">
-          {quizList.map((data) => {
+          {ejercicio.map((data) => {
             return <RenderDate key={data.date_added} date={data.date_added} />;
           })}
         </Flex>
       </Flex>
       <hr />
       <Flex mt="30px" justifyContent="space-evenly">
-        {quizList.map((data) => {
+        {ejercicio.map((data) => {
           return (
             <>
               <GradeSelection
@@ -95,7 +95,7 @@ const ItemDetail = (props) => {
         })}
       </Flex>
       <Flex mt="40px">
-        {quizList.map((data) => {
+        {ejercicio.map((data) => {
           return (
             <InputTemaId temaIdInput={temaIdUpdate} temaId={data.tema_id} />
           );
@@ -103,8 +103,8 @@ const ItemDetail = (props) => {
       </Flex>
       <br />
       <br />
-      <Flex>
-        {quizList.map((data) => {
+      <Flex mt="20px">
+        {ejercicio.map((data) => {
           return (
             <NumberOfExercises
               numberOf={data.number_of_exercises}

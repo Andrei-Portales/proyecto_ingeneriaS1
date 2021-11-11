@@ -7,7 +7,7 @@ const InputTema = (props) => {
 
   return (
     <input
-      className="inputTema"
+      className="inputTemaId"
       type="text"
       value={props.temaId}
       onChange={temaIdInputHandler}

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "../item.scss";
+import "../Ejercicios/item.scss";
 import Tooltip from "@material-ui/core/Tooltip";
 import RenderIndex from "../Components/RenderIndex";
 import RenderDate from "../../../components/RenderDate/RenderDate";

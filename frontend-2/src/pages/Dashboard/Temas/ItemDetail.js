@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
-import "../item-detail.scss";
+import { Flex, Avatar, Text } from "@chakra-ui/react";
+import "../Ejercicios/item-detail.scss";
 import database from "../../../firebase";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 import ProfileImg from "../../../assets/profile.jpg";
 import GradeSelection from "../Components/GradeSelection";
 import SubjectSelection from "../Components/SubjectSelection";
@@ -57,13 +59,13 @@ const ItemDetail = ({ itemId }) => {
   };
 
   return (
-    <div className="quizDetailContainer">
-      <div className="quizHeader">
-        <span onClick={() => onClose()}>
-          <i className="uil uil-minus"></i>
+    <Flex className="shadow" direction="column" w="100%" py="10px" px="24px">
+      <Flex h="70px" justifyContent="end">
+        <span onClick={() => onClose()} className="expandArrow">
+          <ArrowForwardIcon />
         </span>
-      </div>
-      <div className="quizId">
+      </Flex>
+      <Flex h="60px">
         {tema.map((data) => {
           return (
             <InputTemaTitle
@@ -72,20 +74,20 @@ const ItemDetail = ({ itemId }) => {
             />
           );
         })}
-      </div>
-      <div className="userAndDate">
-        <div className="user">
-          <img src={ProfileImg} alt="Profile" width="27" height="27" />
-          <p>Usuario Admin</p>
-        </div>
-        <div className="date">
+      </Flex>
+      <Flex h="60px" mb="6px">
+        <Flex w="50%">
+          <Avatar src={ProfileImg} w="27px" h="27px" />
+          <Text pl="10px">Usuario Admin</Text>
+        </Flex>
+        <Flex w="50%">
           {tema.map((data) => {
             return <RenderDate key={data.date_added} date={data.date_added} />;
           })}
-        </div>
-      </div>
+        </Flex>
+      </Flex>
       <hr />
-      <div className="selectionsToggle">
+      <Flex mt="30px" justifyContent="space-evenly">
         {tema.map((data) => {
           return (
             <>
@@ -100,8 +102,8 @@ const ItemDetail = ({ itemId }) => {
             </>
           );
         })}
-      </div>
-      <div className="inputTemaId">
+      </Flex>
+      <Flex mt="40px">
         {tema.map((data) => {
           return (
             <>
@@ -113,20 +115,15 @@ const ItemDetail = ({ itemId }) => {
             </>
           );
         })}
-      </div>
-      <div className="updateContentContainer">
+      </Flex>
+      <Flex mt="150px">
         <button onClick={() => openEditorModal()}>
           Visualizar o actualizar contenido
           <i className="uil uil-calender openInNewIcon"></i>
           {/* <EditorModal show={show} temaId={itemId} /> */}
         </button>
-      </div>
-      {/* <div>
-        {tema.map((data) => {
-          return data.body;
-        })}
-      </div> */}
-    </div>
+      </Flex>
+    </Flex>
   );
 };
 

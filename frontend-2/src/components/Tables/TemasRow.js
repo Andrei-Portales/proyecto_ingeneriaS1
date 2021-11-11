@@ -6,17 +6,9 @@ import ProfileImg from "../../assets/profile.jpg";
 import RenderDate from "../RenderDate/RenderDate";
 import RenderIndex from "../RenderIndex/RenderIndex";
 
-function EjerciciosRow(props) {
-  const {
-    index,
-    ejercicioId,
-    grade,
-    subject,
-    temaId,
-    tema,
-    numberOfExercises,
-    dateAdded,
-  } = props;
+function TemasRow(props) {
+  const { id, index, title, grade, subject, temaId, videoId, dateAdded } =
+    props;
 
   const { isItemVisible, activeIndex, actions } = useContext(Context);
 
@@ -35,7 +27,7 @@ function EjerciciosRow(props) {
   return (
     <Tr
       className={`tree-item${index === activeIndex.value ? " selected" : ""}`}
-      onClick={() => onItemSelect(ejercicioId, index)}
+      onClick={() => onItemSelect(id, index)}
     >
       <Td py=".8rem">
         <Flex>
@@ -44,7 +36,7 @@ function EjerciciosRow(props) {
       </Td>
       <Td py=".8rem">
         <Flex>
-          <Text>{tema}</Text>
+          <Text>{title}</Text>
         </Flex>
       </Td>
       <Td py=".8rem">
@@ -64,7 +56,7 @@ function EjerciciosRow(props) {
       </Td>
       <Td py=".8rem">
         <Flex>
-          <Text>{numberOfExercises}</Text>
+          <Text>{videoId}</Text>
         </Flex>
       </Td>
       {!isItemVisible.value ? (
@@ -85,4 +77,4 @@ function EjerciciosRow(props) {
   );
 }
 
-export default EjerciciosRow;
+export default TemasRow;

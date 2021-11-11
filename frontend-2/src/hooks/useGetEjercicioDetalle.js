@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import database from "../firebase";
 
 const useGetQuizDetail = (id) => {
-  const [quizList, setQuizList] = useState([]);
+  const [ejercicio, setEjercicio] = useState([]);
 
   useEffect(() => {
     // Retreive from firebase
@@ -13,10 +13,10 @@ const useGetQuizDetail = (id) => {
           list.push(snap.val());
         }
       });
-      setQuizList(list);
+      setEjercicio(list);
     });
   }, [id]);
 
-  return quizList;
+  return ejercicio;
 };
 export default useGetQuizDetail;

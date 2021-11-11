@@ -1,4 +1,4 @@
-import "./input-tema-title.scss";
+import { Input } from "@chakra-ui/react";
 
 const InputTemaTitle = (props) => {
   const temaIdInputHandler = (e) => {
@@ -6,8 +6,13 @@ const InputTemaTitle = (props) => {
   };
 
   return (
-    <input
-      className="inputTemaTitle"
+    <Input
+      _hover={{ background: "#1f2733" }}
+      _focus={{
+        color: "rgba(66, 165, 245, 1)",
+        background: "#1f2733",
+      }}
+      borderColor="transparent"
       type="text"
       value={props.title}
       onChange={temaIdInputHandler}

@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 // Chakra Imports
-import { Box, Flex, Link, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import AdminNavbarLinks from "./AdminNavbarLinks";
@@ -104,24 +104,15 @@ export default function AdminNavbar(props) {
       >
         <Box mb={{ sm: "8px", md: "0px" }}>
           {/* Here we create navbar brand, based on route name */}
-          <Link
+          <Text
             color={mainText}
             href="#"
             bg="inherit"
-            borderRadius="inherit"
+            fontSize="lg"
             fontWeight="bold"
-            _hover={{ color: { mainText } }}
-            _active={{
-              bg: "inherit",
-              transform: "none",
-              borderColor: "transparent",
-            }}
-            _focus={{
-              boxShadow: "none",
-            }}
           >
             {brandText}
-          </Link>
+          </Text>
         </Box>
         <Box ms="auto" w={{ sm: "100%", md: "unset" }}>
           <AdminNavbarLinks

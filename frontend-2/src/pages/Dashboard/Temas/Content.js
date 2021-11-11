@@ -1,10 +1,21 @@
 import React, { useState, useContext } from "react";
-import "../content.scss";
-import TemaItem from "./Item";
+import {
+  Table,
+  Tbody,
+  Th,
+  Thead,
+  Tr,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
+import "../Ejercicios/content.scss";
+import Card from "../../../components/Card/Card";
+import CardBody from "../../../components/Card/CardBody";
+import TablesTableRow from "../../../components/Tables/TemasRow";
 import ItemDetail from "./ItemDetail";
 import Context from "../../../store/context";
-import Dropdown from "react-bootstrap/Dropdown";
 import { useGetTemas } from "../../../hooks/useGetTemas";
+import AdminNavbar from "../../../components/Navbars/AdminNavbar";
 
 const Content = () => {
   const [isItemSelected, setIsItemSelected] = useState(false);
@@ -20,6 +31,8 @@ const Content = () => {
     setItemId(value);
   };
 
+  const textColor = useColorModeValue("gray.700", "white");
+
   const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
   const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
   const display = `${isItemVisible.value ? "flex" : "none"}`;
@@ -28,38 +41,48 @@ const Content = () => {
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          {/* <div className="filterContainer">
-            <Dropdown>
-              <Dropdown.Toggle variant="link" id="dropdown-basic">
-                <i className="uil uil-filter"></i>
-              </Dropdown.Toggle>
-              <Dropdown.Menu></Dropdown.Menu>
-            </Dropdown>
-          </div> */}
-          <div className="titleContainer">
-            <p>Temas</p>
-          </div>
+          <AdminNavbar brandText="Temas" />
         </div>
         <div className="listContainer">
-          <ul className="tree-list" style={{ width: widthTreeList }}>
-            {temas.map((data, index) => {
-              return (
-                <TemaItem
-                  key={data.id}
-                  index={index}
-                  id={data.id}
-                  title={data.title}
-                  grade={data.grade}
-                  subject={data.subject}
-                  temaId={data.tema_id}
-                  videoId={data.video_url}
-                  dateAdded={data.date_added}
-                  isItemSelected={isItemSelectFunction}
-                  itemId={itemIdFunction}
-                />
-              );
-            })}
-          </ul>
+          <div className="cardContainer" style={{ width: widthTreeList }}>
+            <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
+              <CardBody>
+                <Table variant="simple" color={textColor}>
+                  <Thead>
+                    <Tr my=".8rem" color="gray.400">
+                      <Th mx="0rem"></Th>
+                      <Th color="gray.400">Tema</Th>
+                      <Th color="gray.400">Grado</Th>
+                      <Th color="gray.400">Asignatura</Th>
+                      <Th color="gray.400">Tema id</Th>
+                      <Th color="gray.400">Video id</Th>
+                      {/* <Th color="gray.400">Fecha</Th> */}
+                      {/* <Th></Th> */}
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {temas.map((data, index) => {
+                      return (
+                        <TablesTableRow
+                          key={data.id}
+                          id={data.id}
+                          index={index + 1}
+                          title={data.title}
+                          grade={data.grade}
+                          subject={data.subject}
+                          temaId={data.tema_id}
+                          videoId={data.video_url}
+                          dateAdded={data.date_added}
+                          isItemSelected={isItemSelectFunction}
+                          itemId={itemIdFunction}
+                        />
+                      );
+                    })}
+                  </Tbody>
+                </Table>
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </div>
       <div className="listViewDetail" style={{ display: display }}>

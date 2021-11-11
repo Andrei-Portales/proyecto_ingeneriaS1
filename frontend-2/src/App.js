@@ -32,7 +32,7 @@ import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 import Upload from "./pages/Upload/Upload";
 // const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
-import DashboardEjercicios from "./pages/Dashboard/Dashboard";
+import DashboardEjercicios from "./pages/Dashboard/Ejercicios/Dashboard";
 // const DashboardTemas = React.lazy(() =>
 //   import("./pages/Dashboard/Temas/Dashboard")
 // );

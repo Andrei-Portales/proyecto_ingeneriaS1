@@ -7,16 +7,15 @@ import {
   Tr,
   useColorModeValue,
   useDisclosure,
-  Slide,
 } from "@chakra-ui/react";
 import "./content.scss";
-import Context from "../../store/context";
+import Context from "../../../store/context";
 import ItemDetail from "./ItemDetail";
-import Card from "../../components/Card/Card";
-import CardBody from "../../components/Card/CardBody.js";
-import TablesTableRow from "../../components/Tables/EjerciciosRow";
-import AdminNavbar from "../../components/Navbars/AdminNavbar";
-import { useGetEjercicios } from "../../hooks/useGetEjercicios";
+import Card from "../../../components/Card/Card";
+import CardBody from "../../../components/Card/CardBody.js";
+import TablesTableRow from "../../../components/Tables/EjerciciosRow";
+import AdminNavbar from "../../../components/Navbars/AdminNavbar";
+import { useGetEjercicios } from "../../../hooks/useGetEjercicios";
 
 const Content = (props) => {
   const { ...rest } = props;
@@ -42,13 +41,7 @@ const Content = (props) => {
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          <AdminNavbar
-            onOpen={onOpen}
-            logoText={"PURITY UI DASHBOARD"}
-            brandText="Ejercicios"
-            fixed={fixed}
-            {...rest}
-          />
+          <AdminNavbar brandText="Ejercicios" />
         </div>
         <div className="listContainer">
           <div className="cardContainer" style={{ width: widthTreeList }}>

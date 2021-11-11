@@ -1,23 +1,23 @@
 import React from "react";
 import { Select } from "@chakra-ui/react";
-import "../../Upload/grade-selection.scss";
 
 export const GradeSelection = (props) => {
   const handleGradeSelection = (e) => {
     props.gradeSelection(e.target.value);
   };
-
   return (
-    // <Select>
-    //   <option>cuarto</option>
-    //   <option>quinto</option>
-    //   <option>sexto</option>
-    // </Select>
-    <select value={props.grade} onChange={handleGradeSelection}>
+    <Select
+      bg="#1f2733"
+      borderColor="#1f2733"
+      mx="10px"
+      _focus={{ boxShadow: "none" }}
+      onChange={handleGradeSelection}
+      value={props.grade}
+    >
       <option>cuarto</option>
       <option>quinto</option>
       <option>sexto</option>
-    </select>
+    </Select>
   );
 };
 

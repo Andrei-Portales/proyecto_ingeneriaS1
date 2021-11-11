@@ -1,25 +1,13 @@
-import { useState } from "react";
-
-import {
-  Button,
-  Flex,
-  Text,
-  useDisclosure,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 
 import { ProfileIcon, SettingsIcon } from "../Icons/Icons";
 
-import Configurator from "../Configurator/Configurator";
 import PropTypes from "prop-types";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function HeaderLinks(props) {
   const { variant, children, secondary, ...rest } = props;
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [setSidebarVariant] = useState("transparent");
-  const [fixed, setFixed] = useState(false);
 
   // Chakra Color Mode
   let navbarIcon = useColorModeValue("gray.500", "gray.200");
@@ -27,7 +15,6 @@ export default function HeaderLinks(props) {
   if (secondary) {
     navbarIcon = "white";
   }
-  const settingsRef = React.useRef();
 
   return (
     <Flex
@@ -59,21 +46,9 @@ export default function HeaderLinks(props) {
         cursor="pointer"
         ms={{ base: "16px", xl: "0px" }}
         me="26px"
-        ref={settingsRef}
-        onClick={onOpen}
         color={navbarIcon}
         w="18px"
         h="18px"
-      />
-      <Configurator
-        isOpen={isOpen}
-        onClose={onClose}
-        isChecked={fixed}
-        onSwitch={(value) => {
-          setFixed(value);
-        }}
-        onOpaque={() => setSidebarVariant("opaque")}
-        onTransparent={() => setSidebarVariant("transparent")}
       />
     </Flex>
   );
