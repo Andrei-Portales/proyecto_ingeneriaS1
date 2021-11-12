@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import NumberOfExercisesComponent from "./NumberOfExercises";
 import SubjectSelectionComponent from "./SubjectSelection";
 import GradeSelectionComponent from "./GradeSelection";
 import InputTemaIdComponent from "./InputTemaId";
 import InputTemaTitle from "./InputTemaTitle";
 import database from "../../firebase";
+import theme from "../../theme/theme";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -76,37 +78,39 @@ const QuizSection = (props) => {
   };
 
   return (
-    <div className="generateQuizSection">
-      <NumberOfExercisesComponent
-        numberOfExercises={numberOfExercisesFunction}
-      />
-      <div className="selectionsWrapper">
-        <div className="selection">
-          <GradeSelectionComponent
-            gradeSelection={gradeSelection}
-            grade={grade}
-          />
-          <SubjectSelectionComponent
-            subjectSelection={subjectSelection}
-            subject={subject}
-          />
-          <InputTemaIdComponent temaIdInput={temaIdInput} temaId={temaId} />
+    <ChakraProvider theme={theme} resetCSS={false}>
+      <div className="generateQuizSection">
+        <NumberOfExercisesComponent
+          numberOfExercises={numberOfExercisesFunction}
+        />
+        <div className="selectionsWrapper">
+          <div className="selection">
+            <GradeSelectionComponent
+              gradeSelection={gradeSelection}
+              grade={grade}
+            />
+            <SubjectSelectionComponent
+              subjectSelection={subjectSelection}
+              subject={subject}
+            />
+            <InputTemaIdComponent temaIdInput={temaIdInput} temaId={temaId} />
 
-          <InputTemaTitle
-            temaTitleInput={temaTitleInput}
-            temaTitle={temaTitle}
-          />
+            <InputTemaTitle
+              temaTitleInput={temaTitleInput}
+              temaTitle={temaTitle}
+            />
 
-          <button
-            className="exerciseUploadButton"
-            onClick={() => handleSubmit()}
-          >
-            Generar Quiz
-          </button>
-          <ToastContainer />
+            <button
+              className="exerciseUploadButton"
+              onClick={() => handleSubmit()}
+            >
+              Generar
+            </button>
+            <ToastContainer />
+          </div>
         </div>
       </div>
-    </div>
+    </ChakraProvider>
   );
 };
 

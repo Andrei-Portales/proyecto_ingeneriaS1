@@ -9,6 +9,7 @@ import SubjectSelection from "../Components/SubjectSelection";
 import Context from "../../../store/context";
 import InputTemaId from "../../Upload/InputTemaId";
 import EditorModal from "../../Modals/Editor";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import InputVideoId from "../Components/InputVideoId";
 import InputTemaTitle from "../Components/InputTemaTitle";
 import useGetTemaDetail from "../../../hooks/useGetTemaDetail";
@@ -119,7 +120,8 @@ const ItemDetail = ({ itemId }) => {
       <Flex mt="150px">
         <button onClick={() => openEditorModal()}>
           Visualizar o actualizar contenido
-          <i className="uil uil-calender openInNewIcon"></i>
+          <ExternalLinkIcon />
+          {/* <i className="uil uil-calender openInNewIcon"></i> */}
           {/* <EditorModal show={show} temaId={itemId} /> */}
         </button>
       </Flex>

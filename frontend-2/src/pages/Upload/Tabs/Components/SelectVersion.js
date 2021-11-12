@@ -10,7 +10,7 @@ const SelectionVersion = (props) => {
     <div className="selectVersion">
       <div className="versionTitle"> Versión</div>
       <div className="selectionWrapper" onChange={onChangeVersion}>
-        {Array.from(Array(3)).map((value, index) => (
+        {Array.from(Array(2)).map((value, index) => (
           <>
             <input
               className="radio_input"

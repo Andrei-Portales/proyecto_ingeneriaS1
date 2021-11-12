@@ -33,9 +33,11 @@ const Content = () => {
 
   const textColor = useColorModeValue("gray.700", "white");
 
-  const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
-  const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
-  const display = `${isItemVisible.value ? "flex" : "none"}`;
+  const widthOne = `${isItemVisible.value && itemId !== "" ? "62%" : "90%"}`;
+  const widthTreeList = `${
+    isItemVisible.value && itemId !== "" ? "100%" : "94%"
+  }`;
+  const display = `${isItemVisible.value && itemId !== "" ? "flex" : "none"}`;
 
   return (
     <div className="contentWrapper">

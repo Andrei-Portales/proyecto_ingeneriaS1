@@ -71,6 +71,7 @@ const Add = () => {
       <div className={styles.dashboardWrapper}>
         <Sidebar isActive={2} />
         <div className={styles.addWrapper}>
+          <div className={styles.addTitle}>Subir tema</div>
           <div className={styles.add}>
             <AddForm ref={formRef} />
             <Editor ref={editorRef} />

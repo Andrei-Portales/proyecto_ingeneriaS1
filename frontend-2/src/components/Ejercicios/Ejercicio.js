@@ -11,28 +11,11 @@ import TopNavigation from "./TopNavigation/TopNavigation";
 import BottomNavigation from "./BottomNavigation/BottomNavigation";
 import ProblemTopbar from "./ProblemTopbar";
 import useKeyboardShortcut from "use-keyboard-shortcut";
-import SpeechRecognition, {
-  useSpeechRecognition,
-} from "react-speech-recognition";
-import { createSpeechlySpeechRecognition } from "@speechly/speech-recognition-polyfill";
-
-// const appId = "f16ef849-188b-4e08-9b63-e2b321edaa41";
-// const SpeechlySpeechRecognition = createSpeechlySpeechRecognition(appId);
-// SpeechRecognition.applyPolyfill(SpeechlySpeechRecognition);
 
 const Ejercicio = () => {
   const { exercise } = useGetExercise();
   const { isCorrectAnswer } = useContext(Context);
   let isAudioEnabled = localStorage.getItem("enabledAudio") === "true";
-
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-    browserSupportsSpeechRecognition,
-  } = useSpeechRecognition();
-  const startListening = () =>
-    SpeechRecognition.startListening({ continuous: true });
 
   const answersList = [];
 
@@ -64,10 +47,6 @@ const Ejercicio = () => {
     }
   };
 
-  if (!browserSupportsSpeechRecognition) {
-    return <span>Browser doesn't support speech recognition.</span>;
-  }
-
   return (
     <div className={exerciceWrapper}>
       {isCorrectAnswer.value ? <Confetti active={true} /> : ""}
@@ -76,19 +55,6 @@ const Ejercicio = () => {
       <div className="problemBody">
         <div className="problemContentWrapper">
           <ProblemTopbar audioSource={exercise.audio_url} />
-
-          {/* <div>
-                  <p>Microphone: {listening ? "on" : "off"}</p>
-                  <button
-                    onTouchStart={startListening}
-                    onMouseDown={startListening}
-                    onTouchEnd={SpeechRecognition.stopListening}
-                    onMouseUp={SpeechRecognition.stopListening}
-                  >
-                    Hold to talk
-                  </button>
-                  <p>{transcript}</p>
-                </div> */}
 
           <div className="problemContent">
             <QuestionsPanel

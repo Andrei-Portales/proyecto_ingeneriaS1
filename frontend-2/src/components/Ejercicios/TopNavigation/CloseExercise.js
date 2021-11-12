@@ -26,7 +26,7 @@ const CloseExercise = () => {
   return (
     <div className="exitPanel">
       <p onClick={() => closeExercise()}>
-        <i className="uil uil-times uilTimes"></i>
+        <i className="uil uil-multiply" size="22"></i>
       </p>
     </div>
   );

@@ -68,51 +68,33 @@
           }
         }
       }
-
-      .dropdown {
-        position: absolute;
-        top: 78px;
-        width: 220px;
-        transform: translateX(-55%);
-        background-color: white;
-        padding: 1rem 0;
-        overflow: hidden;
-        z-index: 5;
-        border: 1px solid #ededed;
-        border-radius: 8px;
-        // -webkit-box-shadow: -1px 2px 13px 0 rgb(0 0 0 / 10%);
-        // -moz-box-shadow: -1px 2px 13px 0 rgb(0 0 0 / 10%);
-        // box-shadow: -1px 2px 13px 0 rgb(0 0 0 / 10%);
-
-        .menu-item {
-          height: 45px;
-          width: 100%;
-          display: flex;
-          font-size: 16px;
-          align-items: center;
-          color: #6e6d7a;
-          transition: background 500;
-
-          &:hover {
-            background-color: #ededed;
-            cursor: pointer;
-            color: #0d0c22;
-            text-decoration: none;
-          }
-
-          .uil {
-            margin: 0px 12px 0px 20px;
-          }
-          .uil-toggle-on {
-            color: blue;
-          }
-          .uil-toggle-off {
-            color: #6e6d7a;
-          }
-        }
-      }
     }
   }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 78px !important;
+  width: 220px;
+  transform: translateX(-45%) !important;
+}
+
+.uil-toggle-on {
+  color: blue;
+}
+.uil-toggle-off {
+  color: #6e6d7a;
+}
+
+.dropdown-item {
+  height: 40px;
+}
+
+.usernameText {
+  color: black;
+}
+.usernameTextDark {
+  color: white;
 }
 
 .profile-dropdown-toggle {
@@ -143,14 +125,15 @@
   z-index: 5;
   border: 1px solid #ededed;
   border-radius: 8px;
-}
-.uil {
-  margin: 0px 12px 0px 0px;
+
+  .uil {
+    margin: 0px 12px 0px 0px;
+  }
 }
 
 .horizontal-divider {
   display: flex;
-  height: 8px;
+  height: 16px;
   justify-content: center;
   align-items: center;
 

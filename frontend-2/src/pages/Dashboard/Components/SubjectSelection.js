@@ -10,6 +10,7 @@ const SubjectSelection = (props) => {
       bg="#1f2733"
       borderColor="#1f2733"
       mx="10px"
+      maxWidth="180px"
       _focus={{ boxShadow: "none" }}
       onChange={handleSubjectSelection}
       value={props.subject}

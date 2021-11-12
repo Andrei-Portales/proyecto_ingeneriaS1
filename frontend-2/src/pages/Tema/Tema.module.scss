@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-
-@mixin grid($cols, $mgn){
+@mixin grid($cols, $mgn) {
   float: left;
   margin-right: $mgn;
   margin-bottom: $mgn;
-  width: ((100% - (($cols - 1) * $mgn )) / $cols );
+  width: ((100% - (($cols - 1) * $mgn)) / $cols);
   &:nth-child(#{$cols}n) {
     margin-right: 0;
- }
+  }
 }
 
 // SCREEN 0 - 320PX
@@ -19,6 +18,10 @@
   height: 100%;
   display: flex;
   margin: 0;
+
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .videoSection {
@@ -37,11 +40,10 @@
       font-size: 18px;
       font-family: "DejaVu Sans", "Arial", sans-serif;
       padding-left: 16px;
-      margin: 15px 0px;
+      margin: 20px 0px;
     }
   }
 
-    
   .videoContenedor {
     width: 100%;
   }
@@ -50,7 +52,7 @@
     width: 100% !important;
     border: none;
     height: calc(25vh) !important;
-  }  
+  }
 }
 
 .opcionesContenedor {
@@ -93,24 +95,23 @@
   cursor: pointer;
 }
 
-.tituloRecomendaciones{
+.tituloRecomendaciones {
   color: #093366;
-      text-align: center;
-      font-weight: 600;
-      font-size: 25px;
-      font-family: "DejaVu Sans", "Arial", sans-serif;
-      padding-left: 0;
-      margin: 0;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  font-family: "DejaVu Sans", "Arial", sans-serif;
+  padding-left: 0;
+  margin: 0;
 }
 
-.lineaDivisora{
+.lineaDivisora {
   border-left: 4px solid #093366;
   height: 100vh;
   left: 50%;
   margin-left: -3px;
   margin-top: 25px;
 }
-
 
 .infoMateria {
   display: none !important;
@@ -147,7 +148,6 @@
   color: white !important;
 }
 
-
 .titulo-recomendaciones-dark {
   color: white !important;
 }
@@ -155,7 +155,7 @@
 // SUGERENCIAS
 
 .more-dark {
-  background-color: #21242c;
+  background-color: #1f2733;
   color: white;
   h2 {
     color: white !important;
@@ -183,14 +183,19 @@
   text-overflow: ellipsis;
   margin-right: 30px;
   background-color: white;
-  border-radius: 7px 7px 0 0;
+  border-radius: 10px 10px 0 0;
   font-family: "DejaVu Sans", "Arial", sans-serif;
+}
+.description-dark {
+  background-color: #1f2733;
+  color: white;
 }
 
 .showMoreDescription {
   width: calc(100% - 30px);
   border: none;
   outline: none;
+  color: black;
   background-color: white;
   border-radius: 0 0 7px 7px;
   font-weight: bold;
@@ -202,6 +207,14 @@
     background-color: rgb(219, 219, 219);
   }
 }
+.showMoreDescriptionDark {
+  background-color: #1f2733;
+  color: white;
+
+  &:hover {
+    background-color: #2b2e44;
+  }
+}
 
 .helpContainer {
   height: 80px;
@@ -209,12 +222,8 @@
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
-  @include grid(1, 2%)
+  @include grid(1, 2%);
 }
-
-
-
-
 
 @media (min-width: 320px) {
   .videoSection {

@@ -31,7 +31,7 @@ const NumberOfExercises = (props) => {
     <Flex flexDirection="column" onChange={onChangeValue}>
       <Flex mb="10px">Número de preguntas</Flex>
       <Flex>
-        {Array.from(Array(7)).map((value, index) => (
+        {Array.from(Array(5)).map((value, index) => (
           <>
             <input
               className="radio_input"

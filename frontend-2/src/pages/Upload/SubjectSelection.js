@@ -9,6 +9,7 @@ const SubjectSelection = (props) => {
     <Select
       bg="#1f2733"
       borderColor="#1f2733"
+      maxWidth="180px"
       _focus={{ boxShadow: "none" }}
       onChange={handleSubjectSelection}
       value={props.subject}

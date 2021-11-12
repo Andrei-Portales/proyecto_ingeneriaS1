@@ -48,6 +48,14 @@ const Tema = () => {
     !isLightTheme ? styles["more-dark"] : ""
   }`;
 
+  const description = `${styles.description} ${
+    !isLightTheme ? styles["description-dark"] : ""
+  }`;
+
+  const showMoreDescription = `${styles.showMoreDescription} ${
+    !isLightTheme ? styles["showMoreDescriptionDark"] : ""
+  }`;
+
   const exportPDFWithComponent = async () => {
     if (pdfExportComponent.current) {
       setShowDescription(true);
@@ -80,7 +88,6 @@ const Tema = () => {
   };
 
   return (
-    
     <div className={styles.tema}>
       <div className={`${showContent ? mainClases : mainClases}`}>
         <div className={styles.videoContenedor}>
@@ -107,7 +114,7 @@ const Tema = () => {
               {tema.map((item) => {
                 return (
                   <div
-                    className={styles.description}
+                    className={description}
                     style={{
                       height: showDescription ? "fit-content" : "200px",
                     }}
@@ -117,64 +124,69 @@ const Tema = () => {
               })}
               <button
                 onClick={toggleShowDescription}
-                className={styles.showMoreDescription}
+                className={showMoreDescription}
               >
-                {showDescription ? "Mostrar menos" : "Mostrar mas"}
+                {showDescription ? "Mostrar menos" : "Mostrar más"}
               </button>
             </div>
           </PDFExport>
         </div>
 
         <div className={styles.opcionesContenedor}>
-          <button className={styles.botonDescargar} style={{width: '250px'}}>
-          <a
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-            href={`${downloadTema}/${params.id}`}
-            target="_blank"
-            rel="noreferrer"
-            download
-          >
-            Descargar PDF <i className="uil uil-import" size="16" style={{paddingLeft:'50px'}} ></i>
-          </a>
+          <button className={styles.botonDescargar} style={{ width: "250px" }}>
+            <a
+              style={{
+                color: "white",
+                textDecoration: "none",
+              }}
+              href={`${downloadTema}/${params.id}`}
+              target="_blank"
+              rel="noreferrer"
+              download
+            >
+              Descargar PDF{" "}
+              <i
+                className="uil uil-import"
+                size="16"
+                style={{ paddingLeft: "50px" }}
+              ></i>
+            </a>
           </button>
           <button
             className={styles.botonEjercicios}
-            style={{width: '250px', 
-                    marginRight: 'calc(100% - 85%)'}}
+            style={{ width: "250px", marginRight: "calc(100% - 85%)" }}
             onClick={() => openExercise()}
           >
-            Ejercicios<i className="uil uil-clipboard-blank" size="16" style={{paddingLeft:'50px'}}></i>
+            Ejercicios
+            <i
+              className="uil uil-clipboard-blank"
+              size="16"
+              style={{ paddingLeft: "50px" }}
+            ></i>
           </button>
-          
         </div>
       </div>
-        
-      
+
       <div className={`${showContent ? suggestions : styles.hideMore}`}>
-      <h3 className={tituloRecomendaciones}>Recomendaciones</h3>
+        <h3 className={tituloRecomendaciones}>Recomendaciones</h3>
         <div className={styles.contenidoContenedor}>
           <div className={materiaClasses}>
-            
             <div className={styles.materiasList}>
-              
-                {temas.map((item, index) => (
-                  <>
-                    <div
-                      onClick={onClickTemaHandler.bind(null, item.tema_id)}
-                      key={item.id}
-                      className={styles.temaItemPanel}
-                    >
-                      <TemaItemSuggested
-                        leading={index + 1}
-                        title={item.title}
-                        isCompleted={item.isCompleted}
-                      />
-                    </div>
-                  </>
-                ))}
+              {temas.map((item, index) => (
+                <>
+                  <div
+                    onClick={onClickTemaHandler.bind(null, item.tema_id)}
+                    key={item.id}
+                    className={styles.temaItemPanel}
+                  >
+                    <TemaItemSuggested
+                      leading={index + 1}
+                      title={item.title}
+                      isCompleted={item.isCompleted}
+                    />
+                  </div>
+                </>
+              ))}
             </div>
           </div>
         </div>

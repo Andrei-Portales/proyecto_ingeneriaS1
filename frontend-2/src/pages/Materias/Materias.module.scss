@@ -1,43 +1,44 @@
 .materia {
-    text-align: center;
+  text-align: center;
 }
 
 .materia-dark {
-    & h1 {
-        color: white;
-    }
+  & h1 {
+    color: white;
+  }
 }
 
 .materiasList {
-    list-style: none;
-    margin-top: 30px;
+  list-style: none;
+  margin-top: 30px;
 }
 
-.title{
-    color: white;
+.title {
+  color: white;
 }
 
-.temaTitulo{
-    animation: item-load 400ms ease-in;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color:white;
+.temaTitulo {
+  animation: item-load 400ms ease-in;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  text-transform: capitalize;
 }
 
-.materiasListPanel{
-    animation: item-load 400ms ease-in;
-    color:white;
+.materiasListPanel {
+  animation: item-load 400ms ease-in;
+  color: white;
 }
 
 @keyframes item-load {
-    0%{
-        transform: translateY(-20%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
 
-    100%{
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

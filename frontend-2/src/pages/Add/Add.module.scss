@@ -8,6 +8,18 @@
 .addWrapper {
   width: 90%;
   margin-left: 130px;
+
+  .addTitle {
+    margin: auto;
+    color: white;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    width: 94%;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 700;
+  }
 }
 
 .add {
@@ -16,8 +28,6 @@
   margin: auto;
   color: white;
   background-color: #1f2733;
-
-  margin-top: 110px;
   margin-bottom: 25px;
   padding: 20px 16px;
 }

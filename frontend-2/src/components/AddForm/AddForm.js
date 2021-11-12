@@ -63,26 +63,35 @@ const AddForm = forwardRef((props, ref) => {
         <label>Titulo:</label>
         <input onChange={titleChangeHandler} value={state.title} />
       </div>
+      <br />
       <div className={styles.input}>
-        <label>Id de tema:</label>
-        <input onChange={idChangeHandler} value={state.id} />
-        <label>Id de video:</label>
-        <input onChange={urlChangeHandler} value={state.url} />
+        <div className={styles.inputTemaId}>
+          <label>Id de tema:</label>
+          <input onChange={idChangeHandler} value={state.id} />
+        </div>
+        <div className={styles.inputVideoId}>
+          <label>Id de video:</label>
+          <input onChange={urlChangeHandler} value={state.url} />
+        </div>
       </div>
-
+      <br />
       <div className={styles.dropDown}>
-        <label>Grado:</label>
-        <select onChange={gradeChangeHandler} value={state.grade}>
-          <option value="cuarto">Cuarto</option>
-          <option value="quinto">Quinto</option>
-          <option value="sexto">Sexto</option>
-        </select>
-        <label>Materia:</label>
-        <select onChange={materiaChangeHandler} value={state.materia}>
-          <option value="matematicas">Matematicas</option>
-          <option value="ciencias">Ciencias</option>
-          <option value="idioma">Idioma</option>
-        </select>
+        <div className={styles.inputTemaId}>
+          <label>Grado:</label>
+          <select onChange={gradeChangeHandler} value={state.grade}>
+            <option value="cuarto">Cuarto</option>
+            <option value="quinto">Quinto</option>
+            <option value="sexto">Sexto</option>
+          </select>
+        </div>
+        <div className={styles.inputTemaId}>
+          <label>Materia:</label>
+          <select onChange={materiaChangeHandler} value={state.materia}>
+            <option value="matematicas">Matematicas</option>
+            <option value="ciencias">Ciencias</option>
+            <option value="idioma">Idioma</option>
+          </select>
+        </div>
       </div>
 
       {/* <div className={styles.input}>

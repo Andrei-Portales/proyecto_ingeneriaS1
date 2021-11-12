@@ -20,7 +20,7 @@ import { useGetEjercicios } from "../../../hooks/useGetEjercicios";
 const Content = (props) => {
   const { ...rest } = props;
   const [itemId, setItemId] = useState("");
-  const { isItemVisible } = useContext(Context);
+  const { isItemVisible, id } = useContext(Context);
   const { onOpen } = useDisclosure();
   const [fixed, setFixed] = useState(false);
 
@@ -28,14 +28,18 @@ const Content = (props) => {
 
   const itemIdFunction = (value) => {
     setItemId(value);
-    console.log(value);
   };
 
-  const widthOne = `${isItemVisible.value ? "62%" : "90%"}`;
-  const widthTreeList = `${isItemVisible.value ? "100%" : "94%"}`;
-  const display = `${isItemVisible.value ? "flex" : "none"}`;
+  const widthOne = `${isItemVisible.value && itemId !== "" ? "62%" : "90%"}`;
+  const widthTreeList = `${
+    isItemVisible.value && itemId !== "" ? "100%" : "94%"
+  }`;
+  const display = `${isItemVisible.value && itemId !== "" ? "flex" : "none"}`;
 
   const textColor = useColorModeValue("gray.700", "white");
+
+  console.log("IsItemVisisble: " + isItemVisible.value);
+  console.log("Tema Id: " + itemId);
 
   return (
     <div className="contentWrapper">
