@@ -1,5 +1,18 @@
 import React, { useState, useContext } from "react";
 import { Flex, Avatar, Text } from "@chakra-ui/react";
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
+
 import "../Ejercicios/item-detail.scss";
 import database from "../../../firebase";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -15,10 +28,11 @@ import InputTemaTitle from "../Components/InputTemaTitle";
 import useGetTemaDetail from "../../../hooks/useGetTemaDetail";
 import RenderDate from "../../../components/RenderDate/RenderDate";
 
-const ItemDetail = ({ itemId }) => {
+function ItemDetail({ itemId }) {
   const [show, setShow] = useState(false);
   const { isItemVisible, activeIndex, showEditor, actions } =
     useContext(Context);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const tema = useGetTemaDetail(itemId);
 
@@ -41,7 +55,7 @@ const ItemDetail = ({ itemId }) => {
     database.ref(`temas/${itemId}`).update({ video_url: answer });
   };
 
-  const onClose = () => {
+  const onCloseDetail = () => {
     actions({
       type: "setActiveIndex",
       payload: { ...activeIndex, value: -1 },
@@ -62,7 +76,7 @@ const ItemDetail = ({ itemId }) => {
   return (
     <Flex className="shadow" direction="column" w="100%" py="10px" px="24px">
       <Flex h="70px" justifyContent="end">
-        <span onClick={() => onClose()} className="expandArrow">
+        <span onClick={() => onCloseDetail()} className="expandArrow">
           <ArrowForwardIcon />
         </span>
       </Flex>
@@ -118,15 +132,28 @@ const ItemDetail = ({ itemId }) => {
         })}
       </Flex>
       <Flex mt="150px">
-        <button onClick={() => openEditorModal()}>
+        <button onClick={onOpen}>
           Visualizar o actualizar contenido
           <ExternalLinkIcon />
-          {/* <i className="uil uil-calender openInNewIcon"></i> */}
-          {/* <EditorModal show={show} temaId={itemId} /> */}
         </button>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Modal Title</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>{/* <Lorem count={2} /> */}</ModalBody>
+
+            <ModalFooter>
+              <Button colorScheme="blue" mr={3} onClick={onClose}>
+                Close
+              </Button>
+              <Button variant="ghost">Secondary Action</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Flex>
     </Flex>
   );
-};
+}
 
 export default ItemDetail;

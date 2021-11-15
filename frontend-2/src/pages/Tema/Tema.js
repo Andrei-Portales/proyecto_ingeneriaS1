@@ -57,11 +57,9 @@ const Tema = () => {
   }`;
 
   const exportPDFWithComponent = async () => {
-    if (pdfExportComponent.current) {
-      setShowDescription(true);
-      await new Promise((resolve) => setTimeout(resolve, 200));
-      pdfExportComponent.current.save();
-    }
+    setShowDescription(true);
+
+    pdfExportComponent.current.save();
   };
 
   const onClickTemaHandler = (id) => {
@@ -100,7 +98,6 @@ const Tema = () => {
             ref={pdfExportComponent}
             paperSize="auto"
             margin={40}
-            // fileName={tema.title}
             creator="Educa Facil"
           >
             <div className={styles.tituloContenedor}>
@@ -133,16 +130,16 @@ const Tema = () => {
         </div>
 
         <div className={styles.opcionesContenedor}>
-          <button className={styles.botonDescargar} style={{ width: "250px" }}>
-            <a
+          <button
+            onClick={exportPDFWithComponent}
+            className={styles.botonDescargar}
+            style={{ width: "250px" }}
+          >
+            <span
               style={{
                 color: "white",
                 textDecoration: "none",
               }}
-              href={`${downloadTema}/${params.id}`}
-              target="_blank"
-              rel="noreferrer"
-              download
             >
               Descargar PDF{" "}
               <i
@@ -150,7 +147,7 @@ const Tema = () => {
                 size="16"
                 style={{ paddingLeft: "50px" }}
               ></i>
-            </a>
+            </span>
           </button>
           <button
             className={styles.botonEjercicios}

@@ -1,7 +1,9 @@
 .profileWrapper {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  // background-color: #f3fbff;
   background-color: rgb(204, 237, 240);
   background: url(../../assets/background2.png) repeat;
 
@@ -15,11 +17,13 @@
   }
 
   .userProfileWrapper {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
     .userAvatarWrapper {
-      background-color: rgba(0, 0, 0, 0.1);
       width: 90%;
       height: 400px;
-      margin: 0px auto;
+      margin: auto;
       border-radius: 12px;
       display: flex;
 
@@ -28,22 +32,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .avatar {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          background-color: #048dc4;
-          justify-content: center;
-          img {
-            width: 100px;
-            height: 100px;
-            margin: auto;
-            right: 20 !important;
-          }
-        }
       }
       .userBasicInfo {
         width: 50%;
@@ -59,6 +47,7 @@
             outline: none;
             border: none;
             border-radius: 5px;
+            color: black;
             // border-color: #e1e2e3;
           }
           label {
@@ -68,6 +57,7 @@
             width: 200px;
             height: 40px;
             border-color: #e1e2e3;
+            color: black;
             padding-left: 10px;
             padding-right: 16px;
             outline: none;
@@ -76,6 +66,11 @@
         }
       }
     }
+  }
+  .userProfileRight {
+    width: 30%;
+    background-color: #1f2733;
+    height: 100%;
   }
 }
 
@@ -86,4 +81,8 @@
 }
 .saveChangesWrapperHidden {
   display: none;
+}
+
+.role-title {
+  text-transform: capitalize;
 }

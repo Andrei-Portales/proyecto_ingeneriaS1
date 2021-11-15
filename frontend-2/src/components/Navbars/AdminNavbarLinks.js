@@ -3,14 +3,41 @@ import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { ProfileIcon, SettingsIcon } from "../Icons/Icons";
 
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../../firebase";
 import { NavLink } from "react-router-dom";
 
 export default function HeaderLinks(props) {
   const { variant, children, secondary, ...rest } = props;
-
-  // Chakra Color Mode
   let navbarIcon = useColorModeValue("gray.500", "gray.200");
+  const history = useHistory();
+  const [user, loading] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+
+  const fetchUserName = async () => {
+    console.log("feching");
+    try {
+      const query = await db
+        .collection("users")
+        .where("uid", "==", user?.uid)
+        .get();
+
+      const data = await query.docs[0].data();
+      setName(data.name);
+      setRole(data.role);
+    } catch (err) {
+      console.error(err);
+      console.log("An error occured while fetching user data");
+    }
+  };
+  useEffect(() => {
+    fetchUserName();
+    if (loading) return;
+    if (!user || role === "estudiante") return history.replace("/login");
+  }, [user, loading, role]);
 
   if (secondary) {
     navbarIcon = "white";
@@ -28,7 +55,7 @@ export default function HeaderLinks(props) {
           ms="0px"
           px="0px"
           border="none"
-          me={{ sm: "2px", md: "16px" }}
+          me={{ sm: "2px", md: "40px" }}
           color={navbarIcon}
           variant="transparent-with-icon"
           leftIcon={
@@ -39,18 +66,22 @@ export default function HeaderLinks(props) {
             )
           }
         >
-          <Text display={{ sm: "none", md: "flex" }}>Usuario</Text>
+          <Text display={{ sm: "none", md: "flex" }}>{name}</Text>
         </Button>
       </NavLink>
 
-      <SettingsIcon
+      <Button onClick={logout}>
+        <i class="uil uil-signout" size="30px"></i>
+      </Button>
+
+      {/* <SettingsIcon
         cursor="pointer"
         ms={{ base: "16px", xl: "0px" }}
         me="26px"
         color={navbarIcon}
         w="18px"
         h="18px"
-      />
+      /> */}
     </Flex>
   );
 }

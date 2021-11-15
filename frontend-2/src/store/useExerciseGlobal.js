@@ -24,6 +24,9 @@ const useExerciseGlobal = () => {
   ////// GLOBAL VARIABLES FOR TEMAS
   const [isItemVisible, setIsItemVisible] = useState({ value: false });
 
+  //USER
+  const [username, setUsername] = useState({ value: "" });
+
   const actions = (action) => {
     const { type, payload } = action;
     switch (type) {
@@ -47,6 +50,8 @@ const useExerciseGlobal = () => {
         return setLoading(payload);
       case "setIsItemVisible":
         return setIsItemVisible(payload);
+      case "setUsername":
+        return setUsername(payload);
       default:
         return isCorrectAnswer;
     }
@@ -62,6 +67,7 @@ const useExerciseGlobal = () => {
     showEditor,
     loading,
     isItemVisible,
+    username,
     actions,
   };
 };
