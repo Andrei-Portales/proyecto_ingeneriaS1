@@ -14,7 +14,7 @@ import ItemDetail from "./ItemDetail";
 import Card from "../../../components/Card/Card";
 import CardBody from "../../../components/Card/CardBody.js";
 import TablesTableRow from "../../../components/Tables/EjerciciosRow";
-import AdminNavbar from "../../../components/Navbars/AdminNavbar";
+import TeacherNavbar from "../../../components/Navbars/TeacherNavbar";
 import { useGetEjercicios } from "../../../hooks/useGetEjercicios";
 
 const Content = (props) => {
@@ -45,7 +45,7 @@ const Content = (props) => {
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          <AdminNavbar brandText="Ejercicios" />
+          <TeacherNavbar brandText="Ejercicios" />
         </div>
         <div className="listContainer">
           <div className="cardContainer" style={{ width: widthTreeList }}>

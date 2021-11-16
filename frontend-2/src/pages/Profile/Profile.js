@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import "./profile.scss";
 import theme from "../../theme/theme";
+import { useGetPin } from "../../hooks/useGetPin";
 import CloseExercise from "../../components/Ejercicios/TopNavigation/CloseExercise";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenAlt } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../firebase";
 import PersonImg from "../../assets/person.svg";
 import ProfileImg from "../../assets/profile.jpg";
+import { ToastContainer, toast } from "react-toastify";
 
 import {
   Flex,
@@ -38,7 +40,8 @@ function Profile() {
   const [userGrade, setUserGrade] = useState(localStorage.getItem("userGrade"));
   const [userName, setUserName] = useState(localStorage.getItem("userName"));
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [pin, setPin] = useState("");
+  const [pins, setPins] = useState("");
+  const { pin } = useGetPin();
 
   // let mainText = useColorModeValue("gray.700", "gray.200");
   let mainText = useColorModeValue("gray.200", "gray.200");
@@ -92,7 +95,7 @@ function Profile() {
   };
 
   const handleUpdateRole = () => {
-    if (pin === "12345678") {
+    if (pins === pin) {
       db.collection("users")
         .doc(id)
         .update({ role: "teacher" })
@@ -100,6 +103,7 @@ function Profile() {
           window.location.reload();
         });
     } else {
+      toast.error("PIN no valido");
       return;
     }
   };
@@ -108,7 +112,7 @@ function Profile() {
     setShowSave(false);
   };
 
-  const pinChangeHandler = (event) => setPin(event.target.value);
+  const pinChangeHandler = (event) => setPins(event.target.value);
 
   return (
     <>
@@ -222,9 +226,10 @@ function Profile() {
                                   </Button>
                                 </Flex>
                                 <Flex>
+                                  <ToastContainer />
                                   <Input
                                     placeholder="PIN de 8 dígitos"
-                                    value={pin}
+                                    value={pins}
                                     onChange={pinChangeHandler}
                                   />
                                   <Button

@@ -26,6 +26,7 @@ const useExerciseGlobal = () => {
 
   //USER
   const [username, setUsername] = useState({ value: "" });
+  const [role, setRole] = useState({ value: "" });
 
   const actions = (action) => {
     const { type, payload } = action;
@@ -52,6 +53,8 @@ const useExerciseGlobal = () => {
         return setIsItemVisible(payload);
       case "setUsername":
         return setUsername(payload);
+      case "setRole":
+        return setRole(payload);
       default:
         return isCorrectAnswer;
     }
@@ -68,6 +71,7 @@ const useExerciseGlobal = () => {
     loading,
     isItemVisible,
     username,
+    role,
     actions,
   };
 };

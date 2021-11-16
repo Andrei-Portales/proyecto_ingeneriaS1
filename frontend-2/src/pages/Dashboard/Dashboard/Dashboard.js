@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <ChakraProvider theme={theme} resetCss={false}>
       <div className="dashboardWrapper">
-        <SidebarComponent isActive={5} />
+        <SidebarComponent isActive={1} />
         <ContentComponent />
       </div>
     </ChakraProvider>

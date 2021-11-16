@@ -10,7 +10,7 @@ const Dashboard = () => {
     <ChakraProvider theme={theme} resetCss={false}>
       <DarkMode>
         <div className="dashboardWrapper">
-          <SidebarComponent isActive={3} />
+          <SidebarComponent isActive={4} />
           <ContentComponent />
         </div>
       </DarkMode>

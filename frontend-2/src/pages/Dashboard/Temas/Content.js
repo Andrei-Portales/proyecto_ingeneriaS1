@@ -15,7 +15,7 @@ import TablesTableRow from "../../../components/Tables/TemasRow";
 import ItemDetail from "./ItemDetail";
 import Context from "../../../store/context";
 import { useGetTemas } from "../../../hooks/useGetTemas";
-import AdminNavbar from "../../../components/Navbars/AdminNavbar";
+import TeacherNavbar from "../../../components/Navbars/TeacherNavbar";
 
 const Content = () => {
   const [isItemSelected, setIsItemSelected] = useState(false);
@@ -43,7 +43,7 @@ const Content = () => {
     <div className="contentWrapper">
       <div className="listViewContainer" style={{ width: widthOne }}>
         <div className="listTitle">
-          <AdminNavbar brandText="Temas" />
+          <TeacherNavbar brandText="Temas" />
         </div>
         <div className="listContainer">
           <div className="cardContainer" style={{ width: widthTreeList }}>

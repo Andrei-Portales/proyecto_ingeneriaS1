@@ -1,18 +1,23 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
+import { ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import database from "../../firebase";
 import Editor from "../../components/Editor/Editor";
 import AddForm from "../../components/AddForm/AddForm";
 import Sidebar from "../../components/Sidebar/Sidebars";
 import styles from "./Add.module.scss";
+import theme from "../../theme/theme";
+import TeacherNavbar from "../../components/Navbars/TeacherNavbar";
 import { Fragment } from "react";
 import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay";
 import { toast } from "react-toastify";
+import Context from "../../store/context";
 
 const Add = () => {
   const editorRef = useRef();
   const formRef = useRef();
   const [alreadyExist, setAlreadyExists] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { role } = useContext(Context);
 
   const saveForm = async () => {
     const { id, title, url, materia, grade } = formRef.current.state;
@@ -66,27 +71,47 @@ const Add = () => {
   };
 
   return (
-    <Fragment>
-      {isLoading && <LoadingOverlay />}
-      <div className={styles.dashboardWrapper}>
-        <Sidebar isActive={2} />
-        <div className={styles.addWrapper}>
-          <div className={styles.addTitle}>Subir tema</div>
-          <div className={styles.add}>
-            <AddForm ref={formRef} />
-            <Editor ref={editorRef} />
-            <div className={styles.actions}>
-              <button onClick={() => {}} className={styles.submitButton}>
-                Resetear
-              </button>
-              <button onClick={saveForm} className={styles.submitButton}>
-                Guardar
-              </button>
-            </div>
+    <ChakraProvider theme={theme} resetCss={false}>
+      <Fragment>
+        {isLoading && <LoadingOverlay />}
+        <div className={styles.dashboardWrapper}>
+          <Sidebar isActive={3} />
+          <div className={styles.addWrapper}>
+            <Flex className="listTitle">
+              <Flex>
+                <TeacherNavbar brandText="Subir temas" />
+              </Flex>
+            </Flex>
+            {role.value === "admin" ? (
+              <div className={styles.add}>
+                <AddForm ref={formRef} />
+                <Editor ref={editorRef} />
+                <div className={styles.actions}>
+                  <button onClick={() => {}} className={styles.submitButton}>
+                    Resetear
+                  </button>
+                  <button onClick={saveForm} className={styles.submitButton}>
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Flex
+                h="300px"
+                mt="100px"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Text>
+                  Acceso unicamente a usuarios admin. Si esto es un error,
+                  presione el boton de ayuda.
+                </Text>
+              </Flex>
+            )}
           </div>
         </div>
-      </div>
-    </Fragment>
+      </Fragment>
+    </ChakraProvider>
   );
 };
 

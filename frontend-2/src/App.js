@@ -32,6 +32,7 @@ import Profile from "./pages/Profile/Profile";
 // const Upload = React.lazy(() => import("./pages/Upload/Upload"));
 import Upload from "./pages/Upload/Upload";
 // const Dashboard = React.lazy(() => import("./pages/Dashboard/Dashboard"));
+import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import DashboardEjercicios from "./pages/Dashboard/Ejercicios/Dashboard";
 // const DashboardTemas = React.lazy(() =>
 //   import("./pages/Dashboard/Temas/Dashboard")
@@ -56,6 +57,9 @@ const App = () => {
       </Route>
       <Route path="/grados/:id/:id/:id/ejercicio/:id/:id" exact>
         <Ejercicio />
+      </Route>
+      <Route path="/dashboard" exact>
+        <Dashboard />
       </Route>
       <Route path="/dashboard/subir-ejercicios" exact>
         <Upload />

@@ -3,11 +3,12 @@ import { Button, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import { ProfileIcon, SettingsIcon } from "../Icons/Icons";
 
 import PropTypes from "prop-types";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../../firebase";
 import { NavLink } from "react-router-dom";
+import Context from "../../store/context";
 
 export default function HeaderLinks(props) {
   const { variant, children, secondary, ...rest } = props;
@@ -15,10 +16,9 @@ export default function HeaderLinks(props) {
   const history = useHistory();
   const [user, loading] = useAuthState(auth);
   const [name, setName] = useState("");
-  const [role, setRole] = useState("");
+  const { role, actions } = useContext(Context);
 
   const fetchUserName = async () => {
-    console.log("feching");
     try {
       const query = await db
         .collection("users")
@@ -27,7 +27,10 @@ export default function HeaderLinks(props) {
 
       const data = await query.docs[0].data();
       setName(data.name);
-      setRole(data.role);
+      actions({
+        type: "setRole",
+        payload: { ...role, value: data.role },
+      });
     } catch (err) {
       console.error(err);
       console.log("An error occured while fetching user data");
@@ -44,44 +47,45 @@ export default function HeaderLinks(props) {
   }
 
   return (
-    <>
-      {role === "admin" ? (
-        <Flex
-          pe={{ sm: "0px", md: "16px" }}
-          w={{ sm: "100%", md: "auto" }}
-          alignItems="center"
-          flexDirection="row"
+    <Flex
+      pe={{ sm: "0px", md: "16px" }}
+      w={{ sm: "100%", md: "auto" }}
+      alignItems="center"
+      flexDirection="row"
+    >
+      <NavLink to="/login">
+        <Button
+          ms="0px"
+          px="0px"
+          border="none"
+          me={{ sm: "2px", md: "40px" }}
+          color={navbarIcon}
+          variant="transparent-with-icon"
+          leftIcon={
+            document.documentElement.dir ? (
+              ""
+            ) : (
+              <ProfileIcon color={navbarIcon} w="22px" h="22px" me="6px" />
+            )
+          }
         >
-          <NavLink to="/login">
-            <Button
-              ms="0px"
-              px="0px"
-              border="none"
-              me={{ sm: "2px", md: "40px" }}
-              color={navbarIcon}
-              variant="transparent-with-icon"
-              leftIcon={
-                document.documentElement.dir ? (
-                  ""
-                ) : (
-                  <ProfileIcon color={navbarIcon} w="22px" h="22px" me="6px" />
-                )
-              }
-            >
-              <Text display={{ sm: "none", md: "flex" }}>{name}</Text>
-            </Button>
-          </NavLink>
+          <Text display={{ sm: "none", md: "flex" }}>{name}</Text>
+        </Button>
+      </NavLink>
 
-          <Button onClick={logout}>
-            <i class="uil uil-signout" size="30px"></i>
-          </Button>
-        </Flex>
-      ) : (
-        <Flex>
-          <Text>Hola</Text>
-        </Flex>
-      )}
-    </>
+      <Button onClick={logout}>
+        <i class="uil uil-signout" size="30px"></i>
+      </Button>
+
+      {/* <SettingsIcon
+        cursor="pointer"
+        ms={{ base: "16px", xl: "0px" }}
+        me="26px"
+        color={navbarIcon}
+        w="18px"
+        h="18px"
+      /> */}
+    </Flex>
   );
 }
 
