@@ -5,7 +5,6 @@ import TemaItem from "../../components/TemaItem/TemaItem";
 import { useGetMaterias } from "../../hooks/useGetMaterias";
 
 import styles from "./Materias.module.scss";
-import fondo from "../../assets/background.jpg";
 
 const Materias = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -26,8 +25,12 @@ const Materias = () => {
     history.push(`/grados/${params.grado}/${params.materia}/${id}`);
   };
 
+  const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+
   return (
-    <body background={fondo}>
+    <body className={fondo}>
       <div className={materiaClasses}>
         <h1 className={styles.temaTitulo}>
           {params.materia === "matematicas" ? "Matemáticas" : params.materia}

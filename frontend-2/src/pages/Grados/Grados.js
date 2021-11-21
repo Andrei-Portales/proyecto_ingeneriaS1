@@ -3,17 +3,24 @@ import styles from './Grados.module.scss';
 import cuarto from '../../assets/4togrado.png';
 import quinto from '../../assets/5togrado.png';
 import sexto from '../../assets/6togrado.png';
-import fondo from '../../assets/background.jpg';
+import { useSelector } from 'react-redux';
 
 const Grados = () => {
   const history = useHistory();
+
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
 
   const selectGradeHandler = (grade) => {
     history.push(`/grados/${grade}`);
   };  
 
+  const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+
+
   return (
-    <body  background={fondo}>
+    <body className={fondo}>
       <div className={styles.gradosPage}>
         <h1 className={styles.title}>Grados</h1>
         <div className={styles.grados}>
