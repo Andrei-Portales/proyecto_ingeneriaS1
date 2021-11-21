@@ -50,7 +50,7 @@ function Navbar(props) {
       <ul className="ul-navbar-nav">
         <Dropdown>
           <Dropdown.Toggle
-            className="profile-dropdown-toggle"
+            className="prfroofile-dropdown-toggle"
             id="dropdown-basic"
           >
             <span className={usernameText}>{name}</span>

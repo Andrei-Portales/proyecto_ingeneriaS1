@@ -3,6 +3,15 @@ body {
 	height: 100%;
 }
 
+.bodyPart{
+    background-image: url('../../assets/background.jpg');
+}
+
+.bodyPart-dark {
+    background-image: none;
+    background-color: #1a202c;
+}
+
 .aboutContainer {
     display: flex;
     margin: auto;

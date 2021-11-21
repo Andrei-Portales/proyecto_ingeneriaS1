@@ -1,6 +1,6 @@
 import styles from './AboutUs.module.scss';
 import { useSelector } from 'react-redux';
-import fondo from '../../assets/background.jpg';
+
 
 const AboutUs = () => {
     const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -17,8 +17,12 @@ const AboutUs = () => {
         !isLightTheme && styles["aboutText2-dark"]
     }`;
 
+    const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+    
     return(
-        <body background={fondo}>
+        <body className={fondo}>
             <div className={styles.aboutContainer}>
                 <div className={tituloAbout}>Acerca de Nosotros</div>
                 <h3 className={textAbout1}>Misión</h3>

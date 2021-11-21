@@ -1,7 +1,6 @@
 import styles from "./FAQ.module.scss";
 import Accordion from "react-bootstrap/Accordion";
 import { useSelector } from "react-redux";
-import fondo from '../../assets/background.jpg';
 
 const FAQ = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -10,8 +9,12 @@ const FAQ = () => {
     !isLightTheme && styles["faqTitle-dark"]
   }`;
 
+  const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+
   return (
-    <body background={fondo}>
+    <body className={fondo}>
       <div className={styles.faqContainer}>
         <div className={tituloFAQ}>Preguntas frecuentes</div>
         <Accordion>
