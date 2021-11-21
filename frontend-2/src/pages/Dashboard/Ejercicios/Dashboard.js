@@ -7,7 +7,7 @@ import "./dashboard.scss";
 
 const Dashboard = () => {
   return (
-    <ChakraProvider theme={theme} resetCss={false}>
+    <ChakraProvider theme={theme}>
       <DarkMode>
         <div className="dashboardWrapper">
           <SidebarComponent isActive={4} />
