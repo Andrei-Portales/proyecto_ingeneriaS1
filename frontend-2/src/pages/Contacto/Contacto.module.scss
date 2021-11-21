@@ -8,8 +8,8 @@ body {
 }
 
 .bodyPart-dark {
-    background-image: none;
-    background-color: #1a202c;
+    background-image: none !important;
+    background-color: #1a202c !important;
 }
 
 .contactoPage {
@@ -59,6 +59,10 @@ body {
 	box-sizing: border-box;
 }
 
+.contactoForm-dark{
+    background-color: #1F2733 !important;
+}
+
 .content{
     padding: 8px;
 	border: 1px solid #CCC;
@@ -74,6 +78,10 @@ body {
 	-moz-border-radius: 3px;
 }
 
+.content-dark{
+    color: white !important;
+}
+
 .subtitle{
 	font-size: 1.1em;
 	width: 50%;
@@ -84,6 +92,10 @@ body {
 	-o-border-radius: 3px;
 	-ms-border-radius: 3px;
 	-moz-border-radius: 3px;
+}
+
+.subtitle-dark{
+    color: white;
 }
 
 @keyframes item-load {

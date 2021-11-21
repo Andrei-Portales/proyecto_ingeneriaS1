@@ -8,8 +8,16 @@ body {
 }
 
 .bodyPart-dark {
-  background-image: none;
-  background-color: #1a202c;
+  background-image: none !important;
+  background-color: #1a202c !important;
+}
+
+.colorAcordion{
+}
+
+.colorAcordion-dark{
+  background-color: #1F2733 !important;
+  color: white !important;
 }
 
 .faqContainer {

@@ -16,6 +16,19 @@ const Contacto = () => {
         !isLightTheme && styles["bodyPart-dark"]
     }`;
 
+  const subtitle = `${styles.subtitle} ${
+        !isLightTheme && styles["subtitle-dark"]
+    }`;
+
+  const contactoForm = `${styles.contactoForm} ${
+        !isLightTheme && styles["contactoForm-dark"]
+    }`;
+
+  const content = `${styles.content} ${
+        !isLightTheme && styles["content-dark"]
+    }`;
+
+
     return (
       <body  className={fondo}>
         <div className={styles.contactoPage}>
@@ -27,53 +40,53 @@ const Contacto = () => {
           <br></br><br></br>
 
           <div className={styles.wrap}>
-            <div className={styles.contactoForm}>
-              <h2 className={styles.subtitle}>
+            <div className={contactoForm}>
+              <h2 className={subtitle}>
                 Nombre
               </h2>
-              <h2 className={styles.subtitle}>
+              <h2 className={subtitle}>
                 Correo
               </h2>
               
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Alfredo Quezada
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 que191002@uvg.edu.gt
               </h5>
 
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Andrei Portales
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 por19825@uvg.edu.gt
               </h5>
 
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Javier Hernández
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 her19202@uvg.edu.gt
               </h5>
 
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Marco Ramírez
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 ram19588@uvg.edu.gt
               </h5>
 
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Mirka Monzón
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 mon18139@uvg.edu.gt
               </h5>
 
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 Oscar de León
               </h5>
-              <h5 className={styles.content}>
+              <h5 className={content}>
                 del19298@uvg.edu.gt
               </h5>
             </div>

@@ -13,13 +13,17 @@ const FAQ = () => {
         !isLightTheme && styles["bodyPart-dark"]
     }`;
 
+  const colorAcord = `${styles.colorAcordion} ${
+        !isLightTheme && styles["colorAcordion-dark"]
+    }`;
+
   return (
     <body className={fondo}>
       <div className={styles.faqContainer}>
         <div className={tituloFAQ}>Preguntas frecuentes</div>
         <Accordion>
-          <Accordion.Item eventKey="0">
-            <Accordion.Header>
+          <Accordion.Item eventKey="0" className={colorAcord}>
+            <Accordion.Header >
               ¿Cómo configuro una nueva cuenta de usuario?
             </Accordion.Header>
             <Accordion.Body>
@@ -39,7 +43,7 @@ const FAQ = () => {
               función principal en Educa Fácil: alumno, maestro o padre.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1">
+          <Accordion.Item eventKey="1" className={colorAcord}>
             <Accordion.Header>¿Cómo informo errores en videos?</Accordion.Header>
             <Accordion.Body>
               Si desea informar una nueva aclaración por un error en un video,
@@ -51,7 +55,7 @@ const FAQ = () => {
               ¡Gracias por ayudar a mejorar Educa Fácil!
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2">
+          <Accordion.Item eventKey="2" className={colorAcord}>
             <Accordion.Header>
               ¿Cómo puedo restablecer mi contraseña?
             </Accordion.Header>
@@ -70,7 +74,7 @@ const FAQ = () => {
               <b>revise su carpeta de correo no deseado</b>.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="3">
+          <Accordion.Item eventKey="3" className={colorAcord}>
             <Accordion.Header>
               ¿Cuáles son los requisitos básicos de contraseña para Educa Fácil?
             </Accordion.Header>
@@ -89,8 +93,8 @@ const FAQ = () => {
               Evite los caracteres especiales como: $, ", #, @
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="4">
-            <Accordion.Header>
+          <Accordion.Item eventKey="4" className={colorAcord}>
+            <Accordion.Header className={colorAcord}>
               ¿Cuáles son los principios de privacidad de Educa Fácil?
             </Accordion.Header>
             <Accordion.Body>
@@ -120,7 +124,7 @@ const FAQ = () => {
               productos.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="5">
+          <Accordion.Item eventKey="5" className={colorAcord}>
             <Accordion.Header>
               ¿Educa Fácil puede darme un certificado o diploma?
             </Accordion.Header>
