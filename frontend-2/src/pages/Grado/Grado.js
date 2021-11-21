@@ -1,7 +1,7 @@
 import { useParams, useHistory } from 'react-router-dom';
 import { materias } from '../../util/grados-materias';
 import styles from './Grado.module.scss';
-import fondo from '../../assets/background.jpg';
+import { useSelector } from 'react-redux';
 
 const Grado = (props) => {
   const history = useHistory();
@@ -12,12 +12,18 @@ const Grado = (props) => {
     history.replace('/grados');
   }
 
+  const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
+
   const onMateriaClickHandler = (id) => {
     history.push(`/grados/${params.grado}/${id}`);
   };
 
+  const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+
   return (
-    <body  background={fondo}>
+    <body className={fondo}>
       <div className={styles.gradoPage}>
         <h1 className={styles.title}>{gradoInfo.title}</h1>
         <div className={styles.materias}>

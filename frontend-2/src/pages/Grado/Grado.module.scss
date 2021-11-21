@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.bodyPart{
+  background-image: url('../../assets/background.jpg');
+}
+
+.bodyPart-dark {
+  background-image: none;
+  background-color: #1a202c;
+}
+
 .title {
   animation: item-load 400ms ease-in;
   margin-left: auto;

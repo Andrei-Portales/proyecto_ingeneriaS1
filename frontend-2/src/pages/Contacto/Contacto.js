@@ -1,6 +1,5 @@
 import styles from './Contacto.module.scss';
 import { useSelector } from "react-redux";
-import fondo from '../../assets/background.jpg';
 
 const Contacto = () => {
   const isLightTheme = useSelector((state) => state.theme.theme) === "LIGHT";
@@ -13,8 +12,12 @@ const Contacto = () => {
     !isLightTheme && styles["prf-dark"]
   }`;
 
+  const fondo = `${styles.bodyPart} ${
+        !isLightTheme && styles["bodyPart-dark"]
+    }`;
+
     return (
-      <body  background={fondo}>
+      <body  className={fondo}>
         <div className={styles.contactoPage}>
 
           <h1 className={title}><b>Contacto</b></h1>
