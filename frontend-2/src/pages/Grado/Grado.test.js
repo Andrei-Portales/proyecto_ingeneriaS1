@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Grado from './Grado';
+import store from '../../store/store';
+import { Provider } from 'react-redux';
 
 const renderWithRouter = (ui, { route = '/' } = {}) => {
   window.history.pushState({}, 'Test page', route);
@@ -11,7 +13,12 @@ const renderWithRouter = (ui, { route = '/' } = {}) => {
 test('render grado screen', async () => {
   const route = '/grados/cuarto';
 
-  renderWithRouter(<Grado grade={'cuarto'}/>, { route });
+  renderWithRouter(
+    <Provider store={store}>
+      <Grado grade={'cuarto'} />
+    </Provider>,
+    { route }
+  );
 
   const title = await screen.findByText('Materias 4to');
 
