@@ -24,6 +24,10 @@ jobs:
         run: |
           cd frontend-2
           npm i --legacy-peer-deps
+      - name: Run tests
+        run: |
+          cd frontend-2
+          npm run tests
       - name: Build dependecies
         run: |
           cd frontend-2
