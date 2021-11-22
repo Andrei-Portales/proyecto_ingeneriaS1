@@ -19,7 +19,7 @@ test('text grados options', async () => {
     <Provider store={store}>
       <Grados />
     </Provider>
-  );
+  ); 
 
   const cuarto = await screen.findByText('Cuarto');
   const quitno = await screen.findByText('Quinto');
