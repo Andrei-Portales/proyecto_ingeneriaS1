@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: |
           cd frontend-2
-          npm run tests
+          npm run test
       - name: Build dependecies
         run: |
           cd frontend-2
